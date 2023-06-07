@@ -1,0 +1,26 @@
+
+virtual machine
+server 10$ per month
+server within server
+
+docker container
+image blue print
+
+docker image
+docker image use docker container
+
+vmwhere 
+window virtual machine
+
+container
+
+example
+gmail 
+email send
+
+
+/////////////////////////////////
+
+
+docker is a container its a common seprate all file packages project infomation
+which we can use other machine use easily we did not install all things or version.

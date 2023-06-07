@@ -1,0 +1,17 @@
+big o notation
+array object
+problem solving approach
+problem solving patern
+recursion
+soring
+data structure intro
+single link list
+double link list
+stack queue
+binary search tree
+binary heaps
+hash tables
+graph
+graph traversal
+dijstra algo
+trie

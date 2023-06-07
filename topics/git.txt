@@ -1,0 +1,17 @@
+git reset/ revert
+git reset --soft <commit id>
+
+
+
+
+
+zoho:-
+user base dashboard
+customize home pages
+leads:-
+india mard
+telephonic data
+third party
+social media app
+
+

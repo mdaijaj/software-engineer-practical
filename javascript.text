@@ -1,0 +1,130 @@
+top 30 question interview javascript:-
+
+promise promise.all()  promise.trace() type  race method in promise
+callback
+prototype
+call bind apply
+es6 14 example
+curry
+closer
+array function method
+first class function
+29.What is a first order function
+pure function
+27.High order function?
+advantage of JavaScript
+3.  What is an undefined and undeclared variable? 
+24. What is DOM? What is the use of a document object?
+31. What is the 'Strict' mode in JavaScript and how can it be enabled?
+33. What is hoisting? 	What is the Temporal Dead Zone
+what is promise
+What is a polyfill
+What is IIFE(Immediately Invoked Function Expression)
+What is scope in javascript
+cookies token  What is a service worker session
+undefined vs null vs nan
+What is the use of preventDefault method
+What is an anonymous function
+what is class object oops method
+What is a constructor method
+What is the difference between Shallow and Deep copy
+
+
+optional 
+What is a service worker
+What are regular expression patterns
+What are the advantages of Getters and Setters
+What is a decorator
+
+
+
+
+
+what is a anonymous function.
+that function without name its call anonymous function.
+
+does not own identity
+express vs statement
+
+Expression:-
+An Expression is something which evaluates to a value, or which produce a value
+or the value itself
+
+statement:-
+A bigger piece of code that is executed and which does not produce a value on
+itself.
+
+
+
+dom:- Document Object Model  :-
+Structured representation of HTML document.
+DOM allows JavaScript to access HTML elements and styles to manipulate i.e.
+change text, HTML attributes, and even CSS styles
+
+We will make JavaScript interact with the Webpage, Technically that is called
+DOM manipulation
+
+
+undefined vs null 
+Undefined is the default value of something which has never been assign
+
+null:-
+Null is quite similar to undefined but it is not a default value of anything, you can
+
+
+Scope Concepts
+ Scoping: So scoping controls how our program's variables are organized and
+accessed by the JavaScript engine.
+So basically scoping asks the question, where do variables live?
+Or where can we access a certain variable and where not?
+ Lexical Scoping: means that the way variables are organized and accessed is entirely
+controlled by the placement of functions and of blocks in the programs code
+Ex: A function that is written inside another function has access to the variables of
+the parent function.
+ Scope: Scope is the space or environment in which a certain variable is declared.
+Global, Function and Block Scope
+ Scope of a variable: Entire region of our code, where a certain variable can be
+accessed.
+
+Callback:-
+Callback hell is when we have a lot of nested callbacks in order to execute
+asynchronous tasks in sequence.
+
+
+doubt ?
+
+scope practical example let const var
+hosting
+
+Lexical Scoping
+we can access variable of parent function inside function that is call Lexical scoping
+
+
+
+
+/////
+top 10 question answer practical right
+
+Immediately Invoked Functions Expressions (IIFE)
+ Sometimes in JavaScript, we need a function that is only executed once. And then
+never again..
+ So basically a function that disappears right after it's called once.
+ These are immediately invoked
+
+
+
+
+Hi everyone - I am looking for a job change and would appreciate your support. Thank you in advance for any connections, advice, or opportunities you can offer.
+
+If you have any openings or references kindly share mail id in the comment section I'll forward my resume.
+
+#activelylooking #job #activelylooking #lookingforjob #jobs #recruitment #jobsearch #job #hiring #recruiting #hiringnow #work #talentsolutions #jobseekers #hr #jobplatform #jobinterview #experience #jobday #mernstackdeveloper #mernstack #nodejsdeveloper #mernstack #hr #hiring #immediatejoiner #nodejs #noida #delhincr #gurugram
+
+Thank you!!
+
+Role: Nodejs Developer || MERN Stack Devloper
+Total Experience: 2.5 yrs 
+Email Id: aijaj535@gmail.com
+Contact No.: +91 8826616653
+
+hr@devherds.com

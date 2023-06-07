@@ -1,0 +1,299 @@
+្life cycle method:-
+constructor
+rendor
+componentDimount
+componentDidUpdate
+componentDidUnmount
+
+useMemo:-
+1 performance well take from cache  well application performance
+2 result ko cache me store kar raha hai next time wo caches se utha lega
+3 unwantage function call not use event call so use memo
+memoized value
+
+useCallback
+function store in cache
+memoized function
+
+application well performance 
+unwantage function call ko rokne ke liye
+unnessessary funcion call ko rokne ke liye
+
+
+phase :-
+mounting birth
+updating we do changes
+unmounting dead phase
+
+componentdimount:- we should api call and async process in this phase 
+
+
+2 hoc(hight order component)
+when component pas as a props inut component and output component that is call hoc
+when component pass as argument of funcion inside function thats call hoc
+a hoc is a advanced technique in React for reusing component logic.
+a hoc is third party react library.
+a hoc is funcion that take a component and returns a new component.
+
+why use hoc?
+same logic  when we use same component logic different component so we used hoc.
+
+
+
+const subjects= (STUDENT)=>{ //component name as arg
+  class Subject extends Componet{
+    rendor(){
+      return (
+        <STUDENT hocsub="Java"></STUDENT>
+      )
+    }
+  }
+  return Subject;
+}
+
+export default subjects;
+
+
+
+two type of hooks
+1 inbuild hooks
+Basic
+adddtion
+
+Basic Hooks
+    useState() state management within particular component 
+    useEffect() life cycle method
+    useContext()  //state management global access
+
+Additional Hooks:-
+    useRef():-
+    useReducer():- 
+    useCallback()  :-
+    useMemo()
+
+2. customHooks
+
+    useCallback():-
+    memoize the function
+    code optimization handle  performance manage stop loop or rerendor 
+    optimization component reredering
+    refrential equality of function
+
+
+    useMemo():-
+    memoize the function value
+      code optimization handle
+    optimization component reredering
+  refrential equality of function
+
+
+  useContext:-
+  data pass multiple level grandparent to child
+  instead of redux for data pass
+  component a pass to component b pass component c;
+
+  useReducer:-
+  state management
+  and use redux
+  action with dispatch
+
+
+  redux:-
+  
+  whenever pass the function  arg then use arrow function
+ ()=>{
+   
+ }+919818551429ndle using hooks
+it like a useState only and its preserve the value. No rerender
+
+function CustomTextInput(props) {
+  // textInput must be declared here so the ref can refer to it
+  const textInput = useRef(null);
+  
+  function handleClick() {
+    textInput.current.focus();
+    textInput.current.style.display="none"
+  }
+
+  return (
+    <div>
+      <input
+        type="text"
+        ref={textInput} />
+      <input
+        type="button"
+        value="Focus the text input"
+        onClick={handleClick}
+      />
+    </div>
+  );
+}
+
+
+
+redux:-
+first phase:-
+1.prop drilling
+child to parent prop data pass
+
+
+2. react hooks
+with redux we can use
+
+3.redux store:-
+about redux:-
+redux is a patern and library for manageing and updating application state using events called "action". 
+It serve as centrallized store for state that needs to be used across your entire application.
+state can only be updated in a predictable fasshion.
+
+
+
+action:-
+what i do?
+
+reducer:
+how to do?
+
+store:-
+all the data store
+
+function assoicated with store:
+
+data pass child to parent help using redux:-
+
+
+
+23oct 2022
+props:-
+used for data pass one component to another component
+
+state:-
+state varible use manage state or updating state
+
+
+jxs:-
+its all html in component inside html in js used thats called jxs(html js ka mukut)
+
+
+conditional rendering:-
+const { useState, useEffect } = React;
+const TodoRemaining = () => <div>Remaining</div>;
+const TodoDone = () => <div>Done</div>;
+
+const TodoDisplay = () => {
+  const [isPreview, setIsPreview] = useState(true);
+
+  return (
+    <div>
+      {isPreview ? <TodoRemaining /> : <TodoDone />}
+      <label htmlFor="change">
+        <input
+          type="checkbox"
+          id="change"
+          onChange={() => setIsPreview(!isPreview)}
+        />
+        Change
+      </label>
+    </div>
+  );
+};
+
+export default TodoDisplay;
+
+
+//list key special key for update or deleting particular item.
+function NumberList(props) {
+  const numbers = props.numbers;
+  const listItems = numbers.map((number) =>
+    <ListItem key={number.toString()} value={number} />
+  );
+  return (
+    <ul>
+      {listItems}
+    </ul>
+  );
+}
+
+constructor:-
+before loading execute.
+
+componentDidMount:- 
+render first time execute
+
+
+bind or arrow use function onClick function call.
+example:-
+
+<button onClick={this.increment.bind(this)}> click me </button>  //es5
+<button onClick={()=>{this.increment()}}> click me </button>     //es6
+
+
+class base component life cycle method:-
+render
+componentdidmount  -- first time loading    //useEffect
+constructor
+componentDidUpdate   -- update time load
+componentDidUnmount   --remove from component
+
+example:-
+componentDidMount()=>{
+  console.log("first time loading then call this function, componentDidMount working here...")
+}
+
+componentDidUpdate()=>{
+  console.log(" when anyupdate call this function,  componentDidUpdate is working here...)
+}
+
+componentDidUnmount=()=>{
+  console.log("when you will remove any component then it will call this function working...   component remove..")
+}
+
+
+
+
+
+
+function base component life cycle method:-
+//componentDidMount phase
+useEffect(()=>{
+  console.log("componentDimount is working...")
+})
+
+
+//update phase
+useEffect((number)=>{
+  console.log("componentDimount is working...")
+}, [number])
+
+
+//remove component phase:-
+useEffect((number)=>{
+  console.log("function component updating is working...")
+  return ()=>{
+    console.log("function component removing here...")
+  }
+}, [number]);
+
+
+//composing
+same component different props or data use compositing as work inheritance
+reuse multiple component 
+
+
+webpack:-
+bundal of information don't go other side
+compiler bebel
+
+
+dom
+
+its is a object presentation of the html document 
+document  
+object   like h2 body heading 
+model all dom presentation organized way
+
+virtual dom:-
+virtual dom is replica of original dom
+
+
+

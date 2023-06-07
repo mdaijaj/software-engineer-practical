@@ -1,0 +1,134 @@
+top 25 question which asked question?
+
+What Are The Key Features Of NodeJs
+how is better then other language why choose nodejs for backend?
+event loop 
+core module ?
+What are streams in Nodejs Explain the different types of streams present in Nodejs
+new promise practical
+how to handle multile thread if nodejs single thread?
+fork  	Differentiate between spawn and fork methods in Nodejs?
+callback vs callback hell How can you avoid callback hells
+middleware with example
+how to handle multile user reqeust handle
+fileSystem
+asynchoronous vs synchoronous
+What Is EventEmitter In NodeJs
+eventloop  libuv
+Explain chaining in Nodejs
+packages json vs packages.lock.json
+List down the major security implementations within Node.js
+repl example
+buffer example
+thread pool type   How does Nodejs handle the child threads?   how many type of threads?
+Can you write CRUD operations in Node js without using frameworks?  practical
+Explain the purpose of module exports?
+What is the datatype of console?  Which are the different console methods available
+restful API
+npm 
+cluster
+
+
+answer:-
+What Are The Key Features Of NodeJs?
+Asynchronous event driven IO helps concurrent request handling – All APIs of Node.js are asynchronous. This feature means that if a Node receives a request for some Input/Output operation, it will execute that operation in the background and continue with the processing of other requests. Thus it will not wait for the response from the previous requests.
+Fast in Code execution – Node.js uses the V8 JavaScript Runtime engine, the one which is used by Google Chrome. Node has a wrapper over the JavaScript engine which makes the runtime engine much faster and hence processing of requests within Node.js also become faster.
+Single Threaded but Highly Scalable – Node.js uses a single thread model for event looping. The response from these events may or may not reach the server immediately. However, this does not block other operations. Thus making Node.js highly scalable. Traditional servers create limited threads to handle requests while Node.js creates a single thread that provides service to much larger numbers of such requests.
+Node.js library uses JavaScript – This is another important aspect of Node.js from the developer’s point of view. The majority of developers are already well-versed in JavaScript. Hence, development in Node.js becomes easier for a developer who knows JavaScript.
+There is an Active and vibrant community for the Node.js framework – The active community always keeps the framework updated with the latest trends in the web development.
+No Buffering – Node.js applications never buffer any data. They simply output the data in chunks.
+
+
+
+What are streams in Nodejs Explain the different types of streams present in Nodejs?
+Streams are objects that allow the reading of data from the source and writing of data to the destination as a continuous process.
+There are four types of streams.
+to facilitate the reading operation.
+to facilitate the writing operation.
+to facilitate both read and write operations.
+is a form of Duplex stream that performs computations based on the available input.
+
+
+
+Differentiate between spawn and fork methods in Nodejs?
+In Node.js, the spawn() is used to launch a new process with the provided set of commands. This method doesn’t create a new V8 instance and just one copy of the node module is active on the processor. When your child process returns a large amount of data to the Node you can invoke this method.
+
+
+How can you avoid callback hells?
+There are lots of ways to solve the issue of callback hells:
+1.modularization: break callbacks into independent functions,
+2.use a control flow library, like async.
+3.use generators with Promises,
+4.use async/await (note that it is only available in the latest v7 release and not in the LTS version
+
+
+
+
+
+Which are the areas where it is suitable to use NodeJS?
+I/O bound Applications
+Data Streaming Applications
+Data Intensive Real-time Applications (DIRT)
+JSON APIs based Applications
+Single Page Applications
+
+
+In general, middleware is a function receives the Request and Response objects. In other words, in an application’s request-response cycle these functions have access to various request & response objects along with the next function of the cycle,The next function of middleware is represented with the help of a variable, usually named next. Most commonly performed tasks by the middleware functions are
+
+Execute any type of code
+Update or modify the request and the response objects
+Finish the request-response cycle
+Invoke the next middleware in the stack
+
+
+
+Explain libuv?
+Libuv is a multi-platform support library of Node.js which majorly is used for asynchronous I/O. It was primarily developed for Node.js, with time it is popularly practiced with other systems like as Luvit, pyuv, Julia, etc. Libuv is basically an abstraction around libev/ IOCP depending on the platform, providing users an API based on libev. A few of the important features of libuv are:
+
+Full-featured event loop backed
+File system events
+Asynchronous file & file system operations
+Asynchronous TCP & UDP sockets
+Child processes
+
+
+25. What is the difference between spawn and fork methods in Node.js?
+The spawn() function is used to create a new process and launch it using the command line. What it does is that it creates a node module on the processor. Node.js invokes this method when the child processes return data.
+
+The following is the syntax for the spawn() method:
+
+child_process.spawn(command[, args][, options])
+Coming to the fork() method, it can be considered as an instance of the already existing spawn() method. Spawning ensures that there is more than one active worker node to handle tasks at any given point in time.
+
+The following is the syntax for the fork() method:
+
+child_process.fork(modulePath[, args][, options])
+
+
+
+How can we take advantage of multi-core system in Nodejs as nodejs works on single thread?
+We can use node js cluster to use multicores in the hardware,The cluster module allows easy creation of child processes that all share server ports
+
+
+
+
+
+
+26. What is the use of middleware in Node.js?
+A middleware is a simple function that has the ability to handle incoming requests and outbound response objects. Middleware is used primarily for the following tasks:
+
+Execution of code (of any type)
+Updating request and response objects
+Completion of request–response iterations
+Calling the next middleware
+
+
+28. Why is assert used in Node.js?
+Assert is used to explicitly write test cases to verify the working of a piece of code. The following code snippet denotes the usage of assert:
+
+var assert = require('assert');
+function add(x, y) {
+return x + y;
+}
+var result = add(3,5);
+assert( result === 8, 'three summed with five is eight');

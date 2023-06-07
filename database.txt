@@ -1,0 +1,16 @@
+connected db
+second highest salary
+migration
+join all
+mongodb vs mysql
+trasection
+index
+
+
+mongodb
+replica set
+aggregation
+transection
+
+
+

@@ -1,0 +1,66 @@
+core module
+bydefault module no need to import or require some are import or require; 
+buffer
+http
+fileSystem
+stream
+microservice
+middleware
+
+middleware use only only routes
+req res ko access and modify kar sakte hai
+
+app.use()  //middleware
+when we use authentication on that time we use middleware
+
+
+buffer=
+its a temporary memory location in nodejs while creating file nodejs need some memory location.
+
+
+event:-
+event.emit("countAPI")   send event
+
+
+let count=0;
+event.on("countAPI", ()=>{    //recive event
+    console.log("event called", count)
+})
+
+
+repl:- read-eval-print-loop
+calculation karna evulate karna cmd shell par
+
+
+Informational responses (100 – 199)
+Successful responses (200 – 299)
+Redirection messages (300 – 399)
+Client error responses (400 – 499)
+Server error responses (500 – 599)
+
+different engine in nodejs
+chrome v8
+safari chakra
+firefox  spiderman
+
+
+
+libuv
+asynchrous
+event loop 
+
+
+cluster:-
+server ka copy
+traffic ko handle
+
+
+
+
+
+
+doub ?
+
+
+table 
+UPDATE dbo.Table1 SET col2 = (CASE col2 WHEN 1 THEN 0 ELSE 1 END);
