@@ -1,5 +1,8 @@
 top 30 question interview javascript:-
 
+
+
+
 promise promise.all()  promise.trace() type  race method in promise
 callback
 prototype
@@ -7,7 +10,7 @@ call bind apply
 es6 14 example
 curry
 closer
-array function method
+array function method ?
 first class function
 29.What is a first order function
 pure function
@@ -17,11 +20,11 @@ advantage of JavaScript
 24. What is DOM? What is the use of a document object?
 31. What is the 'Strict' mode in JavaScript and how can it be enabled?
 33. What is hoisting? 	What is the Temporal Dead Zone
-what is promise
 What is a polyfill
 What is IIFE(Immediately Invoked Function Expression)
 What is scope in javascript
-cookies token  What is a service worker session
+cookies token  
+What is a service worker session
 undefined vs null vs nan
 What is the use of preventDefault method
 What is an anonymous function
@@ -30,22 +33,13 @@ What is a constructor method
 What is the difference between Shallow and Deep copy
 
 
-optional 
-What is a service worker
-What are regular expression patterns
-What are the advantages of Getters and Setters
-What is a decorator
-
-
-
 
 
 what is a anonymous function.
 that function without name its call anonymous function.
-
 does not own identity
-express vs statement
 
+express vs statement
 Expression:-
 An Expression is something which evaluates to a value, or which produce a value
 or the value itself
@@ -93,7 +87,7 @@ asynchronous tasks in sequence.
 
 doubt ?
 
-scope practical example let const var
+scope practical example let const var function use
 hosting
 
 Lexical Scoping
@@ -110,21 +104,3 @@ Immediately Invoked Functions Expressions (IIFE)
 never again..
  So basically a function that disappears right after it's called once.
  These are immediately invoked
-
-
-
-
-Hi everyone - I am looking for a job change and would appreciate your support. Thank you in advance for any connections, advice, or opportunities you can offer.
-
-If you have any openings or references kindly share mail id in the comment section I'll forward my resume.
-
-#activelylooking #job #activelylooking #lookingforjob #jobs #recruitment #jobsearch #job #hiring #recruiting #hiringnow #work #talentsolutions #jobseekers #hr #jobplatform #jobinterview #experience #jobday #mernstackdeveloper #mernstack #nodejsdeveloper #mernstack #hr #hiring #immediatejoiner #nodejs #noida #delhincr #gurugram
-
-Thank you!!
-
-Role: Nodejs Developer || MERN Stack Devloper
-Total Experience: 2.5 yrs 
-Email Id: aijaj535@gmail.com
-Contact No.: +91 8826616653
-
-hr@devherds.com

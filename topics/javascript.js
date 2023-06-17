@@ -1,3 +1,15 @@
+
+//scope example
+var username="rahul"
+function userinfo(){
+    username= "aijaj";
+}
+
+console.log("username", username)
+userinfo()
+
+
+
 let p1= new Promise((resolve, rejected)=>{
     setTimeout(() => {
         resolve("promise1")
@@ -204,4 +216,81 @@ arrayOfOddNumbers[100] = 199;
 
 
 
+// let p1= new Promise((resolve, rejected)=>{
+//     resolve("a")
+// })
 
+// let p2= new Promise((resolve, rejected)=>{
+//     let smsdata="b"
+//     setTimeout(() => {
+//         resolve(smsdata)
+//     }, 4*1000);
+// })
+
+// let p3= new Promise((resolve, rejected)=>{
+//     setTimeout(() => {
+//         resolve("c")
+//     }, 1*1000);
+// })
+
+// let p4= new Promise((resolve, rejected)=>{
+//     resolve("d")
+// })
+
+// Promise.all([p1,p2,p3,p4])
+// .then((result)=>{
+//     console.log(`total is  ${result}`)
+// })
+// .catch((error)=>{
+//     console.log(`error promise ${error}`)
+// })
+
+
+
+
+
+//3 call apply and bind
+// case0;
+var student1 = {
+    name: "aijaj",
+    displayName(country, state) {                                        //repeating code
+        console.log(`my name is ${this.name}  and my country  ${country} ${state}`)
+    }
+ }
+ 
+ var student2 = {
+    name: "rahul",
+    displayName(country) {                                      //repeating code
+        console.log(`my name is ${this.name}  and my country  ${country}  ${state}`)
+    }
+ }
+ // student1.displayName("India", "Delhi")
+ 
+ // case1:
+ var student2 = {
+    name: "rahul",
+ }
+ // student1.displayName.call(student2, "India", "haryana")   // use call method 
+ 
+ 
+ //case 2 using apply method use array as a argument
+ var student2 = {
+    name: "kishan",
+ }
+ // student1.displayName.apply(student2, ["India", "Mumbai"])   // use apply method array format only  both immediately call
+ 
+ //case 3 use bind method take variable function
+ var student2 = {
+    name: "rahul",
+ }
+ // const studentInfo= student1.displayName.bind(student2, "India", "Chennai") ;  //use bind and take a variable fucntion
+ // studentInfo()
+ 
+ 
+ // call vs apply vs bind
+ // call apply and bind method use access only once call other function property not repeating code
+ // Call and apply are almost same except the way arguments are passed
+ // call as , and apply as a array arguments
+ // bind method use take variable function define;
+ 
+ 

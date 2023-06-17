@@ -1,0 +1,46 @@
+top 25 question which asked question?
+
+What Are The Key Features Of NodeJs?
+how is better then other language why choose nodejs for backend?
+event loop?  How does Node.js work?
+core module ?
+What are streams in Nodejs Explain the different types of streams present in Nodejs
+new promise practical
+how to handle multile req if nodejs single thread?  how to handle multile user reqeust handl
+fork Differentiate between spawn and fork methods in Nodejs?
+callback vs callback hell How can you avoid callback hells
+middleware with example
+fileSystem
+asynchoronous vs synchoronous
+What Is EventEmitter In NodeJs
+eventloop  libuv
+Explain chaining in Nodej
+packages json vs packages.lock.json
+List down the major security implementations within Node.js
+repl example
+buffer example
+thread pool type How does Nodejs handle the child threads? how many type of threads?
+Can you write CRUD operations in Node js without using frameworks?  practical
+Explain the purpose of module exports?
+restful API
+npm 
+cluster
+
+
+
+doubt
+worker thread
+how nodjes fast executation code using v8
+how to handle multi thread in python practical than its better than nodejs
+
+
+
+
+
+
+
+
+
+
+
+

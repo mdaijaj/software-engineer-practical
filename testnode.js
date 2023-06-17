@@ -1,22 +1,22 @@
 
 
-// multiple request handle in nodejs example || handle concurrency
-function request(order){
-    console.log("order", order)
-    response(function (){
-        console.log("Delivered Order!", order)
-    })
-}
+// // multiple request handle in nodejs example || handle concurrency
+// function request(order){
+//     console.log("order", order)
+//     response(function (){
+//         console.log("Delivered Order!", order)
+//     })
+// }
 
-function response(callback){
-    setTimeout(callback , 5000);
-}
+// function response(callback){
+//     setTimeout(callback , 5000);
+// }
 
-request(1)
-request(2)
-request(3)
-request(4)
-request(5)
+// request(1)
+// request(2)
+// request(3)
+// request(4)
+// request(5)
 
 
 
@@ -33,3 +33,21 @@ event.on("saymyname", ()=>{
 
 event.emit("saymyname")
 
+
+
+//eventEmiter
+
+console.log("starting up")
+setTimeout(()=>{
+    console.log("api called")
+}, 2000)
+
+setInterval(()=>{
+    console.log("each 5 second call repeadly")
+}, 5000)
+
+
+
+
+
+doubt?

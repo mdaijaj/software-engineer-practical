@@ -1,0 +1,24 @@
+20 important question
+
+1	What is MongoDB mysql?
+2	What are the difference between NoSQL and SQL
+10 what is mysql and Features const and pros
+3	How to establish MongoDB database connection in a node application?
+4	What are virtual property in mongoose
+5. second highest salary
+6 migration
+7 join all
+8 aggregation pipeline
+9 index
+11 orm what is meaning pros const
+12 replica set
+13 transection
+14 What are the mongoose middlewares?
+15 How to query data using mongoose?
+16 What are JWT?
+17	What are different authentication methods?
+18	What are disadvantages of using session based authentication?
+19	What are disadvantages of using jwt based authentication?
+
+table  multiple case
+UPDATE dbo.Table1 SET col2 = (CASE col2 WHEN 1 THEN 0 ELSE 1 END);

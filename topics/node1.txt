@@ -1,0 +1,454 @@
+practical knowledge
+
+// mern
+mongodb and mysql  1h
+nodejs          1h
+javascript      2h
+reactjs         1h
+
+
+important question
+soring
+prime number
+binary search
+find second largest number
+sorted value unique value
+fibonasis value
+
+
+
+
+answer:-
+1. What Are The Key Features Of NodeJs?
+Asynchronous event driven IO helps concurrent request handling – All APIs of Node.js are asynchronous. This feature means that if a Node receives a request for some Input/Output operation, it will execute that operation in the background and continue with the processing of other requests. Thus it will not wait for the response from the previous requests.
+Fast in Code execution – Node.js uses the V8 JavaScript Runtime engine, the one which is used by Google Chrome. Node has a wrapper over the JavaScript engine which makes the runtime engine much faster and hence processing of requests within Node.js also become faster.
+Single Threaded but Highly Scalable – Node.js uses a single thread model for event looping. The response from these events may or may not reach the server immediately. However, this does not block other operations. Thus making Node.js highly scalable. Traditional servers create limited threads to handle requests while Node.js creates a single thread that provides service to much larger numbers of such requests.
+Node.js library uses JavaScript – This is another important aspect of Node.js from the developer’s point of view. The majority of developers are already well-versed in JavaScript. Hence, development in Node.js becomes easier for a developer who knows JavaScript.
+There is an Active and vibrant community for the Node.js framework – The active community always keeps the framework updated with the latest trends in the web development.
+No Buffering – Node.js applications never buffer any data. They simply output the data in chunks.
+
+
+
+event driven (mouseEvent)
+
+setTimeout
+setInterver
+setimmediate
+
+
+
+
+2.event loop?  How does Node.js work?
+A Node.js application creates a single thread on its invocation. Whenever Node.js receives a request, it first completes its processing before moving on to the next request.
+
+Node.js works asynchronously by using the event loop and callback functions, to handle multiple requests coming in parallel. An Event Loop is a functionality which handles and processes all your external events and just converts them to a callback function. It invokes all the event handlers at a proper time. Thus, lots of work is done on the back-end, while processing a single request, so that the new incoming request doesn't have to wait if the processing is not complete.
+
+While processing a request, Node.js attaches a callback function to it and moves it to the back-end. Now, whenever its response is ready, an event is called which triggers the associated callback function to send this response.
+
+
+
+3 What are the core modules of Node.js?
+Node.js has a set of core modules that are part of the platform and come with the Node.js installation. These modules can be loaded into the program by using the require function.
+
+some of the important core modules in Node.js.
+Name	Description
+Assert	It is used by Node.js for testing itself. It can be accessed with require('assert').
+Buffer	It is used to perform operations on raw bytes of data which reside in memory. It can be accessed with require('buffer')
+Child Process	It is used by node.js for managing child processes. It can be accessed with require('child_process').
+Cluster	This module is used by Node.js to take advantage of multi-core systems, so that it can handle more load. It can be accessed with require('cluster').
+Console	It is used to write data to console. Node.js has a Console object which contains functions to write data to console. It can be accessed with require('console').
+Crypto	It is used to support cryptography for encryption and decryption. It can be accessed with require('crypto').
+HTTP	It includes classes, methods and events to create Node.js http server.
+URL	It includes methods for URL resolution and parsing.
+Query String	It includes methods to deal with query string.
+Path	It includes methods to deal with file paths.
+File System	It includes classes, methods, and events to work with file I/O.
+Util	It includes utility functions useful for programmers.
+Zlib	It is used to compress and decompress data. It can be accessed with require('zlib').
+
+
+
+
+
+4 What are streams in Nodejs Explain the different types of streams present in Nodejs?
+Streams are objects that allow the reading of data from the source and writing of data to the destination as a continuous process.
+There are four types of streams.
+to facilitate the reading operation.
+to facilitate the writing operation.
+to facilitate both read and write operations.
+is a form of Duplex stream that performs computations based on the available input.
+
+
+1. Reading from a Stream:
+
+const fs = require("fs");
+let data = "";
+
+// Create a readable stream
+const readerStream = fs.createReadStream("file.txt");
+
+// Set the encoding to be utf8.
+readerStream.setEncoding("UTF8");
+
+// Handle stream events --> data, end, and error
+readerStream.on("data", function (chunk) {
+  data += chunk;
+});
+
+readerStream.on("end", function () {
+  console.log(data);
+});
+
+readerStream.on("error", function (err) {
+  console.log(err.stack);
+});
+
+
+
+
+2. Writing to a Stream:
+
+const fs = require("fs");
+const data = "File writing to a stream example";
+
+// Create a writable stream
+const writerStream = fs.createWriteStream("file.txt");
+
+// Write the data to stream with encoding to be utf8
+writerStream.write(data, "UTF8");
+
+// Mark the end of file
+writerStream.end();
+
+// Handle stream events --> finish, and error
+writerStream.on("finish", function () {
+  console.log("Write completed.");
+});
+
+writerStream.on("error", function (err) {
+  console.log(err.stack);
+});
+
+
+
+3. Piping the Streams:
+
+Piping is a mechanism where we provide the output of one stream as the input to another stream. It is normally used to get data from one stream and to pass the output of that stream to another stream. There is no limit on piping operations.
+
+const fs = require("fs");
+
+// Create a readable stream
+const readerStream = fs.createReadStream('input.txt');
+
+// Create a writable stream
+const writerStream = fs.createWriteStream('output.txt');
+
+// Pipe the read and write operations
+// read input.txt and write data to output.txt
+readerStream.pipe(writerStream);
+4. Chaining the Streams:
+
+Chaining is a mechanism to connect the output of one stream to another stream and create a chain of multiple stream operations. It is normally used with piping operations.
+
+const fs = require("fs");
+const zlib = require('zlib');
+
+// Compress the file input.txt to input.txt.gz
+fs.createReadStream('input.txt')
+   .pipe(zlib.createGzip())
+   .pipe(fs.createWriteStream('input.txt.gz'));
+  
+console.log("File Compressed.");
+
+
+How to handle large data in Node.js?
+The Node.js stream feature makes it possible to process large data continuously in smaller chunks without keeping it all in memory. One benefit of using streams is that it saves time, since you don't have to wait for all the data to load before you start processing. This also makes the process less memory-intensive.
+
+Some of the use cases of Node.js streams include:
+
+Reading a file that's larger than the free memory space, because it's broken into smaller chunks and processed by streams. For example, a browser processes videos from streaming platforms like Netflix in small chunks, making it possible to watch videos immediately without having to download them all at once.
+
+Reading large log files and writing selected parts directly to another file without downloading the source file. For example, you can go through traffic records spanning multiple years to extract the busiest day in a given year and save that data to a new file.
+
+
+
+
+/**
+ * Promise
+ */
+function getSum(num1, num2) {
+  const myPromise = new Promise((resolve, reject) => {
+    if (!isNaN(num1) && !isNaN(num2)) {
+      resolve(num1 + num2);
+    } else {
+      reject(new Error("Not a valid number"));
+    }
+  });
+
+  return myPromise;
+}
+
+console.log(getSum(10, 20)); // Promise { 30 }
+
+
+
+
+
+
+5 Differentiate between spawn and fork methods in Nodejs?
+In Node.js, the spawn() is used to launch a new process with the provided set of commands. This method doesn’t create a new V8 instance and just one copy of the node module is active on the processor. When your child process returns a large amount of data to the Node you can invoke this method.
+Differentiate between spawn and fork methods in Nodejs?
+In Node.js, the spawn() is used to launch a new process with the provided set of commands. This method doesn’t create a new V8 instance and just one copy of the node module is active on the processor. When your child process returns a large amount of data to the Node you can invoke this method.
+
+
+6 How can you avoid callback hells?
+There are lots of ways to solve the issue of callback hells:
+1.modularization: break callbacks into independent functions,
+2.use a control flow library, like async.
+3.use generators with Promises,
+4.use async/await (note that it is only available in the latest v7 release and not in the LTS version
+
+
+
+
+7 What Is EventEmitter In NodeJs?
+Events module in Node.js allows us to create and handle custom events. The Event module contains “EventEmitter” class which can be used to raise and handle custom events. It is accessible via the following code.
+
+// Import events module
+var events = require('events');
+
+// Create an eventEmitter object
+var eventEmitter = new events.EventEmitter();
+
+8 When an EventEmitter instance encounters an error, it emits an “error” event. When a new listener gets added, it fires a “newListener” event and when a listener gets removed, it fires a “removeListener” event.
+EventEmitter provides multiple properties like “on” and “emit”. The “on” property is used to bind a function to the event and “emit” is used to fire an event. .
+
+
+event:-
+event.emit("countAPI")   send event
+
+
+let count=0;
+event.on("countAPI", ()=>{    //recive event
+    console.log("event called", count)
+})
+
+
+
+
+9 Which are the areas where it is suitable to use NodeJS?
+I/O bound Applications
+Data Streaming Applications
+Data Intensive Real-time Applications (DIRT)
+JSON APIs based Applications
+Single Page Applications
+
+
+10 What are the tasks that a middleware can do?
+Middleware functions can perform the following tasks:
+
+Execute any code.
+Make changes to the request and the response objects.
+End the request-response cycle.
+Call the next middleware function in the stack.
+
+
+11 What are the different types of middleware?
+An Express application can use the following types of middleware:
+
+Application-level middleware
+Router-level middleware
+Error-handling middleware
+Built-in middleware
+Third-party middleware
+
+
+
+
+12 How can we read or write files in node js?
+The fs module provides an API for interacting with the file system in a manner closely modeled around standard POSIX functions. To use this module:
+
+const fs = require('fs');
+There are a few methods like
+fs.readFile(file, data[, options], callback)
+fs.writeFile(file, data[, options], callback)
+
+
+
+13 Explain libuv?
+Libuv is a multi-platform support library of Node.js which majorly is used for asynchronous I/O. It was primarily developed for Node.js, with time it is popularly practiced with other systems like as Luvit, pyuv, Julia, etc. Libuv is basically an abstraction around libev/ IOCP depending on the platform, providing users an API based on libev. A few of the important features of libuv are:
+
+Full-featured event loop backed
+File system events
+Asynchronous file & file system operations
+Asynchronous TCP & UDP sockets
+Child processes
+
+
+
+
+14. What is the difference between spawn and fork methods in Node.js?
+The spawn() function is used to create a new process and launch it using the command line. What it does is that it creates a node module on the processor. Node.js invokes this method when the child processes return data.
+
+The following is the syntax for the spawn() method:
+
+child_process.spawn(command[, args][, options])
+Coming to the fork() method, it can be considered as an instance of the already existing spawn() method. Spawning ensures that there is more than one active worker node to handle tasks at any given point in time.
+
+The following is the syntax for the fork() method:
+
+child_process.fork(modulePath[, args][, options])
+
+
+
+16 How can we take advantage of multi-core system in Nodejs as nodejs works on single thread?
+We can use node js cluster to use multicores in the hardware,The cluster module allows easy creation of child processes that all share server ports
+
+
+
+
+
+
+15. What is the use of middleware in Node.js?
+A middleware is a simple function that has the ability to handle incoming requests and outbound response objects. Middleware is used primarily for the following tasks:
+
+Execution of code (of any type)
+Updating request and response objects
+Completion of request–response iterations
+Calling the next middleware
+
+
+17. Why is assert used in Node.js?
+Assert is used to explicitly write test cases to verify the working of a piece of code. The following code snippet denotes the usage of assert:
+
+
+
+
+18 Explain chaining in Nodejs?
+Chaining is a mechanism whereby the output of one stream is connected to another stream creating a chain of multiple stream operations.
+
+var assert = require('assert');
+function add(x, y) {
+return x + y;
+}
+var result = add(3,5);
+assert( result === 8, 'three summed with five is eight');
+
+
+
+19 Explain REPL In NodeJs?
+The REPL stands for “Read Eval Print Loop”. It is a simple program that accepts the commands, evaluates them, and finally prints the results. REPL provides an environment similar to that of Unix/Linux shell or a window console, in which we can enter the command and the system, in turn, responds with the output. REPL performs the following tasks.
+
+READ - It Reads the input from the user, parses it into JavaScript data structure and then stores it in the memory.
+EVAL - It Executes the data structure.
+PRINT - It Prints the result obtained after evaluating the command.
+LOOP - It Loops the above command until the user presses Ctrl+C two times.
+
+repl:- read-eval-print-loop
+calculation karna evulate karna cmd shell par
+
+
+20 What are buffer objects in nodejs?
+In Node.js, Buffer objects are used to represent binary data in the form of a sequence of bytes. Many Node.js APIs, for example streams and file system operations, support Buffers, as interactions with the operating system or other processes generally always happen in terms of binary data
+
+buffer=
+its a temporary memory location in nodejs while creating file nodejs need some memory location.
+
+
+21 How does Nodejs handle the child threads?
+In general, Node.js is a single threaded process and doesn’t expose the child threads or thread management methods. But you can still make use of the child threads using spawn() for some specific asynchronous I/O tasks which execute in the background and don’t usually execute any JS code or hinder with the main event loop in the application. If you still want to use the threading concept in your application you have to include a module called ChildProcess explicitly.
+
+
+
+
+22 Explain the purpose of module exports?
+A module in Node.js is used to encapsulate all the related codes into a single unit of code which can be interpreted by shifting all related functions into a single file
+
+
+
+23 NPM stands for Node Package Manager. It provides following two main functionalities.
+
+It works as an Online repository for node.js packages/modules which are present at <nodejs.org>.
+It works as Command line utility to install packages, do version management and dependency management of Node.js packages. NPM comes bundled along with Node.js installable. We can verify its version using the following command-
+
+
+24
+Q. What is load balancer and how it works?
+A load balancer is a process that takes in HTTP requests and forwards these HTTP requests to one of a collection of servers. Load balancers are usually used for performance purposes: if a server needs to do a lot of work for each request, one server might not be enough, but 2 servers alternating handling incoming requests might.
+
+1. Using cluster module:
+
+cluster:-
+server ka copy
+traffic ko handle
+
+
+
+25 How does the cluster module work in Node.js?
+The cluster module provides a way of creating child processes that runs simultaneously and share the same server port.
+
+Node.js runs single threaded programming, which is very memory efficient, but to take advantage of computers multi-core systems, the Cluster module allows you to easily create child processes that each runs on their own single thread, to handle the load.
+
+Load Balancer
+
+Example:
+
+/**
+ * Cluster Module
+ */
+const cluster = require("cluster");
+
+if (cluster.isMaster) {
+  console.log(`Master process is running...`);
+  cluster.fork();
+  cluster.fork();
+} else {
+  console.log(`Worker process started running`);
+}
+Output:
+
+Master process is running...
+Worker process started running
+Worker process started running
+
+
+
+
+others
+
+Informational responses (100 – 199)
+Successful responses (200 – 299)
+Redirection messages (300 – 399)
+Client error responses (400 – 499)
+Server error responses (500 – 599)
+
+different engine in nodejs
+chrome v8
+safari chakra
+firefox  spiderman
+
+
+
+
+
+
+// const app=express();
+// const {middlewarename}= "/index"
+// const app=express();
+// const {middlewarename}= "/index"
+
+// let newFun= async ()=>{
+//     let userdata= await userInfo()
+//     console.log("userdata", userdata)
+//     // next()
+//     console.log("someting")
+// }
+
+// var userInfo=()=>{
+//     setTimeout(() => {
+//         console.log("api called")
+// }, 5000);
+// }
+
+// let newdata= newFun()
+// console.log("newdata", newdata)
