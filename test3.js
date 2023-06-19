@@ -29,5 +29,19 @@ function isAnagram(str1, str2){
 
 }
 
-let checked= isAnagram("aijaj", "ajaji")
-console.log("checked", checked)
+// let checked= isAnagram("aijaj", "ajaji")
+// console.log("checked", checked)
+
+
+//recursion using   total= 5*4*3*2*1
+let total=1;
+function factorial(number){
+    total*= number
+    if(number>1){
+        factorial(number-1)
+    }else if(number==1){
+        console.log("total", total)
+    }
+}
+
+factorial(5)
