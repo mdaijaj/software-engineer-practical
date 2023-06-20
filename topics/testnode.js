@@ -49,5 +49,10 @@ setInterval(()=>{
 
 
 
+// const { EventEmitter } = require("selenium-webdriver");
 
-doubt?
+
+// let userdata= EventEmitter.emit("user", data)
+// console.log("userdata", userdata)
+
+
