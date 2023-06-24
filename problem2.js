@@ -217,18 +217,18 @@ const users=[
 ]
 
 
-// const output2= users.reduce(function (acc, curr){
-//   // console.log("aijaj", acc[curr.age])  new object check age exits or not
-//   console.log("aaaa", acc[curr.age])
-//   if(acc[curr.age]){
-//      acc[curr.age] = ++acc[curr.age]
-//   }else{
-//      acc[curr.age]= 1
-//   }
-//   return acc;
-// }, {})
+const output2= users.reduce(function (acc, curr){
+  // console.log("aijaj", acc[curr.age])  new object check age exits or not
+  console.log("aaaa", acc[curr.age])
+  if(acc[curr.age]){
+     acc[curr.age] = ++acc[curr.age]
+  }else{
+     acc[curr.age]= 1
+  }
+  return acc;
+}, {})
 
-// console.log("output2", output2)
+console.log("output2", output2)
 
 
 

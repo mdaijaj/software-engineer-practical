@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <script>
+    let data = [34,3,1,5,76,78];
+      for(i=0;i<data.length;i++){
+        for(j=0;j<data.length-i;j++){
+            console.warn(data)
+            if(data[j]>data[j+1]){
+                let temp=data[j];  //swapping
+                data[j]=data[j+1];
+                data[j+1]=temp;
+            }
+        }
+      }
+    </script>
+
+  </head>
+  <body>
+    <h1>Array Sorting in JavaScript</h1>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+    <h2>Recursion Head & tail</h2>
+    <script>
+
+        function test(x){
+            console.log("head", x)   //head recursion
+
+            if(x>0){
+                test(x-1) 
+            }
+            console.log("tail", x)    // tail recursion
+        }
+        let data=5
+        test(data)
+
+    </script>
+</body>
+</html>

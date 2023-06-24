@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+    <h1> Class Stack</h1>
+    <script>
+
+        class Stack {
+            item=[];
+            max=4;
+            currentSize; 
+
+            constructor(size){   //in class execute first constructor
+                this.max=  size;
+                this.currentSize= this.item.length
+            }
+        
+            push(newValue){   //push method no use function key board in class
+                console.log("kkkk", this.currentSize, this.max)
+                if(this.currentSize >this.max){
+                    alert("stack is full you cannot add new element", newValue)
+                }
+                else{
+                    this.item[this.currentSize]= newValue
+                    this.currentSize+=1
+                }
+            }
+
+            pop(newValue){    //pop method
+                console.log(this.currentSize, this.max)
+                if(this.currentSize<=0){
+                    alert("stack is empty you cannot remove from  empty stack", newValue)
+                }
+                else{
+                    this.item[this.currentSize]= newValue
+                    this.currentSize-=1
+                    this.item.length= this.currentSize 
+                }
+            }
+
+            display(){
+                console.log("stack", this.item)
+            }
+        }
+
+        st1= new Stack(4)   //instance
+        st1.push(25)
+        st1.push(45)
+        st1.push(25)
+        st1.push(45)
+        st1.push(25)
+        st1.push(45)
+        // st1.pop()
+        st1.display()
+
+    </script>
+</body>
+</html>

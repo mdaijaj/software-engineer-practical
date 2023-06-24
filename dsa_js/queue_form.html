@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+    <h1> Basic Queue</h1>
+
+    <div class="userNumber">
+        <input type="number" id="userinput" placeholder="only input integer value">
+    </div>
+    <br>
+    <button onclick="enqueue()">Add Element </button>
+    <button onclick="dequeue()">Remove Element</button>
+    <button onclick="front()">Front Element</button>
+    <button onclick="rear()">Rear Element</button>
+    <button onclick="display()">Show Element</button>
+
+
+
+
+
+
+    <script>
+        let data=[];
+        let max=4;
+        let currentSize= data.length;
+        
+
+        // enqueue add element
+        function enqueue(){
+            console.log(currentSize, max)
+            let newValue= document.getElementById("userinput").value;
+
+            if(currentSize >max){
+                alert("queue is full you cannot add new element", newValue)
+            }
+            else{
+                data[currentSize]= newValue
+                currentSize+=1
+            }
+        }
+
+        //dequeue remove element
+        function dequeue(){
+            console.log(currentSize, max)
+            let newValue= document.getElementById("userinput").value;
+
+            if(currentSize<=0){
+                alert("queue is empty you cannot remove from  empty queue", newValue)
+            }
+            else{
+               for (var i=0; i<data.length; i++){
+                data[i]= data[i+1]
+               }
+               currentSize--
+               data.length= currentSize;
+            }
+        }
+
+        // queue first element
+        function front(){
+            console.log("currentSize", currentSize)
+            if(currentSize>0){
+                console.log("front", data[0])
+            }else{
+                alert("queue is empty you cannot remove from  empty queue"+ currentSize)
+            }
+        }
+
+        // queue last element
+        function rear(){
+            console.log("currentSize", currentSize)
+            if(currentSize>0){
+                console.log("rear", data[currentSize-1])
+            }else{
+                alert("queue is empty you cannot remove from  empty queue"+ currentSize)
+            }
+        }
+
+        //show element
+        function display(){
+            console.log("data", data)
+        }
+
+        
+        // enqueue(12)
+        // enqueue(58)
+        // enqueue(35)
+        // // dqueue()
+        // enqueue(45)
+        // // enqueue(58)
+        // // enqueue(35)
+        // // dqueue()
+        // // dqueue()
+        // // dqueue()
+        // display()
+        // front()
+        // rear()
+
+    </script>
+</body>
+</html>

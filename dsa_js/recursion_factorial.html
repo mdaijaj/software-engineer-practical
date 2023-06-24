@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        //13 recursion using without loop   total= 5*4*3*2*1
+        let total = 1;
+        function factorial(number) {
+            total *= number
+            if (number > 1) {
+                factorial(number - 1)
+            } else if (number == 1) {
+                console.log("total", total)
+            }
+        }
+        factorial(5)
+
+    </script>
+</head>
+<body>
+    <h1> Recursion with factorial number</h1>
+</body>
+</html>

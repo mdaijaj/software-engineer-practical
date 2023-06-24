@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+    <h1>Stack</h1>
+    <script>
+
+        let data=[];
+        let max=5;
+        let currentSize= data.length;
+        
+        function push(newValue){
+            console.log(currentSize, max)
+            if(currentSize >max){
+                alert("stack is full you cannot add new element", newValue)
+            }
+            else{
+                data[currentSize]= newValue
+                currentSize+=1
+            }
+        }
+
+        function pop(newValue){
+            console.log(currentSize, max)
+            if(currentSize<=0){
+                alert("stack is empty you cannot remove from  empty stack", newValue)
+            }
+            else{
+            data[currentSize]= newValue
+            currentSize-=1
+            data.length= currentSize 
+            }
+        }
+
+        function display(){
+            console.log("stack", data)
+        }
+
+        push(12)
+        push(78)
+        push(25)
+        push(8)
+        push(26)
+        push(48)
+        push(27)
+        // pop()
+        // pop()
+        display()
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+</head>
+<body>
+    <h1>Stack</h1>
+    <div class="userNumber">
+        <input type="number" id="userinput" placeholder="only input integer value">
+    </div>
+    <br>
+    <button onclick="push()">Push Element </button>
+    <button onclick="pop()">Pop Element</button>
+    <button onclick="showStack()">Show Element</button>
+
+    <script>
+        let data=[];
+        let max=5;
+        let currentSize= data.length;
+        
+        function push(){
+            let newValue= document.getElementById("userinput").value;
+
+            if(currentSize >max){
+                alert("stack is full you cannot add new element", newValue)
+            }
+            else{
+                data[currentSize]= newValue
+                currentSize+=1
+            }
+            console.log("stack", data)
+        }
+
+
+        function pop(){
+            let newValue= document.getElementById("userinput").value;
+            console.log(currentSize, max)
+            if(currentSize<=0){
+                alert("stack is empty you cannot remove from  empty stack", newValue)
+            }
+            else{
+                data[currentSize]= newValue
+                currentSize-=1
+                data.length= currentSize 
+            }
+            console.log("stack", data)
+        }
+  
+
+        function showStack(){
+            console.log("data", data)
+        }
+    </script>
+</body>
+</html>

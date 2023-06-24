@@ -24,3 +24,26 @@ array
 
 
 6,7
+
+
+
+
+
+
+
+load balanncer
+cloud
+sharding
+
+
+majenda
+oracal
+shopify
+medusa e-commerce framework js
+
+we need to host on multiple ec2?
+
+
+
+
+zoho service all use example
