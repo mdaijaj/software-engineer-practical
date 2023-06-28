@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+    <h1>Recursion Binary Search</h1>
+    <script>
+        
+        function BinarySearchRecursion(data, start, end){
+            let key= 15            //user input value
+            let result=false;
+            if(data.length<=0){    // not emply array
+                return result=false
+            }
+
+            let mid = Math.floor((start + end) / 2);  //mid value
+            if(data[mid]==key){
+                console.log("key item found ", data[mid])
+                result= true
+            }else if(data[mid]<key){
+                // start= mid+1
+                BinarySearchRecursion(data, mid+1, end)   // mid value increment and store start value  
+            }else{
+                // end= mid-1
+                BinarySearchRecursion(data, start, mid-1)  // mid value decrement and store end value
+            }
+            return result;
+        }
+
+        let data=[4,6,12,15,24,28,30,35,40];
+        console.log(BinarySearchRecursion(data, 0, data.length-1)) 
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+
+<body>
+    <h1>Insert Sort Example</h1>
+    <script>
+
+    function InsertSort(arr){
+        let temp, j, i;
+
+        for (i=1; i< arr.length; i++){
+            temp= arr[i]                    //temp value when insert data
+            j=i-1
+            while(j>=0 && arr[j]> temp){   //condition for compare sort value
+                arr[j+1]= arr[j]           //swap value
+                j-=1 
+            }
+            arr[j+1]= temp                 //swap value
+            console.log("arr", arr)
+        }
+        // console.log("arr", arr)
+    }
+
+    let arr=[12, 11, 13, 5, 6];
+    console.log("arr", arr)
+    InsertSort(arr)
+       
+    </script>
+</body>
+</html>

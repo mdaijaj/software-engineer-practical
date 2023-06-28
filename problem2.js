@@ -104,6 +104,27 @@ function SecondMax(arr2){
 
 
 
+
+
+  const input = [1, 2, 3, 3, 4, 5,2, 6,3,6,1];
+  function removeDuplicate(arr) {
+      const result = [];
+      let idx = 0;
+      const tmp = {};
+
+      for (let i = 0; i < arr.length; i++) {
+          if (!tmp[arr[i]]) {   //condition check object item is not exits 
+              tmp[arr[i]] = 1;
+              result[idx] = arr[i];
+              idx++;
+          } 
+      }
+      return result;
+  }
+  // console.log("remove duplicate", removeDuplicate(input));
+
+
+
     // 5 
     function printDiamond(n) {
         for (let i = 0; i < n; i++) {
@@ -184,20 +205,6 @@ function getUniqueValues(arrOfNum) {
 }
 
 
-function uniqueValue(arrOfNum){
-  let i= 0;
-  for (var j=1; j<arrOfNum.length-1; j++){
-    if(arrOfNum[i]!== arrOfNum[j]){
-      arrOfNum[i]= arrOfNum[j]
-    }
-  }
-  
-  console.log("arrOfNum", arrOfNum)
-}
-uniqueValue(arrOfNum)
-
-
-
 
 
 
@@ -229,6 +236,20 @@ const output2= users.reduce(function (acc, curr){
 }, {})
 
 console.log("output2", output2)
+
+
+
+
+// charactor count
+function CharactorCount(string){
+  let counter={}
+  for (var char of string){
+      counter[char]=(counter[char] || 0) +1
+  }
+  console.log("counter", counter)
+
+}
+// CharactorCount(string)
 
 
 
@@ -333,22 +354,43 @@ factorial(5)
 
 
 
-//15  // Function to check Palindrome
-// function checkPalindrome(n)
-// {
-//     let reverse = 0;
-//     let temp = n;
-//     while (temp != 0) {
-//         reverse = (reverse * 10) + (temp % 10);
-//         temp = Math.floor(temp / 10);
-//     }
-//     return (reverse == n); // if it is true then it will return 1;
-//      // else if false it will return 0;
-// }
-// let n2 = 7007;
+15  // Function to check Palindrome
+function checkPalindrome(n)
+{
+    let reverse = 0;
+    let temp = n;
+    while (temp != 0) {
+        reverse = (reverse * 10) + (temp % 10);
+        temp = Math.floor(temp / 10);
+    }
+    return (reverse == n); // if it is true then it will return 1;
+     // else if false it will return 0;
+}
+let n2 = 7007;
 // if (checkPalindrome(n2) == 1) {
 //     console.log("Yes","</br>");
 // }
 // else {
 //     console.log("No","</br>");
 // }
+
+
+// 16. string palindrom
+function palindromString(string){
+  let start=0
+  let end=string.length-1
+  let result=true;
+  while(start<end){
+    if(string[start]!= string[end]){
+      result=false
+    }
+    start++
+    end--
+  }
+  return result
+}
+
+let string="levels"
+// console.log(palindromString(string))
+
+// 7490865697
