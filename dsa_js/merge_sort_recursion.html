@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+
+<body>
+    <h1>Merge Sort Example</h1>
+    <script>
+
+// nlogn time complexity     // not completed 
+    
+    //divided 
+    function Didived(arr, start, end){
+        // 0log(n)
+        if(start>=end){
+            return ;
+        }
+        let mid= Math.floor((start+end)/2);    //mid value 
+        console.log("mid", mid)
+        Didived(arr, start, mid)  // divided concept into two parts 1st array
+        Didived(arr, mid+1, end)  // 2st array
+
+        Conquer(arr, start, end)
+    }
+
+    function Conquer(arr, start, mid, end){  //conquer sorting two array
+        let mergedArr=[];
+        let index1= start;
+        let index2= mid+1;
+        let x=0;
+
+        //3 while loop array sort  o(n)
+        while(index1<=mid && index2<=end){  //both array length eual and there is remaning element two condition
+            if(arr[index1]<= arr[index2]){
+                mergedArr[x++]= arr[index1++]
+            }else{
+                mergedArr[x++]= arr[index2++]
+            }
+        }
+
+        while(index1<=mid){   //first condition
+            mergedArr[x++]= arr[index1++]
+        }
+
+        while(index2<=end){   //second arr condition
+            mergedArr[x++]= arr[index2++]
+        }
+
+        for(var i=0; j= start, i<mergedArr.length; j++, i++){  //copy in original array
+            arr[i]= mergedArr[i]
+        }
+    }
+
+    function MergeSort(arr){
+
+        Didived(arr,0, arr.length)  //
+
+        for (var k=0; k<arr.length; k++){
+            console.log(arr[k])
+        }
+    }
+
+    let arr=[20,12,53,3]
+    MergeSort(arr)
+       
+    </script>
+</body>
+</html>

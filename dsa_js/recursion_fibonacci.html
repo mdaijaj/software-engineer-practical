@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+    <h2>Recursion Sum of Number</h2>
+    <script>
+        let total=0;
+        function Fibonacci(initial,nextElement, num){
+          
+            if(num==initial){
+                return 1
+            }
+            let finalElement= initial+ nextElement
+            console.log("finalElement", finalElement)
+            Fibonacci(nextElement,finalElement, num-1) 
+        }
+        let num=10;
+        let initial=0;
+        let nextElement=1;
+        console.log("finalElement", initial)
+        console.log("finalElement", nextElement)
+
+        Fibonacci(initial,nextElement, num )
+
+    </script>
+</body>
+</html>

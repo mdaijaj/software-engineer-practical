@@ -29,50 +29,6 @@ let numbers = [0, 1, 2, 30, 15, 5, 20];
 
 
 
-// //2 matrix Driver code
-//     let A = [   
-//                 [1, 1, 1, 1], 
-//                 [2, 2, 2, 2], 
-//                 [3, 3, 3, 3], 
-//                 [4, 4, 4, 4]        
-//             ]; 
-//     let B = [   
-//                 [1, 1, 1, 1], 
-//                 [2, 2, 2, 2], 
-//                 [3, 3, 3, 3], 
-//                 [4, 4, 4, 4]
-//             ]; 
-
-//     let NT = 4; 
-//     // This function adds A[][] and B[][], and stores 
-//     // the result in C[][] 
-//     function add(A, B, C) { 
-//         let i, j; 
-//         for (i = 0; i < NT; i++){
-//             for (j = 0; j < NT; j++) {
-//                 C[i][j] = A[i][j] + B[i][j]; 
-//             }
-//         }    
-//     } 
-    
-//     // To store result
-//     let C = new Array(NT);
-//     for (let k = 0; k < NT; k++){
-//         C[k] = new Array(NT);
-//     } 
-//     // add(A, B, C); 
-//     // console.log("C", C)
-    
-//     // let i, j; 
-//     // console.log("Result matrix is <br>"); 
-//     // for (i = 0; i < N; i++) { 
-//     //     for (j = 0; j < N; j++) 
-//     //         console.log(C[i][j] + " "); 
-//     //     console.log("<br>");
-//     // } 
-
-
-
 //3 second max number
 function SecondMax(arr2){
     if(arr2.length>0){
@@ -121,44 +77,7 @@ function SecondMax(arr2){
       }
       return result;
   }
-  // console.log("remove duplicate", removeDuplicate(input));
-
-
-
-    // 5 
-    function printDiamond(n) {
-        for (let i = 0; i < n; i++) {
-          let row = "";
-          for (let j = 0; j < n - i - 1; j++) {
-            row += " ";
-          }
-          row += "*";
-          for (let k = 0; k < 2 * i - 1; k++) {
-            row += " ";
-          }
-          if (i !== 0) {
-            row += "*";
-          }
-          console.log(row);
-        }
-        for (let i = n - 2; i >= 0; i--) {
-          let row = "";
-          for (let j = 0; j < n - i - 1; j++) {
-            row += " ";
-          }
-          row += "*";
-          for (let k = 0; k < 2 * i - 1; k++) {
-            row += " ";
-          }
-          if (i !== 0) {
-            row += "*";
-          }
-          console.log(row);
-        }
-      }
-      // Example usage
-      // printDiamond(5);
-
+  console.log("remove duplicate", removeDuplicate(input));
 
 
 
@@ -331,7 +250,7 @@ function factorial(number){
       console.log("total", total)
   }
 }
-factorial(5)
+factorial(4)
 
 
 
@@ -391,6 +310,85 @@ function palindromString(string){
 }
 
 let string="levels"
-// console.log(palindromString(string))
+console.log(palindromString(string))
 
-// 7490865697
+
+
+//2 matrix Driver code
+    let A = [   
+                [1, 1, 1, 1], 
+                [2, 2, 2, 2], 
+                [3, 3, 3, 3], 
+                [4, 4, 4, 4]        
+            ]; 
+    let B = [   
+                [1, 1, 1, 1], 
+                [2, 2, 2, 2], 
+                [3, 3, 3, 3], 
+                [4, 4, 4, 4]
+            ]; 
+
+//     let NT = 4; 
+//     // This function adds A[][] and B[][], and stores 
+//     // the result in C[][] 
+//     function add(A, B, C) { 
+//         let i, j; 
+//         for (i = 0; i < NT; i++){
+//             for (j = 0; j < NT; j++) {
+//                 C[i][j] = A[i][j] + B[i][j]; 
+//             }
+//         }    
+//     } 
+    
+//     // To store result
+//     let C = new Array(NT);
+//     for (let k = 0; k < NT; k++){
+//         C[k] = new Array(NT);
+//     } 
+//     // add(A, B, C); 
+//     // console.log("C", C)
+    
+//     // let i, j; 
+//     // console.log("Result matrix is <br>"); 
+//     // for (i = 0; i < N; i++) { 
+//     //     for (j = 0; j < N; j++) 
+//     //         console.log(C[i][j] + " "); 
+//     //     console.log("<br>");
+//     // } 
+
+
+
+    // 5 
+    function printDiamond(n) {
+      for (let i = 0; i < n; i++) {
+        let row = "";
+        for (let j = 0; j < n - i - 1; j++) {
+          row += " ";
+        }
+        row += "*";
+        for (let k = 0; k < 2 * i - 1; k++) {
+          row += " ";
+        }
+        if (i !== 0) {
+          row += "*";
+        }
+        console.log(row);
+      }
+      for (let i = n - 2; i >= 0; i--) {
+        let row = "";
+        for (let j = 0; j < n - i - 1; j++) {
+          row += " ";
+        }
+        row += "*";
+        for (let k = 0; k < 2 * i - 1; k++) {
+          row += " ";
+        }
+        if (i !== 0) {
+          row += "*";
+        }
+        console.log(row);
+      }
+    }
+    // Example usage
+    // printDiamond(5);
+

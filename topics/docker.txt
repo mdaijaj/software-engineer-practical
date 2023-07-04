@@ -24,3 +24,15 @@ email send
 
 docker is a container its a common seprate all file packages project infomation
 which we can use other machine use easily we did not install all things or version.
+
+
+
+
+
+
+
+
+scope
+substring example
+insert in string crud
+

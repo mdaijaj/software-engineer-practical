@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+    <h2>Recursion Sum of Number</h2>
+    <script>
+        let total=0;
+        function SumOfNumber(initial, num, sum){
+          
+            if(num==initial){
+                total+=initial
+                console.log("total", total)    // total recursion
+                return total
+            }
+            total+=initial
+            SumOfNumber(initial+1, num, total) 
+        }
+        let num=5;
+        SumOfNumber(1,num, 0 )
+
+    </script>
+</body>
+</html>
