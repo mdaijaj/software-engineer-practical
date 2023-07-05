@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+
+<body>
+    <h1>Quick Sort </h1>
+    <h3> Time Complexity worse case n^2</h3>
+    <h3> Time Complexity average case n(logn)</h3>
+
+    <script>
+
+        function partition(arr, low, high){   
+            let pivot=arr[high];  //pivot value last element
+            let i= low-1   //empty array
+
+            for (var j=low; j<high; j++){  //sorted array
+                if(arr[j]<pivot){
+                    i++
+                    // swaping 
+                    let temp= arr[i];
+                    arr[i]= arr[j]
+                    arr[j]= temp
+                }
+            }
+            i++;
+            let temp= arr[i];
+            arr[i]= pivot
+            arr[high]= temp
+            return i;
+        }
+
+        function quickSort(arr, low, high){   
+            if(low<high){
+                let pivotIndex= partition(arr, low, high)   // pivot index partition function called
+                console.log("pivotIndex", pivotIndex)
+                quickSort(arr, low, pivotIndex-1);   //less element of array from pivot
+                quickSort(arr, pivotIndex+1, high)  //greater element of array from pivot
+            }
+        }
+
+        let arr=[6,3,9,5,2,8];
+        let n= arr.length
+        quickSort(arr,0, n-1)
+
+        console.log("qucck sort.....", arr)
+
+    </script>
+</body>
+</html>
