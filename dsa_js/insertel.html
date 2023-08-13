@@ -1,1 +1,31 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+
+<body>
+    <h1>Insert Element Example</h1>
+    <script>
+
+    function InsertElement(arr, position, newElement){
+        let temp, j, i;
+        for (i=arr.length-1; i>=0; i--){
+            if(i>=position){ 
+                arr[i+1]=arr[i]   //extend one each elment on left side
+                if(i==position){
+                    arr[position]= newElement  //insert new ele
+                }
+            } 
+        }
+        console.log(arr)
+    }
+
+    let arr=[12, 11, 13, 5, 6];
+    let newEle= 8;
+    let position= 2;
+    InsertElement(arr, position, newEle)
+       
+    </script>
+</body>
+</html>

@@ -2,7 +2,7 @@
 
 1	What is MongoDB mysql?
 2	What are the difference between NoSQL and SQL
-10 what is mysql and Features const and pros
+1 what is mysql and Features const and pros
 3	How to establish MongoDB database connection in a node application?
 4	What are virtual property in mongoose
 5. second highest salary

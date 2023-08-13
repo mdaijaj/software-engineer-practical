@@ -41,9 +41,15 @@ oracal
 shopify
 medusa e-commerce framework js
 
-we need to host on multiple ec2?
-
-
-
-
 zoho service all use example
+
+dsa js remaining
+link list
+tree
+graph
+
+
+
+
+doubt:-
+event driven

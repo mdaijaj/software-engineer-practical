@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Map Dsa in Javascript </h1>
+    <script>
+        let data= new Map([
+            ["name","aijaj"],
+            [true,  "bool key"],
+            [100, "hundered"],
+            ["email", "aijaj@gmail.com"],
+           [ 'age', 27]
+        ])
+        data.set("color", "red");
+        data.set("name", "king khan")
+
+      
+        
+        // console.log(data.size)  //size
+        // console.log(data.has(200))  //false
+        // console.log(data.get(100)) //arr value
+        // data.clear();
+
+        // console.log(data)
+    
+
+        for (var i of data){
+            console.log("element", i)
+        }
+
+
+    </script>
+    
+</body>
+</html>

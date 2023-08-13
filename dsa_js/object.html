@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Object </h1>
+    <script>
+        let data= {
+            name:"aijaj",
+            email: "aijaj@gmail.com",
+            age: 27,
+            getName: function(){
+                return this.name
+            }
+        }
+        data.contact= 789641230;
+        data.name="king khan"
+
+        // for (var i in data){
+        //     console.log(i)  //each key
+        // }
+        
+        console.log(Object.keys(data))  //key
+        console.log(Object.values(data))  //value
+        console.log(Object.entries(data)) //arr pair
+
+
+    </script>
+    
+</body>
+</html>

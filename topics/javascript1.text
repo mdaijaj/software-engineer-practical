@@ -3,6 +3,77 @@ A promise is an object that may produce a single value some time in the future w
 
 The syntax of Promise creation looks like below,
 
+what is a anonymous function.
+that function without name its call anonymous function.
+does not own identity
+
+express vs statement
+Expression:-
+An Expression is something which evaluates to a value, or which produce a value
+or the value itself
+
+statement:-
+A bigger piece of code that is executed and which does not produce a value on
+itself.
+
+
+
+dom:- Document Object Model  :-
+Structured representation of HTML document.
+DOM allows JavaScript to access HTML elements and styles to manipulate i.e.
+change text, HTML attributes, and even CSS styles
+
+We will make JavaScript interact with the Webpage, Technically that is called
+DOM manipulation
+
+
+undefined vs null 
+Undefined is the default value of something which has never been assign
+
+null:-
+Null is quite similar to undefined but it is not a default value of anything, you can
+
+
+Scope Concepts
+ Scoping: So scoping controls how our program's variables are organized and
+accessed by the JavaScript engine.
+So basically scoping asks the question, where do variables live?
+Or where can we access a certain variable and where not?
+ Lexical Scoping: means that the way variables are organized and accessed is entirely
+controlled by the placement of functions and of blocks in the programs code
+Ex: A function that is written inside another function has access to the variables of
+the parent function.
+ Scope: Scope is the space or environment in which a certain variable is declared.
+Global, Function and Block Scope
+ Scope of a variable: Entire region of our code, where a certain variable can be
+accessed.
+
+Callback:-
+Callback hell is when we have a lot of nested callbacks in order to execute
+asynchronous tasks in sequence.
+
+
+
+scope practical example let const var function use
+hosting
+
+Lexical Scoping
+we can access variable of parent function inside function that is call Lexical scoping
+
+
+
+
+/////
+top 10 question answer practical right
+
+Immediately Invoked Functions Expressions (IIFE)
+ Sometimes in JavaScript, we need a function that is only executed once. And then
+never again..
+ So basically a function that disappears right after it's called once.
+ These are immediately invoked
+
+
+
 const promise = new Promise(function (resolve, reject) {
   // promise description
 });
@@ -20,9 +91,7 @@ const promise = new Promise(
 promise.then((value) => console.log(value));
 The action flow of a promise will be as below,
 
-Screenshot
 
-arrow_up Back to Top
 
 Why do you need a promise
 Promises are used to handle asynchronous operations. They provide an alternative approach for callbacks by reducing the callback hell and writing the cleaner code.
