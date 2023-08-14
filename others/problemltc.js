@@ -1,5 +1,5 @@
 
-//leet code
+//1 leet code
 var twoSum = function (nums, target) {
 
     for (var i = 0; i < nums.length; i++) {
@@ -12,15 +12,13 @@ var twoSum = function (nums, target) {
         }
     }
     console.log("not found sum of index")
-
 };
-
 let nums = [4, 5, 6, 7, 8, 9];
 // twoSum(nums, 12)
 
 
 
-//roman to integer example
+//2. roman to integer example
 var romanToInt = function (item) {
     let I = 1;
     let V = 5
@@ -33,9 +31,8 @@ var romanToInt = function (item) {
     let XC = 90
     let IV = 4
     let IX = 9
-
-
     let total = 0;
+
     for (var s = 0; s < item.length; s++) {
         if (item[s] + item[s + 1] == "CM") {
             total += CM
@@ -71,12 +68,11 @@ var romanToInt = function (item) {
 // romanToInt("MCDLXXVI");
 
 
-
+//3. synonyms
 function longestCommonPrefix(strs) {
     if (!strs || strs.length === 0) {
         return '';
     }
-
     for (let i = 0; i < strs[0].length; i++) {
         const char = strs[0][i];
         for (let j = 1; j < strs.length; j++) {
@@ -85,18 +81,16 @@ function longestCommonPrefix(strs) {
             }
         }
     }
-
     return strs[0];
 }
-
 // Example usage
 const strs = ["flower", "flow", "flight"];
-const result = longestCommonPrefix(strs);
+// const result = longestCommonPrefix(strs);
 //   console.log(result);
 
 
 
-
+//4 sorting merge two arr
 var mergeTwoLists = function (list1, list2) {
 
     let arr = []
@@ -104,37 +98,36 @@ var mergeTwoLists = function (list1, list2) {
         if (list1[i] < list2[i]) {
             arr.push(list1[i])
         }
-        if (list1[i] == list2[i]) {
+        else if (list1[i] == list2[i]) {
             arr.push(list1[i])
         }
         arr.push(list2[i])
     }
     // console.log("aijaj", arr)
-
-
     // // Output: [1,1,2,3,4,4]
 }
 let list1 = [1, 2, 4]
 let list2 = [1, 3, 4]
-
 // mergeTwoLists(list1, list2)
 
 
-// let a=14;
-// function getData(){
-//     a=20
-//     // console.log(a)
-// }
-// console.log(a)
-// getData() //20
+//5 let const var example
+let a = 14;
+function getData(a) {
+    a = 20
+    // console.log(a) // 20
+}
+console.log(a)
+// getData(a) //14
 
 
-let input = "10001010";
-// Output: 138;
+//6. find binary to decimal number
+let input = "1001110";
 const binaryToDecimal = (num) => {
     let output = 0;
     for (let i = num.length - 1; i >= 0; i--) {
         let val = Math.pow(2, num.length - 1 - i) * Number(num[i]);
+        console.log("val", val)
         output += val;
     }
     let reverseNum = num.split("").reverse();
@@ -143,75 +136,132 @@ const binaryToDecimal = (num) => {
         let val = Math.pow(2, i) * Number(reverseNum[i]);
         res += val;
     }
-    console.log("output", output)
+    console.log("output", output)  //38
     return [res, output];
 };
-
-binaryToDecimal(input)
-
+// binaryToDecimal(input)
 
 
-// Print -> 1 2 3 using async await
-console.log(1);
-setTimeout(() => console.log(2), 0);
-console.log(3);
+
+// console.log(1);
+// setTimeout(() => console.log(2), 0);
+// console.log(3);
+
+//7 Print -> 1 2 3 using async await
 const printNum = async () => {
     console.log(1);
     await new Promise((resolve) => setTimeout(() => {
         console.log(2);
         resolve();
-    }, 100));
+    }, 1000));
     console.log(3);
 }
+// printNum()
 
 
 
-// Call by reference:
+//8 Call by reference:
 let person = { name: 'Alice', age: 30 };
+// let age=26   variable not update but object update
 function updateAge(p) {
     p.age++;
 }
-updateAge(person);
-console.log(person.age); // Output: 31
-let myArray = [1, 2, 3];
-function addToEnd(arr, value) {
-    arr.push(value);
-}
-addToEnd(myArray, 4);
-console.log(myArray); // Output: [1, 2, 3, 4]
+// updateAge(person);
+// console.log(person.age); // Output: 31
 
 
-//using hash map
+
+//9 using hash map
 let str1 = "acadbdbadc";
 const checkCount = (str) => {
-let hashMap = {};
-for (let i = 0; i < str.length; i++) {
-if (!hashMap[str[i]]) hashMap[str[i]] = 1;else hashMap[str[i]]++;
-}
-return hashMap;
+    let hashMap = {};
+    for (let i= 0; i < str.length; i++) {
+        if (!hashMap[str[i]]) 
+            hashMap[str[i]] = 1;
+        else hashMap[str[i]]++;
+    }
+    console.log("hashMap", hashMap)
+    return hashMap;
 };
+// checkCount(str1)
 
 
-//duplication removiing numb
-// let nums = [4, 3, 3, 1];
-let nums1 = [1, 2, 3, 5, 5, 6];
-const checkDuplicate = (nums) => {
-let hashMap = {},
-missingNum = 0,
-repeatedNum = 0;
-for (let i = 0; i < nums.length; i++) {
-if (!nums.includes(i + 1)) missingNum = i + 1;
-if (!hashMap[nums[i]]) hashMap[nums[i]] = 1;
-else {
-hashMap[nums[i]]++;
-repeatedNum = nums[i];
+
+
+//10 matrix Driver code
+let A = [   
+    [1, 1, 1, 1], 
+    [2, 2, 2, 2], 
+    [3, 3, 3, 3], 
+    [4, 4, 4, 4]        
+]; 
+let B = [   
+    [1, 1, 1, 1], 
+    [2, 2, 2, 2], 
+    [3, 3, 3, 3], 
+    [4, 4, 4, 4]
+]; 
+
+//     let NT = 4; 
+//     // This function adds A[][] and B[][], and stores 
+//     // the result in C[][] 
+//     function add(A, B, C) { 
+//         let i, j; 
+//         for (i = 0; i < NT; i++){
+//             for (j = 0; j < NT; j++) {
+//                 C[i][j] = A[i][j] + B[i][j]; 
+//             }
+//         }    
+//     } 
+
+//     // To store result
+//     let C = new Array(NT);
+//     for (let k = 0; k < NT; k++){
+//         C[k] = new Array(NT);
+//     } 
+//     // add(A, B, C); 
+//     // console.log("C", C)
+
+//     // let i, j; 
+//     // console.log("Result matrix is <br>"); 
+//     // for (i = 0; i < N; i++) { 
+//     //     for (j = 0; j < N; j++) 
+//     //         console.log(C[i][j] + " "); 
+//     //     console.log("<br>");
+//     // } 
+
+
+
+// 11 print diamond 
+function printDiamond(n) {
+for (let i = 0; i < n; i++) {
+let row = "";
+for (let j = 0; j < n - i - 1; j++) {
+row += " ";
+}
+row += "*";
+for (let k = 0; k < 2 * i - 1; k++) {
+row += " ";
+}
+if (i !== 0) {
+row += "*";
+}
+console.log(row);
+}
+for (let i = n - 2; i >= 0; i--){
+let row = "";
+for (let j = 0; j < n - i - 1; j++) {
+row += " ";
+}
+row += "*";
+for (let k = 0; k < 2 * i - 1; k++) {
+row += " ";
+}
+if (i !== 0) {
+row += "*";
+}
+console.log(row);
 }
 }
-return {
-repeatedNum,
-missingNum,
-sum: repeatedNum + missingNum,
-};
-};
-console.log(checkDuplicate(nums));
-console.log(checkDuplicate(nums1));
+// Example usage
+// printDiamond(5);
