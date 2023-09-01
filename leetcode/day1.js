@@ -1,8 +1,7 @@
 
-
 function Pairsum_target(arr, target) {
     arr.sort();
-    console.log("arr", arr)
+    console.log(arr)
     let start = 0;
     let end = arr.length - 1;
 
@@ -29,11 +28,9 @@ let target = 12;
 
 
 var merge = function (nums1, m, nums2, n) {
-
     let arr3 = [];
     var i = 0, j = 0, k = 0;
     while (i < m && j < n) {
-
         // Check if current element of first array is smaller than current element of second array. If yes, 
         // store first array element and increment first array index. 
         // Otherwise do same with second array
@@ -44,25 +41,22 @@ var merge = function (nums1, m, nums2, n) {
             arr3[k++] = nums2[j++];
         }
     }
-
     // Store remaining elements of first array
     while (i < m) {
         arr3[k++] = nums1[i++];
     }
-
     // Store remaining elements of second array
-
     while (j < n) {
         arr3[k++] = nums2[j++];
     }
-    console.log("arr3", arr3)
+    console.log("mergetwoarray", arr3)
 };
 
 let arr1 = [1,2,3,0,0,0]
 let arr2 = [2,5,6]
-
-console.log("arr1", arr1.indexOf(0))
+// console.log("arr1", arr1.indexOf(0))
 // merge(arr1, arr1.indexOf(0), arr2, arr2.length);
+
 
 
 
@@ -72,18 +66,46 @@ var removeElement = function(nums, val) {
     for (var i of nums){
         if(i!=val){
            arr.push(i)
+        }else{
+            index+=1
         }
     }
+    for(var i=0; i<index; i++){
+        let char = String.fromCharCode(95);
+        arr.push(char)
+    }
     console.log(arr);
-    return arr
 };
 
-
-let nums= [3,2,2,3]
-let val= 3;
+let nums= [0,1,2,2,3,0,4,2]
+let val= 2;
 // removeElement(nums, val)
 
 
+
+function removeDuplicates(arrOfNum) {
+    const set = new Set(arrOfNum);
+    console.log("set", [...set])
+    return [...set];
+}
+// removeDuplicates([1,1,2])
+
+
+
+var rotate = function(nums, k) {
+    let arr_len=nums.length-k;
+    let arr1=nums.slice(arr_len)
+    // console.log("nums",nums)
+    
+    for (var i=0; i<arr_len; i++){
+        arr1.push(nums[i])
+    }
+    console.log("rotatearr", arr1)
+};
+
+let arr3 = [1,2,3,4,5,6,7];
+let k = 1
+rotate(arr3, k)
 
 
 

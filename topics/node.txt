@@ -32,4 +32,14 @@ API functions in Node?
 What Is A Child_process Module In NodeJs?
 What is Piping in Node?
 
-abinayam@newtglobalcorp.com
+
+
+//important
+with example deeply.
+promise example
+with async await
+array method example
+callback example
+between spawn() and fork() methods in Node.js?
+Explain libuv?
+load balancer?

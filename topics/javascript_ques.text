@@ -47,3 +47,15 @@ slice vs splice  array method
 map, foreach, filter, reduce
 What is a RegExp object
 Whatare the tools or techniques used for debugging JavaScript code
+
+
+example js:-
+closures 
+call bind apply
+this example
+prototype example
+37.High order function?  opposite of first order function
+38.pure function
+39.What is a first order function   does not accepts function as argument and return value
+40.What is a first class function   name function as variable that is call first class function
+
