@@ -19,14 +19,13 @@ packages json vs packages.lock.json
 List down the major security implementations within Node.js
 repl example
 buffer example
-thread pool type How does Nodejs handle the child threads? how many type of threads?
 Can you write CRUD operations in Node js without using frameworks?  practical
 Explain the purpose of module exports?
 restful API
 what is npm? 
 cluster
 worker thread  ? doubt
-how nodjes fast executatiz`z`z`on code using v8
+how nodjes fast executated on code using v8
 how to handle multi thread in python practical than its better than nodejs
 API functions in Node?
 What Is A Child_process Module In NodeJs?
@@ -43,3 +42,10 @@ callback example
 between spawn() and fork() methods in Node.js?
 Explain libuv?
 load balancer?
+fork Differentiate between spawn and
+eventloop  libuv
+thread pool type How does Nodejs handle the child threads? how many type of threads?
+16 What are JWT?
+17 What are different authentication methods?
+18 What are disadvantages of using session based authentication?
+19 What are disadvantages of using jwt based authentication?

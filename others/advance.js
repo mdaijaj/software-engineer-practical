@@ -1,32 +1,3 @@
-// es6
-// 1. Arrow Functions
-// 2. Scoping With “Let” and “Const” Keywords.
-// 3. Template Literals
-// 4. Enhanced Object Literals
-// 5. Destructuring
-// 6. Default Parameter
-// 7. Spread Operators
-// 8. Classes
-// 9. Promises
-// 10. Array helper functions
-// https://medium.com/@musturi.rakesh/best-es6-features-in-javascript-69a0b16425ce
-
-
-// Advance js topics
-//1 callback vs promise
-//2 es6
-//3 hoisting
-//4 oops constructure
-//5 prototype concept
-//6 inheritance in js
-//7 binding this keybard
-//8 clousers scope
-//9 iife immediately invonked fucntion expression
-//10 module patern
-//11 currying
-
-
-
 // callback function
 // function
 // example1

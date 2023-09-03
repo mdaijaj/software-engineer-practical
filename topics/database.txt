@@ -1,10 +1,10 @@
 20 important question
 
-2 What are the difference between NoSQL and SQL
 1 what is mysql and MongoDB Features const and pros
+2 What are the difference between NoSQL and SQL
 3 How to establish MongoDB database connection in a node application?
 4 What are virtual property in mongoose
-5 second highest salary
+5 second highest salary in monggodb
 6 migration
 7 join all
 8 aggregation pipeline
@@ -12,30 +12,82 @@
 11 orm what is meaning pros const
 12 replica set
 13 transection
-14 What are the mongoose middlewares?
+14 What are the mongoose middlewares?  pre or post in schema that is call middlewares
 15 How to query data using mongoose?
-16 What are JWT?
-17 What are different authentication methods?
-18 What are disadvantages of using session based authentication?
-19 What are disadvantages of using jwt based authentication?
+
+
 groupby
+SELECT product_category, SUM(sales_amount) AS total_sales FROM sales
+GROUP BY product_category;
+what is Scalable mysql Horizontal and Vertical?
+Mongodb data modeling
+
 having query
+SELECT product_category, SUM(sales_amount) AS total_sales FROM sales
+GROUP BY product_category
+HAVING total_sales > 10000;
 
 
+index use:-
+create index studdob On students (dob); add multiple columns  //create index
+show index from students;         //show index
+drop index studdob On students;
 
 
 table  multiple case
 UPDATE db.Table1 SET col2 = (CASE col2 WHEN 1 THEN 0 ELSE 1 END);
+
 Explain Vertical Scaling and Horizontal Scaling
-
-
 Scaling Horizontal and Vertical both mysql and monggodb
-object oriented db
-bson format
+
 
 Embedded documents
 nested documents or Embedded documents max 100
 one document size  max is 16mb not exeed more that
 
 
-Mongodb data modeling
+what is transection?
+A transaction in MySQL is a sequence of one or more SQL statements that are treated as a single,
+indivisible unit of work. Transactions are used to maintain data integrity and consistency in a databas
+
+
+virtual properties allow you to define computed or derived properties on your Mongoose models. 
+These virtual properties do not exist in the MongoDB document stored in the database; 
+instead, they are calculated on the fly when you access them.
+
+example:-
+
+const mongoose = require('mongoose');
+const userSchema = new mongoose.Schema({
+  firstName: String,
+  lastName: String,
+});
+// Define a virtual property called 'fullName'
+userSchema.virtual('fullName').get(function () {
+  return `${this.firstName} ${this.lastName}`;
+});
+
+const User = mongoose.model('User', userSchema);
+
+
+second highest salary
+db.employees.aggregate([
+  {
+    $sort: { salary: -1 }
+  },
+  {
+    $skip: 1
+  },
+  {
+    $limit: 1
+  }
+]);
+
+
+Migrations are scripts or instructions that specify how the database schema should change. 
+Each migration corresponds to a specific, discrete change to the schema, such as creating a new table, adding or modifying columns, creating indexes, or defining relationships between tables. Migrations are typically versioned to ensure they are applied in a specific order.
+
+doubt?
+11 orm what is meaning pros const with example
+object oriented db
+bson format

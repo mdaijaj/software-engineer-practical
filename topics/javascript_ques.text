@@ -1,6 +1,6 @@
 top 50 question interview javascript:-
 
-promise promise.all()  promise.trace() type  race method in promise
+promise promise.all()  promise.race() type  race method in promise
 callback
 callback hell
 What is prototype chain
@@ -47,6 +47,36 @@ slice vs splice  array method
 map, foreach, filter, reduce
 What is a RegExp object
 Whatare the tools or techniques used for debugging JavaScript code
+
+
+// es6
+// 1. Arrow Functions
+// 2. Scoping With “Let” and “Const” Keywords.
+// 3. Template Literals
+// 4. Enhanced Object Literals
+// 5. Destructuring
+// 6. Default Parameter
+// 7. Spread Operators Rest
+// 8. Classes
+// 9. Promises
+// 10. Array helper functions Array Methods
+// 11. Import and export syntax
+
+// https://medium.com/@musturi.rakesh/best-es6-features-in-javascript-69a0b16425ce
+
+
+// Advance js topics
+//1 callback vs promise
+//2 es6
+//3 hoisting
+//4 oops constructure
+//5 prototype concept
+//6 inheritance in js
+//7 binding this keybard
+//8 clousers scope
+//9 iife immediately invonked fucntion expression
+//10 module patern
+//11 currying
 
 
 example js:-

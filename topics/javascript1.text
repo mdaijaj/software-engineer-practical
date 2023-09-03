@@ -1,7 +1,9 @@
 What is a promise
-A promise is an object that may produce a single value some time in the future with either a resolved value or a reason that it’s not resolved(for example, network error). It will be in one of the 3 possible states: fulfilled, rejected, or pending.
-
+A promise is an object that may produce a single value some time in the future with either a resolved value or a reason that it’s not resolved(for example, network error). 
+It will be in one of the 3 possible states: fulfilled, rejected, or pending.
 The syntax of Promise creation looks like below,
+.then()
+.catch()
 
 what is a anonymous function.
 that function without name its call anonymous function.
@@ -98,7 +100,8 @@ The action flow of a promise will be as below,
 
 
 Why do you need a promise
-Promises are used to handle asynchronous operations. They provide an alternative approach for callbacks by reducing the callback hell and writing the cleaner code.
+Promises are used to handle asynchronous operations. They provide an alternative approach 
+for callbacks by reducing the callback hell and writing the cleaner code.
 
 arrow_up Back to Top
 
@@ -227,18 +230,14 @@ loadScript("/script1.js", function (script) {
 
 
 What is a callback hell?
-Callback Hell is an anti-pattern with multiple nested callbacks which makes code hard to read and debug when dealing with asynchronous logic. The callback hell looks like below,
-
-async1(function(){
-    async2(function(){
-        async3(function(){
-            async4(function(){
-                ....
-            });
-        });
-    });
-});
-
+Callback Hell is an anti-pattern with multiple nested callbacks which makes code hard to read 
+and debug when dealing with asynchronous logic. The callback hell looks like below,
+// // Nested callback hell
+// doTask1(function () {
+//     doTask2(function () {
+//         doTask3();
+//     });
+// });
 
 
 What is a prototype chain
@@ -249,7 +248,8 @@ The prototype on object instance is available through Object.getPrototypeOf(obje
 
 
 What is the difference between proto and prototype
-The __proto__ object is the actual object that is used in the lookup chain to resolve methods, etc. Whereas prototype is the object that is used to build __proto__ when you create an object with new.
+The __proto__ object is the actual object that is used in the lookup chain to resolve methods, etc. 
+Whereas prototype is the object that is used to build __proto__ when you create an object with new.
 
 new Employee().__proto__ === Employee.prototype;
 new Employee().prototype === undefined;

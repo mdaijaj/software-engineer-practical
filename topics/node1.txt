@@ -1,11 +1,5 @@
 practical knowledge
 
-// mern
-mongodb and mysql  1h
-nodejs          1h
-javascript      2h
-reactjs         1h
-
 
 important question
 soring
