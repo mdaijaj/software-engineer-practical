@@ -1,7 +1,7 @@
 // //1 sorting
 function bubbleSort(array){
   for (let i=0; i< array.length; i++){
-    for (let j=0; j< array.length-i; j++){   //each loop sorted last item so -i
+    for (let j=0; j< array.length-i; j++){   //each loop sorted last item so -i big value sorted send on last item
       if(array[j] >array[j+1]){
         //swaping value
         let temp=array[j];
@@ -60,7 +60,7 @@ function SecondMax(arr2){
 
 
 
-//5
+//5 duplicate remove value
   const input = [1, 2, 3, 3, 4, 5,2, 6,3,6,1];
   function removeDuplicate(arr) {
       const result = [];
@@ -68,7 +68,7 @@ function SecondMax(arr2){
       const tmp = {};
 
       for (let i of arr) {
-          if (!tmp[i]) {   //condition check object item is not exits 
+          if (!tmp[i]) {   //condition check object item is not exits or undefine
               tmp[i] = 1;
               result[idx] = i;
               idx++;
@@ -79,7 +79,7 @@ function SecondMax(arr2){
   // console.log("remove duplicate", removeDuplicate(input));
 
 
-
+// duplicate remove item
   let mainarr = [
     { name: "aijaj", email: "aijaj535@gmail.com", city: "delhi" },
     { name: "rahul", email: "rahul@gmail.com", city: "noida" },
@@ -98,7 +98,8 @@ function SecondMax(arr2){
 //6. Iterative function to implement Binary Search
 let iterativeFunction = function (arr, x) {
 
-  let start = 0, end = arr.length - 1;
+  let start = 0 
+  let end = arr.length - 1;
 
   // Iterate while start not meets end
   while (start <= end) {
@@ -127,18 +128,6 @@ let x = 8;
 
 
 
-//8 unique value in array
-// const arrOfNum = [1, 2, 2, 4, 5, 6, 6];
-// // console.log(getUniqueValues(arrOfNum)); // [1, 2, 4, 5, 6]
-
-// function getUniqueValues(arrOfNum) {
-//   const set = new Set(arrOfNum);
-//   return [...set];
-// }
-
-
-
-
 
 // 9. find binary no 
 let newarr=[5,1,3,2,6];
@@ -151,11 +140,11 @@ let string =["aijaj", "aijaj", "aman", "yogi", "satyam"]
 
 // charactor count
 function CharactorCount(string){
-  let counter={}
-  for (var char of string){
-      counter[char]=(counter[char] || 0) +1
+  let newobj={}
+  for (var word of string){
+      newobj[word]=(newobj[word] || 0) +1  //same
   }
-  console.log("counter_string", counter)
+  console.log("newobj_string", newobj)
 }
 CharactorCount(string)
 
@@ -170,14 +159,14 @@ const users=[
 ]
 
 
-const output2= users.reduce(function (acc, curr){
-  // console.log("aijaj", acc[curr.age])  new object check age exits or not
-  if(acc[curr.age]){
-     acc[curr.age] = ++acc[curr.age]
+const output2= users.reduce(function (newObj2, item){
+  // console.log("aijaj", newObj2[item.age])  new object check age exits or not
+  if(newObj2[item.age]){
+     newObj2[item.age] = ++newObj2[item.age]
   }else{
-     acc[curr.age]= 1
+     newObj2[item.age]= 1
   }
-  return acc;
+  return newObj2;
 }, {})
 
 console.log("output2", output2)
@@ -231,17 +220,17 @@ function isAnagram(str1, str2){
       return false
   }
 
-  let counter={}
+  let newObj={}
   for (var char of str1){
-      counter[char]=(counter[char] || 0) +1
+      newObj[char]=(newObj[char] || 0) +1
   }
-  console.log("counter", counter)
+  console.log("newObj", newObj)
 
   for (var item of str2){
-      if(!counter[item]){
+      if(!newObj[item]){
           return false
       }
-      counter[item]-=1
+      newObj[item]-=1
   }
   return true
 }
@@ -261,25 +250,6 @@ function factorial(number){
   }
 }
 factorial(4)
-
-
-
-//14  //fibonacci series
-//  function  fib(n){
-//      /* Declare an array to store Fibonacci numbers. */
-//      let f = new Array(n+2); // 1 extra to handle case, n = 0
-//      let i;
-//      /* 0th and 1st number of the series are 0 and 1*/
-//      f[0] = 0;
-//      f[1] = 1;
-//      for (i = 2; i <= n; i++){
-//          /* Add the previous 2 numbers in the series and store it */
-//          f[i] = f[i-1] + f[i-2];
-//      }
-//      return f[n];
-//  }
-//  let n=9;
-//  console.log(fib(n));
 
 
 
@@ -318,11 +288,12 @@ function palindromString(string){
   return result
 }
 
-let strings="levels"
+let strings="level"
 console.log(palindromString(strings))
 
 
 
+//doubt
 // const str = 'sachin is the good batsman';
 // let arr=str.split(" ")
 // // console.log("arr", arr)
@@ -335,3 +306,23 @@ console.log(palindromString(strings))
 //           break
 //     }
 // }
+
+
+
+
+//14  //fibonacci series
+//  function  fib(n){
+//      /* Declare an array to store Fibonacci numbers. */
+//      let f = new Array(n+2); // 1 extra to handle case, n = 0
+//      let i;
+//      /* 0th and 1st number of the series are 0 and 1*/
+//      f[0] = 0;
+//      f[1] = 1;
+//      for (i = 2; i <= n; i++){
+//          /* Add the previous 2 numbers in the series and store it */
+//          f[i] = f[i-1] + f[i-2];
+//      }
+//      return f[n];
+//  }
+//  let n=9;
+//  console.log(fib(n));
