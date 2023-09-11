@@ -1,21 +1,21 @@
-// //promise
-// const myPromise = new Promise((resolve, reject) => {
-//     setTimeout(() => {
-//       const data = "Promise resolved with some data";
-//       if(data){
-//         resolve(data);
-//       }else{
-//       reject(new Error("Promise rejected with an error"));
-//       }
-//     }, 2000);
-//   });
+//promise
+const myPromise = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      const data = "Promise resolved with some data";
+      if(data){
+        resolve(data);
+      }else{
+      reject(new Error("Promise rejected with an error"));
+      }
+    }, 2000);
+  });
 
-// myPromise.then((result) => {
-//     console.log("Promise fulfilled:", result);
-// })
-// .catch((error) => {
-//     console.error("Promise rejected:", error.message);
-// });
+myPromise.then((result) => {
+    console.log("Promise fulfilled:", result);
+})
+.catch((error) => {
+    console.error("Promise rejected:", error.message);
+});
 
 // Promise.all
 // Promise.any
@@ -248,8 +248,8 @@ function Person(firstName, lastName) {
   var person2 = new Person('Jane', 'Smith');
   
   // Calling the method from the prototype on the instances
-  console.log(person1.getFullName()); // Output: "John Doe"
-  console.log(person2.getFullName()); // Output: "Jane Smith"
+//   console.log(person1.getFullName()); // Output: "John Doe"
+//   console.log(person2.getFullName()); // Output: "Jane Smith"
 
 
   
@@ -459,6 +459,8 @@ var student2 = {
 const arrayOfOddNumbers = [1, 3, 5];
 arrayOfOddNumbers[100] = 199;
 // console.log(arrayOfOddNumbers.length); 200
+
+
 
 
 

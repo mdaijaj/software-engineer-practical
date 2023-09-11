@@ -11,11 +11,11 @@
 // 2.
 // let a=[];
 // let b=a
-// console.log(a==b)   //false because we compare memory location
+// console.log(a==b)   //true because we compare memory location
 // console.log(a===b)
 
 //3.
-// console.log(typeof(NaN))   //special operator datatype number
+// console.log(typeof(NaN))   //special operator (datatype number)
 
 // 4
 // let data= 10 - -10;
@@ -31,8 +31,9 @@
 
 
 // const data=["aijaj", "aman", "sakib"];
-// const [,y]= data;   //first element of data
+// const [y]= data;   //first element of data
 // console.log(y)
+// const [,y]= data;   //2 element of data
 
 // let inf={
 //     name: "kishan", age: 47, skill: "javascript"
@@ -47,24 +48,33 @@
 // }
 // console.log("info", inf)
 
+// const result= {} || null ||[] ||  "" || false  //postive value {}, [], number
+// const result1=  null ||  "" || false   // first take positive value check if not positive then take last element
+// // if(result){
+//     console.log("result", result)
+// // }
+
 
 // 6
 // JSON.parse()  
 // parse json to javascript value
 
 
-// let name="prince khan";
+
+// let  block level
+// 
+// let name="prince khan";   
 // function getName(){  //let is block level scope 
 //     console.log("name", name)   //error cannot access before initilize
 //     let name="rahul khan"
 // }
 // getName() 
 
-
+// import
 // const name="code step by step";
 // console.log(!typeof(name) ==="object")  //false  //first naration check and compare operator check
 // console.log(!typeof(name) ==="string")  //false
-// console.log(!typeof(name) ===false)  //true
+// console.log(!typeof(name) ===false)  //true    //string using narate(!) convert to boolean
 
 
 
@@ -72,32 +82,67 @@
 //map return someting
 //foreach not return anything
 
+// const name="aijajkhan";
+// const age=26;
 
+// console.log(isNaN(name))  not a number
+// console.log(isNaN(age))    number 
+
+
+// let person2={
+//     name: "aijaj khan"
+// }
+// delete person2.name  //you can not object delete only object property you can delete
+// console.log("kkkk", person2)
+
+
+let person={
+    name: "aijaj khan"
+}
+// Object.seal(person)  //after use seal you cannot modify add object properties
+person.age=45
+person.name="ksish"  //update name only not add object properties.
+// console.log("kkkk", person)
+
+
+let x=1;
+let y=1
+let z=2
+// console.log("arthematic", x === y === --z)   //boolean and number   //false
+
+//undefine vs not define
+// p=25
+// console.log("t", t)  //not define
+console.log("p", p);  //undefined  hoisting
+var p;
 
 
 
 // //top 50question
-// for (var i=0; i<3; i++){
+// for (var i=0; i<3; i++){  //global variable
 //     setTimeout(()=>
 //         console.log(i),1000)
 // }
 
-// for (let i=0; i<3; i++){ 
+// for (let i=0; i<3; i++){   //block scope
 //     setTimeout(()=>
 //         console.log(i),1000)
 // }
 
 
-console.log(+ true)
+// console.log(+ true)  //number
+console.log("llll", !"aijaj")  //false
+console.log(typeof("aijajkhan"))  //string
 
-let data= "size";
-const bird={
-    size: "small"
-}
-console.log(bird[data])  
-console.log(bird["size"])
-console.log(bird.size)
-console.log(bird.data)  //undefine no access data
+
+// let data= "size";
+// const bird={
+//     size: "small"
+// }
+// console.log(bird[data])  
+// console.log(bird["size"])
+// console.log(bird.size)
+// console.log(bird.data)  //undefine no access data
 
 
 //43
@@ -122,7 +167,7 @@ console.log(++number)  //pre inc
 console.log(number)
 
 
-console.log(typeof typeof (1))
+// console.log(typeof typeof (1))   
 
 
 console.log(!!null)  //condtion first true
