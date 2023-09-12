@@ -134,48 +134,95 @@ var p;
 console.log("llll", !"aijaj")  //false
 console.log(typeof("aijajkhan"))  //string
 
+console.log(+true)    //  1 // when + string or boolean ke aage lagane par convert into number
+console.log(typeof(+true)) // number 
+ 
+
 
 // let data= "size";
 // const bird={
 //     size: "small"
 // }
-// console.log(bird[data])  
-// console.log(bird["size"])
-// console.log(bird.size)
-// console.log(bird.data)  //undefine no access data
+// console.log(bird[data])    //small  we can use only variable  []
+// console.log(bird["size"])  //small
+// console.log(bird.size)      //small
+// console.log(bird.data)  //undefine no access data  variable ko obj. ke sath access nhi kar sakte  only obj ke inside hi karte hai
 
 
-//43
-let c={name: "aijajkhan"}  
-let d= c;  //location copy
-c.name="adil khan"
-console.log(d.name)   //adil khan
+//57
+// let c={name: "aijajkhan"}  
+// let d= c;  //location copy not data copy
+// c.name="adil khan"
+// console.log(d.name)   //adil khan
 
 
-let a=3
-let b= new Number("3")
-console.log(typeof("b", b))
-console.log(a===b) //obj reason make a constructor
-console.log(a==b)
+// let a=3
+// let b= new Number("3")
+// console.log(typeof("b", b))
+// console.log(a===b) //obj reason make a constructor
+// console.log(a==b)
 
+function fruit(){
+    console.log("woofs")
+}
+
+fruit.name="banana"  //no effect because obj ki property me kuch data define kar rahe hai.
+// fruit()
 
 //pre post
-
-let number=0;
-console.log(number++)  //post inc
-console.log(++number)  //pre inc
-console.log(number)
-
-
-// console.log(typeof typeof (1))   
+// let number=0;
+// console.log(number++)  //post inc  0
+// console.log(++number)  //pre inc   2
+// console.log(number)   //2
 
 
-console.log(!!null)  //condtion first true
-console.log(!!"")   //condtion first true
-console.log(!!1)
+// console.log(typeof typeof (1))    //string bc type of 1 number and its written in english so string
 
 
-console.log([..."adilkhan"])
+// console.log(!!null)  //condtion first true
+// console.log(!!"")   //condtion first true
+// console.log(!!1)
+
+
+console.log([..."adilkhan"])   // same using split()  earch char in arr
+console.log(typeof[..."adilkhan"])  
+
+
+// function getAge(...args){   //spread operator failana in array
+//     console.log("args", args)
+//     console.log("args", typeof(args))  //arr no data type its only obj
+// }
+// getAge(25)
+
+
+function getAge(){   
+    'use strict';    //strictly use syntax use any varible first declare
+    age=27
+    console.log("age", age)
+}
+// getAge()
+
+const obj2={
+    name: "rahul kan",
+    age: "25",
+    age: "28"  
+}
+console.log("obj2", obj2)  //unique key in obj overwrite value
+
+
+const num= [1,2,3]
+num[7]= 15
+// console.log("num", num)  //empty value between space 
+
+
+console.log(!!null)  //false
+console.log(!!"")   //false
+console.log(!!1)    //true
+console.log(!!{})    //true
+console.log(!![]) //true
+
+
+
 
 
 const obj={
@@ -183,6 +230,24 @@ const obj={
     age: "25"
 }
 
-for( const i in obj){
-    console.log(i)
+for( const item in obj){
+    console.log(item)   //key print
 }
+
+console.log(typeof 3 + 4 + "5")  //number45  left to right
+
+console.log(typeof (3 + 4 + + "5"))  //number    //string ke age plus lagane par number ho jata hai
+console.log(3 + 4 + + "5")  //12
+
+
+// callbyref
+// callbyvalue 
+
+function getInfo(member){   //call by ref (memory location pass) //jab bhi parameter me obj pas karne ko hi callbyref  
+    member.name="aijaj khan"   
+}
+
+const person2= {name: "adil khan"}
+getInfo(person2)  //
+
+console.log(person2)
