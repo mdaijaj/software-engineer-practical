@@ -293,6 +293,27 @@ console.log(palindromString(strings))
 
 
 
+// // 5 4 3 2 1
+// // 5 4 3 2
+// // 5 4 3
+// // 5 4 
+// // 5
+
+
+
+let k=0;
+for (var i=5; i>k; i--){
+    let partern=""
+    for (var j=i; j>k;  j--){
+        partern+= j + " "
+    }
+    k+=1
+    i+=1
+    console.log(partern)
+}
+
+
+
 //doubt
 // const str = 'sachin is the good batsman';
 // let arr=str.split(" ")

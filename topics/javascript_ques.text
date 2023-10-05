@@ -4,50 +4,48 @@ promise promise.all()  promise.race() type  race method in promise
 callback
 callback hell
 What is prototype chain
-What is the difference between proto and prototype
+What is the difference between proto and prototype?
 call bind apply
 es6 with class 14 example
 currying
 closures
 array function method ?
 first class function
-29.What is a first order function
+What is a first order function
+High order function?
 pure function
-27.High order function?
 advantage of JavaScript
 3.  What is an undefined and undeclared variable? 
 24. What is DOM? What is the use of a document object?
 How do you manipulate DOM using a service worker
-31. What is the 'Strict' mode in JavaScript and how can it be enabled?
+31. What is the 'Strict' mode in JavaScript and how can it be enabled
 33. What is hoisting? 	
-What is the Temporal Dead Zone
 What is a polyfill
 What is IIFE(Immediately Invoked Function Expression)
 What is scope in javascript
-cookies token   What is a cookie ,need a Cookie , the options in a cookie, delete a cookie
-What are the differences between cookie, local storage and session storage
-What is a service worker session
+cookies token   What is a cookie ,need a Cookie , the options in a cookie, delete a cookie?
+What are the differences between cookie, local storage and session storage?
+What is a service worker session?
 undefined vs null vs nan
-What is the use of preventDefault method
+What is the use of preventDefault method?
 What is an anonymous function
-what is class object oops method
-What is a constructor method
+what is class object oops method?
+What is a constructor method?
 What is the difference between Shallow and Deep copy
 ecma script
 == and === operators
-What are lambda or arrow functions
+What are lambda or arrow functions?
 arrow vs regular function
-What is memoization
-What is web storage
-What is the use of stopPropagation method
+What is memoization?
+What is web storage?
+What is the use of stopPropagation method?
 What is the use of setTimeout and setInterval
-What is the purpose of clearTimeout method and clearInterval method
+What is the purpose of clearTimeout method and clearInterval method?
 What are regular expression patterns
 slice vs splice  array method
 map, foreach, filter, reduce
 What is a RegExp object
 Whatare the tools or techniques used for debugging JavaScript code
-
 
 // es6
 // 1. Arrow Functions
@@ -73,27 +71,15 @@ Whatare the tools or techniques used for debugging JavaScript code
 //5 prototype concept
 //6 inheritance in js
 //7 binding this keybard
-//8 clousers scope
+//8 closers scope
 //9 iife immediately invonked fucntion expression
 //10 module patern
 //11 currying
 
 
-example js:-
-closures 
-call bind apply
-this example
-prototype example
-37.High order function?  opposite of first order function
-38.pure function
-39.What is a first order function   does not accepts function as argument and return value
-40.What is a first class function   name function as variable that is call first class function
 
-
-
-//Import
-graphql
-nestjs
-typescript
-blockchain
-
+//practical
+What is the Temporal Dead Zone
+What are the differences between cookie, local storage and session storage
+What is a service worker session
+session base authenticaton and cookie base authenticaton

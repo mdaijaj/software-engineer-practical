@@ -1,0 +1,6 @@
+ssh your_username@your_server_ip
+
+
+
+go to server
+code deployment in serve

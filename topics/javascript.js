@@ -1,7 +1,7 @@
 //promise
 const myPromise = new Promise((resolve, reject) => {
     setTimeout(() => {
-      const data = "Promise resolved with some data";
+      const data = "Promise resolved with some data";  //condition we can
       if(data){
         resolve(data);
       }else{
@@ -17,9 +17,9 @@ myPromise.then((result) => {
     console.error("Promise rejected:", error.message);
 });
 
-// Promise.all
-// Promise.any
+// Promise.all   method is settled with only resolved promises,so if any promise reutrns error then it won't work
 // Promise.allSettled
+// Promise.any  any and race same which ass soon as resolve
 // Promise.race
 // Promise.resolve
 // Promise.reject
@@ -54,6 +54,7 @@ myPromise.then((result) => {
 
 // // any rejcted show rejected error not work resolve and resolve sequence
 // Promise.any:- This method doesn't wait for all the promises to resolve. It is done when any one of the promises is settled.
+
 // let total=0;
 // Promise.all([p1,p2,p3,p4])
 // .then((result)=>{
@@ -85,8 +86,8 @@ myPromise.then((result) => {
 
 // all() method is settled with only resolved promises, so if any promise reutrns error then it won't work
 //return each promise if reject then it also show resolve
-
 // Promise.all([p1,p2,p3,p4])
+
 // Promise.allSettled([p1,p2,p3,p4])
 // allSettled() method waits for all promises regards of their state & returns Promise at the ends
 
@@ -142,7 +143,7 @@ myPromise.then((result) => {
 
 
 // //callback
-// // A function that takes a callback as an argument and invokes it
+// A function that takes a callback as an argument and invokes it
 // function fetchData(callback) {
 //     setTimeout(()=>{
 //         let data= "data fetching successfully!"  //4
@@ -157,6 +158,7 @@ myPromise.then((result) => {
 // console.log("Start fetching data...");  //1
 // fetchData(handleData);
 // console.log("Fetching data in progress...");  //2
+
 
 
 
@@ -236,7 +238,7 @@ function doTask1() {
 function Person(firstName, lastName) {
     this.firstName = firstName;
     this.lastName = lastName;
-  }
+}
   
   // Adding a method to the Person constructor's prototype
   Person.prototype.getFullName = function () {
@@ -252,6 +254,30 @@ function Person(firstName, lastName) {
 //   console.log(person2.getFullName()); // Output: "Jane Smith"
 
 
+// example2 prototype
+// javascript has a special properties called prototype that is either null or refrences other object.
+
+let a={
+  name: "aijaj khan",
+  // language: "Javascript",
+  run: ()=>{
+    console.log("self proto running..")
+  }
+}
+console.log(a)
+
+let p={
+  run: ()=>{
+    console.log("proto running..")
+  }
+}
+// p.__proto__={
+//   language: "python"
+// }
+a.__proto__= p
+a.run();
+console.log("language", a.language)
+
   
 
 // call vs apply vs bind
@@ -265,7 +291,7 @@ function Person(firstName, lastName) {
 var student1 = {
     name: "aijaj",
     displayName(country, state) {                                        //repeating code
-        //    console.log(`my name is ${this.name}  and my country  ${country} ${state}`)
+           console.log(`my name is ${this.name}  and my country  ${country} ${state}`)
     }
 }
 
@@ -278,58 +304,71 @@ var student2 = {
 // student1.displayName("India", "Delhi")
 
 // case1:
-var student2 = {
-    name: "rahul",
-}
+// var student2 = {
+//     name: "rahul",
+// }
 // student1.displayName.call(student2, "India", "haryana")   // use call method 
 
 
-//case 2 using apply method use array as a argument
-var student2 = {
-    name: "kishan",
-}
+// //case 2 using apply method use array as a argument
+// var student2 = {
+//     name: "kishan",
+// }
 // student1.displayName.apply(student2, ["India", "Mumbai"])   // use apply method second argument array format only  both immediately call
 
 //case 3 use bind method take variable function
-var student2 = {
-    name: "rahul",
-}
+// var student2 = {
+//     name: "mukesh",
+// }
 // const studentInfo= student1.displayName.bind(student2, "India", "Chennai") ;  //use bind and take a variable fucntion
 // studentInfo()
 
+//bind real exmaple
+let multiply= function (x, y){
+  console.log(x*y)
+}
+
+// let multiplyByTwo= function (y){  //same copy bind method
+//   let x=2;
+//   console.log(x*y)
+// }
+
+let multiplyByTwo= multiply.bind(this, 2)
+multiplyByTwo(5)
+
 
 //example 2
-// //call apply and bind
-// // case1
-// let name={
-//     firstname: "adil",
-//     lastname: "khan",
-//     printFullname: function(){
-//         console.log(this.firstname + this.lastname)
-//     }
-// } 
+//call apply and bind
+// case1
+let name={
+    firstname: "adil",
+    lastname: "khan",
+    printFullname: function(){
+        console.log(this.firstname + this.lastname)
+    }
+} 
 
 // name.printFullname()
-// let name2={
-//     firstname: "raj",
-//     lastname: "malhotra"
-// }
+let name2={
+    firstname: "raj",
+    lastname: "malhotra"
+}
 // name.printFullname.call(name2)
 
 // case2
-let name = {
-    firstname: "adil",
-    lastname: "khan"
-}
+// let name = {
+//     firstname: "adil",
+//     lastname: "khan"
+// }
 let printFullname = function (homeTown, state) {
     // console.log(this.firstname + " " + this.lastname + " from " + homeTown +", " + state )
 }
 printFullname.call(name, "bawana", "delhi")
 
-let name2 = {
-    firstname: "Mahenra sing",
-    lastname: "dhoni"
-}
+// let name2 = {
+//     firstname: "Mahenra sing",
+//     lastname: "dhoni"
+// }
 
 //function borrow
 // printFullname.call(name2, "bhagalpur", "bihar")
@@ -345,35 +384,41 @@ let userInf = printFullname.bind(name2, "bhagalpur", "bihar")
 
 
 
-
-
 //Impure
 let numberArray = [];
-const impureAddNumber = (number) => numberArray.push(number);
+// const impureAddNumber = (number) => numberArray.push(number);
 // console.log("pure", impureAddNumber(6)); // returns 1
 // console.log("pure", impureAddNumber(6)); // returns 1
 // console.log("numberArray", numberArray); // returns [6]
 
-//pure
-const pureAddNumber = (number) => (argNumberArray) => argNumberArray.concat([number]);
+
+
+//pure function not side effect to other function
+// const pureAddNumber = (number) => (argNumberArray) => argNumberArray.concat([number]);
 // console.log("pureAddNumber", pureAddNumber(7)(numberArray)); // returns [6, 7]
 // console.log("pureAddNumber", pureAddNumber(7)(numberArray)); // returns [6, 7]
 // console.log("numberArray", numberArray); // returns [6]
-
-
 // console.log("aijaj",eval("1+3"));
 
 
+//impure function
+// let x=45;  
+// function add(){
+//   console.log("x", x++)
+// }
 
 
+//pure function
+function add(x){
+  console.log("x", x+1)
+  return x+1
+}
 
+add(8)
+add(8)
+add(8)
+add(8)
 
-
-
-
-// const arrayOfOddNumbers = [1, 3, 5];
-// arrayOfOddNumbers[100] = 199;
-// console.log(arrayOfOddNumbers.length); 200
 
 
 
@@ -406,8 +451,6 @@ const pureAddNumber = (number) => (argNumberArray) => argNumberArray.concat([num
 // .catch((error)=>{
 //     console.log(`error promise ${error}`)
 // })
-
-
 
 
 
@@ -449,27 +492,109 @@ var student2 = {
 // studentInfo()
 
 
-
-
-
-
-
-
-
-const arrayOfOddNumbers = [1, 3, 5];
-arrayOfOddNumbers[100] = 199;
-// console.log(arrayOfOddNumbers.length); 200
-
-
-
-
-
-
 //scope example
 var username = "rahul"
 function userinfo() {
     username = "aijaj";
 }
+console.log("username", username)  //rahul
+// userinfo()
 
-// console.log("username", username)
-userinfo()
+
+
+//clouser    
+//clouser is function along with its lexical enviroment bind that is call clouser
+function init() {
+  var name = "Mozilla"; // name is a local variable created by init
+  function displayName() { // displayName() is the inner function, that forms the closure
+    console.log(name); // use variable declared in the parent function
+  }
+  name= "Chrome"
+  return displayName;
+}
+let c= init();
+console.log("c", c())
+
+
+// // curry  same clousers example different code write way
+// function Addition1(a){
+//     return function(b){
+//         return function(c){
+//             return a+b+c
+//         }
+//     }
+// }
+
+// // let add1= Addition1(5)
+// // let add2= add1(6)
+// // let add3= add2(8)
+// let res=Addition1(5)(7)(5)
+// console.log("res", res)
+
+
+// (function() {
+//   var a = b = 5;
+// })();
+
+// console.log(b);
+
+let racer1 = function() {
+  setTimeout(() => console.log("timeout"), 0);
+  setImmediate(() => console.log("immediate"));
+  process.nextTick(() => console.log("nextTick"));
+}
+racer1();
+
+// $ node test.js
+
+// db dbhhqqkoqxu0kt
+// user uwhuy22ib86wq
+// psw s9jzubgbu7xa
+
+//es6 let var
+x=12
+function userData(){
+    var x = 2;
+}
+// console.log("aijaj", x)  //undefine
+
+
+
+//////////////////////////////////////////////////////////////////////////
+//array method:-
+// toString()
+
+let bikes=["r15", "apache", "yamaha", "honda", "bajaj", "tvs"]
+// console.log(bikes.toString());
+
+
+// console.log(bikes.join(""));
+// console.log(bikes.join("-"));
+
+// let cars=["ducati", "jaguar", "tvs", "swift"]
+let bike=["r15", "apache", "yamaha", "honda", "bajaj", "tvs"]
+let scooty=["jupitor", "honda", "hero"]
+
+// let allvehicals=cars.concat(bike, scooty)
+// console.log("allvehicals",allvehicals) //return new array
+
+
+//find method first item of array
+// let arr=[7,5,9,8,4,2]
+// const found= arr.find((element)=> element>5)
+// console.log("found", found)
+
+
+//entities
+// let cars=["ducati", "jaguar", "tvs", "swift"]
+// let obj=cars.entries()
+// for (var element of obj){
+//   console.log("cars", element)
+// }
+
+//////////////////////////////////////////////////////////////////////////
+
+
+var x,j,k;
+j=k=6; x=2; x==j*k; 
+console.log("khan", x); z

@@ -1,9 +1,19 @@
-្life cycle method:-
-constructor
-rendor
-componentDimount
-componentDidUpdate
-componentDidUnmount
+life cycle method:-
+constructor:-
+before loading execute.
+
+class base life cycle method
+constructor()
+rendor()  //render first time execute
+componentDidmount()
+componentDidUpdate()
+componentDidUnmount()
+
+
+funcion base component useEffect:-
+useState()
+return()
+useEffect()
 
 useMemo:-
 1 performance well take from cache  well application performance
@@ -12,7 +22,7 @@ useMemo:-
 memoized value
 
 useCallback
-function store in cache
+function store in cache same useMemo funcionality in funcion
 memoized function
 
 application well performance 
@@ -29,7 +39,7 @@ componentdimount:- we should api call and async process in this phase
 
 
 2 hoc(hight order component)
-when component pas as a props inut component and output component that is call hoc
+when component pas as a props input component and output component that is call hoc
 when component pass as argument of funcion inside function thats call hoc
 a hoc is a advanced technique in React for reusing component logic.
 a hoc is third party react library.
@@ -62,14 +72,14 @@ adddtion
 
 Basic Hooks
     useState() state management within particular component 
-    useEffect() life cycle method
     useContext()  //state management global access
+    useEffect() life cycle method
 
 Additional Hooks:-
     useRef():-
     useReducer():- 
     useCallback()  :-
-    useMemo()
+    useMemo():-
 
 2. customHooks
 
@@ -286,14 +296,127 @@ compiler bebel
 
 
 dom
-
 its is a object presentation of the html document 
-document  
-object   like h2 body heading 
-model all dom presentation organized way
-
+document  html document not pdf document
+object   element like h2 body head tag or object or element
+model all dom presentation organized way  || completed html document
+ 
 virtual dom:-
-virtual dom is replica of original dom
+virtual dom is replica of original dom its a copy of original dom
 
 
 
+
+
+useRef:- when click then highlight color
+style color focus value etc handle using hooks
+it like a useState only and its preserve the value. No rerender
+
+function CustomTextInput(props) {
+  // textInput must be declared here so the ref can refer to it
+  const textInput = useRef(null);
+  
+  function handleClick() {
+    textInput.current.focus();
+    textInput.current.style.display="none"
+  }
+
+  return (
+    <div>
+      <input
+        type="text"
+        ref={textInput} />
+      <input
+        type="button"
+        value="Focus the text input"
+        onClick={handleClick}
+      />
+    </div>
+  );
+}
+
+
+
+
+
+redux:-
+first phase:-
+1.prop drilling
+child to parent prop data pass
+
+
+2. react hooks
+with redux we can use
+
+3.redux store:-
+about redux:-
+redux is a patern and library for manageing and updating application state using events called "action". 
+It serve as centrallized store for state that needs to be used across your entire application.
+state can only be updated in a predictable fasshion.
+
+
+
+action:-
+what i do?
+
+reducer:
+how to do?
+
+store:-
+all the data store
+
+function assoicated with store:
+
+data pass child to parent help using redux:-
+
+
+
+
+state:-
+state varible use manage state or updating state
+
+
+
+
+
+conditional rendering:-
+const { useState, useEffect } = React;
+const TodoRemaining = () => <div>Remaining</div>;
+const TodoDone = () => <div>Done</div>;
+
+const TodoDisplay = () => {
+  const [isPreview, setIsPreview] = useState(true);
+
+  return (
+    <div>
+      {isPreview ? <TodoRemaining /> : <TodoDone />}
+      <label htmlFor="change">
+        <input
+          type="checkbox"
+          id="change"
+          onChange={() => setIsPreview(!isPreview)}
+        />
+        Change
+      </label>
+    </div>
+  );
+};
+
+export default TodoDisplay;
+
+
+
+
+
+//list key special key for update or deleting particular item.
+function NumberList(props) {
+  const numbers = props.numbers;
+  const listItems = numbers.map((number) =>
+    <ListItem key={number.toString()} value={number} />
+  );
+  return (
+    <ul>
+      {listItems}
+    </ul>
+  );
+}
