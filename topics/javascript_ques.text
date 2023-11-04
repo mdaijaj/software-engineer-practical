@@ -6,10 +6,8 @@ callback hell
 What is prototype chain
 What is the difference between proto and prototype?
 call bind apply
-es6 with class 14 example
 currying
 closures
-array function method ?
 first class function
 What is a first order function
 High order function?
@@ -17,10 +15,8 @@ pure function
 advantage of JavaScript
 3.  What is an undefined and undeclared variable? 
 24. What is DOM? What is the use of a document object?
-How do you manipulate DOM using a service worker
 31. What is the 'Strict' mode in JavaScript and how can it be enabled
 33. What is hoisting? 	
-What is a polyfill
 What is IIFE(Immediately Invoked Function Expression)
 What is scope in javascript
 cookies token   What is a cookie ,need a Cookie , the options in a cookie, delete a cookie?
@@ -46,6 +42,11 @@ slice vs splice  array method
 map, foreach, filter, reduce
 What is a RegExp object
 Whatare the tools or techniques used for debugging JavaScript code
+es6 with class 14 example
+array function method ?
+How do you manipulate DOM using a service worker
+What is a polyfill
+
 
 // es6
 // 1. Arrow Functions

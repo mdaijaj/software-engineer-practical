@@ -386,7 +386,8 @@ Curried functions are great to improve code reusability and functional compositi
 
 
 What are closures
-A closure is the combination of a function and the lexical environment within which that function was declared. i.e, It is an inner function that has access to the outer or enclosing function’s variables. The closure has three scope chains
+A closure is the combination of a function and the lexical environment within which that function was declared. 
+i.e, It is an inner function that has access to the outer or enclosing function’s variables. The closure has three scope chains
 
 Own scope where variables defined between its curly brackets
 Outer function’s variables
@@ -409,20 +410,18 @@ As per the above code, the inner function(i.e, greetingInfo) has access to the v
 What is a first class function
 In Javascript, functions are first class objects. First-class functions means when functions in that language are treated like any other variable.
 
-For example, in such a language, a function can be passed as an argument to other functions, can be returned by another function and can be assigned as a value to a variable. For example, in the below example, handler functions assigned to a listener
+For example, in such a language, a function can be passed as an argument to other functions, can be returned by 
+another function and can be assigned as a value to a variable. 
+For example, in the below example, handler functions assigned to a listener
 
 const handler = () => console.log("This is a click handler function");
 document.addEventListener("click", handler);
 
 
-
-ack to Top
-
 What is a first order function
 First-order function is a function that doesn’t accept another function as an argument and doesn’t return a function as its return value.
 
 const firstOrder = () => console.log("I am a first order function!");
-arrow_up Back to Top
 
 
 
@@ -438,7 +437,8 @@ higherOrder(firstOrderFunc);
 
 
 What is a pure function
-A Pure function is a function where the return value is only determined by its arguments without any side effects. i.e, If you call a function with the same arguments 'n' number of times and 'n' number of places in the application then it will always return the same value.
+A Pure function is a function where the return value is only determined by its arguments without any side effects. i.e, 
+If you call a function with the same arguments 'n' number of times and 'n' number of places in the application then it will always return the same value.
 
 Let's take an example to see the difference between pure and impure functions,
 
@@ -460,10 +460,10 @@ console.log(numberArray); // returns [6]
 What are the differences between pure and impure functions?
 Some of the major differences between pure and impure function are as below,
 
-Pure function	Impure function
-It has no side effects	It causes side effects
-It is always return the same result	It returns different result on each call
-Easy to read and debug	Difficult to read and debug because they are affected by extenal code
+Pure function	                        Impure function
+It has no side effects	                It causes side effects
+It is always return the same result	    It returns different result on each call
+Easy to read and debug	                Difficult to read and debug because they are affected by extenal code
 
 
 
@@ -484,12 +484,10 @@ DOM stands for Document Object Model. A document object represents the html docu
 What is a strict mode in javascript
 Strict Mode is a new feature in ECMAScript 5 that allows you to place a program, or a function, in a “strict” operating context. This way it prevents certain actions from being taken and throws more exceptions. The literal expression "use strict"; instructs the browser to use the javascript code in the Strict mode.
 
-arrow_up Back to Top
 
 Why do you need strict mode
 Strict mode is useful to write "secure" JavaScript by notifying "bad syntax" into real errors. For example, it eliminates accidentally creating a global variable by throwing an error and also throws an error for assignment to a non-writable property, a getter-only property, a non-existing property, a non-existing variable, or a non-existing object.
 
-arrow_up Back to Top
 
 How do you declare strict mode
 The strict mode is declared by adding "use strict"; to the beginning of a script or a function. If declared at the beginning of a script, it has global scope.
@@ -531,7 +529,8 @@ This hoisting makes functions to be safely used in code before they are declared
 
 
 What is the Temporal Dead Zone
-The Temporal Dead Zone is a behavior in JavaScript that occurs when declaring a variable with the let and const keywords, but not with var. In ECMAScript 6, accessing a let or const variable before its declaration (within its scope) causes a ReferenceError. The time span when that happens, between the creation of a variable’s binding and its declaration, is called the temporal dead zone.
+The Temporal Dead Zone is a behavior in JavaScript that occurs when declaring a variable with the let and const keywords, but not with var. In ECMAScript 6, 
+accessing a let or const variable before its declaration (within its scope) causes a ReferenceError. The time span when that happens, between the creation of a variable’s binding and its declaration, is called the temporal dead zone.
 
 Let's see this behavior with an example,
 

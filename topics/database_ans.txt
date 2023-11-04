@@ -83,3 +83,24 @@ doubt?
 11 orm what is meaning pros const with example
 object oriented db
 bson format
+
+json bson
+
+
+aggregation in Mongodb:-
+aggregation is the process of selecting data from a collection to process multiple documents and returns computed results
+
+group value from multiple documents together
+fetching a lots of nested data from performed complex operations
+filter and sort documents and analysis data changes
+
+
+
+replica
+duplicate of server
+
+Sharding
+Sharding is a data distribution process and stores a single data set into multiple databas.
+Vertical adding more resourses as on demand
+Horizontal adding more processing or physical machine
+

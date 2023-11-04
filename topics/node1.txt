@@ -24,6 +24,10 @@ No Buffering – Node.js applications never buffer any data. They simply output 
 
 
 event driven (mouseEvent)
+event emit
+event handlers
+event listener
+
 
 setTimeout
 setInterver
@@ -32,7 +36,7 @@ setimmediate
 
 
 
-2.event loop?  How does Node.js work?
+2.event loop?  How does Node.js work? its a part of libuv
 A Node.js application creates a single thread on its invocation. Whenever Node.js receives a request, it first completes its processing before moving on to the next request.
 
 Node.js works asynchronously by using the event loop and callback functions, to handle multiple requests coming in parallel. An Event Loop is a functionality which handles and processes all your external events and just converts them to a callback function. It invokes all the event handlers at a proper time. Thus, lots of work is done on the back-end, while processing a single request, so that the new incoming request doesn't have to wait if the processing is not complete.
@@ -200,7 +204,7 @@ There are lots of ways to solve the issue of callback hells:
 1.modularization: break callbacks into independent functions,
 2.use a control flow library, like async.
 3.use generators with Promises,
-4.use async/await (note that it is only available in the latest v7 release and not in the LTS version
+4.use async/await note that it is only available in the latest v7 release and not in the LTS version
 
 
 
@@ -446,3 +450,8 @@ firefox  spiderman
 
 // let newdata= newFun()
 // console.log("newdata", newdata)
+
+
+
+
+micro services

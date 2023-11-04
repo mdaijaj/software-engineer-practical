@@ -18,10 +18,10 @@ myPromise.then((result) => {
 });
 
 // Promise.all   method is settled with only resolved promises,so if any promise reutrns error then it won't work
-// Promise.allSettled
+// Promise.allSettled  wait for all promise and return all promise where it setle resolve or rejected.
 // Promise.any  any and race same which ass soon as resolve
-// Promise.race
-// Promise.resolve
+// Promise.race 
+// Promise.resolve 
 // Promise.reject
 
 
@@ -56,7 +56,7 @@ myPromise.then((result) => {
 // Promise.any:- This method doesn't wait for all the promises to resolve. It is done when any one of the promises is settled.
 
 // let total=0;
-// Promise.all([p1,p2,p3,p4])
+// Promise.allSettled([p1,p2,p3,p4])
 // .then((result)=>{
 //     console.log("result", result)
 //     for (let i=0; i<result.length; i++){
@@ -162,26 +162,26 @@ myPromise.then((result) => {
 
 
 
-// Nested callbacks without proper indentation (callback hell)
-function doTask1(callback1) {
-    setTimeout(function () {
-        console.log("Task 1 done");
-        callback1();
-    }, 1000);
-}
+// // Nested callbacks without proper indentation (callback hell)
+// function doTask1(callback1) {
+//     setTimeout(function () {
+//         console.log("Task 1 done");
+//         callback1();
+//     }, 1000);
+// }
 
-function doTask2(callback2) {
-    setTimeout(function () {
-        console.log("Task 2 done");
-        callback2();
-    }, 1000);
-}
+// function doTask2(callback2) {
+//     setTimeout(function () {
+//         console.log("Task 2 done");
+//         callback2();
+//     }, 1000);
+// }
 
-function doTask3() {
-    setTimeout(function () {
-        console.log("Task 3 done");
-    }, 1000);
-}
+// function doTask3() {
+//     setTimeout(function () {
+//         console.log("Task 3 done");
+//     }, 1000);
+// }
 
 
 // // Nested callback hell
@@ -194,46 +194,48 @@ function doTask3() {
 
 
 
-//using promise:-
-function doTask1() {
-    return new Promise((resolve) => {
-      setTimeout(function () {
-        console.log("Task 1 done");
-        resolve();
-      }, 1000);
-    });
-  }
+// //using promise:-
+// function doTask1() {
+//     return new Promise((resolve) => {
+//       setTimeout(function () {
+//         console.log("Task 1 done");
+//         resolve();
+//       }, 1000);
+//     });
+//   }
   
-  function doTask2() {
-    return new Promise((resolve) => {
-      setTimeout(function () {
-        console.log("Task 2 done");
-        resolve();
-      }, 1000);
-    });
-  }
+//   function doTask2() {
+//     return new Promise((resolve) => {
+//       setTimeout(function () {
+//         console.log("Task 2 done");
+//         resolve();
+//       }, 1000);
+//     });
+//   }
   
-  function doTask3() {
-    return new Promise((resolve) => {
-      setTimeout(function () {
-        console.log("Task 3 done");
-        resolve();
-      }, 1000);
-    });
-  }
+//   function doTask3() {
+//     return new Promise((resolve) => {
+//       setTimeout(function () {
+//         console.log("Task 3 done");
+//         resolve();
+//       }, 1000);
+//     });
+//   }
   
-  // Using async/await to avoid callback hell
-  async function runTasks() {
-    await doTask1();
-    await doTask2();
-    await doTask3();
-  }
-  runTasks();
+  // // Using async/await to avoid callback hell
+  // async function runTasks() {
+  //   await doTask1();
+  //   await doTask2();
+  //   await doTask3();
+  // }
+  // runTasks();
   
 
 
 
 //prototype:-
+// javascript has a special properties called prototype that is either null or refrences other object.
+
 // Constructor function for creating Person objects
 function Person(firstName, lastName) {
     this.firstName = firstName;
@@ -255,28 +257,27 @@ function Person(firstName, lastName) {
 
 
 // example2 prototype
-// javascript has a special properties called prototype that is either null or refrences other object.
 
-let a={
-  name: "aijaj khan",
-  // language: "Javascript",
-  run: ()=>{
-    console.log("self proto running..")
-  }
-}
-console.log(a)
+// let a={
+//   name: "aijaj khan",
+//   language: "Javascript",
+//   run: ()=>{
+//     console.log("self proto running..")
+//   }
+// }
+// // console.log(a)
 
-let p={
-  run: ()=>{
-    console.log("proto running..")
-  }
-}
+// let p={
+//   run: ()=>{
+//     console.log("proto running..")
+//   }
+// }
 // p.__proto__={
 //   language: "python"
 // }
-a.__proto__= p
-a.run();
-console.log("language", a.language)
+// a.__proto__= p
+// a.run();
+// console.log("language", a.language)
 
   
 
@@ -311,17 +312,17 @@ var student2 = {
 
 
 // //case 2 using apply method use array as a argument
-// var student2 = {
-//     name: "kishan",
-// }
+var student2 = {
+    name: "kishan",
+}
 // student1.displayName.apply(student2, ["India", "Mumbai"])   // use apply method second argument array format only  both immediately call
 
 //case 3 use bind method take variable function
-// var student2 = {
-//     name: "mukesh",
-// }
-// const studentInfo= student1.displayName.bind(student2, "India", "Chennai") ;  //use bind and take a variable fucntion
-// studentInfo()
+var student2 = {
+    name: "mukesh",
+}
+const studentInfo= student1.displayName.bind(student2, "India", "Chennai") ;  //use bind and take a variable fucntion
+studentInfo()
 
 //bind real exmaple
 let multiply= function (x, y){
@@ -384,6 +385,11 @@ let userInf = printFullname.bind(name2, "bhagalpur", "bihar")
 
 
 
+const multiArgFunction = (a, b, c) => a + b + c;
+console.log(multiArgFunction(1, 2, 3)); // 6
+
+
+
 //Impure
 let numberArray = [];
 // const impureAddNumber = (number) => numberArray.push(number);
@@ -408,16 +414,16 @@ let numberArray = [];
 // }
 
 
-//pure function
-function add(x){
-  console.log("x", x+1)
-  return x+1
-}
+// //pure function
+// function add(x){
+//   console.log("x", x+1)
+//   return x+1
+// }
 
-add(8)
-add(8)
-add(8)
-add(8)
+// add(8)
+// add(8)
+// add(8)
+// add(8)
 
 
 
@@ -492,13 +498,13 @@ var student2 = {
 // studentInfo()
 
 
-//scope example
-var username = "rahul"
-function userinfo() {
-    username = "aijaj";
-}
-console.log("username", username)  //rahul
-// userinfo()
+// //scope example
+// var username = "rahul"
+// function userinfo() {
+//     username = "aijaj";
+// }
+// console.log("username", username)  //rahul
+// // userinfo()
 
 
 
@@ -595,6 +601,6 @@ let scooty=["jupitor", "honda", "hero"]
 //////////////////////////////////////////////////////////////////////////
 
 
-var x,j,k;
-j=k=6; x=2; x==j*k; 
-console.log("khan", x); z
+// var x,j,k;
+// j=k=6; x=2; x==j*k; 
+// console.log("khan", x); z

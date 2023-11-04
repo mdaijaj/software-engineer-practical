@@ -9,14 +9,64 @@ componentDidmount()
 componentDidUpdate()
 componentDidUnmount()
 
+phase :-
+componentdimount:- we should api call and async process in this phase 
+mounting birth
+updating we do changes
+unmounting dead phase
+
 
 funcion base component useEffect:-
 useState()
 return()
 useEffect()
 
+
+class base component life cycle method:-
+rendor
+componentdidmount  -- first time loading    //useEffect
+constructor
+componentDidUpdate   -- update time load
+componentDidUnmount   --remove from component
+
+example:-
+componentDidMount()=>{
+  console.log("first time loading then call this function, componentDidMount working here...")
+}
+
+componentDidUpdate()=>{
+  console.log(" when anyupdate call this function,  componentDidUpdate is working here...)
+}
+
+componentDidUnmount=()=>{
+  console.log("when you will remove any component then it will call this function working...   component remove..")
+}
+
+
+function base component life cycle method:-
+//componentDidMount phase
+useEffect(()=>{
+  console.log("componentDimount is working...")
+})
+
+
+//update phase
+useEffect((number)=>{
+  console.log("componentDimount is working...")
+}, [number])
+
+
+//remove component phase:-
+useEffect((number)=>{
+  console.log("function component updating is working...")
+  return ()=>{
+    console.log("function component removing here...")
+  }
+}, [number]);
+
+
 useMemo:-
-1 performance well take from cache  well application performance
+1 well application performance from cache
 2 result ko cache me store kar raha hai next time wo caches se utha lega
 3 unwantage function call not use event call so use memo
 memoized value
@@ -30,24 +80,18 @@ unwantage function call ko rokne ke liye
 unnessessary funcion call ko rokne ke liye
 
 
-phase :-
-mounting birth
-updating we do changes
-unmounting dead phase
-
-componentdimount:- we should api call and async process in this phase 
-
 
 2 hoc(hight order component)
-when component pas as a props input component and output component that is call hoc
-when component pass as argument of funcion inside function thats call hoc
+
+
+when component pas as a props input component and return output component that is call hoc
+when component pass as argument of funcion return inside function thats call hoc
 a hoc is a advanced technique in React for reusing component logic.
 a hoc is third party react library.
 a hoc is funcion that take a component and returns a new component.
 
 why use hoc?
 same logic  when we use same component logic different component so we used hoc.
-
 
 
 const subjects= (STUDENT)=>{ //component name as arg
@@ -64,25 +108,23 @@ const subjects= (STUDENT)=>{ //component name as arg
 export default subjects;
 
 
-
 two type of hooks
 1 inbuild hooks
-Basic
-adddtion
+  Basic
+  adddtion
 
-Basic Hooks
-    useState() state management within particular component 
-    useContext()  //state management global access
-    useEffect() life cycle method
+  Basic Hooks
+      useState() state management within particular component 
+      useContext()  //state management global access
+      useEffect() life cycle method
 
-Additional Hooks:-
-    useRef():-
-    useReducer():- 
-    useCallback()  :-
-    useMemo():-
+  Additional Hooks:-
+      useRef():-
+      useReducer():- 
+      useCallback()  :-
+      useMemo():-
 
 2. customHooks
-
     useCallback():-
     memoize the function
     code optimization handle  performance manage stop loop or rerendor 
@@ -101,19 +143,23 @@ Additional Hooks:-
   data pass multiple level grandparent to child
   instead of redux for data pass
   component a pass to component b pass component c;
+  prop drilling se bachne ke lite useContext() use karte hai
+
 
   useReducer:-
   state management
   and use redux
   action with dispatch
 
+ 
+useRef:- when click then highlight color
+rerender do't lost state object 
+access dom property or funcion
+rerender component stop unwantage reredering
 
-  redux:-
-  
-  whenever pass the function  arg then use arrow function
- ()=>{
-   
- }+919818551429ndle using hooks
+
+style color focus value etc handle using hooks
+it like a useState only and its preserve the value. No rerender
 it like a useState only and its preserve the value. No rerender
 
 function CustomTextInput(props) {
@@ -143,7 +189,7 @@ function CustomTextInput(props) {
 
 redux:-
 first phase:-
-1.prop drilling
+1.prop drilling a component data pass to b component data pass to c component 
 child to parent prop data pass
 
 
@@ -157,18 +203,16 @@ It serve as centrallized store for state that needs to be used across your entir
 state can only be updated in a predictable fasshion.
 
 
-
-action:-
+1. action:-
 what i do?
 
-reducer:
+2. reducer:
 how to do?
 
-store:-
+3. store:-
 all the data store
 
 function assoicated with store:
-
 data pass child to parent help using redux:-
 
 
@@ -224,65 +268,12 @@ function NumberList(props) {
   );
 }
 
-constructor:-
-before loading execute.
-
-componentDidMount:- 
-render first time execute
-
 
 bind or arrow use function onClick function call.
 example:-
 
 <button onClick={this.increment.bind(this)}> click me </button>  //es5
 <button onClick={()=>{this.increment()}}> click me </button>     //es6
-
-
-class base component life cycle method:-
-render
-componentdidmount  -- first time loading    //useEffect
-constructor
-componentDidUpdate   -- update time load
-componentDidUnmount   --remove from component
-
-example:-
-componentDidMount()=>{
-  console.log("first time loading then call this function, componentDidMount working here...")
-}
-
-componentDidUpdate()=>{
-  console.log(" when anyupdate call this function,  componentDidUpdate is working here...)
-}
-
-componentDidUnmount=()=>{
-  console.log("when you will remove any component then it will call this function working...   component remove..")
-}
-
-
-
-
-
-
-function base component life cycle method:-
-//componentDidMount phase
-useEffect(()=>{
-  console.log("componentDimount is working...")
-})
-
-
-//update phase
-useEffect((number)=>{
-  console.log("componentDimount is working...")
-}, [number])
-
-
-//remove component phase:-
-useEffect((number)=>{
-  console.log("function component updating is working...")
-  return ()=>{
-    console.log("function component removing here...")
-  }
-}, [number]);
 
 
 //composing
@@ -296,127 +287,62 @@ compiler bebel
 
 
 dom
-its is a object presentation of the html document 
+its is a object presentation of the html document in tree structure in browser
 document  html document not pdf document
 object   element like h2 body head tag or object or element
 model all dom presentation organized way  || completed html document
  
 virtual dom:-
 virtual dom is replica of original dom its a copy of original dom
+and modification any particular things
+
+
+
+
+//pratical
+advannce hooks
+life cycle method
+useContext
+Additional Hooks
+composing
+webpack or babel
 
 
 
 
 
-useRef:- when click then highlight color
-style color focus value etc handle using hooks
-it like a useState only and its preserve the value. No rerender
+controle component
+input field can be control  by react state like useState() control
+using useState
+state can be predictable
 
-function CustomTextInput(props) {
-  // textInput must be declared here so the ref can refer to it
-  const textInput = useRef(null);
-  
-  function handleClick() {
-    textInput.current.focus();
-    textInput.current.style.display="none"
-  }
-
-  return (
-    <div>
-      <input
-        type="text"
-        ref={textInput} />
-      <input
-        type="button"
-        value="Focus the text input"
-        onClick={handleClick}
-      />
-    </div>
-  );
-}
+uncontrole
+use useRef 
+input field honi chahiye
+input field can be control by useRef() or javascript document like document.getElmentBy
+state can not be predictable.
 
 
 
 
+life cycle method:-
+useState():-
+state change particular component change
 
-redux:-
-first phase:-
-1.prop drilling
-child to parent prop data pass
+useEffect(()=>{
+  console.log("hello calling again to again console")
+})
 
-
-2. react hooks
-with redux we can use
-
-3.redux store:-
-about redux:-
-redux is a patern and library for manageing and updating application state using events called "action". 
-It serve as centrallized store for state that needs to be used across your entire application.
-state can only be updated in a predictable fasshion.
+calling on screen load only
+useEffect(()=>{
+  console.log("only once time  console")
+}, [])
 
 
-
-action:-
-what i do?
-
-reducer:
-how to do?
-
-store:-
-all the data store
-
-function assoicated with store:
-
-data pass child to parent help using redux:-
+//depend on change in value
+useEffect(()=>{
+  console.log("depend on change in value")
+}, [value])
 
 
-
-
-state:-
-state varible use manage state or updating state
-
-
-
-
-
-conditional rendering:-
-const { useState, useEffect } = React;
-const TodoRemaining = () => <div>Remaining</div>;
-const TodoDone = () => <div>Done</div>;
-
-const TodoDisplay = () => {
-  const [isPreview, setIsPreview] = useState(true);
-
-  return (
-    <div>
-      {isPreview ? <TodoRemaining /> : <TodoDone />}
-      <label htmlFor="change">
-        <input
-          type="checkbox"
-          id="change"
-          onChange={() => setIsPreview(!isPreview)}
-        />
-        Change
-      </label>
-    </div>
-  );
-};
-
-export default TodoDisplay;
-
-
-
-
-
-//list key special key for update or deleting particular item.
-function NumberList(props) {
-  const numbers = props.numbers;
-  const listItems = numbers.map((number) =>
-    <ListItem key={number.toString()} value={number} />
-  );
-  return (
-    <ul>
-      {listItems}
-    </ul>
-  );
-}
+useReducer useMemo useCallback Remaining

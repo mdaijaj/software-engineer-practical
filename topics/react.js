@@ -1,8 +1,8 @@
 // ● What is hooks?
 // ● useState vs useContext?
-// ● What is virtual DOM how does it differ from real DOM?
+// ● What is virtual DOM shadow  how does it differ from real DOM?
 // ● How do you manage state in React?
-// ● What is JSX?
+// ● What is JSX? 
 // ● What is Bebel?
 // ● What is useState?
 // ● What is useMemo?
@@ -15,14 +15,14 @@
 // ● How to update state using useState?
 // ● What are component lifecycle methods?
 // ● How do we pass props from child to parent in react
-// ● How can we stop re-rendering in react?
-// ● Stateful vs stateless
+// ● How can we stop re-rendering in react?  //using useMemo
+// ● Stateful vs stateless class funtion
 // ● reactMemo and useMemo
 // ● lazyLoad of components
 // ● Prop drilling in react
 // ● Thunk
 // ● Difference in axios and fetch?
-// ● What are interceptors in React?
+// ● What are interceptors in React?  ?
 // ● What are middlewares in react?
 // ● What is difference in pure component an higher order components?
 // ● What is difference in memo(), useMemo() and usecallback()
@@ -60,4 +60,3 @@
 // Use cases of less common hooks
 // Higher-Order Components
 // React DevTools
-

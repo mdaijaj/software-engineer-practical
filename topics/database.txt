@@ -22,3 +22,35 @@ All join
 Sharding
 Agrregation
 Project ion
+
+
+IN Operator
+SELECT * FROM Customers
+WHERE Country IN ('Germany', 'France', 'UK');
+
+The SQL BETWEEN Operator
+SELECT * FROM Products
+WHERE Price BETWEEN 10 AND 20;
+
+The SQL COUNT(), AVG() and SUM() Functions
+
+
+SQL HAVING Examples
+SELECT COUNT(CustomerID), Country
+FROM Customers
+GROUP BY Country
+HAVING COUNT(CustomerID) > 5;
+
+
+
+
+MCS220 15 December 2023 web technology
+MCS215 16 December 2023 cyber security
+MCS218 18 December 2023 data communication computer network
+MCS212 19 December 2023 descrete math
+MCS219 20 December 2023 object oriented analysis and designing
+MCS213 21 December 2023 software engineering
+MCS214 26 December 2023 skill and ethiks
+MCS211 29 December 2023 designing analysis algo
+MCS221 30 December 2023 warehouse data mining 
+
