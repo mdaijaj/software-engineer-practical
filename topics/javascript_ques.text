@@ -20,11 +20,10 @@ advantage of JavaScript
 What is IIFE(Immediately Invoked Function Expression)
 What is scope in javascript
 cookies token   What is a cookie ,need a Cookie , the options in a cookie, delete a cookie?
-What are the differences between cookie, local storage and session storage?
-What is a service worker session?
 undefined vs null vs nan
-What is the use of preventDefault method?
+What is the use of preventDefault method?  stop redirect page or reload
 What is an anonymous function
+What is a polyfill
 what is class object oops method?
 What is a constructor method?
 What is the difference between Shallow and Deep copy
@@ -38,14 +37,15 @@ What is the use of stopPropagation method?
 What is the use of setTimeout and setInterval
 What is the purpose of clearTimeout method and clearInterval method?
 What are regular expression patterns
+array function method ?
 slice vs splice  array method
 map, foreach, filter, reduce
 What is a RegExp object
 Whatare the tools or techniques used for debugging JavaScript code
 es6 with class 14 example
-array function method ?
 How do you manipulate DOM using a service worker
-What is a polyfill
+What is a service worker session?
+What are the differences between cookie, local storage and session storage?
 
 
 // es6

@@ -64,8 +64,8 @@ function SecondMax(arr2){
   const input = [1, 2, 3, 3, 4, 5,2, 6,3,6,1];
   function removeDuplicate(arr) {
       const result = [];
-      let idx = 0;
       const tmp = {};
+      let idx = 0;
 
       for (let i of arr) {
           if (!tmp[i]) {   //condition check object item is not exits or undefine
@@ -158,37 +158,36 @@ const users=[
   { firstname: "elon ", lastname: "musk", age: 35 },
 ]
 
+// const output2= users.reduce(function (newObj2, item){
+//   // console.log("aijaj", newObj2[item.age])  new object check age exits or not
+//   if(newObj2[item.age]){
+//      newObj2[item.age] = ++newObj2[item.age]
+//   }else{
+//      newObj2[item.age]= 1
+//   }
+//   return newObj2;
+// }, {})
 
-const output2= users.reduce(function (newObj2, item){
-  // console.log("aijaj", newObj2[item.age])  new object check age exits or not
-  if(newObj2[item.age]){
-     newObj2[item.age] = ++newObj2[item.age]
-  }else{
-     newObj2[item.age]= 1
-  }
-  return newObj2;
-}, {})
-
-console.log("output2", output2)
+// console.log("output2", output2)
 
 
-//11  //prime number in js
-//  function isPrime(n) {
-//     // Corner case
-//     if (n <= 1)
-//         return false;
-//     // Check from 2 to n-1
-//     for (let i = 2; i < n; i++){
-//         if (n % i == 0){
-//             console.log("not prime number", n)
-//             return false;
-//         } 
-//     }
-//     console.log("prime number", n)
-//     return true;
-// }
-// // Driver Code
-// isPrime(19)
+11  //prime number in js
+ function isPrime(n) {
+    // Corner case
+    if (n <= 1)
+        return false;
+    // Check from 2 to n-1
+    for (let i = 2; i < n; i++){
+        if (n % i == 0){
+            console.log("not prime number", n)
+            return false;
+        } 
+    }
+    console.log("prime number", n)
+    return true;
+}
+// Driver Code
+isPrime(19)
 
 
 
