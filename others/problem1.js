@@ -17,9 +17,8 @@ function bubbleSort(array){
 
 
 
-//7.sorting
+//.sorting
 let numbers = [0, 1, 2, 30, 15, 5, 20];
-
 // numbers.sort( function( a , b){
 //     if(a > b) return 1;
 //     if(a < b) return -1;
@@ -29,10 +28,9 @@ let numbers = [0, 1, 2, 30, 15, 5, 20];
 
 
 
-//3 second max number
+//2 second max number
 function SecondMax(arr2){
     if(arr2.length>0){
-
        let max=arr2[0];
        let second_max=arr2[0];
        for (var i=0; i<arr2.length; i++){
@@ -50,28 +48,27 @@ function SecondMax(arr2){
 //  SecondMax(arr2)
 
 
-  // 4
-    function removeDuplicates(arrOfNum) {
-        const set = new Set(arrOfNum);
-        // console.log("set", [...set])
-    }
-    // removeDuplicates(arr2)
+
+//3 duplicate remove value
+  function removeDuplicates(arrOfNum) {
+      const set = new Set(arrOfNum);
+      // console.log("set", [...set])
+  }
+  // removeDuplicates(arr2)
 
 
 
-
-//5 duplicate remove value
   const input = [1, 2, 3, 3, 4, 5,2, 6,3,6,1];
   function removeDuplicate(arr) {
       const result = [];
       const tmp = {};
-      let idx = 0;
-
+      // let idx = 0;
       for (let i of arr) {
           if (!tmp[i]) {   //condition check object item is not exits or undefine
               tmp[i] = 1;
-              result[idx] = i;
-              idx++;
+              // result[idx] = i;
+              result.push(i)
+              // idx++;
           } 
       }
       return result;
@@ -87,7 +84,6 @@ function SecondMax(arr2){
     { name: "aijaj", email: "aijaj535@gmail.com", city: "delhi" },
     { name: "aijaj", email: "aijaj535@gmail.com", city: "delhi" }
   ];
-  
   let uniqueArr = mainarr.filter((obj, index, self) =>
       index === self.findIndex((item) => item.name === obj.name && item.email === obj.email && item.city === obj.city)
   );
@@ -95,9 +91,8 @@ function SecondMax(arr2){
 
 
 
-//6. Iterative function to implement Binary Search
+//4. Binary Search
 let iterativeFunction = function (arr, x) {
-
   let start = 0 
   let end = arr.length - 1;
 
@@ -106,7 +101,7 @@ let iterativeFunction = function (arr, x) {
 
       // Find the mid index
       let mid = Math.floor((start + end) / 2);
-      // console.log("mid", mid)
+      console.log("mid", mid)
 
       // If element is present at mid, return True
       if (arr[mid] === x) return true;
@@ -127,18 +122,10 @@ let x = 8;
 // else console.log("Element not found!");
 
 
-
-
-// 9. find binary no 
-let newarr=[5,1,3,2,6];
-let output=newarr.map((item)=> item.toString(2))
-// console.log("output", output)
-
-
 let string =["aijaj", "aijaj", "aman", "yogi", "satyam"]
 // let number = [11, 12,12, 10, 15, 11, 14, 13, 16];
 
-// charactor count
+//5 charactor count
 function CharactorCount(string){
   let newobj={}
   for (var word of string){
@@ -146,11 +133,11 @@ function CharactorCount(string){
   }
   console.log("newobj_string", newobj)
 }
-CharactorCount(string)
+// CharactorCount(string)
 
 
 
-//10 find each count:-
+// find each count:-
 const users=[
   { firstname: "aijaj", lastname: "khan", age: 25 },
   { firstname: "akshay", lastname: "kumar", age: 45 },
@@ -171,7 +158,7 @@ const users=[
 // console.log("output2", output2)
 
 
-11  //prime number in js
+ //6 prime number in js
  function isPrime(n) {
     // Corner case
     if (n <= 1)
@@ -187,7 +174,7 @@ const users=[
     return true;
 }
 // Driver Code
-isPrime(19)
+// isPrime(19)
 
 
 
@@ -212,13 +199,11 @@ for(var i = 1; i <= N; i++){
 
 
 
-// 12 anagram
+// 7 anagram
 function isAnagram(str1, str2){
-
   if(str1.length!== str2.length){
       return false
   }
-
   let newObj={}
   for (var char of str1){
       newObj[char]=(newObj[char] || 0) +1
@@ -233,12 +218,11 @@ function isAnagram(str1, str2){
   }
   return true
 }
-
 // let checked= isAnagram("aijaj", "ajaji")
 // console.log("checked", checked)
 
 
-//13 recursion using without loop   total= 5*4*3*2*1
+//8 recursion using without loop   total= 5*4*3*2*1
 let total=1;
 function factorial(number){
   total*= number
@@ -248,11 +232,11 @@ function factorial(number){
       console.log("total", total)
   }
 }
-factorial(4)
+// factorial(4)
 
 
 
-15  // Function to check Palindrome
+//9 Function to check Palindrome
 function checkPalindrome(n){
     let reverse = 0;
     let temp = n;
@@ -272,7 +256,7 @@ let n2 = 7007;
 // }
 
 
-// 16. string palindrom
+//  string palindrom
 function palindromString(string){
   let start=0
   let end=string.length-1
@@ -286,63 +270,73 @@ function palindromString(string){
   }
   return result
 }
-
 let strings="level"
-console.log(palindromString(strings))
+// console.log(palindromString(strings))
 
 
 
-// // 5 4 3 2 1
-// // 5 4 3 2
-// // 5 4 3
-// // 5 4 
-// // 5
-
-
-
-let k=0;
-for (var i=5; i>k; i--){
-    let partern=""
-    for (var j=i; j>k;  j--){
-        partern+= j + " "
-    }
-    k+=1
-    i+=1
-    console.log(partern)
+//10 each word first capital letter 
+const str = 'sachin is the good batsman';
+let arr3=str.split(" ")
+console.log("arr", arr3)
+let newstring=[]
+for (let i=0; i< arr3.length; i++){
+    // console.log("arr3[i]", arr3[i])
+    const str2 = arr3[i].charAt(0).toUpperCase() + arr3[i].slice(1);
+    newstring.push(str2)
 }
+console.log("newstring", newstring)
 
 
 
-//doubt
-// const str = 'sachin is the good batsman';
-// let arr=str.split(" ")
-// // console.log("arr", arr)
-// let main=[]
-// for (let i=0; i< arr.length; i++){
-//     console.log(arr[i])
-//     for (let j=0; j<arr[i].length; j++){
-//           console.log(arr[i][0].toUpperCase())
-          
-//           break
-//     }
+
+// 11  //fibonacci serie
+function fibonacci(n){
+  let previous=0;
+  let current=1;       
+  let sum=0;
+  let fibonacciSeries=[0,1];
+  for (var i=2; i<=n; i++){
+    previous=current
+    current=sum
+    sum=previous+ current
+    fibonacciSeries.push(sum)
+  }
+  console.log("fibonacciSeries", fibonacciSeries)
+}
+// fibonacci(10)
+
+
+
+//first n fibonacci series
+function generateFibonacciSeries(n) {
+  var fibonacciSeries = [0, 1];
+  for (var i = 2; i < n; i++) {
+    var nextNumber = fibonacciSeries[i - 1] + fibonacciSeries[i - 2];  //formulla fn= (fn-1) + (fn-2)
+    fibonacciSeries.push(nextNumber);
+  }
+  console.log("fibonacciSeries", fibonacciSeries) ;
+}
+var result = generateFibonacciSeries(10);
+console.log(result);
+
+
+
+// 12. find binary no 
+let newarr=[5,1,3,2,6];
+let output=newarr.map((item)=> item.toString(2))
+// console.log("output", output)
+
+
+const object1 = {
+  a: 'somestring',
+  b: 42,
+};
+
+//13 object iteration
+// for (const [key, value] of Object.entries(object1)) {
+//   console.log(`${key}: ${value}`);
 // }
-
-
-
-
-//14  //fibonacci series
-//  function  fib(n){
-//      /* Declare an array to store Fibonacci numbers. */
-//      let f = new Array(n+2); // 1 extra to handle case, n = 0
-//      let i;
-//      /* 0th and 1st number of the series are 0 and 1*/
-//      f[0] = 0;
-//      f[1] = 1;
-//      for (i = 2; i <= n; i++){
-//          /* Add the previous 2 numbers in the series and store it */
-//          f[i] = f[i-1] + f[i-2];
-//      }
-//      return f[n];
-//  }
-//  let n=9;
-//  console.log(fib(n));
+// Expected output:
+// "a: somestring"
+// "b: 42"

@@ -29,13 +29,6 @@ We will make JavaScript interact with the Webpage, Technically that is called
 DOM manipulation
 
 
-undefined vs null 
-Undefined is the default value of something which has never been assign
-
-null:-
-Null is quite similar to undefined but it is not a default value of anything, you can
-
-
 Scope Concepts
  Scoping: So scoping controls how our program's variables are organized and
 accessed by the JavaScript engine.
@@ -141,7 +134,6 @@ Promise.all is a promise that takes an array of promises as an input (an iterabl
 Promise.all([Promise1, Promise2, Promise3]) .then(result) => {   console.log(result) }) .catch(error => console.log(`Error in promises ${error}`))
 Note: Remember that the order of the promises(output the result) is maintained as per input order.
 
-arrow_up Back to Top
 
 What is the purpose of the race method in promise
 Promise.race() method will return the promise instance which is firstly resolved or rejected. Let's take an example of race() method where promise2 is resolved first
@@ -409,10 +401,8 @@ As per the above code, the inner function(i.e, greetingInfo) has access to the v
 
 What is a first class function
 In Javascript, functions are first class objects. First-class functions means when functions in that language are treated like any other variable.
-
 For example, in such a language, a function can be passed as an argument to other functions, can be returned by 
 another function and can be assigned as a value to a variable. 
-For example, in the below example, handler functions assigned to a listener
 
 const handler = () => console.log("This is a click handler function");
 document.addEventListener("click", handler);
@@ -439,12 +429,12 @@ higherOrder(firstOrderFunc);
 What is a pure function
 A Pure function is a function where the return value is only determined by its arguments without any side effects. i.e, 
 If you call a function with the same arguments 'n' number of times and 'n' number of places in the application then it will always return the same value.
-
 Let's take an example to see the difference between pure and impure functions,
 
 //Impure
 let numberArray = [];
 const impureAddNumber = (number) => numberArray.push(number);
+
 //Pure
 const pureAddNumber = (number) => (argNumberArray) =>
   argNumberArray.concat([number]);
@@ -468,11 +458,27 @@ Easy to read and debug	                Difficult to read and debug because they 
 
 
 What are the differences between undeclared and undefined variables
-Below are the major differences between undeclared(not defined) and undefined variables,
-
 undeclared	undefined
-These variables do not exist in a program and are not declared	These variables declared in the program but have not assigned any value
-If you try to read the value of an undeclared variable, then a runtime error is encountered	If you try to read the value of an undefined variable, an undefined value is returned.
+These variables do not exist in a program and are not declared	
+If you try to read the value of an undeclared variable, then a runtime error is encountered	
+These variables declared in the program but have not assigned any value
+If you try to read the value of an undefined variable, an undefined value is returned.
+
+
+undefined vs null 
+Undefined is the default value of something which has never been assign
+
+null:-
+Null is quite similar to undefined but it is not a default value of anything, you can
+
+
+What is the difference between null and undefined
+Null	Undefined
+It is an assignment value which indicates that variable points to no object.	It is not an assignment value where a variable has been declared but has not yet been assigned a value.
+Type of null is object	Type of undefined is undefined
+The null value is a primitive value that represents the null, empty, or non-existent reference.	The undefined value is a primitive value used when a variable has not been assigned a value.
+Indicates the absence of a value for a variable	Indicates absence of variable itself
+Converted to zero (0) while performing primitive operations	Converted to NaN while performing primitive operations
 
 
 
@@ -508,7 +514,8 @@ function myFunction() {
 
 
 What is Hoisting
-Hoisting is a JavaScript mechanism where variables, function declarations and classes are moved to the top of their scope before code execution. Remember that JavaScript only hoists declarations, not initialisation. Let's take a simple example of variable hoisting,
+Hoisting is a JavaScript mechanism where variables, function declarations and classes are moved to the top of their scope before code execution. 
+Remember that JavaScript only hoists declarations, not initialisation. Let's take a simple example of variable hoisting,
 
 console.log(message); //output : undefined
 var message = "The variable Has been hoisted";
@@ -554,7 +561,8 @@ IIFE (Immediately Invoked Function Expression) is a JavaScript function that run
 (function () {
   // logic here
 })();
-The primary reason to use an IIFE is to obtain data privacy because any variables declared within the IIFE cannot be accessed by the outside world. i.e, If you try to access variables with IIFE then it throws an error as below,
+The primary reason to use an IIFE is to obtain data privacy because any variables declared within the IIFE cannot be accessed by the outside world. 
+i.e, If you try to access variables with IIFE then it throws an error as below,
 
 (function () {
   var message = "IIFE";
@@ -612,19 +620,6 @@ Maximum data size	4KB	5 MB	5MB
 
 What is a service worker
 A Service worker is basically a script (JavaScript file) that runs in the background, separate from a web page and provides features that don't need a web page or user interaction. Some of the major features of service workers are Rich offline experiences(offline first web application development), periodic background syncs, push notifications, intercept and handle network requests and programmatically managing a cache of responses.
-
-
-
-What is the difference between null and undefined
-Below are the main differences between null and undefined,
-
-Null	Undefined
-It is an assignment value which indicates that variable points to no object.	It is not an assignment value where a variable has been declared but has not yet been assigned a value.
-Type of null is object	Type of undefined is undefined
-The null value is a primitive value that represents the null, empty, or non-existent reference.	The undefined value is a primitive value used when a variable has not been assigned a value.
-Indicates the absence of a value for a variable	Indicates absence of variable itself
-Converted to zero (0) while performing primitive operations	Converted to NaN while performing primitive operations
-
 
 
 What is the use of preventDefault method
@@ -693,7 +688,8 @@ console.log(employeeObject.name); // John
 What is the difference between Shallow and Deep copy
 There are two ways to copy an object,
 
-Shallow Copy: Shallow copy is a bitwise copy of an object. A new object is created that has an exact copy of the values in the original object. If any of the fields of the object are references to other objects, just the reference addresses are copied i.e., only the memory address is copied.
+Shallow Copy: Shallow copy is a bitwise copy of an object. A new object is created that has an exact copy of the values in the original object. If any of the fields of the object are references to other objects, 
+just the reference addresses are copied i.e., only the memory address is copied.
 
 Example
 

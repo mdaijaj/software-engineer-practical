@@ -13,14 +13,13 @@ What is a first order function
 High order function?
 pure function
 advantage of JavaScript
-3.  What is an undefined and undeclared variable? 
+3.  What is an undefined and undeclared variable and NaN?
 24. What is DOM? What is the use of a document object?
 31. What is the 'Strict' mode in JavaScript and how can it be enabled
 33. What is hoisting? 	
 What is IIFE(Immediately Invoked Function Expression)
 What is scope in javascript
 cookies token   What is a cookie ,need a Cookie , the options in a cookie, delete a cookie?
-undefined vs null vs nan
 What is the use of preventDefault method?  stop redirect page or reload
 What is an anonymous function
 What is a polyfill
@@ -29,23 +28,23 @@ What is a constructor method?
 What is the difference between Shallow and Deep copy
 ecma script
 == and === operators
-What are lambda or arrow functions?
 arrow vs regular function
 What is memoization?
-What is web storage?
-What is the use of stopPropagation method?
 What is the use of setTimeout and setInterval
-What is the purpose of clearTimeout method and clearInterval method?
-What are regular expression patterns
+What are regular expression patterns || What is a RegExp object
 array function method ?
 slice vs splice  array method
 map, foreach, filter, reduce
-What is a RegExp object
-Whatare the tools or techniques used for debugging JavaScript code
-es6 with class 14 example
+
+What are the differences between cookie, local storage and session storage?
+session base authenticaton and cookie base authenticaton
+What are lambda or arrow functions?
+What is web storage?
+What is the use of stopPropagation method?
+What is the purpose of clearTimeout method and clearInterval method?
 How do you manipulate DOM using a service worker
 What is a service worker session?
-What are the differences between cookie, local storage and session storage?
+es6 with class 14 example
 
 
 // es6
@@ -70,17 +69,7 @@ What are the differences between cookie, local storage and session storage?
 //3 hoisting
 //4 oops constructure
 //5 prototype concept
-//6 inheritance in js
 //7 binding this keybard
 //8 closers scope
 //9 iife immediately invonked fucntion expression
-//10 module patern
 //11 currying
-
-
-
-//practical
-What is the Temporal Dead Zone
-What are the differences between cookie, local storage and session storage
-What is a service worker session
-session base authenticaton and cookie base authenticaton

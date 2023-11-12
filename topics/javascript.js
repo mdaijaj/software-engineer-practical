@@ -10,18 +10,33 @@ const myPromise = new Promise((resolve, reject) => {
     }, 2000);
   });
 
-myPromise.then((result) => {
-    console.log("Promise fulfilled:", result);
-})
-.catch((error) => {
-    console.error("Promise rejected:", error.message);
-});
+// myPromise.then((result) => {
+//     console.log("Promise fulfilled:", result);
+// })
+// .catch((error) => {
+//     console.error("Promise rejected:", error.message);
+// });
 
-// Promise.all   method is settled with only resolved promises,so if any promise reutrns error then it won't work
-// Promise.allSettled  wait for all promise and return all promise where it setle resolve or rejected.
-// Promise.any  any and race same which ass soon as resolve
-// Promise.race 
-// Promise.resolve 
+
+// //with Async/Await: used
+// async function asyncFunction() {
+//     try {
+//       const result = await myPromise;
+//       console.log(result);
+//     } catch (error) {
+//       console.error(error);
+//     }
+//   }
+//   asyncFunction();
+
+
+  
+
+// Promise.all        :- method is settled with only resolved promises,so if any promise reutrns error then it won't work
+// Promise.allSettled :- it is used for handling an array of promises and waiting for all of them to settle (resolve or reject).
+// Promise.any        :-any and race same which ass soon as resolve
+// Promise.race       :-is used to race multiple promises and return the value of the first promise (either resolved or rejected) to complete
+// Promise.resolve    
 // Promise.reject
 
 
@@ -292,7 +307,7 @@ function Person(firstName, lastName) {
 var student1 = {
     name: "aijaj",
     displayName(country, state) {                                        //repeating code
-           console.log(`my name is ${this.name}  and my country  ${country} ${state}`)
+        console.log(`my name is ${this.name}  and my country  ${country} ${state}`)
     }
 }
 
@@ -385,50 +400,6 @@ let userInf = printFullname.bind(name2, "bhagalpur", "bihar")
 
 
 
-const multiArgFunction = (a, b, c) => a + b + c;
-console.log(multiArgFunction(1, 2, 3)); // 6
-
-
-
-//Impure
-let numberArray = [];
-// const impureAddNumber = (number) => numberArray.push(number);
-// console.log("pure", impureAddNumber(6)); // returns 1
-// console.log("pure", impureAddNumber(6)); // returns 1
-// console.log("numberArray", numberArray); // returns [6]
-
-
-
-//pure function not side effect to other function
-// const pureAddNumber = (number) => (argNumberArray) => argNumberArray.concat([number]);
-// console.log("pureAddNumber", pureAddNumber(7)(numberArray)); // returns [6, 7]
-// console.log("pureAddNumber", pureAddNumber(7)(numberArray)); // returns [6, 7]
-// console.log("numberArray", numberArray); // returns [6]
-// console.log("aijaj",eval("1+3"));
-
-
-//impure function
-// let x=45;  
-// function add(){
-//   console.log("x", x++)
-// }
-
-
-// //pure function
-// function add(x){
-//   console.log("x", x+1)
-//   return x+1
-// }
-
-// add(8)
-// add(8)
-// add(8)
-// add(8)
-
-
-
-
-
 // let p1= new Promise((resolve, rejected)=>{
 //     resolve("a")
 // })
@@ -508,6 +479,7 @@ var student2 = {
 
 
 
+
 //clouser    
 //clouser is function along with its lexical enviroment bind that is call clouser
 function init() {
@@ -522,7 +494,7 @@ let c= init();
 console.log("c", c())
 
 
-// // curry  same clousers example different code write way
+// // curry  same clousers example different code write way on single line multiple arguments
 // function Addition1(a){
 //     return function(b){
 //         return function(c){
@@ -538,24 +510,56 @@ console.log("c", c())
 // console.log("res", res)
 
 
-// (function() {
-//   var a = b = 5;
-// })();
 
-// console.log(b);
+// What is a first class function
+// In Javascript, functions are first class objects. First-class functions means when functions in that language are treated like any other variable.
+// For example, in such a language, a function can be passed as an argument to other functions, can be returned by 
+// another function and can be assigned as a value to a variable. 
 
-let racer1 = function() {
-  setTimeout(() => console.log("timeout"), 0);
-  setImmediate(() => console.log("immediate"));
-  process.nextTick(() => console.log("nextTick"));
-}
-racer1();
+const handler = () => console.log("This is a click handler function");
+// handler()
 
-// $ node test.js
+// What is a first order function
+// First-order function is a function that doesn’t accept another function as an argument and doesn’t return a function as its return value.
 
-// db dbhhqqkoqxu0kt
-// user uwhuy22ib86wq
-// psw s9jzubgbu7xa
+const firstOrder = () => console.log("I am a first order function!");
+// firstOrder()
+
+
+
+// What is a higher order function
+// Higher-order function is a function that accepts another function as an argument or returns a function as a return value or both.
+const firstOrderFunc = () =>
+    console.log("Hello, I am a high order function");
+const higherOrder = (ReturnFirstOrderFunc) => ReturnFirstOrderFunc();
+higherOrder(firstOrderFunc);
+
+
+
+
+
+// What is a pure function
+// A Pure function is a function where the return value is only determined by its arguments without any side effects. i.e, 
+// If you call a function with the same arguments 'n' number of times and 'n' number of places in the application then it will always return the same value.
+// Let's take an example to see the difference between pure and impure functions,
+
+//Impure
+let numberArray = [];
+const impureAddNumber = (number) => numberArray.push(number);
+
+//Pure
+const pureAddNumber = (number) => (argNumberArray) =>
+  argNumberArray.concat([number]);
+
+//Display the results
+console.log(impureAddNumber(6)); // returns 1
+console.log(numberArray); // returns [6]
+console.log(pureAddNumber(7)(numberArray)); // returns [6, 7]
+console.log(numberArray); // returns [6]
+
+
+
+
 
 //es6 let var
 x=12
@@ -604,3 +608,9 @@ let scooty=["jupitor", "honda", "hero"]
 // var x,j,k;
 // j=k=6; x=2; x==j*k; 
 // console.log("khan", x); z
+
+
+// (function() {
+//   var a = b = 5;
+// })();
+// console.log(b);

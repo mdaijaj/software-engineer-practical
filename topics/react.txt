@@ -43,6 +43,7 @@ componentDidUnmount=()=>{
 }
 
 
+
 function base component life cycle method:-
 //componentDidMount phase
 useEffect(()=>{
@@ -65,25 +66,12 @@ useEffect((number)=>{
 }, [number]);
 
 
-useMemo:-
-1 well application performance from cache
-2 result ko cache me store kar raha hai next time wo caches se utha lega
-3 unwantage function call not use event call so use memo
-memoized value
+cleanup function
 
-useCallback
-function store in cache same useMemo funcionality in funcion
-memoized function
-
-application well performance 
-unwantage function call ko rokne ke liye
-unnessessary funcion call ko rokne ke liye
 
 
 
 2 hoc(hight order component)
-
-
 when component pas as a props input component and return output component that is call hoc
 when component pass as argument of funcion return inside function thats call hoc
 a hoc is a advanced technique in React for reusing component logic.
@@ -111,7 +99,7 @@ export default subjects;
 two type of hooks
 1 inbuild hooks
   Basic
-  adddtion
+  adddtional
 
   Basic Hooks
       useState() state management within particular component 
@@ -119,48 +107,57 @@ two type of hooks
       useEffect() life cycle method
 
   Additional Hooks:-
-      useRef():-
-      useReducer():- 
-      useCallback()  :-
-      useMemo():-
+      useRef()      :- blur color   
+      useReducer()  :- using redux thunk
+      useCallback() :- memoize the function
+      useMemo()     :- memoize the value
+      useLayoutEffect():- 
 
 2. customHooks
-    useCallback():-
-    memoize the function
-    code optimization handle  performance manage stop loop or rerendor 
-    optimization component reredering
-    refrential equality of function
 
 
-    useMemo():-
-    memoize the function value
-      code optimization handle
-    optimization component reredering
+
+useCallback
+function store in cache same useMemo funcionality in funcion
+memoized function
+memoize the function
+code optimization handle  performance manage stop loop or rerendor 
+optimization component reredering
+refrential equality of function
+application well performance 
+unwantage function call ko rokne ke liye
+unnessessary funcion call ko rokne ke liye
+
+
+useMemo():-
+1 well application performance from cache
+2 result ko cache me store kar raha hai next time wo caches se utha lega
+3 unwantage function call not use event call so use memo
+  memoize the function value
+  code optimization handle
+  optimization component reredering
   refrential equality of function
 
 
-  useContext:-
+useContext:-
   data pass multiple level grandparent to child
   instead of redux for data pass
   component a pass to component b pass component c;
   prop drilling se bachne ke lite useContext() use karte hai
 
 
-  useReducer:-
+useReducer:-
   state management
   and use redux
   action with dispatch
 
  
 useRef:- when click then highlight color
-rerender do't lost state object 
-access dom property or funcion
-rerender component stop unwantage reredering
-
-
-style color focus value etc handle using hooks
-it like a useState only and its preserve the value. No rerender
-it like a useState only and its preserve the value. No rerender
+  rerender do't lost state object 
+  access dom property or funcion
+  rerender component stop unwantage reredering
+  style color focus value etc handle using hooks
+  it like a useState only and its preserve the value. No rerender
 
 function CustomTextInput(props) {
   // textInput must be declared here so the ref can refer to it

@@ -79,25 +79,25 @@
 // Output: [4,6,9,11,13,16]
 
 
-let arr=[5,3,8,10,14,5,7,15,17,12]
+// let arr=[5,3,8,10,14,5,7,15,17,12]
 
-let arr2=[];
+// let arr2=[];
 
-let sorting=arr.sort((a, b)=>{
-    if(a>b) return 1
-    return -1
-})
-let smallest= sorting[0]
-let greatest= sorting[sorting.length-1]
-console.log("smallest", sorting)
+// let sorting=arr.sort((a, b)=>{
+//     if(a>b) return 1
+//     return -1
+// })
+// let smallest= sorting[0]
+// let greatest= sorting[sorting.length-1]
+// console.log("smallest", sorting)
 
-// console.log("smallest", smallest)
-// console.log("greatest", greatest)
+// // console.log("smallest", smallest)
+// // console.log("greatest", greatest)
 
 
-for (let i=smallest; i<greatest; i++){
-    if(!arr.includes(i)){
-        arr2.push(i)
-    }
-}
-console.log("arr2", arr2)
+// for (let i=smallest; i<greatest; i++){
+//     if(!arr.includes(i)){
+//         arr2.push(i)
+//     }
+// }
+// console.log("arr2", arr2)

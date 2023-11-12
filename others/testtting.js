@@ -89,16 +89,45 @@
 // // 405 pankha road
 
 
-const myPromise= new Promise((resolve, reject)=>{
-    // console.log("aijaj", Math.random() * 99).trunc()
-    let data = Math.random() * 99
-    let result=Math.trunc(data)
-    console.log("result", result)
+// const myPromise= new Promise((resolve, reject)=>{
+//     // console.log("aijaj", Math.random() * 99).trunc()
+//     let data = Math.random() * 99
+//     let result=Math.trunc(data)
+//     console.log("result", result)
  
-    if(result){
-        resolve("ya i am done")
-    }
-    reject(new Error("it may be failed any time.."))
- })
+//     if(result){
+//         resolve("ya i am done")
+//     }
+//     reject(new Error("it may be failed any time.."))
+//  })
 
+
+// const animal = {
+//     type: 'Unknown',
+//     speak() {
+//       console.log(`The ${this.type} makes a sound.`);
+//     }
+//   };
+  
+//   const cat = {
+//     type: 'Cat'
+//   };
+  
+//   cat.__proto__ = animal;
+  
+//   cat.speak(); // "The Cat makes a sound."
+
+function Animal(type) {
+    this.type = type;
+  }
+  
+  Animal.prototype.speak = function () {
+    console.log(`The ${this.type} makes a sound.`);
+  };
+  
+  const cat = new Animal('Cat');
+  
+  cat.speak(); // "The Cat makes a sound."
+  
+  
 
