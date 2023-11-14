@@ -5,7 +5,6 @@ What Are The Key Features Of NodeJs?
 event loop?  How does Node.js work?
 core module ?
 What are streams in Nodejs Explain the different types of streams present in Nodejs What is Piping in Node?
-
 new promise practical
 how to handle multile req if nodejs single thread?  how to handle multile user reqeust Handle
 fork Differentiate between spawn and fork methods in Nodejs?   15. Differentiate between spawn and fork methods in Nodejs?
@@ -47,3 +46,13 @@ thread pool type How does Nodejs handle the child threads? how many type of thre
 17 What are different authentication methods?
 18 What are disadvantages of using session based authentication?
 19 What are disadvantages of using jwt based authentication?
+
+
+
+problem solve question
+soring
+prime number
+binary search
+find second largest number
+sorted value unique value
+fibonasis value

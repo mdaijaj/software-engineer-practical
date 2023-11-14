@@ -1,17 +1,3 @@
-practical knowledge
-
-
-important question
-soring
-prime number
-binary search
-find second largest number
-sorted value unique value
-fibonasis value
-
-
-
-
 answer:-
 1. What Are The Key Features Of NodeJs?
 Asynchronous event driven IO helps concurrent request handling – All APIs of Node.js are asynchronous. This feature means that if a Node receives a request for some Input/Output operation, it will execute that operation in the background and continue with the processing of other requests. Thus it will not wait for the response from the previous requests.

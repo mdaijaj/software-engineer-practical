@@ -14,7 +14,6 @@ High order function?
 pure function
 advantage of JavaScript
 3.  What is an undefined and undeclared variable and NaN?
-24. What is DOM? What is the use of a document object?
 31. What is the 'Strict' mode in JavaScript and how can it be enabled
 33. What is hoisting? 	
 What is IIFE(Immediately Invoked Function Expression)
@@ -35,7 +34,6 @@ What are regular expression patterns || What is a RegExp object
 array function method ?
 slice vs splice  array method
 map, foreach, filter, reduce
-
 What are the differences between cookie, local storage and session storage?
 session base authenticaton and cookie base authenticaton
 What are lambda or arrow functions?
@@ -71,5 +69,22 @@ es6 with class 14 example
 //5 prototype concept
 //7 binding this keybard
 //8 closers scope
-//9 iife immediately invonked fucntion expression
 //11 currying
+
+
+doubt
+cookies token   What is a cookie ,need a Cookie , the options in a cookie, delete a cookie?
+session base authenticaton and cookie base authenticaton
+what is class object oops method?
+What are lambda or arrow functions?
+What is web storage?
+What is the use of stopPropagation method?
+What is the purpose of clearTimeout method and clearInterval method?
+What is a service worker session?
+class
+object
+inheritance
+encapsulate
+other
+
+

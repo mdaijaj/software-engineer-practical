@@ -71,7 +71,7 @@ cleanup function
 
 
 
-2 hoc(hight order component)
+2 hoc(higher order component)
 when component pas as a props input component and return output component that is call hoc
 when component pass as argument of funcion return inside function thats call hoc
 a hoc is a advanced technique in React for reusing component logic.
@@ -95,6 +95,15 @@ const subjects= (STUDENT)=>{ //component name as arg
 
 export default subjects;
 
+
+7 hooks:-
+useState
+useEffect
+useRef  //read deep
+useContext
+useReducer
+useMemo
+useCallback
 
 two type of hooks
 1 inbuild hooks
@@ -222,8 +231,8 @@ state:-
 state varible use manage state or updating state
 
 
-jxs:-
-its all html in component inside html in js used thats called jxs(html js ka mukut)
+jsx:-
+its all html in component inside html in js used thats called jsx(html js ka mukut)
 
 
 conditional rendering:-
@@ -343,3 +352,28 @@ useEffect(()=>{
 
 
 useReducer useMemo useCallback Remaining
+
+
+shadow dom :=
+main dom ke ander hidden dom hota hai bahar wale dom ka style design ka impact nhi aata hai use hi
+shodow dom kahte hai.
+why?
+if class match then overwrite
+
+
+fetch vs axios:-
+fetch:-
+json.stringfy()
+fetch me two parameter(url, option)
+after response convert to json.stringfy()
+body: me json.stringfy()  data pass hota hai
+
+axios:-
+only one parameter(option)
+data: normal object;
+response status.code we can error handle click easily.
+
+
+
+
+

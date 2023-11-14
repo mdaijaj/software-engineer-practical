@@ -614,3 +614,27 @@ let scooty=["jupitor", "honda", "hero"]
 //   var a = b = 5;
 // })();
 // console.log(b);
+
+
+
+// arrow function vs normally functional
+
+// arrow function:-
+// not a argument
+// not make constructor
+// not take self own this keyboard
+// we can use single line
+
+
+function add(a,b){
+    console.log("arguments", arguments)
+    return a+b;
+}
+add(7,5)
+
+
+// const add=(a, b)=>{
+//     console.log("arguments", arguments)
+//     return a+b;
+// }
+// add(7,5)

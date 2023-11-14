@@ -104,3 +104,21 @@ Sharding is a data distribution process and stores a single data set into multip
 Vertical adding more resourses as on demand
 Horizontal adding more processing or physical machine
 
+
+
+IN Operator
+SELECT * FROM Customers
+WHERE Country IN ('Germany', 'France', 'UK');
+
+The SQL BETWEEN Operator
+SELECT * FROM Products
+WHERE Price BETWEEN 10 AND 20;
+
+The SQL COUNT(), AVG() and SUM() Functions
+
+
+SQL HAVING Examples
+SELECT COUNT(CustomerID), Country
+FROM Customers
+GROUP BY Country
+HAVING COUNT(CustomerID) > 5;

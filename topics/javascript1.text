@@ -723,3 +723,36 @@ var empDetailsDeepCopy = {
   expertise: empDetails.expertise,
 };
 Now if you change empDetailsDeepCopy.name, it will only affect empDetailsDeepCopy & not empDetails
+
+
+
+map: return new array, 
+foreach same job but return undefined, 
+filter: selected subset multiple element from an array, 
+
+//reduce:-
+the reduce() method is an array method used to reduce an array to a single value. 
+It applies a provided function to each element of the array (from left to right) to reduce it to a single value. 
+The reduce() method takes a callback function as its argument, and this function is applied to each element of the array.
+
+syntax:-
+array.reduce(callback, initialValue);
+
+callback: A function to execute on each element in the array. The function takes four arguments: accumulator, currentValue, currentIndex, and array.
+accumulator: The accumulated result of the callback's previous invocations, or the initial value if provided.
+currentValue: The current element being processed in the array.
+currentIndex: The index of the current element being processed.
+array: The array on which reduce was called.
+
+const numbers = [1, 2, 3, 4, 5];
+const sum = numbers.reduce((accumulator, currentValue) => {
+  return accumulator + currentValue;
+}, 0);
+
+console.log(sum); // Output: 15
+
+
+
+
+
+
