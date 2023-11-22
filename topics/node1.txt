@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 practical knowledge
 
 
@@ -12,6 +13,8 @@ fibonasis value
 
 
 
+=======
+>>>>>>> c876da96af5d30965b7ec1509c47fd7c7723296e
 answer:-
 1. What Are The Key Features Of NodeJs?
 Asynchronous event driven IO helps concurrent request handling – All APIs of Node.js are asynchronous. This feature means that if a Node receives a request for some Input/Output operation, it will execute that operation in the background and continue with the processing of other requests. Thus it will not wait for the response from the previous requests.
@@ -23,10 +26,18 @@ No Buffering – Node.js applications never buffer any data. They simply output 
 
 
 
+<<<<<<< HEAD
 event driven architecture  (mouseEvent)   
 event EventEmitter  
 event listener 
 event handlers
+=======
+event driven (mouseEvent)
+event emit
+event handlers
+event listener
+
+>>>>>>> c876da96af5d30965b7ec1509c47fd7c7723296e
 
 setTimeout
 setInterver
@@ -35,7 +46,7 @@ setimmediate
 
 
 
-2.event loop?  How does Node.js work?
+2.event loop?  How does Node.js work? its a part of libuv
 A Node.js application creates a single thread on its invocation. Whenever Node.js receives a request, it first completes its processing before moving on to the next request.
 
 Node.js works asynchronously by using the event loop and callback functions, to handle multiple requests coming in parallel. An Event Loop is a functionality which handles and processes all your external events and just converts them to a callback function. It invokes all the event handlers at a proper time. Thus, lots of work is done on the back-end, while processing a single request, so that the new incoming request doesn't have to wait if the processing is not complete.
@@ -203,13 +214,14 @@ There are lots of ways to solve the issue of callback hells:
 1.modularization: break callbacks into independent functions,
 2.use a control flow library, like async.
 3.use generators with Promises,
-4.use async/await (note that it is only available in the latest v7 release and not in the LTS version
+4.use async/await note that it is only available in the latest v7 release and not in the LTS version
 
 
 
 
 7 What Is EventEmitter In NodeJs?
-Events module in Node.js allows us to create and handle custom events. The Event module contains “EventEmitter” class which can be used to raise and handle custom events. It is accessible via the following code.
+Events module in Node.js allows us to create and handle custom events. The Event module contains “EventEmitter” class which can be used to raise and handle custom events. 
+It is accessible via the following code.
 
 // Import events module
 var events = require('events');
@@ -217,7 +229,8 @@ var events = require('events');
 // Create an eventEmitter object
 var eventEmitter = new events.EventEmitter();
 
-8 When an EventEmitter instance encounters an error, it emits an “error” event. When a new listener gets added, it fires a “newListener” event and when a listener gets removed, it fires a “removeListener” event.
+8 When an EventEmitter instance encounters an error, it emits an “error” event. 
+When a new listener gets added, it fires a “newListener” event and when a listener gets removed, it fires a “removeListener” event.
 EventEmitter provides multiple properties like “on” and “emit”. The “on” property is used to bind a function to the event and “emit” is used to fire an event. .
 
 
@@ -449,3 +462,8 @@ firefox  spiderman
 
 // let newdata= newFun()
 // console.log("newdata", newdata)
+
+
+
+
+micro services

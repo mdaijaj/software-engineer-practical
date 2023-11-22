@@ -714,22 +714,22 @@ console.log("curry", resp("address"))
 
 
 
-// //promise
-// let myPromise1 = new Promise((resolve, reject)=>{
-//   let carName= "audi";
-//   if(carName=="audi"){
-//     resolve('successfully');
-//   }
-//   else{
-//     reject('rejected');
-//   }
-// })
-// myPromise1.then((msg) => {
-//   console.log("then block -->", msg)
-// })
-// .catch((msg) =>{
-//   console.log("catch block -->", msg)
-// });
+//promise
+let myPromise1 = new Promise((resolve, reject)=>{
+  let carName= "audi";
+  if(carName=="audi"){
+    resolve('successfully');
+  }
+  else{
+    reject('rejected');
+  }
+})
+myPromise1.then((msg) => {
+  console.log("then block -->", msg)
+})
+.catch((msg) =>{
+  console.log("catch block -->", msg)
+});
 
 
 

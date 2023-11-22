@@ -1,0 +1,164 @@
+
+Euclid's algorithm
+
+1. Divide a=1071 by b=462 and store the remainder in r.
+r= 1071 % 462 (here, % represents the remainder operator) 
+
+Its Properties r = 147
+2. If r = 0, the algorithm terminates and b is the GCD. Otherwise, go to Step 3.
+Here, r is not zero, so we will go to Step 3.
+3. The integer will get the current value of integer b and the new value of integer b will be the current value of r.
+Here, a=462 and b=147
+4. Go back to Step 1. 
+
+
+
+Algorithm GCD-Euclid (a, b)
+begin [start of Algorithm]
+{
+while b ≠ 0 do
+{
+r ← a mod b;
+ a ←b;
+b← r;
+} [end of while loop]
+return (b)
+} [end of algorithm]
+
+
+
+
+Algorithm GCD-Euclid (a, b)
+Step1: begin [start of Algorithm]
+Step2: {
+Step3: while b ≠ 0 do
+Step4: {
+Step5: r ← a mod b;
+Step6: a ←b;
+Step7: b← r;
+Step8: } [end of while loop]
+Step9: return (b)
+Step10: } [end of algorithm]
+In above algorithm Step5, Step6 and Step7 are example of sequencing, as these
+statements are always executed in sequence as written the text.
+Step3 is selection step as it decides which next step is to be executed among
+Step4 and Step9 according to the condition of the loop.
+Step3 is also acts as iteration or the looping statements. Based on the while
+loop condition, the Step4 to Step8 are executed in repeatedly manner. 
+
+
+
+1.5 ANALYSIS & COMPLEXITY OF ALGORITHM 
+
+
+TYPES OF PROBLEMS 
+
+Sorting
+ Searching
+ Graph problems
+ Combinatorial problems
+ Geometric problems
+ Numerical problems 
+
+
+1.7 PROBLEM SOLVING TECHNIQUES 
+Divide and Conquer Approach
+Binary Search.
+     Quick Sort.
+     Merge Sort.
+     Strassen's Matrix Multiplication.
+     Closest Pair of Points. 
+
+Dynamic Programming
+Branch and Bound
+Randomized Algorithms
+Backtracking Algorithm
+
+1.8 DETERMINISTIC AND STOCHASTIC
+ALGORITHM 
+
+
+
+
+UNIT 2 ASYMPTOTIC BOUNDS 
+
+SOME USEFUL MATHEMATICAL
+FUNCTIONS & NOTATIONS 
+2.6 Asymptotic Analysis and Notations 
+2.6.1 Worst Case and Average Case Analysis 
+2.6.2 Drawbacks of Asymptotic Analysis
+2.6.3 Asymptotic Notations 
+    1. Big-O notation,
+    2. Big-Θ ( Theta) notation
+    3. Big-Ω (Omega) notation
+2.6.4 Big-O notation: Upper Bounds 
+
+
+
+UNIT 3 COMPLEXITY ANALYSIS OF SIMPLE ALGORITHMS 
+
+3.2 A BRIEF REVIEW OF ASYMPTOTIC NOTATIONS
+
+
+
+
+What is the purpose of asymptotic analysis? What are the drawbacks of
+asymptotic analysis? Explain the Big-O notation with the help of an
+example.
+
+
+Write the linear search algorithm and discuss its best case, worst case and average
+case time complexity. Show the best case, worst case and the average case of
+linear search in the following data:
+13, 15, 2, 6, 14, 10, 8, 7, 3, 5, 19, 4, 17.
+
+
+Write and explain the recursive binary search algorithm. Use this algorithm for
+searching an element in a sorted array of 7 elements.
+
+
+Explain the working of Prim’s algorithm for finding the minimum cost spanning
+tree with the help of an example. Also find the time complexity of Prim’s
+algorithm.
+
+
+Explain the working of Bellman-Ford algorithm for finding the shortest path from
+a single source to all destinations with the help of an example. Also find the time
+complexity of this algorithm.
+
+Explain backtracking; and Branch and Bound techniques with the help of an
+example each.
+
+
+b) Explain the following types of problems in Computer Science with the help of an
+example problem for each:
+i) Searching
+ii) String Processing
+iii) Geometric Problems
+iv) Numerical Problems
+
+
+c) Write the algorithm for the divide and conquer strategy for Matrix multiplication.
+Also, analyse this algorithm.
+
+
+List the functional and non-functional requirements.
+
+
+
+
+
+cyber security
+Explain the pillars of digital security. What are the pros and cons of digital security?
+What is meant by Cyber Security intrusion detection?
+What are Social Engineering attacks? What are the laws related to it?
+
+
+Explain the following terms with the help of an exampleof each.
+
+Substitution Cyphers
+Function-based Cryptography
+Symmetric key cryptography
+Data Encryption Standard
+Electronic Signatures
+Pseudorandom numbers and sequences

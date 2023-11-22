@@ -235,7 +235,6 @@ for( const item in obj){
 }
 
 console.log(typeof 3 + 4 + "5")  //number45  left to right
-
 console.log(typeof (3 + 4 + + "5"))  //number    //string ke age plus lagane par number ho jata hai
 console.log(3 + 4 + + "5")  //12
 
@@ -251,3 +250,10 @@ const person2= {name: "adil khan"}
 getInfo(person2)  //
 
 console.log(person2)
+
+
+// const arrayOfOddNumbers = [1, 3, 5];
+// arrayOfOddNumbers[100] = 199;
+// console.log(arrayOfOddNumbers.length); 200
+
+

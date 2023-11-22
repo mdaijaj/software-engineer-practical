@@ -1,11 +1,15 @@
 top 50 question which asked question?
 
+<<<<<<< HEAD
 what is nodejs?
 how is better then other language why choose nodejs for backend ??
+=======
+what is nodejs?  
+>>>>>>> c876da96af5d30965b7ec1509c47fd7c7723296e
 What Are The Key Features Of NodeJs?
 event loop?  How does Node.js work?
 core module ?
-What are streams in Nodejs Explain the different types of streams present in Nodejs
+What are streams in Nodejs Explain the different types of streams present in Nodejs What is Piping in Node?
 new promise practical
 how to handle multile req if nodejs single thread?  how to handle multile user reqeust Handle
 fork Differentiate between spawn and fork methods in Nodejs?   15. Differentiate between spawn and fork methods in Nodejs?
@@ -13,8 +17,7 @@ callback vs callback hell How can you avoid callback hells
 middleware with example
 asynchoronous vs synchoronous
 What Is EventEmitter In NodeJs
-eventloop  libuv
-Explain chaining in nodejs   
+eventloop  libuv  
 packages json vs packages.lock.json
 List down the major security implementations within Node.js
 repl example
@@ -29,8 +32,7 @@ how nodjes fast executated on code using v8
 how to handle multi thread in python practical than its better than nodejs
 API functions in Node?
 What Is A Child_process Module In NodeJs?
-What is Piping in Node?
-
+how is better then other language why choose nodejs for backend?
 
 
 //important
@@ -48,3 +50,13 @@ thread pool type How does Nodejs handle the child threads? how many type of thre
 17 What are different authentication methods?
 18 What are disadvantages of using session based authentication?
 19 What are disadvantages of using jwt based authentication?
+
+
+
+problem solve question
+soring
+prime number
+binary search
+find second largest number
+sorted value unique value
+fibonasis value

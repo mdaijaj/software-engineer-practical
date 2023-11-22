@@ -29,13 +29,6 @@ We will make JavaScript interact with the Webpage, Technically that is called
 DOM manipulation
 
 
-undefined vs null 
-Undefined is the default value of something which has never been assign
-
-null:-
-Null is quite similar to undefined but it is not a default value of anything, you can
-
-
 Scope Concepts
  Scoping: So scoping controls how our program's variables are organized and
 accessed by the JavaScript engine.
@@ -187,7 +180,6 @@ function outerFunction(callback) {
 }
 
 outerFunction(callbackFunction);
-arrow_up Back to Top
 
 Why do we need callbacks
 The callbacks are needed because javascript is an event driven language. That means instead of waiting for a response javascript will keep executing while listening for other events. Let's take an example with the first function invoking an API call(simulated by setTimeout) and the next function which logs the message.
@@ -359,7 +351,6 @@ Enhanced Object Literals
 Promises
 Classes
 Modules
-arrow_up Back to Top
 
 What is ES6
 ES6 is the sixth edition of the javascript language and it was released in June 2015. It was initially known as ECMAScript 6 (ES6) and later renamed to ECMAScript 2015. Almost all the modern browsers support ES6 but for the old browsers there are many transpilers, like Babel.js etc.
@@ -385,7 +376,8 @@ Curried functions are great to improve code reusability and functional compositi
 
 
 What are closures
-A closure is the combination of a function and the lexical environment within which that function was declared. i.e, It is an inner function that has access to the outer or enclosing function’s variables. The closure has three scope chains
+A closure is the combination of a function and the lexical environment within which that function was declared. 
+i.e, It is an inner function that has access to the outer or enclosing function’s variables. The closure has three scope chains
 
 Own scope where variables defined between its curly brackets
 Outer function’s variables
@@ -407,14 +399,17 @@ As per the above code, the inner function(i.e, greetingInfo) has access to the v
 
 What is a first class function
 In Javascript, functions are first class objects. First-class functions means when functions in that language are treated like any other variable.
-
-For example, in such a language, a function can be passed as an argument to other functions, can be returned by another function and can be assigned as a value to a variable. For example, in the below example, handler functions assigned to a listener
+For example, in such a language, a function can be passed as an argument to other functions, can be returned by 
+another function and can be assigned as a value to a variable. 
 
 const handler = () => console.log("This is a click handler function");
 document.addEventListener("click", handler);
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> c876da96af5d30965b7ec1509c47fd7c7723296e
 What is a first order function
 First-order function is a function that doesn’t accept another function as an argument and doesn’t return a function as its return value.
 
@@ -434,13 +429,14 @@ higherOrder(firstOrderFunc);
 
 
 What is a pure function
-A Pure function is a function where the return value is only determined by its arguments without any side effects. i.e, If you call a function with the same arguments 'n' number of times and 'n' number of places in the application then it will always return the same value.
-
+A Pure function is a function where the return value is only determined by its arguments without any side effects. i.e, 
+If you call a function with the same arguments 'n' number of times and 'n' number of places in the application then it will always return the same value.
 Let's take an example to see the difference between pure and impure functions,
 
 //Impure
 let numberArray = [];
 const impureAddNumber = (number) => numberArray.push(number);
+
 //Pure
 const pureAddNumber = (number) => (argNumberArray) =>
   argNumberArray.concat([number]);
@@ -456,19 +452,35 @@ console.log(numberArray); // returns [6]
 What are the differences between pure and impure functions?
 Some of the major differences between pure and impure function are as below,
 
-Pure function	Impure function
-It has no side effects	It causes side effects
-It is always return the same result	It returns different result on each call
-Easy to read and debug	Difficult to read and debug because they are affected by extenal code
+Pure function	                        Impure function
+It has no side effects	                It causes side effects
+It is always return the same result	    It returns different result on each call
+Easy to read and debug	                Difficult to read and debug because they are affected by extenal code
 
 
 
 What are the differences between undeclared and undefined variables
-Below are the major differences between undeclared(not defined) and undefined variables,
-
 undeclared	undefined
-These variables do not exist in a program and are not declared	These variables declared in the program but have not assigned any value
-If you try to read the value of an undeclared variable, then a runtime error is encountered	If you try to read the value of an undefined variable, an undefined value is returned.
+These variables do not exist in a program and are not declared	
+If you try to read the value of an undeclared variable, then a runtime error is encountered	
+These variables declared in the program but have not assigned any value
+If you try to read the value of an undefined variable, an undefined value is returned.
+
+
+undefined vs null 
+Undefined is the default value of something which has never been assign
+
+null:-
+Null is quite similar to undefined but it is not a default value of anything, you can
+
+
+What is the difference between null and undefined
+Null	Undefined
+It is an assignment value which indicates that variable points to no object.	It is not an assignment value where a variable has been declared but has not yet been assigned a value.
+Type of null is object	Type of undefined is undefined
+The null value is a primitive value that represents the null, empty, or non-existent reference.	The undefined value is a primitive value used when a variable has not been assigned a value.
+Indicates the absence of a value for a variable	Indicates absence of variable itself
+Converted to zero (0) while performing primitive operations	Converted to NaN while performing primitive operations
 
 
 
@@ -480,12 +492,10 @@ DOM stands for Document Object Model. A document object represents the html docu
 What is a strict mode in javascript
 Strict Mode is a new feature in ECMAScript 5 that allows you to place a program, or a function, in a “strict” operating context. This way it prevents certain actions from being taken and throws more exceptions. The literal expression "use strict"; instructs the browser to use the javascript code in the Strict mode.
 
-arrow_up Back to Top
 
 Why do you need strict mode
 Strict mode is useful to write "secure" JavaScript by notifying "bad syntax" into real errors. For example, it eliminates accidentally creating a global variable by throwing an error and also throws an error for assignment to a non-writable property, a getter-only property, a non-existing property, a non-existing variable, or a non-existing object.
 
-arrow_up Back to Top
 
 How do you declare strict mode
 The strict mode is declared by adding "use strict"; to the beginning of a script or a function. If declared at the beginning of a script, it has global scope.
@@ -506,7 +516,8 @@ function myFunction() {
 
 
 What is Hoisting
-Hoisting is a JavaScript mechanism where variables, function declarations and classes are moved to the top of their scope before code execution. Remember that JavaScript only hoists declarations, not initialisation. Let's take a simple example of variable hoisting,
+Hoisting is a JavaScript mechanism where variables, function declarations and classes are moved to the top of their scope before code execution. 
+Remember that JavaScript only hoists declarations, not initialisation. Let's take a simple example of variable hoisting,
 
 console.log(message); //output : undefined
 var message = "The variable Has been hoisted";
@@ -527,7 +538,8 @@ This hoisting makes functions to be safely used in code before they are declared
 
 
 What is the Temporal Dead Zone
-The Temporal Dead Zone is a behavior in JavaScript that occurs when declaring a variable with the let and const keywords, but not with var. In ECMAScript 6, accessing a let or const variable before its declaration (within its scope) causes a ReferenceError. The time span when that happens, between the creation of a variable’s binding and its declaration, is called the temporal dead zone.
+The Temporal Dead Zone is a behavior in JavaScript that occurs when declaring a variable with the let and const keywords, but not with var. In ECMAScript 6, 
+accessing a let or const variable before its declaration (within its scope) causes a ReferenceError. The time span when that happens, between the creation of a variable’s binding and its declaration, is called the temporal dead zone.
 
 Let's see this behavior with an example,
 
@@ -551,7 +563,8 @@ IIFE (Immediately Invoked Function Expression) is a JavaScript function that run
 (function () {
   // logic here
 })();
-The primary reason to use an IIFE is to obtain data privacy because any variables declared within the IIFE cannot be accessed by the outside world. i.e, If you try to access variables with IIFE then it throws an error as below,
+The primary reason to use an IIFE is to obtain data privacy because any variables declared within the IIFE cannot be accessed by the outside world. 
+i.e, If you try to access variables with IIFE then it throws an error as below,
 
 (function () {
   var message = "IIFE";
@@ -585,7 +598,6 @@ By default, the cookie is deleted when the browser is closed but you can change 
 document.cookie = "username=John; expires=Sat, 8 Jun 2019 12:00:00 UTC";
 By default, the cookie belongs to a current page. But you can tell the browser what path the cookie belongs to using a path parameter.
 document.cookie = "username=John; path=/services";
-arrow_up Back to Top
 
 How do you delete a cookie
 You can delete a cookie by setting the expiry date as a passed date. You don't need to specify a cookie value in this case. For example, you can delete a username cookie in the current page as below.
@@ -594,7 +606,6 @@ document.cookie =
   "username=; expires=Fri, 07 Jun 2019 00:00:00 UTC; path=/;";
 Note: You should define the cookie path option to ensure that you delete the right cookie. Some browsers doesn't allow to delete a cookie unless you specify a path parameter.
 
-arrow_up Back to Top
 
 What are the differences between cookie, local storage and session storage
 Below are some of the differences between cookie, local storage and session storage,
@@ -611,21 +622,9 @@ What is a service worker
 A Service worker is basically a script (JavaScript file) that runs in the background, separate from a web page and provides features that don't need a web page or user interaction. Some of the major features of service workers are Rich offline experiences(offline first web application development), periodic background syncs, push notifications, intercept and handle network requests and programmatically managing a cache of responses.
 
 
-
-What is the difference between null and undefined
-Below are the main differences between null and undefined,
-
-Null	Undefined
-It is an assignment value which indicates that variable points to no object.	It is not an assignment value where a variable has been declared but has not yet been assigned a value.
-Type of null is object	Type of undefined is undefined
-The null value is a primitive value that represents the null, empty, or non-existent reference.	The undefined value is a primitive value used when a variable has not been assigned a value.
-Indicates the absence of a value for a variable	Indicates absence of variable itself
-Converted to zero (0) while performing primitive operations	Converted to NaN while performing primitive operations
-
-
-
 What is the use of preventDefault method
-The preventDefault() method cancels the event if it is cancelable, meaning that the default action or behaviour that belongs to the event will not occur. For example, prevent form submission when clicking on submit button and prevent opening the page URL when clicking on hyperlink are some common use cases.
+The preventDefault() method cancels the event if it is cancelable, meaning that the default action or behaviour that belongs to the event will not occur. For example, 
+prevent form submission when clicking on submit button and prevent opening the page URL when clicking on hyperlink are some common use cases.
 
 document
   .getElementById("link")
@@ -661,7 +660,7 @@ console.log(z); // 50
 
 
 What is a first class function
-In Javascript, functions are first class objects. First-class functions means when functions in that language are treated like any other variable.
+First-class functions means when functions in that language are treated like any other variable.
 
 For example, in such a language, a function can be passed as an argument to other functions, can be returned by another function and can be assigned as a value to a variable. For example, in the below example, handler functions assigned to a listener
 
@@ -689,7 +688,8 @@ console.log(employeeObject.name); // John
 What is the difference between Shallow and Deep copy
 There are two ways to copy an object,
 
-Shallow Copy: Shallow copy is a bitwise copy of an object. A new object is created that has an exact copy of the values in the original object. If any of the fields of the object are references to other objects, just the reference addresses are copied i.e., only the memory address is copied.
+Shallow Copy: Shallow copy is a bitwise copy of an object. A new object is created that has an exact copy of the values in the original object. If any of the fields of the object are references to other objects, 
+just the reference addresses are copied i.e., only the memory address is copied.
 
 Example
 
@@ -725,6 +725,7 @@ var empDetailsDeepCopy = {
 Now if you change empDetailsDeepCopy.name, it will only affect empDetailsDeepCopy & not empDetails
 
 
+<<<<<<< HEAD
 const memoizAddition = () => {
   let cache = {};
   return (value) => {
@@ -743,3 +744,36 @@ const memoizAddition = () => {
 const addition = memoizAddition();
 console.log(addition(20)); //output: 40 calculated
 console.log(addition(20)); //output: 40 cached
+=======
+
+map: return new array, 
+foreach same job but return undefined, 
+filter: selected subset multiple element from an array, 
+
+//reduce:-
+the reduce() method is an array method used to reduce an array to a single value. 
+It applies a provided function to each element of the array (from left to right) to reduce it to a single value. 
+The reduce() method takes a callback function as its argument, and this function is applied to each element of the array.
+
+syntax:-
+array.reduce(callback, initialValue);
+
+callback: A function to execute on each element in the array. The function takes four arguments: accumulator, currentValue, currentIndex, and array.
+accumulator: The accumulated result of the callback's previous invocations, or the initial value if provided.
+currentValue: The current element being processed in the array.
+currentIndex: The index of the current element being processed.
+array: The array on which reduce was called.
+
+const numbers = [1, 2, 3, 4, 5];
+const sum = numbers.reduce((accumulator, currentValue) => {
+  return accumulator + currentValue;
+}, 0);
+
+console.log(sum); // Output: 15
+
+
+
+
+
+
+>>>>>>> c876da96af5d30965b7ec1509c47fd7c7723296e

@@ -3,12 +3,11 @@ top 50 question interview javascript:-
 promise promise.all()  promise.race() type  race method in promise
 callback
 callback hell
-What is prototype chain
-What is the difference between proto and prototype
+What is the difference between proto and prototype?
 call bind apply
-es6 with class 14 example
 currying
 closures
+<<<<<<< HEAD
 array function method
 first class function
 29.What is a first order function
@@ -29,24 +28,40 @@ What are the differences between cookie, local storage and session storage
 What is a service worker session
 undefined vs null vs NaN
 What is the use of preventDefault method
+=======
+first class function
+What is a first order function
+High order function?
+pure function 
+advantage of JavaScript
+3.  What is an undefined and undeclared variable and NaN?
+31. What is the 'Strict' mode in JavaScript and how can it be enabled
+33. What is hoisting? 	
+What is IIFE(Immediately Invoked Function Expression)
+What is scope in javascript
+What is a cookie ,need a Cookie , the options in a cookie, delete a cookie?
+>>>>>>> c876da96af5d30965b7ec1509c47fd7c7723296e
 What is an anonymous function
-what is class object oops method
-What is a constructor method
+What is a polyfill
+what is class object oops method?
+What is a constructor method?
 What is the difference between Shallow and Deep copy
 ecma script
 == and === operators
-What are lambda or arrow functions
 arrow vs regular function
-What is memoization
-What is web storage
-What is the use of stopPropagation method
+What is memoization?
 What is the use of setTimeout and setInterval
-What is the purpose of clearTimeout method and clearInterval method
-What are regular expression patterns
+What are regular expression patterns || What is a RegExp object
+array function method ?
 slice vs splice  array method
 map, foreach, filter, reduce
-What is a RegExp object
-Whatare the tools or techniques used for debugging JavaScript code
+What is web storage the differences between cookie, local storage and session storage?
+session base authenticaton and cookie base authenticaton
+What are lambda or arrow functions?
+What is the purpose of clearTimeout method and clearInterval method?
+How do you manipulate DOM using a service worker
+What is a service worker session?
+es6 with class 14 example
 
 
 // es6
@@ -71,29 +86,24 @@ Whatare the tools or techniques used for debugging JavaScript code
 //3 hoisting
 //4 oops constructure
 //5 prototype concept
-//6 inheritance in js
 //7 binding this keybard
-//8 clousers scope
-//9 iife immediately invonked fucntion expression
-//10 module patern
+//8 closers scope
 //11 currying
 
 
-example js:-
-closures 
-call bind apply
-this example
-prototype example
-37.High order function?  opposite of first order function
-38.pure function
-39.What is a first order function   does not accepts function as argument and return value
-40.What is a first class function   name function as variable that is call first class function
+doubt
+cookies token   What is a cookie ,need a Cookie , the options in a cookie, delete a cookie?
+session base authenticaton and cookie base authenticaton
+what is class object oops method?
+What are lambda or arrow functions?
+What is web storage?
+What is the use of stopPropagation method?
+What is the purpose of clearTimeout method and clearInterval method?
+What is a service worker session?
+class
+object
+inheritance
+encapsulate
+other
 
-
-
-//Import
-graphql
-nestjs
-typescript
-blockchain
 

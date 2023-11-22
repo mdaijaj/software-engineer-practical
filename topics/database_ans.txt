@@ -1,20 +1,10 @@
-20 important question
+Mongodb
 
-1 what is mysql and MongoDB Features const and pros
-2 What are the difference between NoSQL and SQL
-3 How to establish MongoDB database connection in a node application?
-    4 What are virtual property in mongoose
-5 second highest salary in monggodb
-6 migration
-7 join all
-8 aggregation pipeline
-9 index
-11 orm what is meaning pros const object 
-12 replica set
-13 transection
-14 What are the mongoose middlewares?  pre or post in schema that is call middlewares
-15 How to query data using mongoose?
-
+nosql database Mongodb
+1 redis key value base
+2. casandra columns base big data
+3. document base Mongodb
+4. graph based 
 
 
 
@@ -28,18 +18,12 @@ having query
 SELECT product_category, SUM(sales_amount) AS total_sales FROM sales
 GROUP BY product_category
 HAVING total_sales > 10000;
-//mysql
-Trasection
-Second highest salary
-All join
-Sharding
-Agrregation
-Project ion
 
 
-SELECT MAX(salary) AS second_highest_salary
-FROM employees
-WHERE salary < (SELECT MAX(salary) FROM employees);
+index use:-
+create index studdob On students (dob); add multiple columns  //create index
+show index from students;         //show index
+drop index studdob On students;
 
 
 table  multiple case
@@ -56,7 +40,7 @@ one document size  max is 16mb not exeed more that
 
 what is transection?
 A transaction in MySQL is a sequence of one or more SQL statements that are treated as a single,
-indivisible unit of work. Transactions are used to maintain data integrity and consistency in a database
+indivisible unit of work. Transactions are used to maintain data integrity and consistency in a databas
 
 
 virtual properties allow you to define computed or derived properties on your Mongoose models. 
@@ -100,40 +84,41 @@ doubt?
 object oriented db
 bson format
 
-
-| 1 | Ramesh | 32 | Ahmedabad | 2000.00 |
-| 2 | Ramesh | 25 | Delhi | 1500.00 |
-| 3 | kaushik | 23 | Kota | 2000.00 |
-| 4 | kaushik | 25 | Mumbai | 6500.00 |
-| 5 | Hardik | 27 | Bhopal | 8500.00 |
-| 6 | Komal | 22 | MP | 4500.00 |
-| 7 | Muffy | 24 | Indore | 10000.00 |
-
-SELECT NAME, SUM(SALARY) FROM CUSTOMERS GROUP BY NAME;
+json bson
 
 
-  NAME | SUM(SALARY) |
-+---------+-------------+
-| Hardik | 8500.00 |
-| kaushik | 8500.00 |
-| Komal | 4500.00 |
-| Muffy | 10000.00 |
-| Ramesh | 3500.00 |
+aggregation in Mongodb:-
+aggregation is the process of selecting data from a collection to process multiple documents and returns computed results
+
+group value from multiple documents together
+fetching a lots of nested data from performed complex operations
+filter and sort documents and analysis data changes
 
 
 
-join example:-
-right
-left
-full join
-inner join
-self
- CARTESIAN join
- CROSS JOIN
+replica
+duplicate of server
 
- PRIMARY KEY: A primary key is a field in a table which uniquely identifies each row/record in a database table. Primary keys 
-must contain unique values. A primary key column cannot have NULL values.
+Sharding
+Sharding is a data distribution process and stores a single data set into multiple databas.
+Vertical adding more resourses as on demand
+Horizontal adding more processing or physical machine
 
 
-Difference between Where and Having Clause in SQL : 
 
+IN Operator
+SELECT * FROM Customers
+WHERE Country IN ('Germany', 'France', 'UK');
+
+The SQL BETWEEN Operator
+SELECT * FROM Products
+WHERE Price BETWEEN 10 AND 20;
+
+The SQL COUNT(), AVG() and SUM() Functions
+
+
+SQL HAVING Examples
+SELECT COUNT(CustomerID), Country
+FROM Customers
+GROUP BY Country
+HAVING COUNT(CustomerID) > 5;

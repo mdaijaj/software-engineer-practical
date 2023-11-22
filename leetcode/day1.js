@@ -1,4 +1,5 @@
 
+//first target pair
 function Pairsum_target(arr, target) {
     arr.sort();
     console.log(arr)
@@ -7,7 +8,7 @@ function Pairsum_target(arr, target) {
 
     while (start < end) {
         if (arr[start] + arr[end] == target) {
-            console.log(start, end)
+            console.log("aijajkhan", start, end)
             return start, end
         }
         else if (arr[start] + arr[end] < target) {
@@ -25,8 +26,7 @@ let target = 12;
 // Pairsum_target(arr, target)
 
 
-
-
+//merge two array
 var merge = function (nums1, m, nums2, n) {
     let arr3 = [];
     var i = 0, j = 0, k = 0;
@@ -74,12 +74,12 @@ var removeElement = function(nums, val) {
         let char = String.fromCharCode(95);
         arr.push(char)
     }
-    console.log(arr);
+    console.log("arr", arr);
 };
 
 let nums= [0,1,2,2,3,0,4,2]
 let val= 2;
-// removeElement(nums, val)
+removeElement(nums, val)
 
 
 
@@ -92,6 +92,7 @@ function removeDuplicates(arrOfNum) {
 
 
 
+//rotate array
 var rotate = function(nums, k) {
     let arr_len=nums.length-k;
     let arr1=nums.slice(arr_len)
@@ -100,12 +101,12 @@ var rotate = function(nums, k) {
     for (var i=0; i<arr_len; i++){
         arr1.push(nums[i])
     }
-    console.log("rotatearr", arr1)
+    // console.log("rotatearr", arr1)
 };
 
 let arr3 = [1,2,3,4,5,6,7];
 let k = 1
-rotate(arr3, k)
+// rotate(arr3, k)
 
 
 
