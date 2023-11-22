@@ -4,3 +4,8 @@ mern skill
 unit testing code node and React
 Ability to write unit testing of code components and functional tests for modules
 Experience working in AWS stack like such as S3, EKS, MSK and ELBs is a big plus
+
+
+sales marketting fronted api with example and flow:-
+role wise access with frotned api integration with example
+

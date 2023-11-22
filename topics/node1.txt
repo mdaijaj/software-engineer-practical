@@ -6,7 +6,7 @@ soring
 prime number
 binary search
 find second largest number
-sorted value unique value
+sorted value unique value 
 fibonasis value
 
 
@@ -23,7 +23,10 @@ No Buffering – Node.js applications never buffer any data. They simply output 
 
 
 
-event driven (mouseEvent)
+event driven architecture  (mouseEvent)   
+event EventEmitter  
+event listener 
+event handlers
 
 setTimeout
 setInterver
@@ -67,8 +70,8 @@ Zlib	It is used to compress and decompress data. It can be accessed with require
 4 What are streams in Nodejs Explain the different types of streams present in Nodejs?
 Streams are objects that allow the reading of data from the source and writing of data to the destination as a continuous process.
 There are four types of streams.
-to facilitate the reading operation.
-to facilitate the writing operation.
+to facilitate the rn.
+to facilitate the writing operation.eading operatio
 to facilitate both read and write operations.
 is a form of Duplex stream that performs computations based on the available input.
 

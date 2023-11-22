@@ -1,7 +1,7 @@
 top 50 question which asked question?
 
 what is nodejs?
-how is better then other language why choose nodejs for backend?
+how is better then other language why choose nodejs for backend ??
 What Are The Key Features Of NodeJs?
 event loop?  How does Node.js work?
 core module ?
@@ -42,8 +42,7 @@ callback example
 between spawn() and fork() methods in Node.js?
 Explain libuv?
 load balancer?
-fork Differentiate between spawn and
-eventloop  libuv
+fork Differentiate between spawn and eventloop  libuv
 thread pool type How does Nodejs handle the child threads? how many type of threads?
 16 What are JWT?
 17 What are different authentication methods?

@@ -9,25 +9,25 @@ call bind apply
 es6 with class 14 example
 currying
 closures
-array function method ?
+array function method
 first class function
 29.What is a first order function
 pure function
-27.High order function?
+27.High order function
 advantage of JavaScript
-3.  What is an undefined and undeclared variable? 
-24. What is DOM? What is the use of a document object?
+3.  What is an undefined and undeclared variable
+24. What is DOM? What is the use of a document object
 How do you manipulate DOM using a service worker
-31. What is the 'Strict' mode in JavaScript and how can it be enabled?
-33. What is hoisting? 	
+31. What is the 'Strict' mode in JavaScript and how can it be enabled
+33. What is hoisting
 What is the Temporal Dead Zone
 What is a polyfill
 What is IIFE(Immediately Invoked Function Expression)
 What is scope in javascript
-cookies token   What is a cookie ,need a Cookie , the options in a cookie, delete a cookie
+cookies token What is a cookie ,need a Cookie , the options in a cookie, delete a cookie
 What are the differences between cookie, local storage and session storage
 What is a service worker session
-undefined vs null vs nan
+undefined vs null vs NaN
 What is the use of preventDefault method
 What is an anonymous function
 what is class object oops method
