@@ -3,7 +3,6 @@ top 50 question interview javascript:-
 promise promise.all()  promise.race() type  race method in promise
 callback
 callback hell
-What is prototype chain
 What is the difference between proto and prototype?
 call bind apply
 currying
@@ -11,15 +10,14 @@ closures
 first class function
 What is a first order function
 High order function?
-pure function
+pure function 
 advantage of JavaScript
 3.  What is an undefined and undeclared variable and NaN?
 31. What is the 'Strict' mode in JavaScript and how can it be enabled
 33. What is hoisting? 	
 What is IIFE(Immediately Invoked Function Expression)
 What is scope in javascript
-cookies token   What is a cookie ,need a Cookie , the options in a cookie, delete a cookie?
-What is the use of preventDefault method?  stop redirect page or reload
+What is a cookie ,need a Cookie , the options in a cookie, delete a cookie?
 What is an anonymous function
 What is a polyfill
 what is class object oops method?
@@ -34,11 +32,9 @@ What are regular expression patterns || What is a RegExp object
 array function method ?
 slice vs splice  array method
 map, foreach, filter, reduce
-What are the differences between cookie, local storage and session storage?
+What is web storage the differences between cookie, local storage and session storage?
 session base authenticaton and cookie base authenticaton
 What are lambda or arrow functions?
-What is web storage?
-What is the use of stopPropagation method?
 What is the purpose of clearTimeout method and clearInterval method?
 How do you manipulate DOM using a service worker
 What is a service worker session?

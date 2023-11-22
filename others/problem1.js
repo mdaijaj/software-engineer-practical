@@ -340,3 +340,11 @@ const object1 = {
 // Expected output:
 // "a: somestring"
 // "b: 42"
+
+
+//missing number
+function findMissingNumber(arr, n) {
+  const sum = (n * (n + 1)) / 2;
+  const arrSum = arr.reduce((acc, num) => acc + num, 0);
+  return sum - arrSum;
+  }

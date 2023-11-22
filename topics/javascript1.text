@@ -96,7 +96,6 @@ Why do you need a promise
 Promises are used to handle asynchronous operations. They provide an alternative approach 
 for callbacks by reducing the callback hell and writing the cleaner code.
 
-arrow_up Back to Top
 
 What are the three states of promise
 Promises have three states:
@@ -180,7 +179,6 @@ function outerFunction(callback) {
 }
 
 outerFunction(callbackFunction);
-arrow_up Back to Top
 
 Why do we need callbacks
 The callbacks are needed because javascript is an event driven language. That means instead of waiting for a response javascript will keep executing while listening for other events. Let's take an example with the first function invoking an API call(simulated by setTimeout) and the next function which logs the message.
@@ -352,7 +350,6 @@ Enhanced Object Literals
 Promises
 Classes
 Modules
-arrow_up Back to Top
 
 What is ES6
 ES6 is the sixth edition of the javascript language and it was released in June 2015. It was initially known as ECMAScript 6 (ES6) and later renamed to ECMAScript 2015. Almost all the modern browsers support ES6 but for the old browsers there are many transpilers, like Babel.js etc.
@@ -596,7 +593,6 @@ By default, the cookie is deleted when the browser is closed but you can change 
 document.cookie = "username=John; expires=Sat, 8 Jun 2019 12:00:00 UTC";
 By default, the cookie belongs to a current page. But you can tell the browser what path the cookie belongs to using a path parameter.
 document.cookie = "username=John; path=/services";
-arrow_up Back to Top
 
 How do you delete a cookie
 You can delete a cookie by setting the expiry date as a passed date. You don't need to specify a cookie value in this case. For example, you can delete a username cookie in the current page as below.
@@ -605,7 +601,6 @@ document.cookie =
   "username=; expires=Fri, 07 Jun 2019 00:00:00 UTC; path=/;";
 Note: You should define the cookie path option to ensure that you delete the right cookie. Some browsers doesn't allow to delete a cookie unless you specify a path parameter.
 
-arrow_up Back to Top
 
 What are the differences between cookie, local storage and session storage
 Below are some of the differences between cookie, local storage and session storage,

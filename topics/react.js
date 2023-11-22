@@ -28,7 +28,8 @@
 // ● Event Bubbling?
 // ● What is useeffect cleanup
 // ● What is Redux?
-
+// What is the use of preventDefault method?  stop redirect page or reload
+// What is the use of stopPropagation method?
 
 
 

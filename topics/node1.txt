@@ -196,7 +196,8 @@ There are lots of ways to solve the issue of callback hells:
 
 
 7 What Is EventEmitter In NodeJs?
-Events module in Node.js allows us to create and handle custom events. The Event module contains “EventEmitter” class which can be used to raise and handle custom events. It is accessible via the following code.
+Events module in Node.js allows us to create and handle custom events. The Event module contains “EventEmitter” class which can be used to raise and handle custom events. 
+It is accessible via the following code.
 
 // Import events module
 var events = require('events');
@@ -204,7 +205,8 @@ var events = require('events');
 // Create an eventEmitter object
 var eventEmitter = new events.EventEmitter();
 
-8 When an EventEmitter instance encounters an error, it emits an “error” event. When a new listener gets added, it fires a “newListener” event and when a listener gets removed, it fires a “removeListener” event.
+8 When an EventEmitter instance encounters an error, it emits an “error” event. 
+When a new listener gets added, it fires a “newListener” event and when a listener gets removed, it fires a “removeListener” event.
 EventEmitter provides multiple properties like “on” and “emit”. The “on” property is used to bind a function to the event and “emit” is used to fire an event. .
 
 

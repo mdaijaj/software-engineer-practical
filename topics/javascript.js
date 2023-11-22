@@ -470,12 +470,13 @@ var student2 = {
 
 
 // //scope example
-// var username = "rahul"
-// function userinfo() {
-//     username = "aijaj";
-// }
-// console.log("username", username)  //rahul
-// // userinfo()
+let username = "rahul"
+function userinfo(username) {
+    username = "aijaj";
+    return username
+}
+console.log("username", username)  //rahul
+userinfo(username)
 
 
 

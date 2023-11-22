@@ -377,3 +377,4 @@ response status.code we can error handle click easily.
 
 
 
+funcion pass as a props:-

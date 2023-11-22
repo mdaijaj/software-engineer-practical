@@ -3,7 +3,7 @@
 1 what is mysql and MongoDB Features const and pros
 2 What are the difference between NoSQL and SQL
 3 How to establish MongoDB database connection in a node application?
-4 What are virtual property in mongoose
+    4 What are virtual property in mongoose
 5 second highest salary in monggodb
 6 migration
 7 join all
@@ -15,6 +15,7 @@
 14 What are the mongoose middlewares?  pre or post in schema that is call middlewares
 15 How to query data using mongoose?
 
+
 //mysql
 Trasection
 Second highest salary
@@ -24,5 +25,8 @@ Agrregation
 Project ion
 
 
+SELECT MAX(salary) AS second_highest_salary
+FROM employees
+WHERE salary < (SELECT MAX(salary) FROM employees);
 
 
