@@ -1,5 +1,5 @@
 top 50 question interview javascript:-
-
+ecma script es6 with class 14 example
 promise promise.all()  promise.race() type  race method in promise
 callback
 callback hell
@@ -11,34 +11,32 @@ first class function
 What is a first order function
 High order function?
 pure function 
-advantage of JavaScript
 3.  What is an undefined and undeclared variable and NaN?
-31. What is the 'Strict' mode in JavaScript and how can it be enabled
 33. What is hoisting? 	
 What is IIFE(Immediately Invoked Function Expression)
-What is scope in javascript
-What is a cookie ,need a Cookie , the options in a cookie, delete a cookie?
-What is an anonymous function
-What is a polyfill
 what is class object oops method?
 What is a constructor method?
 What is the difference between Shallow and Deep copy
-ecma script
-== and === operators
+31. What is the 'Strict' mode in JavaScript and how can it be enabled
 arrow vs regular function
 What is memoization?
 What is the use of setTimeout and setInterval
-What are regular expression patterns || What is a RegExp object
 array function method ?
 slice vs splice  array method
 map, foreach, filter, reduce
+== and === operators
 What is web storage the differences between cookie, local storage and session storage?
 session base authenticaton and cookie base authenticaton
 What are lambda or arrow functions?
 What is the purpose of clearTimeout method and clearInterval method?
 How do you manipulate DOM using a service worker
 What is a service worker session?
-es6 with class 14 example
+advantage of JavaScript
+What is scope in javascript
+What is a cookie ,need a Cookie , the options in a cookie, delete a cookie?
+What is an anonymous function
+What is a polyfill
+What are regular expression patterns || What is a RegExp object
 
 
 // es6
@@ -53,7 +51,6 @@ es6 with class 14 example
 // 9. Promises
 // 10. Array helper functions Array Methods
 // 11. Import and export syntax
-
 // https://medium.com/@musturi.rakesh/best-es6-features-in-javascript-69a0b16425ce
 
 
@@ -82,5 +79,3 @@ object
 inheritance
 encapsulate
 other
-
-

@@ -262,7 +262,6 @@ function Dog(name){
    this.name= name;
 }
 
-
 Dog.prototype.sayHI= function(){
    return "woof"
 }

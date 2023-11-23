@@ -342,7 +342,8 @@ Support for constants or immutable variables
 Block-scope support for variables, constants and functions
 Arrow functions
 Default parameters
-Rest and Spread Parameters
+Rest and Spread Parameters:-
+
 Template Literals
 Multi-line Strings
 Destructuring Assignment
@@ -510,7 +511,7 @@ function myFunction() {
 
 
 
-What is Hoisting
+What is Hoisting?
 Hoisting is a JavaScript mechanism where variables, function declarations and classes are moved to the top of their scope before code execution. 
 Remember that JavaScript only hoists declarations, not initialisation. Let's take a simple example of variable hoisting,
 
