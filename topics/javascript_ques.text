@@ -7,6 +7,28 @@ What is the difference between proto and prototype?
 call bind apply
 currying
 closures
+<<<<<<< HEAD
+array function method
+first class function
+29.What is a first order function
+pure function
+27.High order function
+advantage of JavaScript
+3.  What is an undefined and undeclared variable
+24. What is DOM? What is the use of a document object
+How do you manipulate DOM using a service worker
+31. What is the 'Strict' mode in JavaScript and how can it be enabled
+33. What is hoisting
+What is the Temporal Dead Zone
+What is a polyfill
+What is IIFE(Immediately Invoked Function Expression)
+What is scope in javascript
+cookies token What is a cookie ,need a Cookie , the options in a cookie, delete a cookie
+What are the differences between cookie, local storage and session storage
+What is a service worker session
+undefined vs null vs NaN
+What is the use of preventDefault method
+=======
 first class function
 What is a first order function
 High order function?
@@ -14,6 +36,14 @@ pure function
 3.  What is an undefined and undeclared variable and NaN?
 33. What is hoisting? 	
 What is IIFE(Immediately Invoked Function Expression)
+<<<<<<< HEAD
+=======
+What is scope in javascript
+What is a cookie ,need a Cookie , the options in a cookie, delete a cookie?
+>>>>>>> c876da96af5d30965b7ec1509c47fd7c7723296e
+What is an anonymous function
+What is a polyfill
+>>>>>>> 828c92f65eef3a0b9691c4ce56c17229def76677
 what is class object oops method?
 What is a constructor method?
 What is the difference between Shallow and Deep copy

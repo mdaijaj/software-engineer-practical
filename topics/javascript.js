@@ -1,21 +1,38 @@
 //promise
 const myPromise = new Promise((resolve, reject) => {
+<<<<<<< HEAD
+  setTimeout(() => {
+    const data = "Promise resolved with some data";
+    if (data) {
+      resolve(data);
+    } else {
+=======
     setTimeout(() => {
       const data = "Promise resolved with some data";  //condition we can
       if(data){
         resolve(data);
       }else{
+>>>>>>> c876da96af5d30965b7ec1509c47fd7c7723296e
       reject(new Error("Promise rejected with an error"));
-      }
-    }, 2000);
-  });
+    }
+  }, 2000);
+});
 
+<<<<<<< HEAD
+myPromise.then((result) => {
+  console.log("Promise fulfilled:", result);
+})
+  .catch((error) => {
+    console.error("Promise rejected:", error.message);
+  });
+=======
 // myPromise.then((result) => {
 //     console.log("Promise fulfilled:", result);
 // })
 // .catch((error) => {
 //     console.error("Promise rejected:", error.message);
 // });
+>>>>>>> c876da96af5d30965b7ec1509c47fd7c7723296e
 
 
 // //with Async/Await: used
@@ -176,6 +193,28 @@ const myPromise = new Promise((resolve, reject) => {
 
 
 
+<<<<<<< HEAD
+// Nested callbacks without proper indentation (callback hell)
+function doTask1(callback1) {
+  setTimeout(function () {
+    console.log("Task 1 done");
+    callback1();
+  }, 1000);
+}
+
+function doTask2(callback2) {
+  setTimeout(function () {
+    console.log("Task 2 done");
+    callback2();
+  }, 1000);
+}
+
+function doTask3() {
+  setTimeout(function () {
+    console.log("Task 3 done");
+  }, 1000);
+}
+=======
 
 // // Nested callbacks without proper indentation (callback hell)
 // function doTask1(callback1) {
@@ -197,6 +236,7 @@ const myPromise = new Promise((resolve, reject) => {
 //         console.log("Task 3 done");
 //     }, 1000);
 // }
+>>>>>>> c876da96af5d30965b7ec1509c47fd7c7723296e
 
 
 // // Nested callback hell
@@ -209,6 +249,44 @@ const myPromise = new Promise((resolve, reject) => {
 
 
 
+<<<<<<< HEAD
+//using promise:-
+function doTask1() {
+  return new Promise((resolve) => {
+    setTimeout(function () {
+      console.log("Task 1 done");
+      resolve();
+    }, 1000);
+  });
+}
+
+function doTask2() {
+  return new Promise((resolve) => {
+    setTimeout(function () {
+      console.log("Task 2 done");
+      resolve();
+    }, 1000);
+  });
+}
+
+function doTask3() {
+  return new Promise((resolve) => {
+    setTimeout(function () {
+      console.log("Task 3 done");
+      resolve();
+    }, 1000);
+  });
+}
+
+// Using async/await to avoid callback hell
+// async function runTasks() {
+//   await doTask1();
+//   await doTask2();
+//   await doTask3();
+// }
+// runTasks();
+
+=======
 // //using promise:-
 // function doTask1() {
 //     return new Promise((resolve) => {
@@ -245,6 +323,7 @@ const myPromise = new Promise((resolve, reject) => {
   // }
   // runTasks();
   
+>>>>>>> c876da96af5d30965b7ec1509c47fd7c7723296e
 
 
 
@@ -253,6 +332,22 @@ const myPromise = new Promise((resolve, reject) => {
 
 // Constructor function for creating Person objects
 function Person(firstName, lastName) {
+<<<<<<< HEAD
+  this.firstName = firstName;
+  this.lastName = lastName;
+}
+
+// Adding a method to the Person constructor's prototype
+Person.prototype.getFullName = function () {
+  return this.firstName + ' ' + this.lastName;
+};
+
+// Creating instances of the Person object
+var person1 = new Person('John', 'Doe');
+var person2 = new Person('Jane', 'Smith');
+
+// Calling the method from the prototype on the instances
+=======
     this.firstName = firstName;
     this.lastName = lastName;
 }
@@ -267,10 +362,14 @@ function Person(firstName, lastName) {
   var person2 = new Person('Jane', 'Smith');
   
   // Calling the method from the prototype on the instances
+>>>>>>> c876da96af5d30965b7ec1509c47fd7c7723296e
 //   console.log(person1.getFullName()); // Output: "John Doe"
 //   console.log(person2.getFullName()); // Output: "Jane Smith"
 
 
+<<<<<<< HEAD
+
+=======
 // example2 prototype
 
 // let a={
@@ -295,6 +394,7 @@ function Person(firstName, lastName) {
 // console.log("language", a.language)
 
   
+>>>>>>> c876da96af5d30965b7ec1509c47fd7c7723296e
 
 // call vs apply vs bind
 // call apply and bind method use access only once call other function property not repeating code
@@ -305,36 +405,53 @@ function Person(firstName, lastName) {
 //4 call apply and bind
 // case0;
 var student1 = {
+<<<<<<< HEAD
+  name: "aijaj",
+  displayName(country, state) {                                        //repeating code
+    //    console.log(`my name is ${this.name}  and my country  ${country} ${state}`)
+  }
+=======
     name: "aijaj",
     displayName(country, state) {                                        //repeating code
         console.log(`my name is ${this.name}  and my country  ${country} ${state}`)
     }
+>>>>>>> c876da96af5d30965b7ec1509c47fd7c7723296e
 }
 
 var student2 = {
-    name: "rahul",
-    displayName(country) {                                      //repeating code
-        console.log(`my name is ${this.name}  and my country  ${country}  ${state}`)
-    }
+  name: "rahul",
+  displayName(country) {                                      //repeating code
+    console.log(`my name is ${this.name}  and my country  ${country}  ${state}`)
+  }
 }
 // student1.displayName("India", "Delhi")
 
 // case1:
+<<<<<<< HEAD
+var student2 = {
+  name: "rahul",
+}
+=======
 // var student2 = {
 //     name: "rahul",
 // }
+>>>>>>> c876da96af5d30965b7ec1509c47fd7c7723296e
 // student1.displayName.call(student2, "India", "haryana")   // use call method 
 
 
 // //case 2 using apply method use array as a argument
 var student2 = {
-    name: "kishan",
+  name: "kishan",
 }
 // student1.displayName.apply(student2, ["India", "Mumbai"])   // use apply method second argument array format only  both immediately call
 
 //case 3 use bind method take variable function
 var student2 = {
+<<<<<<< HEAD
+  name: "rahul",
+=======
     name: "mukesh",
+>>>>>>> c876da96af5d30965b7ec1509c47fd7c7723296e
 }
 const studentInfo= student1.displayName.bind(student2, "India", "Chennai") ;  //use bind and take a variable fucntion
 studentInfo()
@@ -372,19 +489,33 @@ let name2={
 // name.printFullname.call(name2)
 
 // case2
+<<<<<<< HEAD
+let name = {
+  firstname: "adil",
+  lastname: "khan"
+}
+=======
 // let name = {
 //     firstname: "adil",
 //     lastname: "khan"
 // }
+>>>>>>> c876da96af5d30965b7ec1509c47fd7c7723296e
 let printFullname = function (homeTown, state) {
-    // console.log(this.firstname + " " + this.lastname + " from " + homeTown +", " + state )
+  // console.log(this.firstname + " " + this.lastname + " from " + homeTown +", " + state )
 }
 printFullname.call(name, "bawana", "delhi")
 
+<<<<<<< HEAD
+let name2 = {
+  firstname: "Mahenra sing",
+  lastname: "dhoni"
+}
+=======
 // let name2 = {
 //     firstname: "Mahenra sing",
 //     lastname: "dhoni"
 // }
+>>>>>>> c876da96af5d30965b7ec1509c47fd7c7723296e
 
 //function borrow
 // printFullname.call(name2, "bhagalpur", "bihar")
@@ -434,50 +565,106 @@ let userInf = printFullname.bind(name2, "bhagalpur", "bihar")
 //3 call apply and bind
 // case0;
 var student1 = {
-    name: "aijaj",
-    displayName(country, state) {                                        //repeating code
-        console.log(`my name is ${this.name}  and my country  ${country} ${state}`)
-    }
+  name: "aijaj",
+  displayName(country, state) {                                        //repeating code
+    console.log(`my name is ${this.name}  and my country  ${country} ${state}`)
+  }
 }
 
 var student2 = {
-    name: "rahul",
-    displayName(country) {                                      //repeating code
-        console.log(`my name is ${this.name}  and my country  ${country}  ${state}`)
-    }
+  name: "rahul",
+  displayName(country) {                                      //repeating code
+    console.log(`my name is ${this.name}  and my country  ${country}  ${state}`)
+  }
 }
 // student1.displayName("India", "Delhi")
 
 // case1:
 var student2 = {
-    name: "rahul",
+  name: "rahul",
 }
 // student1.displayName.call(student2, "India", "haryana")   // use call method 
 
 
 //case 2 using apply method use array as a argument
 var student2 = {
-    name: "kishan",
+  name: "kishan",
 }
 // student1.displayName.apply(student2, ["India", "Mumbai"])   // use apply method array format only  both immediately call
 
 //case 3 use bind method take variable function
 var student2 = {
-    name: "rahul",
+  name: "rahul",
 }
 // const studentInfo= student1.displayName.bind(student2, "India", "Chennai") ;  //use bind and take a variable fucntion
 // studentInfo()
 
 
+<<<<<<< HEAD
+
+
+
+
+
+
+
+const arrayOfOddNumbers = [1, 3, 5];
+arrayOfOddNumbers[100] = 199;
+// console.log(arrayOfOddNumbers.length); 200
+
+
+
+
+
+
+//scope example
+var username = "rahul"
+function userinfo() {
+  username = "aijaj";
+=======
 // //scope example
 let username = "rahul"
 function userinfo(username) {
     username = "aijaj";
     return username
+>>>>>>> c876da96af5d30965b7ec1509c47fd7c7723296e
 }
 console.log("username", username)  //rahul
 userinfo(username)
 
+<<<<<<< HEAD
+// console.log("username", username)
+userinfo()
+
+
+
+
+// Memoization
+// Memoization is a way to cache a return value of a function based on its parameters
+
+// Memoized Way
+function memoizedAddTo80() {
+  let cache = {}
+  return function (n) { // closure to access cache obj
+    if (n in cache) {
+      return cache[n]
+    } else {
+      console.log('long time...')
+      cache[n] = n + 80
+      return cache[n]
+    }
+  }
+}
+const memoized = memoizedAddTo80()
+console.log('1.', memoized(5))
+console.log('2.', memoized(5))
+console.log('3.', memoized(5))
+console.log('4.', memoized(10))
+
+
+
+// Garbage Collection
+=======
 
 
 
@@ -639,3 +826,4 @@ add(7,5)
 //     return a+b;
 // }
 // add(7,5)
+>>>>>>> c876da96af5d30965b7ec1509c47fd7c7723296e
