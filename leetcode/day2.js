@@ -58,6 +58,7 @@ let extraCandies = 3;
 
 
 const reverseVowels=(string)=>{
+    
     let start=0;
     let end=string.length-1;
     let temp="";
@@ -65,25 +66,37 @@ const reverseVowels=(string)=>{
     let vowels=['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U']
     let index;
     let index2;
-    while (start<end){
-   
-      if(vowels.includes(string[start])){
-          temp=string[start] 
-          index=string.indexOf(temp);
-      }
-      if(vowels.includes(string[end])){
-          temp2=string[end]
-          index2=string.indexOf(temp2, 3);
+    let username= string.split('');
 
+    while (start<end){
+        
+      if(vowels.includes(username[start])){
+        let temp = username[index];
+        username[index] = username[index2];
+        username[index2] = temp;
       }
-      if(temp && temp2){
-          string[index]=temp2
-          string[index2]=temp
+      if(vowels.includes(username[end])){
+        let temp2 = username[index];
+        username[index] = username[index2];
+        username[index2] = temp2;
       }
+    //   if(temp && temp2){
+    //     let temp = username[index];
+    //     username[index] = username[index2];
+    //     username[index2] = temp;
+    
+        // // Join the array back into a string
+        // let swappedString = chars.join('');
+        //   username[index]=temp2
+        //   username[index2]=temp;     
+        //   username.replace(temp2, 'U') 
+        // }
+
       start++
       end--
     }
-    console.log("temp", string)
+    // console.log("username", username)
+
 }
 
 // let string="rahul"
@@ -128,11 +141,27 @@ const stringCompression=(string)=>{
 
 }
 
-let string = ["a","a","b","b","c","c","c"]
+// let string = ["a","a","b","b","c","c","c"]
 stringCompression(string)
  
 //ab12  ["a","b","1","2"]  4
 
 
+let string="rahul"
+reverseVowels(string)
+
+
+function reverseWords(){
+    let username="the sky is blue";
+    let user=username.split(' ')
+    let newstring=" ";
+    for (var i=user.length-1; i>=0; i-- ){
+        // console.log(username[0])
+        newstring+=user[i] + " "
+    }
+    console.log(newstring)
+}
+
+reverseWords()
 
 
