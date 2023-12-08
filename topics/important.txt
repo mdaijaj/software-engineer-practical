@@ -6,11 +6,9 @@ Ability to write unit testing of code components and functional tests for module
 Experience working in AWS stack like such as S3, EKS, MSK and ELBs is a big plus
 
 
-<<<<<<< HEAD
 sales marketting fronted api with example and flow:-
 role wise access with frotned api integration with example
 
-=======
 
 zoho:-
 user base dashboard
@@ -20,4 +18,3 @@ india mard
 telephonic data
 third party
 social media app
->>>>>>> c876da96af5d30965b7ec1509c47fd7c7723296e

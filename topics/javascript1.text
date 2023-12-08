@@ -407,10 +407,7 @@ const handler = () => console.log("This is a click handler function");
 document.addEventListener("click", handler);
 
 
-<<<<<<< HEAD
 
-=======
->>>>>>> c876da96af5d30965b7ec1509c47fd7c7723296e
 What is a first order function
 First-order function is a function that doesn’t accept another function as an argument and doesn’t return a function as its return value.
 
@@ -726,7 +723,6 @@ var empDetailsDeepCopy = {
 Now if you change empDetailsDeepCopy.name, it will only affect empDetailsDeepCopy & not empDetails
 
 
-<<<<<<< HEAD
 const memoizAddition = () => {
   let cache = {};
   return (value) => {
@@ -745,7 +741,6 @@ const memoizAddition = () => {
 const addition = memoizAddition();
 console.log(addition(20)); //output: 40 calculated
 console.log(addition(20)); //output: 40 cached
-=======
 
 map: return new array, 
 foreach same job but return undefined, 
@@ -777,4 +772,3 @@ console.log(sum); // Output: 15
 
 
 
->>>>>>> c876da96af5d30965b7ec1509c47fd7c7723296e

@@ -1,0 +1,137 @@
+nodejs:- top 25
+what is nodejs
+why use nodejs for backend
+what is callback
+promise
+eventloop  libuv 
+single thread how to handle multiple reqeustion
+What Is EventEmitter In NodeJs
+middleware
+callback hell How can you avoid callback hells
+synchonous vs asynchonous
+What are JWT?  What are disadvantages of using jwt based authentication?
+cookies session localstorage
+What are disadvantages of using session based authentication? 
+What Are The Key Features Of NodeJs?
+core module ?
+What are streams in Nodejs Explain the different types of streams present in Nodejs What is Piping in
+packages json vs packages.lock.json
+List down the major security implementations within Node.js
+repl example
+with async await
+What are different authentication methods?
+
+Can you write CRUD operations in Node js without using frameworks?  practical
+worker thread  ? doubt
+What Is A Child_process Module In NodeJs?
+between spawn() and fork() methods in Node.js?
+
+
+
+
+javascript:- 25 top
+what is js fearture  
+advantage of JavaScript
+ecma script es6 with class 14 example (arrow vs regular function)
+high order function 
+pure inpure function
+first class function first order function
+What is the difference between proto and prototype?
+hosting   What is the Temporal Dead Zone
+curry
+clourser
+array method function  slice vs splice  array method map, foreach, filter, reduce
+call bind apply
+What is an undefined and undeclared variable
+What is DOM? What is the use of a document object
+What is IIFE(Immediately Invoked Function Expression)
+What is scope in javascript
+undefined vs null vs NaN  undeclared
+What is the difference between Shallow and Deep copy
+javscript oops clsss object inheritance incapsulation construtor super this keyboard
+What is the use of setTimeout and setInterval the purpose of clearTimeout method and clearInterval 
+== and === operators
+What are regular expression patterns || What is a RegExp object
+What is memoization?
+What is a cookie ,need a Cookie , the options in a cookie, delete a cookie?
+
+
+
+
+reactjs: 25 top
+what is reactjs fearture 
+reactjs vs anguler why use reactjs for fronted
+life cycle method both useeffect
+state vs props
+class function component
+use state?
+useMemo() vs use callback()
+virtual dom real dom?
+what is jsx
+axios vs fetch?
+What is useRef ?
+What is hooks? all
+what is reduce how it works?
+what is redux
+How to update state in redux?
+How do we pass props from child to parent in react
+useState vs useContext?
+What is Bebel?
+// ● Stateful vs stateless class funtion
+   ● lazyLoad of components
+// ● Prop drilling in react
+Thunk in redux
+// ● What are middlewares in react?
+// ● What is difference in pure component an higher order components?
+// ● How can you improve performance of your react app?
+// ● Event Bubbling?
+// What is the use of preventDefault method?  stop redirect page or reload
+// What is the use of stopPropagation method?
+// ● What are interceptors in React?  ?
+
+
+
+
+
+databases: 25?
+all join right left full join inner join self CARTESIAN join CROSS JOIN
+second highest salary?
+db connection flow?
+raw query any type?
+what is orm why we use?
+what is migration
+mysql vs nosql?
+groupby and having query
+what is index how to create index with example in both
+what is mysql props and const
+what is Mongodb props and const
+what is aggregate pipeling with example
+Vertical Scaling and Horizontal Scaling
+what is replica
+waht is Sharding?
+14 What are the mongoose middlewares?  pre or post in schema that is call middlewares
+virtual properties
+what is transection?
+Embedded documents
+Difference between Where and Having Clause in SQL : 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 practical knowledge
 
 
@@ -13,8 +12,6 @@ fibonasis value
 
 
 
-=======
->>>>>>> c876da96af5d30965b7ec1509c47fd7c7723296e
 answer:-
 1. What Are The Key Features Of NodeJs?
 Asynchronous event driven IO helps concurrent request handling – All APIs of Node.js are asynchronous. This feature means that if a Node receives a request for some Input/Output operation, it will execute that operation in the background and continue with the processing of other requests. Thus it will not wait for the response from the previous requests.
@@ -26,18 +23,15 @@ No Buffering – Node.js applications never buffer any data. They simply output 
 
 
 
-<<<<<<< HEAD
 event driven architecture  (mouseEvent)   
 event EventEmitter  
 event listener 
 event handlers
-=======
 event driven (mouseEvent)
 event emit
 event handlers
 event listener
 
->>>>>>> c876da96af5d30965b7ec1509c47fd7c7723296e
 
 setTimeout
 setInterver
@@ -294,6 +288,16 @@ Asynchronous file & file system operations
 Asynchronous TCP & UDP sockets
 Child processes
 
+console.log("Start");
+setTimeout(function () {
+  console.log("Timeout callback");
+}, 2000);
+
+fs.readFile("example.txt", "utf8", function (err, data) {
+  console.log("File Read Callback");
+});
+
+console.log("End");
 
 
 
