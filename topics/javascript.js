@@ -1,38 +1,33 @@
 //promise
 const myPromise = new Promise((resolve, reject) => {
-<<<<<<< HEAD
   setTimeout(() => {
     const data = "Promise resolved with some data";
     if (data) {
       resolve(data);
     } else {
-=======
     setTimeout(() => {
       const data = "Promise resolved with some data";  //condition we can
       if(data){
         resolve(data);
       }else{
->>>>>>> c876da96af5d30965b7ec1509c47fd7c7723296e
-      reject(new Error("Promise rejected with an error"));
-    }
-  }, 2000);
+        reject(new Error("Promise rejected with an error"));
+      }
+    }, 2000)
+  }
 });
 
-<<<<<<< HEAD
 myPromise.then((result) => {
   console.log("Promise fulfilled:", result);
 })
   .catch((error) => {
     console.error("Promise rejected:", error.message);
   });
-=======
 // myPromise.then((result) => {
 //     console.log("Promise fulfilled:", result);
 // })
 // .catch((error) => {
 //     console.error("Promise rejected:", error.message);
 // });
->>>>>>> c876da96af5d30965b7ec1509c47fd7c7723296e
 
 
 // //with Async/Await: used
@@ -174,26 +169,25 @@ myPromise.then((result) => {
 
 
 
-// //callback
+//callback
 // A function that takes a callback as an argument and invokes it
-// function fetchData(callback) {
-//     setTimeout(()=>{
-//         let data= "data fetching successfully!"  //4
-//         callback(data);		
-//     }, 3000)
-// }
+function fetchData(callback) {
+    setTimeout(()=>{
+        let data= "data fetching successfully!"  //4
+        callback(data);		
+    }, 3000)
+}
 
-// function handleData (data) { 
-//     console.log("callback function: ", data);    //3
-// }
+function handleData (data) { 
+    console.log("callback function: ", data);    //3
+}
 
-// console.log("Start fetching data...");  //1
-// fetchData(handleData);
-// console.log("Fetching data in progress...");  //2
+console.log("Start fetching data...");  //1
+fetchData(handleData);
+console.log("Fetching data in progress...");  //2
 
 
 
-<<<<<<< HEAD
 // Nested callbacks without proper indentation (callback hell)
 function doTask1(callback1) {
   setTimeout(function () {
@@ -214,7 +208,6 @@ function doTask3() {
     console.log("Task 3 done");
   }, 1000);
 }
-=======
 
 // // Nested callbacks without proper indentation (callback hell)
 // function doTask1(callback1) {
@@ -236,7 +229,6 @@ function doTask3() {
 //         console.log("Task 3 done");
 //     }, 1000);
 // }
->>>>>>> c876da96af5d30965b7ec1509c47fd7c7723296e
 
 
 // // Nested callback hell
@@ -249,7 +241,6 @@ function doTask3() {
 
 
 
-<<<<<<< HEAD
 //using promise:-
 function doTask1() {
   return new Promise((resolve) => {
@@ -286,7 +277,6 @@ function doTask3() {
 // }
 // runTasks();
 
-=======
 // //using promise:-
 // function doTask1() {
 //     return new Promise((resolve) => {
@@ -323,7 +313,6 @@ function doTask3() {
   // }
   // runTasks();
   
->>>>>>> c876da96af5d30965b7ec1509c47fd7c7723296e
 
 
 
@@ -332,7 +321,6 @@ function doTask3() {
 
 // Constructor function for creating Person objects
 function Person(firstName, lastName) {
-<<<<<<< HEAD
   this.firstName = firstName;
   this.lastName = lastName;
 }
@@ -347,7 +335,6 @@ var person1 = new Person('John', 'Doe');
 var person2 = new Person('Jane', 'Smith');
 
 // Calling the method from the prototype on the instances
-=======
     this.firstName = firstName;
     this.lastName = lastName;
 }
@@ -362,14 +349,11 @@ var person2 = new Person('Jane', 'Smith');
   var person2 = new Person('Jane', 'Smith');
   
   // Calling the method from the prototype on the instances
->>>>>>> c876da96af5d30965b7ec1509c47fd7c7723296e
 //   console.log(person1.getFullName()); // Output: "John Doe"
 //   console.log(person2.getFullName()); // Output: "Jane Smith"
 
 
-<<<<<<< HEAD
 
-=======
 // example2 prototype
 
 // let a={
@@ -394,7 +378,6 @@ var person2 = new Person('Jane', 'Smith');
 // console.log("language", a.language)
 
   
->>>>>>> c876da96af5d30965b7ec1509c47fd7c7723296e
 
 // call vs apply vs bind
 // call apply and bind method use access only once call other function property not repeating code
@@ -405,17 +388,14 @@ var person2 = new Person('Jane', 'Smith');
 //4 call apply and bind
 // case0;
 var student1 = {
-<<<<<<< HEAD
   name: "aijaj",
   displayName(country, state) {                                        //repeating code
     //    console.log(`my name is ${this.name}  and my country  ${country} ${state}`)
   }
-=======
     name: "aijaj",
     displayName(country, state) {                                        //repeating code
         console.log(`my name is ${this.name}  and my country  ${country} ${state}`)
     }
->>>>>>> c876da96af5d30965b7ec1509c47fd7c7723296e
 }
 
 var student2 = {
@@ -427,15 +407,12 @@ var student2 = {
 // student1.displayName("India", "Delhi")
 
 // case1:
-<<<<<<< HEAD
 var student2 = {
   name: "rahul",
 }
-=======
 // var student2 = {
 //     name: "rahul",
 // }
->>>>>>> c876da96af5d30965b7ec1509c47fd7c7723296e
 // student1.displayName.call(student2, "India", "haryana")   // use call method 
 
 
@@ -447,11 +424,8 @@ var student2 = {
 
 //case 3 use bind method take variable function
 var student2 = {
-<<<<<<< HEAD
   name: "rahul",
-=======
     name: "mukesh",
->>>>>>> c876da96af5d30965b7ec1509c47fd7c7723296e
 }
 const studentInfo= student1.displayName.bind(student2, "India", "Chennai") ;  //use bind and take a variable fucntion
 studentInfo()
@@ -489,33 +463,27 @@ let name2={
 // name.printFullname.call(name2)
 
 // case2
-<<<<<<< HEAD
 let name = {
   firstname: "adil",
   lastname: "khan"
 }
-=======
 // let name = {
 //     firstname: "adil",
 //     lastname: "khan"
 // }
->>>>>>> c876da96af5d30965b7ec1509c47fd7c7723296e
 let printFullname = function (homeTown, state) {
   // console.log(this.firstname + " " + this.lastname + " from " + homeTown +", " + state )
 }
 printFullname.call(name, "bawana", "delhi")
 
-<<<<<<< HEAD
 let name2 = {
   firstname: "Mahenra sing",
   lastname: "dhoni"
 }
-=======
 // let name2 = {
 //     firstname: "Mahenra sing",
 //     lastname: "dhoni"
 // }
->>>>>>> c876da96af5d30965b7ec1509c47fd7c7723296e
 
 //function borrow
 // printFullname.call(name2, "bhagalpur", "bihar")
@@ -600,7 +568,6 @@ var student2 = {
 // studentInfo()
 
 
-<<<<<<< HEAD
 
 
 
@@ -621,18 +588,15 @@ arrayOfOddNumbers[100] = 199;
 var username = "rahul"
 function userinfo() {
   username = "aijaj";
-=======
 // //scope example
 let username = "rahul"
 function userinfo(username) {
     username = "aijaj";
     return username
->>>>>>> c876da96af5d30965b7ec1509c47fd7c7723296e
 }
 console.log("username", username)  //rahul
 userinfo(username)
 
-<<<<<<< HEAD
 // console.log("username", username)
 userinfo()
 
@@ -664,7 +628,6 @@ console.log('4.', memoized(10))
 
 
 // Garbage Collection
-=======
 
 
 
@@ -826,4 +789,3 @@ add(7,5)
 //     return a+b;
 // }
 // add(7,5)
->>>>>>> c876da96af5d30965b7ec1509c47fd7c7723296e
