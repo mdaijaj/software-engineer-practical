@@ -99,7 +99,59 @@ const reverseVowels = (string) => {
 
 }
 
+<<<<<<< HEAD
 let string = "rahul"
+=======
+// let string="rahul"
+// reverseVowels(string)
+
+
+
+const increasingTripletSubsequence=(nums)=>{
+    for (var i=0; i<nums.length; i++){
+        if(nums[i]<nums[i+1] && nums[i+1]<nums[i+2]){
+            console.log(true)
+            return true
+        }
+    }
+    console.log(false)
+    return false
+}
+let nums=[20,100,10,12,5,13]
+
+// increasingTripletSubsequence(nums)
+
+
+const stringCompression=(string)=>{
+    let obj={}
+    for (var char of string){
+        obj[char]=(obj[char] || 0) +1  
+    }
+    let mainstring="";
+    let valuelength=Object.values(obj);
+    let keylength=Object.keys(obj);
+
+    for (var i=0; i<valuelength.length; i++){
+        if(valuelength[i]>1){
+            mainstring+=keylength[i] + valuelength[i]
+        }else{
+            mainstring+=keylength[i]
+        }
+    }
+    let staringarr=mainstring.split("")
+    console.log("mainstring", staringarr)
+    return mainstring.length
+
+}
+
+// let string = ["a","a","b","b","c","c","c"]
+stringCompression(string)
+ 
+//ab12  ["a","b","1","2"]  4
+
+
+let string="rahul"
+>>>>>>> 8f7c5442cbe6a7f69e8860242961479975f9dc71
 reverseVowels(string)
 
 

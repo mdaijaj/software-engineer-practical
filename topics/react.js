@@ -49,3 +49,7 @@
 // ● What is difference in memo(), useMemo() and usecallback()
 // ● How can you improve performance of your react app?
 // Learn to create custom hooks
+
+
+
+// actual wight ka light copy hai
