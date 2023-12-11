@@ -579,45 +579,6 @@ var person2 = new Person('Jane', 'Smith');
 
 
 
-//3 call apply and bind
-// case0;
-var student1 = {
-  name: "aijaj",
-  displayName(country, state) {                                        //repeating code
-    console.log(`my name is ${this.name}  and my country  ${country} ${state}`)
-  }
-}
-
-var student2 = {
-  name: "rahul",
-  displayName(country) {                                      //repeating code
-    console.log(`my name is ${this.name}  and my country  ${country}  ${state}`)
-  }
-}
-// student1.displayName("India", "Delhi")
-
-// case1:
-var student2 = {
-  name: "rahul",
-}
-// student1.displayName.call(student2, "India", "haryana")   // use call method 
-
-
-//case 2 using apply method use array as a argument
-var student2 = {
-  name: "kishan",
-}
-// student1.displayName.apply(student2, ["India", "Mumbai"])   // use apply method array format only  both immediately call
-
-//case 3 use bind method take variable function
-var student2 = {
-  name: "rahul",
-}
-// const studentInfo= student1.displayName.bind(student2, "India", "Chennai") ;  //use bind and take a variable fucntion
-// studentInfo()
-
-
-
   //entities
 // let cars=["ducati", "jaguar", "tvs", "swift"]
 // let obj=cars.entries()
