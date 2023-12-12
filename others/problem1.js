@@ -66,8 +66,8 @@ function SecondMax(arr2){
       for (let i of arr) {
           if (!tmp[i]) {   //condition check object item is not exits or undefine
               tmp[i] = 1;
-              // result[idx] = i;
               result.push(i)
+              // result[idx] = i;
               // idx++;
           } 
       }

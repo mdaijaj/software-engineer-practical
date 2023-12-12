@@ -8,24 +8,40 @@
     <h1>Insert Element Example</h1>
     <script>
 
-    function InsertElement(arr, position, newElement){
+    function InsertElement(){
+        let arr=[12, 11, 13, 5, 6];
+        let newEl = document.getElementById('newEl').value;
+        newEl = parseInt(newEl)
+        let position = document.getElementById('position').value
         let temp, j, i;
         for (i=arr.length-1; i>=0; i--){
             if(i>=position){ 
                 arr[i+1]=arr[i]   //extend one each elment on left side
                 if(i==position){
-                    arr[position]= newElement  //insert new ele
+                    arr[position]= newEl  //insert new element
                 }
             } 
         }
-        console.log(arr)
+    console.log(arr)
     }
 
-    let arr=[12, 11, 13, 5, 6];
-    let newEle= 8;
-    let position= 2;
-    InsertElement(arr, position, newEle)
+    // let arr=[12, 11, 13, 5, 6];
+    // let newEle= 8;
+    // let position= 2;
+    // InsertElement(arr, position, newEle)
+
+
+    // use js inbuild function
+    // console.log("aijaj", arr)
+    // arr.splice(2,0,2000)  //index remove add
+    // console.log("khan", arr)
+    
+
        
     </script>
+     <input type="text" id="position" placeholder="enter position" />
+     <input type="text" id="newEl" placeholder="enter new element" />
+ 
+     <button onclick="InsertElement()">Insert</button>
 </body>
 </html>
