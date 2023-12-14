@@ -36,7 +36,6 @@ ecma script es6 with class 14 example (arrow vs regular function)
 high order function 
 pure inpure function
 first class function first order function
-What is the difference between proto and prototype?
 hosting   What is the Temporal Dead Zone
 curry
 clourser
@@ -54,6 +53,7 @@ What is the use of setTimeout and setInterval the purpose of clearTimeout method
 What are regular expression patterns || What is a RegExp object
 What is memoization?
 What is a cookie ,need a Cookie , the options in a cookie, delete a cookie?
+What is the difference between proto and prototype?
 
 
 
