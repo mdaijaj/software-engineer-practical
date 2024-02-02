@@ -37,9 +37,8 @@ Agrregation
 Project ion
 
 
-SELECT MAX(salary) AS second_highest_salary
-FROM employees
-WHERE salary < (SELECT MAX(salary) FROM employees);
+SELECT MAX(amount) from salary_stuctures ss 
+WHERE amount < (SELECT MAX(amount) from salary_stuctures ss2 ); 
 
 
 table  multiple case
@@ -136,4 +135,6 @@ must contain unique values. A primary key column cannot have NULL values.
 
 
 Difference between Where and Having Clause in SQL : 
+
+
 

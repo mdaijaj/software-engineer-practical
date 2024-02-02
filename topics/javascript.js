@@ -14,9 +14,11 @@
 
 // call vs apply vs bind
 // call apply and bind method use access only once call other function property not repeating code
-// Call and apply are almost same except the way arguments are passed
-// call as single object and apply as a array arguments
+// Call and apply are almost same except the way second arguments are passed
+// call as single object and apply as a array second arguments 
 // bind method use take variable function define;
+var employee1 = { firstName: "aijaj", lastName: "khan" };
+var employee2 = { firstName: "raj", lastName: "malhotra" };
 
 
 
@@ -57,8 +59,6 @@ const originalArray = [1, [2, 3]];
 // Shallow copy using the spread operator
 const shallowCopyArray = [...originalArray];
 
-// Modify the nested array
-shallowCopyArray[1][0] = 99;
 
 // console.log(originalArray);          // Outputs: [1, [99, 3]]
 // console.log(shallowCopyArray);       // Outputs: [1, [99, 3]]
@@ -67,27 +67,48 @@ shallowCopyArray[1][0] = 99;
 // //deep copy Original object with nested object
 // const originalObject = { a: 1, b: { c: 2 } };
 
-// // Deep copy using JSON.parse and JSON.stringify
-// const deepCopyObject = JSON.parse(JSON.stringify(originalObject));
 
-// // Modify the nested object
-// deepCopyObject.b.c = 99;
+// Both Object.assign() and the spread operator (…) will create shallow copy
+// var student1 ={ 
+//         name : "Manish",
+//         company : "Gfg"
+//     }
+//     var student2 =  student1  ;  //shallow copy
+//     student1.name = "Rakesh"
+//     console.log("student 1 name is",student1.name)
+//     console.log("student 2 name is ",student2.name);
 
-// console.log(originalObject);          // Outputs: { a: 1, b: { c: 2 } }
-// console.log(deepCopyObject);          // Outputs: { a: 1, b: { c: 99 } }
+
+// 	var student1 ={ 
+//     	name : "Manish",
+//     	company : "Elitemindz"
+// 	}
+// 	var student2 = { ...student1 } ;   //deep copy
+// 	student1.name = "Rakesh"
+// 	console.log("student 1 name is",student1.name)
+// 	console.log("student 2 name is ",student2.name);
+	
+	
+
+// 	var student1 ={ 
+//     	name : "Manish",
+//     	company : "Gfg"
+// 	}
+// 	var student2 = Object.assign( {} ,student1) ;    //deep copy
+// 	student1.name = "Rakesh"
+// 	console.log("student 1 name is",student1.name)
+// 	console.log("student 2 name is ",student2.name);
 
 
-// // Original array with nested array
-// const originalArray = [1, [2, 3]];
+// 	var student1 ={ 
+//     	name : "Manish",
+//     	company : "Gfg"
+// 	}
+// 	var student2 = JSON.parse(JSON.stringify(student1))    //deep copy
+// 	student1.name = "Rakesh"
+// 	console.log("student 1 name is",student1.name)
+// 	console.log("student 2 name is ",student2.name);
 
-// // Deep copy using JSON.parse and JSON.stringify
-// const deepCopyArray = JSON.parse(JSON.stringify(originalArray));
-
-// // Modify the nested array
-// deepCopyArray[1][0] = 99;
-
-// console.log(originalArray);          // Outputs: [1, [2, 3]]
-// console.log(deepCopyArray);          // Outputs: [1, [99, 3]]
 
 
 
@@ -247,22 +268,22 @@ function add(a,b){
 
 
 
-// //callback
+//callback
 // A function that takes a callback as an argument and invokes it
-// function fetchData(callback) {
-//     setTimeout(()=>{
-//         let data= "data fetching successfully!"  //4
-//         callback(data);		
-//     }, 3000)
-// }
+function fetchData(callback) {
+    setTimeout(()=>{
+        let data= "data fetching successfully!"  //4
+        callback(data);		
+    }, 3000)
+}
 
-// function handleData (data) { 
-//     console.log("callback function: ", data);    //3
-// }
+function handleData (data) { 
+    console.log("callback function: ", data);    //3
+}
 
-// console.log("Start fetching data...");  //1
-// fetchData(handleData);
-// console.log("Fetching data in progress...");  //2
+console.log("Start fetching data...");  //1
+fetchData(handleData);
+console.log("Fetching data in progress...");  //2
 
 
 
