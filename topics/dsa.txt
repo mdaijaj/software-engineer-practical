@@ -1,0 +1,9 @@
+euclid algorithm
+time complexity
+1. Constant Time(O(1)): If the running time does not depend on the
+input size (n) then it is known as constant running time. It can be
+represented as 
+
+2. Linear Time O(kn): If the time complexity is at most a constant factor
+times the size of the input, then it is known as linear time complexity
+and is presented as T(n) <=kn where k is a constant or T(n) =O(n). 

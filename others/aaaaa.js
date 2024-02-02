@@ -29,7 +29,6 @@ const promise= new Promise((resolve, rejected)=>{
 })
 
 
-ElementInternals("message", data)
 
 
 // // fs.readfileSys(writeFsFile)
@@ -37,12 +36,4 @@ ElementInternals("message", data)
 
 // console.log("data", data)
 
-
-
-userdata.findall({
-    include[{
-        model: "prodc",
-        forignkey: "userid"
-    }]
-})
 

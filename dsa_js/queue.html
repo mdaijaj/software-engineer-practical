@@ -1,50 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 </head>
+
 <body>
     <h1> Basic Queue</h1>
     <script>
-        let data=[];
-        let max=4;
-        let currentSize= data.length;
-        
+        let data = [];
+        let max = 4;
+        let currentSize = data.length;
+
 
         // enqueue add element
-        function enqueue(newValue){
+        function enqueue(newValue) {
             console.log(currentSize, max)
-            if(currentSize >max){
+            if (currentSize > max) {
                 alert("queue is full you cannot add new element", newValue)
             }
-            else{
-                data[currentSize]= newValue
-                currentSize+=1
+            else {
+                data[currentSize] = newValue
+                currentSize += 1
             }
         }
 
         //dequeue remove element
-        function dequeue(newValue){
+        function dequeue(newValue) {
             console.log(currentSize, max)
-            if(currentSize<=0){
+            if (currentSize <= 0) {
                 alert("queue is empty you cannot remove from  empty queue", newValue)
             }
-            else{
-               for (var i=0; i<data.length; i++){
-                data[i]= data[i+1]
-               }
-               currentSize--
-               data.length= currentSize;
+            else {
+                for (var i = 0; i < data.length; i++) {
+                    data[i] = data[i + 1]
+                }
+                currentSize--
+                data.length = currentSize;
             }
         }
 
-      
+
 
         //show element
-        function display(){
+        function display() {
             console.log("data", data)
         }
 
-        
+
         enqueue(12)
         enqueue(58)
         enqueue(35)
@@ -58,4 +60,5 @@
         display()
     </script>
 </body>
+
 </html>

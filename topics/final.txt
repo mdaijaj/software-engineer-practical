@@ -20,12 +20,10 @@ List down the major security implementations within Node.js
 repl example
 with async await
 What are different authentication methods?
-
 Can you write CRUD operations in Node js without using frameworks?  practical
 worker thread  ? doubt
 What Is A Child_process Module In NodeJs?
 between spawn() and fork() methods in Node.js?
-
 
 
 
@@ -41,8 +39,6 @@ curry
 clourser
 array method function  slice vs splice  array method map, foreach, filter, reduce
 call bind apply
-What is an undefined and undeclared variable
-What is DOM? What is the use of a document object
 What is IIFE(Immediately Invoked Function Expression)
 What is scope in javascript
 undefined vs null vs NaN  undeclared

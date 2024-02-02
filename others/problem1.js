@@ -8,9 +8,11 @@ function bubbleSort(array){
         array[j]= array[j+1];
         array[j+1]= temp
       }
+      console.log("aijaj", array)
+
     }
   }
-  console.log("aijaj", array)
+  // console.log("aijaj", array)
 }
 // let number = [12, 10, 15, 11, 14, 13, 16];
 // bubbleSort(number)
@@ -62,13 +64,13 @@ function SecondMax(arr2){
   function removeDuplicate(arr) {
       const result = [];
       const tmp = {};
-      // let idx = 0;
+      let idx = 0;
       for (let i of arr) {
           if (!tmp[i]) {   //condition check object item is not exits or undefine
               tmp[i] = 1;
-              result.push(i)
-              // result[idx] = i;
-              // idx++;
+              // result.push(i)
+              result[idx] = i;
+              idx++;
           } 
       }
       return result;
@@ -257,7 +259,7 @@ let n2 = 7007;
 
 
 //  string palindrom
-function palindromString(string){
+function palindromString(string){   121
   let start=0
   let end=string.length-1
   let result=true;

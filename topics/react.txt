@@ -167,6 +167,9 @@ useRef:- when click then highlight color
   rerender component stop unwantage reredering
   style color focus value etc handle using hooks
   it like a useState only and its preserve the value. No rerender
+  use ref change property
+
+  form validation, colors, focus while use only emergency
 
 function CustomTextInput(props) {
   // textInput must be declared here so the ref can refer to it
@@ -378,3 +381,21 @@ response status.code we can error handle click easily.
 
 
 funcion pass as a props:-
+
+
+
+31 december
+react.new for browser open s
+react framework  next.js and remix
+
+
+fragment use for remove extra div like child colum remove div
+
+
+pure component is a class component like useMemo
+it work like stop re-rendering multi time.
+if name is same onClick function then they are not re-render component.
+
+pure component example
+
+
