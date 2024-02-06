@@ -34,6 +34,8 @@ how is better then other language why choose nodejs for backend?
 
 //important
 with example deeply.
+What are streams in Nodejs Explain the different types of streams present in Nodejs What is Piping in Node?
+event loop
 promise example
 with async await
 array method example
@@ -57,6 +59,7 @@ binary search
 find second largest number
 sorted value unique value
 fibonasis value
+middleware with example
 
 
 
