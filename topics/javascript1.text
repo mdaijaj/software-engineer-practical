@@ -5,9 +5,6 @@ The syntax of Promise creation looks like below,
 .then()
 .catch()
 
-what is a anonymous function.
-that function without name its call anonymous function.
-does not own identity
 
 express vs statement
 Expression:-
@@ -43,7 +40,7 @@ Global, Function and Block Scope
  Scope of a variable: Entire region of our code, where a certain variable can be
 accessed.
 
-Callback:-
+Callback hell:-
 Callback hell is when we have a lot of nested callbacks in order to execute
 asynchronous tasks in sequence.
 
@@ -397,17 +394,6 @@ myFunction("Hello Mr."); //output: Hello Mr.John
 As per the above code, the inner function(i.e, greetingInfo) has access to the variables in the outer function scope(i.e, Welcome) even after the outer function has returned.
 
 
-
-What is a first class function
-In Javascript, functions are first class objects. First-class functions means when functions in that language are treated like any other variable.
-For example, in such a language, a function can be passed as an argument to other functions, can be returned by 
-another function and can be assigned as a value to a variable. 
-
-const handler = () => console.log("This is a click handler function");
-document.addEventListener("click", handler);
-
-
-
 What is a first order function
 First-order function is a function that doesn’t accept another function as an argument and doesn’t return a function as its return value.
 
@@ -479,12 +465,6 @@ Type of null is object	Type of undefined is undefined
 The null value is a primitive value that represents the null, empty, or non-existent reference.	The undefined value is a primitive value used when a variable has not been assigned a value.
 Indicates the absence of a value for a variable	Indicates absence of variable itself
 Converted to zero (0) while performing primitive operations	Converted to NaN while performing primitive operations
-
-
-
-24. What is DOM? What is the use of a document object?
-DOM stands for Document Object Model. A document object represents the html document. It can be used to access and change the content of html.
-
 
 
 What is a strict mode in javascript

@@ -210,7 +210,6 @@ function isAnagram(str1, str2){
   for (var char of str1){
       newObj[char]=(newObj[char] || 0) +1
   }
-  console.log("newObj", newObj)
 
   for (var item of str2){
       if(!newObj[item]){
@@ -218,10 +217,12 @@ function isAnagram(str1, str2){
       }
       newObj[item]-=1
   }
+    console.log("newObj", newObj)
+
   return true
 }
-// let checked= isAnagram("aijaj", "ajaji")
-// console.log("checked", checked)
+let checked= isAnagram("aijaj", "ajaji")
+console.log("checked", checked)
 
 
 //8 recursion using without loop   total= 5*4*3*2*1
@@ -285,7 +286,8 @@ let newstring=[]
 for (let i=0; i< arr3.length; i++){
     // console.log("arr3[i]", arr3[i])
     const str2 = arr3[i].charAt(0).toUpperCase() + arr3[i].slice(1);
-    newstring.push(str2)
+    // newstring.push(str2)
+    newstring[i]=str2
 }
 console.log("newstring", newstring)
 

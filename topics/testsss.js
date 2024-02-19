@@ -1,14 +1,23 @@
-function print() {
-  setTimeout(function() {
-    console.log("print inside setTimeout ");  4
-  }, 4000);
-  console.log("print");  2
+
+function first(){
+  setTimeout(() => {
+    console.log("first")
+  }, 2000);
 }
 
-setTimeout(function() {
-  console.log("inside setTimeout");   3
-}, 1000);
 
-console.log("outside setTimeout");    1
+function second( callback){
+  setTimeout(() => {
+    callback
+  }, 2000);
+  console.log("second")
+}
 
-print();
+function main(){
+  setTimeout(() => {
+    second(first())
+  }, 2000);
+  console.log("third")
+}
+
+main();

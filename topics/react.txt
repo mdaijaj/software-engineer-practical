@@ -399,3 +399,19 @@ if name is same onClick function then they are not re-render component.
 pure component example
 
 
+useSearchParams() // for query data get
+
+
+outLet:- is related to nested routing.
+ 
+
+
+project:-
+timer
+todo
+qustion answer
+basic bill calculate
+
+
+
+inverse data flow or child to parent data pass
