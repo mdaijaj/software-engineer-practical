@@ -2,20 +2,6 @@ life cycle method:-
 constructor:-
 before loading execute.
 
-class base life cycle method
-constructor()
-rendor()  //render first time execute
-componentDidmount()
-componentDidUpdate()
-componentDidUnmount()
-
-phase :-
-componentdimount:- we should api call and async process in this phase 
-mounting birth
-updating we do changes
-unmounting dead phase
-
-
 funcion base component useEffect:-
 useState()
 return()
@@ -23,11 +9,11 @@ useEffect()
 
 
 class base component life cycle method:-
-rendor
-componentdidmount  -- first time loading    //useEffect
 constructor
+rendor
+componentdidmount  -- first time loading    //useEffect  mounting birth  we should api call and async process in this phase 
 componentDidUpdate   -- update time load
-componentDidUnmount   --remove from component
+componentDidUnmount   --remove from component  dead phase
 
 example:-
 componentDidMount()=>{
@@ -80,6 +66,9 @@ a hoc is funcion that take a component and returns a new component.
 
 why use hoc?
 same logic  when we use same component logic different component so we used hoc.
+
+
+
 
 
 const subjects= (STUDENT)=>{ //component name as arg

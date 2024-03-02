@@ -463,4 +463,29 @@ arrayOfOddNumbers[100] = 199;
 // console.log(arrayOfOddNumbers.length); 200
 
 
+// function a(){
+//   console.log("1")
+
+//   function b(){
+//     console.log("2")
+//   }
+//   console.log(3)
+//   b()
+// }
+// console.log(4)
+
+
+// a()
+// console.log("5")
+
+
+let a=true
+let count=1
+    setTimeout(()=>a=false,1000)
+    while(a){
+      console.log(count+=1)
+    console.log('hello')
+    }
+
+
 

@@ -55,3 +55,10 @@
 // actual wight ka light copy hai
 
 
+
+
+// event bubbling
+
+// semantic tag
+
+
