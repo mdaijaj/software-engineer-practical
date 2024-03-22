@@ -16,6 +16,10 @@
 15 How to query data using mongoose?
 
 
+dump database
+mongodump --username your_username --password your_password --authenticationDatabase admin --out /path/to/output/directory
+or
+mongodump --uri="mongodb://13.127.232.191:21819/vedobi" --forceTableScan
 
 
 groupby
@@ -135,6 +139,7 @@ must contain unique values. A primary key column cannot have NULL values.
 
 
 Difference between Where and Having Clause in SQL : 
+
 
 
 

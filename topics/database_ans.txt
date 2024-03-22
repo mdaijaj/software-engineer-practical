@@ -122,3 +122,30 @@ SELECT COUNT(CustomerID), Country
 FROM Customers
 GROUP BY Country
 HAVING COUNT(CustomerID) > 5;
+
+
+projection:-
+
+db.collection_name.find({}, key: 1)
+
+{_id: 87455431577, title: "ksisis"},
+{_id: 87455478797, title: "rahls"},
+{_id: 87455478897, title: "how are you"},
+
+
+
+only display the title 
+db.collection_name.find({}, title: 1, _id: 0)
+
+show all document only key title not others
+{title: "ksisis"},
+{title: "rahls"},
+{title: "how are you"},
+
+
+indexing:-
+createIndex()
+
+db.collection_name.createIndex({title: 1, description: -1})  //1 true, -1 false assending or desending
+db.collection_name.dropIndex({title: 1});
+

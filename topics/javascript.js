@@ -1,5 +1,5 @@
 //1 //clouser    
-// //clouser is function along with its lexical enviroment bind that is call clouser
+// //A clouser is function along with its lexical enviroment bind that is call clouser
 // function init() {
 //   var name = "Mozilla"; // name is a local variable created by init
 //   function displayName() { // displayName() is the inner function, that forms the closure
@@ -17,8 +17,15 @@
 // Call and apply are almost same except the way second arguments are passed
 // call as single object and apply as a array second arguments 
 // bind method use take variable function define;
-var employee1 = { firstName: "aijaj", lastName: "khan" };
-var employee2 = { firstName: "raj", lastName: "malhotra" };
+var employee1 = { 
+  firstName: "aijaj", 
+  lastName: "khan" 
+};
+
+var employee2 = { 
+  firstName: "raj", 
+  lastName: "malhotra" 
+};
 
 
 
@@ -38,9 +45,66 @@ var employee2 = { firstName: "raj", lastName: "malhotra" };
 
 
 
+// let obj={
+//   name: "kishan"
+// }
 
-//shallo copy Original object with nested object
-const originalObject = { a: 1, b: { c: 2 } };
+// let user= obj;
+// user.name="musk";
+// console.log("obj...", obj) 
+// console.log("obj...", obj)  //copy of memory location
+
+
+
+  let obj ={ 
+      name : "Manish",
+      company : "Gfg"
+  }
+    var student2 =  student1  ;    //copy of memory location
+    student1.name = "Rakesh"
+    console.log("student 1 name is",student1.name)
+    console.log("student 2 name is ",student2.name);
+
+
+// Both Object.assign() and
+// spread operator (…) will create shallow copy
+
+// 	var student1 ={ 
+//     	name : "Manish",
+//     	company : "Elitemindz"
+// 	}
+// 	var student2 = { ...student1 } ;   //deep copy
+// 	student1.name = "Rakesh"
+// 	console.log("student 1 name is",student1.name)
+// 	console.log("student 2 name is ",student2.name);
+	
+
+
+// //deep copy Original object with nested object
+// const originalObject = { a: 1, b: { c: 2 } };
+
+
+	
+
+// 	var student1 ={ 
+//     	name : "Manish",
+//     	company : "Gfg"
+// 	}
+// 	var student2 = Object.assign( {} ,student1) ;    //shoallow copy
+// 	student1.name = "Rakesh"
+// 	console.log("student 1 name is",student1.name)
+// 	console.log("student 2 name is ",student2.name);
+
+
+// 	var student1 ={ 
+//     	name : "Manish",
+//     	company : "Gfg"
+// 	}
+// 	var student2 = JSON.parse(JSON.stringify(student1))    //deep copy
+// 	student1.name = "Rakesh"
+// 	console.log("student 1 name is",student1.name)
+// 	console.log("student 2 name is ",student2.name);
+
 
 // Shallow copy using the spread operator
 const shallowCopyObject = { ...originalObject };
@@ -62,56 +126,6 @@ const shallowCopyArray = [...originalArray];
 
 // console.log(originalArray);          // Outputs: [1, [99, 3]]
 // console.log(shallowCopyArray);       // Outputs: [1, [99, 3]]
-
-
-// //deep copy Original object with nested object
-// const originalObject = { a: 1, b: { c: 2 } };
-
-
-// Both Object.assign() and the spread operator (…) will create shallow copy
-// var student1 ={ 
-//         name : "Manish",
-//         company : "Gfg"
-//     }
-//     var student2 =  student1  ;  //shallow copy
-//     student1.name = "Rakesh"
-//     console.log("student 1 name is",student1.name)
-//     console.log("student 2 name is ",student2.name);
-
-
-// 	var student1 ={ 
-//     	name : "Manish",
-//     	company : "Elitemindz"
-// 	}
-// 	var student2 = { ...student1 } ;   //deep copy
-// 	student1.name = "Rakesh"
-// 	console.log("student 1 name is",student1.name)
-// 	console.log("student 2 name is ",student2.name);
-	
-	
-
-// 	var student1 ={ 
-//     	name : "Manish",
-//     	company : "Gfg"
-// 	}
-// 	var student2 = Object.assign( {} ,student1) ;    //deep copy
-// 	student1.name = "Rakesh"
-// 	console.log("student 1 name is",student1.name)
-// 	console.log("student 2 name is ",student2.name);
-
-
-// 	var student1 ={ 
-//     	name : "Manish",
-//     	company : "Gfg"
-// 	}
-// 	var student2 = JSON.parse(JSON.stringify(student1))    //deep copy
-// 	student1.name = "Rakesh"
-// 	console.log("student 1 name is",student1.name)
-// 	console.log("student 2 name is ",student2.name);
-
-
-
-
 
 //prototype:-
 // javascript has a special properties called prototype that is either null or refrences other object.
@@ -479,6 +493,7 @@ arrayOfOddNumbers[100] = 199;
 // console.log("5")
 
 
+// infinited console
 let a=true
 let count=1
     setTimeout(()=>a=false,1000)
@@ -489,3 +504,5 @@ let count=1
 
 
 
+    express-session
+    
