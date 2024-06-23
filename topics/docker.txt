@@ -26,13 +26,90 @@ docker is a container its a common seprate all file packages project infomation
 which we can use other machine use easily we did not install all things or version.
 
 
+images:- its is template of project.
+    not update only create or read
+    all tools is availble
+
+container:- its a instance of images.
+    container is a process
+    container is a isolate process
+    container is work independence not effect what version you have
+    
+
+docker hub || docker desktop all tools availble
+for download image 
+    git pull tool name
+
+
+base image and parent image
+
+parent image:-
+    we build images of project.
+base image:-
+    allready maid like programing laguage node react angular python this is base image which is allready build images
+
+
+practical demo:-
+create image
+create container
+action click run button port assigned || manual or random port 0
+app running server
+
+
+create docker image:-
+docker build -t basic-app .
+
+you can delete unUsed image;
+
+if use then delete first container then delete image
+
+command:-
+docker image rm basic-app 
+docker image rm basic-app -f for using image
+
+
+container delete
+docker container rm basic-app
+
+
+manage version in images:-
+
+delete all container and images command:-
+docker system prune -a
+refresh page
+
+
+run docker update file
+docker run --name basic-container -p 5500:5500 --rm -v absultePath file path :/app basic-app
 
 
 
 
 
+1. mkdir DockerFiles inside touch DockerFile
 
-scope
-substring example
-insert in string crud
+2. instruction in DockerFile:
+#getting base image ubuntu 
+FROM ubuntu
+
+MAINTAINER aijaj khan<automation.aijaj535@gmail.com>
+
+FROM apt-get update
+
+CMD ["echo", "Hello World!", "from my first docker image"]
+
+3. exits
+
+4.command in ubuntu docker build or images:-
+# docker build . (same directory)
+docker build -t myimage1:1.0 .
+
+5. check docker images
+docker images
+
+docker run myimage1 or imageId
+
+
+
+
 

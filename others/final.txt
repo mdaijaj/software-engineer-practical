@@ -1,5 +1,4 @@
 nodejs
-
 child thread
 shading
 replica
@@ -9,8 +8,6 @@ even loop
 single thread
 event emitter
 asyncrous
-
-
 reactjs
 virtual dom shadow dom real dom
 hooks all

@@ -35,12 +35,12 @@ Scaling Horizontal and Vertical both mysql and monggodb
 
 Embedded documents
 nested documents or Embedded documents max 100
-one document size  max is 16mb not exeed more that
+one document size  max is 16mb not exceed more that
 
 
 what is transection?
 A transaction in MySQL is a sequence of one or more SQL statements that are treated as a single,
-indivisible unit of work. Transactions are used to maintain data integrity and consistency in a databas
+indivisible unit of work. Transactions are used to maintain data integrity and consistency in a database
 
 
 virtual properties allow you to define computed or derived properties on your Mongoose models. 
@@ -96,10 +96,10 @@ filter and sort documents and analysis data changes
 
 
 
-replica
+replica set
 duplicate of server
 
-Sharding
+Sharding or shard 
 Sharding is a data distribution process and stores a single data set into multiple databas.
 Vertical adding more resourses as on demand
 Horizontal adding more processing or physical machine
@@ -148,4 +148,11 @@ createIndex()
 
 db.collection_name.createIndex({title: 1, description: -1})  //1 true, -1 false assending or desending
 db.collection_name.dropIndex({title: 1});
+
+
+
+shard key = consists of a field or multiple field
+chunks = contains partitioned data or subsets of shared data.
+balancer = responsible for evently distribution of equale chunks across shards
+zones = can help to improve the data locality for shared clusters.
 

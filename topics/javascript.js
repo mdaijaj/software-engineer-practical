@@ -13,7 +13,7 @@
 
 
 // call vs apply vs bind
-// call apply and bind method use access only once call other function property not repeating code
+// call apply and bind method use access only once define other function property not repeating code
 // Call and apply are almost same except the way second arguments are passed
 // call as single object and apply as a array second arguments 
 // bind method use take variable function define;
@@ -40,11 +40,15 @@ var employee2 = {
 // // let add1= Addition1(5)
 // // let add2= add1(6)
 // // let add3= add2(8)
+// console.log("add3", add3)
+
+
+//curry example function call
 // let res=Addition1(5)(7)(5)
 // console.log("res", res)
 
 
-
+//shallo copy deep copy
 // let obj={
 //   name: "kishan"
 // }
@@ -62,8 +66,8 @@ var employee2 = {
   }
     var student2 =  student1  ;    //copy of memory location
     student1.name = "Rakesh"
-    console.log("student 1 name is",student1.name)
-    console.log("student 2 name is ",student2.name);
+    // console.log("student 1 name is",student1.name)
+    // console.log("student 2 name is ",student2.name);
 
 
 // Both Object.assign() and
@@ -504,5 +508,13 @@ let count=1
 
 
 
-    express-session
+express-session
     
+
+
+
+
+
+
+
+

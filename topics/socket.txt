@@ -1,0 +1,23 @@
+websocket 
+socket.io libraray
+
+websocket/http/ftp/smtp
+
+http   req, res send client get response from server
+websocket in event dual communication client or server both send reqeust or response
+
+
+emit= (data send ) event trigger
+on = (data recieved)  lister
+socket = (invidual socket id)
+io.on =(intire socket)
+
+socket.broadcast.emit("message")   except this go to all message
+socket.to ()   to trigger event for particular room 
+socket.join(groupName) 
+
+
+
+
+
+

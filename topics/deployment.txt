@@ -4,3 +4,15 @@ ssh your_username@your_server_ip
 
 go to server
 code deployment in serve
+
+
+
+create instance and setup aws vm instance
+    launch instance
+    create a ppk or pem file
+
+connection aws 
+connection mongodb and configraion
+connection mongodb
+
+
