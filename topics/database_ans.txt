@@ -156,3 +156,16 @@ chunks = contains partitioned data or subsets of shared data.
 balancer = responsible for evently distribution of equale chunks across shards
 zones = can help to improve the data locality for shared clusters.
 
+
+
+
+less relationships
+nested each document size 16kb
+object inside array find query get data
+db.find({hobies:"dance"})  //all document which is dance hobies
+
+
+
+all main topic here with query:-
+
+

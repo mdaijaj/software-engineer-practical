@@ -45,11 +45,11 @@ useEffect(()=>{
 
 //update phase
 useEffect((number)=>{
-  console.log("componentDimount is working...")    //
+  console.log("componentDidUpdate is working...")    //
 }, [number])
 
 
-//remove component phase:-
+//remove component phase:-  cleanup function
 useEffect((number)=>{
   console.log("function component updating is working...")
   return ()=>{
@@ -58,7 +58,7 @@ useEffect((number)=>{
 }, [number]);
 
 
-cleanup function
+
 
 
 
@@ -123,14 +123,12 @@ two type of hooks
 
 useCallback
 function store in cache same useMemo funcionality in funcion
-memoized function
 memoize the function
 code optimization handle  performance manage stop loop or rerendor 
 optimization component reredering
 refrential equality of function
 application well performance 
-unwantage function call ko rokne ke liye
-unnessessary funcion call ko rokne ke liye
+unnessessary/unwantage function call ko rokne ke liye
 
 
 useMemo():-
@@ -301,20 +299,6 @@ virtual dom is replica of original dom its a copy of original dom
 and modification any particular things
 
 
-
-
-//pratical
-advannce hooks
-life cycle method
-useContext
-Additional Hooks
-composing
-webpack or babel
-
-
-
-
-
 controle component
 input field can be control  by react state like useState() control
 using useState
@@ -328,7 +312,7 @@ state can not be predictable.
 
 
 
-
+useCallback
 life cycle method:-
 useState():-
 state change particular component change
@@ -337,9 +321,9 @@ useEffect(()=>{
   console.log("hello calling again to again console")
 })
 
-calling on screen load only
+calling on screen load only once time when rerendering
 useEffect(()=>{
-  console.log("only once time  console")
+  console.log("only once time console after rerendering")
 }, [])
 
 
@@ -347,9 +331,6 @@ useEffect(()=>{
 useEffect(()=>{
   console.log("depend on change in value")
 }, [value])
-
-
-useReducer useMemo useCallback Remaining
 
 
 shadow dom :=
@@ -372,18 +353,6 @@ data: normal object;
 response status.code we can error handle click easily.
 
 
-
-
-
-funcion pass as a props:-
-
-
-
-31 december
-react.new for browser open s
-react framework  next.js and remix
-
-
 fragment use for remove extra div like child colum remove div
 
 
@@ -392,56 +361,28 @@ it work like stop re-rendering multi time.
 if name is same onClick function then they are not re-render component.
 
 pure component example
-
-
 useSearchParams() // for query data get
-
-
 outLet:- is related to nested routing.
- 
-
-
-project:-
-timer
-todo
-qustion answer
-basic bill calculate
-
-
 
 inverse data flow or child to parent data pass
-
-
 why we use react in fronted?
 
 14th april
-
 reactjs vs vanilla js
 variarble query it's difficult to understand
 class value where we can get data in vanilla js using query
 data SELECT munuall
-
-jonas react tutorial
-pure reactjs in js
-why we use ??
-pizza booking app:-
-navigation slider
-date range counter
-qustion flash card
-todo personal work
-splite bill
-
-popcorn rating funcionality
 
 
 fix problem for prop drilling using component composition
 
 component 3 category
 stateless component  
-no state 
+no state use only 
 small and resulable
 
 statefull component 
+state variarble use in component
 have state still resulable
 
 structure component 
@@ -450,11 +391,6 @@ huge and none resulable
 
 
 compositing component?
-
 we can prop drilling to use children component call to solve prop drilling problem.
-
-we can also passing element as props alternative to children
-
-proptype we can mention prop type
-
+we can also passing element as props alternative to 
 

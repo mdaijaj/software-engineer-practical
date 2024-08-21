@@ -1,0 +1,15 @@
+
+typescript:-
+
+superset of js
+easy to read,
+
+write and maintain 
+with features
+tuples, classes, Enums, Interfaces, Genrics
+
+disadvantage:-
+not execute in browser
+
+we have to compiler generate to js
+

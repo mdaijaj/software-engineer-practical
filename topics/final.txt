@@ -114,20 +114,11 @@ Difference between Where and Having Clause in SQL :
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+practical knowledge problem solve question
+soring
+prime number
+binary search
+find second largest number
+sorted value unique value
+fibonasis value
+middleware with example

@@ -1,0 +1,141 @@
+// es6
+// 1. Arrow Functions
+// 2. Scoping With “Let” and “Const” Keywords.
+// 3. Template Literals
+// 4. Enhanced Object Literals
+// 5. Destructuring
+// 6. Default Parameter
+// 7. Spread Operators Rest
+// 8. Classes
+// 9. Promises
+// 10. Array helper functions Array Methods
+// 11. Import and export syntax
+
+
+1. arrow function:-
+ - Syntax
+  Normal Function: Uses the function keyword. Arrow Function: Uses the => syntax.
+  let function sum(a,b){
+    return a+b
+  }
+
+  let sum=(a,b)=> a+b ;
+  console.log(sum(5,9))
+
+-  This keyboard
+  Normal Function: Has its own this context which is dynamically set based on how the function is called.
+  Arrow Function: Does not have its own this. It inherits this from the surrounding lexical context.
+
+
+ - no arguments Object:
+  Normal Function: Has access to the arguments object, which contains all the arguments passed to the function.
+  Arrow Function: Does not have its own arguments object.
+  let obj={
+    value : 50,
+    function message(){
+      console.log(this)
+    }
+  }
+  obj.message()   //
+
+ - not Constructor:
+  Normal Function: Can be used as a constructor function (i.e., you can use new to create instances).
+  Arrow Function: Cannot be used as a constructor function.
+    
+- hosting in arrow function
+
+
+2. let and const Keywords
+- Variables were previously declared using “var” which had function scope and were hoisted to the top. 
+  It means that a variable can be used before declaration. 
+-  But, the “let” variables and constants have block scope which is surrounded by curly-braces “{}” and cannot be used before declaration.
+- var can be redeclared n number of times but let can be redeclared only once per scope.
+exam1.
+let x=5;
+if(x){
+    let x=10
+    console.log(x)  //10
+}
+console.log(x)   //5
+
+let x=5;
+if(x){
+    var x=10
+}
+console.log(x)   //10
+
+
+3. Multi-line Strings
+let greeting = `Hello World,     
+                Greetings to all,
+                Keep Learning and Practicing!`
+
+
+4. Enhanced Object Literals
+  function getMobile(manufacturer, model, year) {
+   return {
+      manufacturer,
+      model,
+      year
+   }
+}
+getMobile("Samsung", "Galaxy", "2020");
+
+
+6. Destructuring Assignment
+  //Array Destructuring
+  let fruits = ["Apple", "Banana"];
+  let [a, b] = fruits; // Array destructuring assignment
+  console.log(a, b);
+
+  //Object Destructuring
+  let person = {name: "Peter", age: 28};
+  let {name, age} = person; // Object destructuring assignment
+  console.log(name, age);
+
+
+7. Default Parameters
+  let calculateArea = function(height, width = 50) {  
+    // height + width
+  }
+  calculateArea(height)
+
+
+8.Spread and Rest Operators
+  
+
+9. Classes
+Previously, classes never existed in JavaScript. 
+Classes are introduced in ES6 which looks similar to classes in other object-oriented languages, 
+such as C++, Java, PHP, etc. But, they do not work exactly the same way. 
+ES6 classes make it simpler to create objects, 
+implement inheritance by using the “extends” keyword and also reuse the code efficiently
+
+class UserProfile {   
+   constructor(firstName, lastName) { 
+      this.firstName = firstName;
+      this.lastName = lastName;     
+   }  
+    
+   getName() {       
+     console.log(`The Full-Name is ${this.firstName} ${this.lastName}`);    
+   } 
+}
+let obj = new UserProfile('John', 'Smith');
+obj.getName(); // output: The Full-Name is John Smith
+
+
+10. Modules
+ES6 introduced a new feature called modules, in which each module is represented by a separate “.js” file. 
+We can use the “import” or “export” statement in a module to import or export variables, functions, classes or any other component from/to different files and modules.
+
+
+11. Promises
+
+12. 10. Array helper functions
+foreach 
+map
+reduce
+
+
+

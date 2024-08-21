@@ -1,9 +1,7 @@
 // doubt
-// promise any
-// promise race diifenent
+
 // prototype with example
 
-// closure vs nest function
 // cookies token   What is a cookie ,need a Cookie , the options in a cookie, delete a cookie?
 // What is the use of preventDefault method?  stop redirect page or reload
 // What is a polyfill
@@ -11,11 +9,9 @@
 // What is a constructor method?
 
 
-// ecma script
+// ecmascript
 // rest spread
 // import and require
-// arrow function normal function fearture  arrow vs regular function
-// module.exports
 
 
 

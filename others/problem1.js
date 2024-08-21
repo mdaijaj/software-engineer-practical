@@ -1,6 +1,6 @@
 // //1 sorting
 function bubbleSort(array){
-  for (let i=0; i< array.length; i++){
+  for (let i=0; i<  array.length; i++){
     for (let j=0; j< array.length-i; j++){   //each loop sorted last item so -i big value sorted send on last item
       if(array[j] >array[j+1]){
         //swaping value
@@ -8,11 +8,9 @@ function bubbleSort(array){
         array[j]= array[j+1];
         array[j+1]= temp
       }
-      console.log("aijaj", array)
-
     }
   }
-  // console.log("aijaj", array)
+  console.log("aijaj", array)
 }
 // let number = [12, 10, 15, 11, 14, 13, 16];
 // bubbleSort(number)
@@ -59,21 +57,30 @@ function SecondMax(arr2){
   // removeDuplicates(arr2)
 
 
+  // const arr = [1,2,3,4,4,1,2, 4];
+  // const b=[];
+  // for(let i=0;i<arr.length;i++){
+  //     if(b.includes(arr[i])==false){   
+  //         b.push(arr[i])
+  //     }
+  // }
+  // console.log("removed duplicate array value",b)
+
 
   const input = [1, 2, 3, 3, 4, 5,2, 6,3,6,1];
   function removeDuplicate(arr) {
-      const result = [];
-      const tmp = {};
+      const tempArr = [];
+      const obj = {};
       let idx = 0;
       for (let i of arr) {
-          if (!tmp[i]) {   //condition check object item is not exits or undefine
-              tmp[i] = 1;
-              // result.push(i)
-              result[idx] = i;
+          if (!obj[i]) {   //condition check object item is not exits or undefine
+              obj[i] = 1;
+              // tempArr.push(i)
+              tempArr[idx] = i;
               idx++;
           } 
       }
-      return result;
+      return tempArr;
   }
   // console.log("remove duplicate", removeDuplicate(input));
 
@@ -131,7 +138,12 @@ let string =["aijaj", "aijaj", "aman", "yogi", "satyam"]
 function CharactorCount(string){
   let newobj={}
   for (var word of string){
-      newobj[word]=(newobj[word] || 0) +1  //same
+      if(newobj[word]){
+          newobj[word]+=1
+      }
+      else{
+          newobj[word]=1
+      }    
   }
   console.log("newobj_string", newobj)
 }
@@ -156,7 +168,6 @@ const users=[
 //   }
 //   return newObj2;
 // }, {})
-
 // console.log("output2", output2)
 
 
@@ -200,7 +211,6 @@ for(var i = 1; i <= N; i++){
 }
 
 
-
 // 7 anagram
 function isAnagram(str1, str2){
   if(str1.length!== str2.length){
@@ -208,7 +218,11 @@ function isAnagram(str1, str2){
   }
   let newObj={}
   for (var char of str1){
-      newObj[char]=(newObj[char] || 0) +1
+    if(newObj[char]){
+      newObj[char]+=1
+    }else{
+      newObj[char]=1
+    }
   }
 
   for (var item of str2){
@@ -217,8 +231,7 @@ function isAnagram(str1, str2){
       }
       newObj[item]-=1
   }
-    console.log("newObj", newObj)
-
+  console.log("newObj", newObj)
   return true
 }
 let checked= isAnagram("aijaj", "ajaji")
@@ -240,25 +253,6 @@ function factorial(number){
 
 
 //9 Function to check Palindrome
-function checkPalindrome(n){
-    let reverse = 0;
-    let temp = n;
-    while (temp != 0) {
-        reverse = (reverse * 10) + (temp % 10);
-        temp = Math.floor(temp / 10);
-    }
-    return (reverse == n); // if it is true then it will return 1;
-     // else if false it will return 0;
-}
-let n2 = 7007;
-// if (checkPalindrome(n2) == 1) {
-//     console.log("Yes","</br>");
-// }
-// else {
-//     console.log("No","</br>");
-// }
-
-
 //  string palindrom
 function palindromString(string){   121
   let start=0
@@ -273,9 +267,55 @@ function palindromString(string){   121
   }
   return result
 }
-let strings="level"
-// console.log(palindromString(strings))
+let strings="123217"
+console.log("kkk", palindromString(strings))
 
+
+function checkPalindrome(n){
+  let reverse = 0;
+  let temp = n;
+  while (temp != 0) {
+      reverse = (reverse * 10) + (temp % 10);
+      temp = Math.floor(temp / 10);
+  }
+  return (reverse == n); // if it is true then it will return 1;
+   // else if false it will return 0;
+}
+let n2 = 7007;
+// if (checkPalindrome(n2) == 1) {
+//     console.log("Yes","</br>");
+// }
+// else {
+//     console.log("No","</br>");
+// }
+
+
+// 15. swap two value without using third variable
+let a = 5;
+let b = 10;
+a = a + b; // a now becomes 15
+b = a - b; // b becomes 5 (original value of a)
+a = a - b; // a becomes 10 (original value of b)
+console.log('a:', a); // a: 10
+console.log('b:', b); // b: 5
+
+
+//Using Destructuring Assignment: 
+// let a = 5;
+// let b = 10;
+// [a, b] = [b, a];
+// console.log('a:', a); // a: 10
+// console.log('b:', b); // b: 5
+
+
+//Using Bitwise XOR
+// let a = 5;
+// let b = 10;
+// a = a ^ b; // a now becomes 15 (in binary: 0101 ^ 1010 = 1111)
+// b = a ^ b; // b becomes 5 (in binary: 1111 ^ 1010 = 0101)
+// a = a ^ b; // a becomes 10 (in binary: 1111 ^ 0101 = 1010)
+// console.log('a:', a); // a: 10
+// console.log('b:', b); // b: 5
 
 
 //10 each word first capital letter 
@@ -309,7 +349,6 @@ function fibonacci(n){
   console.log("fibonacciSeries", fibonacciSeries)
 }
 // fibonacci(10)
-
 
 
 //first n fibonacci series
@@ -351,4 +390,4 @@ function findMissingNumber(arr, n) {
   const sum = (n * (n + 1)) / 2;
   const arrSum = arr.reduce((acc, num) => acc + num, 0);
   return sum - arrSum;
-  }
+}

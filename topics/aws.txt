@@ -1,0 +1,62 @@
+aws main topic:-
+lambda serverless
+    api gateway
+ec2
+    vpc virtual private cloud
+    ip management
+    security group
+    load balance
+    security
+    auto scalling
+
+cloudFront 
+    cdn
+    s3 configration
+S3 simple storage services
+IAM
+    permission management
+SES simple email services
+    email configration
+ECS elastic container services
+    docker container aws management configration
+api gateway
+    with lambda function
+cloudwatch
+cloudshell
+
+
+s3 services:-
+1 aws account have 100 bucket
+1 bucket data storage unlimited 
+
+add new user
+create group
+bucket permission s3 full access
+create bucket
+
+//remove access deined
+bucket public permission enable
+policy add  
+
+static hosting website in bucket
+
+private bucket and inside bucket copy image url and open in browser i am getting access deined but when bucket inside open option click then image open in browser
+so this is called temprary token generate its call pre-sign-url
+ 
+
+setup
+cors
+policy
+
+
+
+
+
+
+
+
+
+
+
+
+
