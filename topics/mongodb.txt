@@ -1,41 +1,55 @@
-Mongodb
+20 important question
 
-nosql database Mongodb
-1 redis key value base
-2. casandra columns base big data
-3. document base Mongodb
-4. graph based 
-
-
-
-groupby
-SELECT product_category, SUM(sales_amount) AS total_sales FROM sales
-GROUP BY product_category;
-what is Scalable mysql Horizontal and Vertical?
-Mongodb data modeling
-
-having query
-SELECT product_category, SUM(sales_amount) AS total_sales FROM sales
-GROUP BY product_category
-HAVING total_sales > 10000;
+1 what is mysql and MongoDB Features const and pros
+2 What are the difference between NoSQL and SQL
+3 How to establish MongoDB database connection in a node application?
+4 What are virtual property in mongoose
+5 second highest salary in monggodb
+6 migration
+7 join all
+8 aggregation pipeline
+9 index
+11 orm what is meaning pros const object 
+12 replica set
+13 transection
+14 What are the mongoose middlewares?  pre or post in schema that is call middlewares
+15 How to query data using mongoose?
 
 
-index use:-
-create index studdob On students (dob); add multiple columns  //create index
-show index from students;         //show index
-drop index studdob On students;
+dump database
+mongodump --username your_username --password your_password --authenticationDatabase admin --out /path/to/output/directory
+or
+mongodump --uri="mongodb://13.127.232.191:21819/vedobi" --forceTableScan
 
 
-table  multiple case
-UPDATE db.Table1 SET col2 = (CASE col2 WHEN 1 THEN 0 ELSE 1 END);
+Trasection
+Second highest salary
+All join
+Sharding
+Agrregation
+Projection
 
-Explain Vertical Scaling and Horizontal Scaling
-Scaling Horizontal and Vertical both mysql and monggodb
 
+virtual properties allow you to define computed or derived properties on your Mongoose models. 
+These virtual properties do not exist in the MongoDB document stored in the database; 
+instead, they are calculated on the fly when you access them.
+
+example:-
+const mongoose = require('mongoose');
+const userSchema = new mongoose.Schema({
+  firstName: String,
+  lastName: String,
+});
+// Define a virtual property called 'fullName'
+userSchema.virtual('fullName').get(function () {
+  return `${this.firstName} ${this.lastName}`;
+});
+
+const User = mongoose.model('User', userSchema);
 
 Embedded documents
 nested documents or Embedded documents max 100
-one document size  max is 16mb not exceed more that
+one document size  max is 16mb not exeed more that
 
 
 what is transection?
@@ -46,7 +60,6 @@ indivisible unit of work. Transactions are used to maintain data integrity and c
 virtual properties allow you to define computed or derived properties on your Mongoose models. 
 These virtual properties do not exist in the MongoDB document stored in the database; 
 instead, they are calculated on the fly when you access them.
-
 example:-
 
 const mongoose = require('mongoose');
@@ -76,15 +89,12 @@ db.employees.aggregate([
 ]);
 
 
-Migrations are scripts or instructions that specify how the database schema should change. 
-Each migration corresponds to a specific, discrete change to the schema, such as creating a new table, adding or modifying columns, creating indexes, or defining relationships between tables. Migrations are typically versioned to ensure they are applied in a specific order.
-
-doubt?
-11 orm what is meaning pros const with example
-object oriented db
-bson format
-
-json bson
+Mongodb
+nosql database Mongodb
+1 redis key value base
+2. casandra columns base big data
+3. document base Mongodb
+4. graph based 
 
 
 aggregation in Mongodb:-
@@ -93,7 +103,6 @@ aggregation is the process of selecting data from a collection to process multip
 group value from multiple documents together
 fetching a lots of nested data from performed complex operations
 filter and sort documents and analysis data changes
-
 
 
 replica set
@@ -150,22 +159,12 @@ db.collection_name.createIndex({title: 1, description: -1})  //1 true, -1 false 
 db.collection_name.dropIndex({title: 1});
 
 
-
 shard key = consists of a field or multiple field
 chunks = contains partitioned data or subsets of shared data.
 balancer = responsible for evently distribution of equale chunks across shards
 zones = can help to improve the data locality for shared clusters.
 
-
-
-
 less relationships
 nested each document size 16kb
 object inside array find query get data
 db.find({hobies:"dance"})  //all document which is dance hobies
-
-
-
-all main topic here with query:-
-
-

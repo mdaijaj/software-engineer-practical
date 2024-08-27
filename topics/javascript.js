@@ -1,15 +1,19 @@
 //1. clouser    
-//A clouser is function along with its lexical enviroment bind that is call clouser
-function mainFun() {
-  var counter = 0; // name is a local variable created by init
-  function displayCounter() { // displayCounter() is the inner function, that forms the closure
-    console.log(counter+=1); // use variable declared in the parent function
-  }
-  return displayCounter;
+// A closure is the combination of a function and the lexical environment within which that function was declared. 
+// It is an inner function that has access to the outer or enclosing function’s variables.
+function makeAdder(num) {
+
+  function add (x) {
+    return num + x;
+  };
+  return add
 }
-let c= mainFun();
-c()
-c()
+
+const add5 = makeAdder(5);
+const add10 = makeAdder(10);
+console.log(add5(2)); // 7
+console.log(add10(2)); // 12
+
 
 
 //2.  call vs apply vs bind
@@ -53,7 +57,7 @@ inviteEmployee2("Hello", "How are you?"); // Hello Jimmy Baily, How are you?
 
 
 
-//3 curry when we get all three argument then it will execute else no execute function that time we use curry
+//3 curry when we get all three argument then it will execute else no execute or delete part function that time we use curry
 //curry same clousers example different code write way on single line multiple arguments
 // function Addition1(a){
 //     return function(b){
@@ -90,8 +94,8 @@ y="aman"
 
 let copyObj= originalObj;
 copyObj.city="benglore"
-// console.log("originalObj", originalObj)  // updated  object benglore (copy of memeory it effect of original object) 
-// console.log("copyObj", copyObj) //updated object benglore (copy of memeory ) //call by refrence
+// console.log("originalObj", originalObj)  // updated  object  (copy of memeory it effect of original object) 
+// console.log("copyObj", copyObj) //updated object (copy of memeory ) //call by refrence
 
 //so there is problem to object copy now going to solution we used shallow copy and deep copy
 
@@ -107,7 +111,6 @@ let originalObj= {
 // console.log(originalObj.city); // New York: )
 // console.log(shallowCopy.city); // mumbai: )
 
-
 let originalObj2= {
   city: "New York"
 }
@@ -115,7 +118,6 @@ var shallowCopy = { ...originalObj2 } ;   // 2. using spread operator (…)
 // shallowCopy.shallowCopy = "jaipur" ;
 // console.log(originalObj2.city); // New York: )
 // console.log(shallowCopy.city); // jaipur: )
-
 
 
 let original = {
@@ -162,7 +164,6 @@ copyobject.address.city="noida"
 // console.log(copyobject);   // noida
 
 
-
 // 5. scope example
   // let username = "rahul"
   // function userinfo(username) {
@@ -172,6 +173,14 @@ copyobject.address.city="noida"
   // }
   // console.log("username", username)  //rahul
   // userinfo(username)
+  
+//   var name="aijaj"
+// function makeAdder() {
+    
+//   console.log(name)
+//   let name="rahul"
+// }
+// makeAdder()
 
 
 
@@ -452,26 +461,6 @@ let scooty=["jupitor", "honda", "hero"]
 //13 Memoization
 // Memoization is the optimization tachnique that can we used to reduce 
 //time-consuming calculation by saving previous input to something called cache and returning the result from it.
-// function memoizedAddTo80() {
-//   let cache = {}
-//   return function (n) { // closure to access cache obj
-//     if (n in cache) {
-//       return cache[n]
-//     } else {
-//       console.log('long time...')
-//       cache[n] = n + 80
-//       return cache[n]
-//     }
-//   }
-// }
-// const memoized = memoizedAddTo80()
-// console.log('1.', memoized(5))
-// console.log('2.', memoized(5))
-// console.log('3.', memoized(5))
-// console.log('4.', memoized(10))
-
-
-
 
 let sum=0;
 function calculate(n){
@@ -482,12 +471,31 @@ function calculate(n){
 }
 
 
+const memoized=(fun)=>{
+  let cache={};
+  return function(...args){
+    let n= args[0]
+    if (n in cache){
+      console.log("caching......")
+      return cache[n]; 
+    }
+    else{
+      console.log("calculation first time..")
+      let result= fun(n)
+      cache[n]= result;
+      return cache
+    }
+  }
+}
+
 console.time();
-console.log(calculate(5))
-console.log(timeend())
+let ifficient= memoized(calculate)
+console.log(ifficient(5));  //first time function called   
+console.timeEnd();
 
-
-
+console.time();
+console.log(ifficient(5))    //second time function called   caching 20x fast check time
+console.timeEnd();
 
 
 
@@ -512,8 +520,6 @@ function increment() {
 // console.log(increment()); // 1
 // console.log(increment()); // 2
 // console.log(increment()); // 3
-
-
 
 
 //16 prototype:-

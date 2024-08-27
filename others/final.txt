@@ -12,3 +12,50 @@ reactjs
 virtual dom shadow dom real dom
 hooks all
 
+
+
+// top Frequently question?
+mongodb vs mysql
+all props const
+nodejs 5 library
+how nodejs work internal
+which compiler is inbuild under the nodejs envorinment
+life cylcle reacjs
+function component vs class component
+controle component vs uncontrole
+context api in reactjx
+hod
+useeffect and use layout effect
+different rest api and soap api and how many type of api
+fetch vs axios
+
+
+
+// 100 question
+// stream 400 storage  utf  
+// cluster 
+
+// simendig tag
+// blog
+// div
+// spam
+
+
+// 5 Differentiate between spawn and fork methods in Nodejs?
+// 13 Explain libuv?
+// 16 How can we take advantage of multi-core system in Nodejs as nodejs works on single thread?
+// 18 Explain chaining in Nodejs?
+// 20 What are buffer objects in nodejs?
+// 21 How does Nodejs handle the child threads?
+// Q. What is load balancer and how it works?
+// What Is EventEmitter In NodeJs
+// buffer example
+// cluster
+// worker thread  ? doubt
+// how to handle multi thread in python practical than its better than nodejs
+// What Is A Child_process Module In NodeJs?
+// load balancer?
+// 17 What are different authentication methods?
+// 18 What are disadvantages of using session based authentication?
+// 19 What are disadvantages of using jwt based authentication?
+

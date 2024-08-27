@@ -36,18 +36,18 @@ What is promise chaining?
 The process of executing a sequence of asynchronous tasks one after another using promises is known as Promise chaining. 
 Let's take an example of promise chaining for calculating the final result,
 
-new Promise(function (resolve, reject) {
+new Promise((resolve, reject)=> {
   setTimeout(() => resolve(10), 1000);
 })
-  .then(function (result) {
+  .then((result)=> {
     console.log(result); // 10
     return result * 2;
   })
-  .then(function (result) {
+  .then((result)=> {
     console.log(result); // 20
     return result * 3;
   })
-  .then(function (result) {
+    .then((result)=> {
     console.log(result); // 60
     return result * 4;
   });
@@ -151,7 +151,6 @@ itself.
 Structured representation of HTML document.
 DOM allows JavaScript to access HTML elements and styles to manipulate i.e.
 change text, HTML attributes, and even CSS styles
-
 We will make JavaScript interact with the Webpage, Technically that is called
 DOM manipulation
 
@@ -173,11 +172,6 @@ Global, Function and Block Scope
 accessed.
 
 
-6. Callback hell:-
-Callback hell is when we have a lot of nested callbacks in order to execute
-asynchronous tasks in sequence.
-
-
 7. Immediately Invoked Functions Expressions (IIFE)
  Sometimes in JavaScript, we need a function that is only executed once. And then
 never again..
@@ -194,7 +188,7 @@ never again..
 8 What is a callback function
 A callback function is a function passed into another function as an argument. This function is invoked inside the outer function to 
 complete an action. Let's take a simple example of how to use callback function
-
+ex1.
 function callbackFunction(name) {
   console.log("Hello " + name);
 }
@@ -208,6 +202,7 @@ outerFunction(callbackFunction);
 
 Why do we need callbacks
 The callbacks are needed because javascript is an event driven language. That means instead of waiting for a response javascript will keep executing while listening for other events. 
+ex2.
 function firstFunction() {
   // Simulate a code delay
   setTimeout(function () {
@@ -223,7 +218,8 @@ secondFunction();
 Output;
 // Second function called
 // First function called
-As observed from the output, javascript didn't wait for the response of the first function and the remaining code block got executed. So callbacks are used in a way to make sure that certain code doesn’t execute until the other code finishes execution.
+As observed from the output, javascript didn't wait for the response of the first function and the remaining code block got executed. 
+So callbacks are used in a way to make sure that certain code doesn’t execute until the other code finishes execution.
 
 
 
@@ -245,7 +241,8 @@ loadScript("/script1.js", function (script) {
 
 
 9. What is a callback hell?
-Callback Hell is an anti-pattern with multiple nested callbacks which makes code hard to read 
+Callback hell is when we have a lot of nested callbacks in order to execute asynchronous tasks in sequence.
+which makes code hard to read 
 and debug when dealing with asynchronous logic. The callback hell looks like below,
 // // Nested callback hell
 // doTask1(function () {
@@ -299,24 +296,6 @@ Object.setPrototypeOf(Square.prototype, Rectangle.prototype);
 Object.setPrototypeOf({}, null);
 
 
-12 What is ES6
-ES6 is the sixth edition of the javascript language and it was released in June 2015. It was initially known as ECMAScript 6 (ES6) and later renamed to ECMAScript 2015. Almost all the modern browsers support ES6 but for the old browsers there are many transpilers, like Babel.js etc.
-List down some of the features of ES6
-Below are the list of some new features of ES6,
-Rest and Spread Parameters:-
-Support for constants or immutable variables
-Block-scope support for variables, constants and functions
-Arrow functions
-Default parameters
-Template Literals
-Multi-line Strings
-Destructuring Assignment
-Enhanced Object Literals
-Promises
-Classes
-Modules
-
-
 13. What is the currying function
 Currying is the process of taking a function with multiple arguments and turning it into a sequence of functions 
 each with only a single argument
@@ -335,22 +314,11 @@ Curried functions are great to improve code reusability and functional compositi
 
 14. What are closures
 A closure is the combination of a function and the lexical environment within which that function was declared. 
-i.e, It is an inner function that has access to the outer or enclosing function’s variables. The closure has three scope chains
+It is an inner function that has access to the outer or enclosing function’s variables. The closure has three scope chains
 
 Own scope where variables defined between its curly brackets
 Outer function’s variables
 Global variables
-
-function Welcome(name) {
-  var greetingInfo = function (message) {
-    console.log(message + " " + name);
-  };
-  return greetingInfo;
-}
-var myFunction = Welcome("John");
-myFunction("Welcome "); //Output: Welcome John
-myFunction("Hello Mr."); //output: Hello Mr.John
-As per the above code, the inner function(i.e, greetingInfo) has access to the variables in the outer function scope(i.e, Welcome) even after the outer function has returned.
 
 
 15 What is a first order function
@@ -479,9 +447,11 @@ somemethod()
 
 
 23 What is a polyfill
-A polyfill is a piece of JS code used to provide modern functionality on older browsers that do not natively support it. For example, 
-Silverlight plugin polyfill can be used to mimic the functionality of an HTML Canvas element on Microsoft Internet Explorer 7.
-
+A polyfill is a piece of JS code used to provide modern functionality on older browsers that do not natively support it.
+Why Use a Polyfill?
+  Backward Compatibility: Ensures that web applications or scripts work in older browsers that do not support the latest features of the language.
+  Cross-Browser Compatibility: Makes sure that your application behaves consistently across different browsers and versions.
+  Progressive Enhancement: Allows developers to use the latest features while still providing fallback support for users with outdated browsers.
 
 
 24 What is IIFE(Immediately Invoked Function Expression)
@@ -507,18 +477,16 @@ Scope is the accessibility of variables, functions, and objects in some particul
 
 
 26 What is a Cookie
-A cookie is a piece of data that is stored on your computer to be accessed by your browser. Cookies are saved as key/value pairs. For example, you can create a cookie named username as below,
-
-
+A cookie is a piece of data that is stored on your computer to be accessed by your browser. Cookies are saved as key/value pairs.
 Why do you need a Cookie
 Cookies are used to remember information about the user profile(such as username). It basically involves two steps,
 When a user visits a web page, the user profile can be stored in a cookie.
 Next time the user visits the page, the cookie remembers the user profile.
 
 
-What are the options in a cookie
+What are the options in a cookie?
 By default, the cookie is deleted when the browser is closed but you can change this behavior by setting expiry date (in UTC time).
-document.cookie = "username=John; expires=Sat, 8 Jun 2019 12:00:00 UTC";
+document.cookie = "username=John;  expires=Sat, 8 Jun 2019 12:00:00 UTC";
 By default, the cookie belongs to a current page. But you can tell the browser what path the cookie belongs to using a path parameter.
 document.cookie = "username=John; path=/services";
 
@@ -539,26 +507,6 @@ Accessed on client or server side	Both server-side & client-side	client-side onl
 Lifetime	As configured using Expires option	until deleted	until tab is closed
 SSL support	Supported	Not supported	Not supported
 Maximum data size	4KB	5 MB	5MB
-
-
-
-27 What is a service worker?
-A Service worker is basically a script (JavaScript file) that runs in the background, separate from a web page and provides features that don't need a web page or user interaction. 
-Some of the major features of service workers are Rich offline experiences(offline first web application development), periodic background syncs, 
-push notifications, intercept and handle network requests and programmatically managing a cache of responses.
-
-
-28 What is the use of preventDefault method
-The preventDefault() method cancels the event if it is cancelable, meaning that the default action or behaviour that belongs to the event will not occur. For example, 
-prevent form submission when clicking on submit button and prevent opening the page URL when clicking on hyperlink are some common use cases.
-
-document
-  .getElementById("link")
-  .addEventListener("click", function (event) {
-    event.preventDefault();
-  });
-Note: Remember that not all events are cancelable.
-
 
 
 29 What is an anonymous function
@@ -586,7 +534,6 @@ console.log(z); // 50
 
 30 What is a first class function
 First-class functions means when functions in that language are treated like any other variable.
-
 For example, in such a language, a function can be passed as an argument to other functions, can be returned by another function and can be assigned as a value to a variable. For example, in the below example, handler functions assigned to a listener
 const handler = () => console.log("This is a click handler function");
 document.addEventListener("click", handler);
@@ -594,8 +541,8 @@ document.addEventListener("click", handler);
 
 
 31 What is a constructor method
-The constructor method is a special method for creating and initializing an object created within a class. If you do not specify a constructor method, a default constructor is used. The example usage of constructor would be as below,
-
+The constructor method is a special method for creating and initializing an object created within a class. If you do not specify a constructor method, a default constructor is used.
+example:-
 class Employee {
   constructor() {
     this.name = "John";
@@ -611,26 +558,6 @@ console.log(employeeObject.name); // John
 There are two ways to copy an object,
 Shallow Copy: Shallow copy is a bitwise copy of an object. A new object is created that has an exact copy of the values in the original object. If any of the fields of the object are references to other objects, 
 just the reference addresses are copied i.e., only the memory address is copied.
-
-
-const memoizAddition = () => {
-  let cache = {};
-  return (value) => {
-    if (value in cache) {
-      console.log("Fetching from cache");
-      return cache[value]; // Here, cache.value cannot be used as property name starts with the number which is not a valid JavaScript  identifier. Hence, can only be accessed using the square bracket notation.
-    } else {
-      console.log("Calculating result");
-      let result = value + 20;
-      cache[value] = result;
-      return result;
-    }
-  };
-};
-// returned function from memoizAddition
-const addition = memoizAddition();
-console.log(addition(20)); //output: 40 calculated
-console.log(addition(20)); //output: 40 cached
 
 
 33 array method?
@@ -676,3 +603,4 @@ console.log(newdata)// [16] show delete item
 37. What is Weakmap and Weakset in Javascript
 38. What is sessionStorage, localStorage , cookie,
 39. What is generator function in Javascript
+

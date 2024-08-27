@@ -11,20 +11,20 @@ What is a first order function
 High order function?
 What is an undefined and undeclared variable and NaN?
 array function method top 10 slice vs splice  array method
+map, foreach, filter, reduce, slice and splice
 24. What is DOM? What is the use of a document object
 What is the Temporal Dead Zone
 What is IIFE(Immediately Invoked Function Expression)
 cookies token What is a cookie ,need a Cookie , the options in a cookie, delete a cookie
 What are the differences between cookie, local storage and session storage
 undefined vs null vs NaN
-33. What is hoisting? 	
+What is hoisting? 	
 What is an anonymous function
-What is the difference between Shallow and Deep copy
+What is the difference between Shallow copy and Deep copy
 arrow vs regular function
 What is memoization?
 What is the use of setTimeout and setInterval
 What is the purpose of clearTimeout method and clearInterval method?
-map, foreach, filter, reduce, slice and splice
 == and === operators
 What is web storage the differences between cookie, local storage and session storage?
 session base authenticaton and cookie base authenticaton
@@ -35,7 +35,6 @@ What is scope in javascript
 What are regular expression patterns || What is a RegExp object
 what is class object oops method?
 What is the difference between proto and prototype?
-What is the use of preventDefault method
 How do you manipulate DOM using a service worker
 What is a polyfill
 
@@ -51,29 +50,6 @@ What is a polyfill
 // 9. Promises
 // 10. Array helper functions Array Methods
 // 11. Import and export syntax
+12.Modules
 // https://medium.com/@musturi.rakesh/best-es6-features-in-javascript-69a0b16425ce
 
-
-// top Frequently question?
-express vs nodejs
-mongodb vs mysql
-all props const
-nodejs 5 library
-how nodejs work internal
-which compiler is inbuild under the nodejs envorinment
-life cylcle reacjs
-function component vs class component
-controle component vs uncontrole
-context api in reactjx
-hod
-useeffect and use layout effect
-different rest api and soap api and how many type of api
-fetch vs axios
-
-
-
-// mern stack developer:-
-mongodb 
-express
-nodejs
-reactjx

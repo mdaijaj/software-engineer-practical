@@ -16,6 +16,10 @@
 
 //3.
 // console.log(typeof(NaN))   //special operator (datatype number)
+// console.log(typeof(null))   //special operator (datatype Object)
+// console.log(typeof(Undefine))   //special operator (datatype Undefine)
+
+
 
 // 4
 // let data= 10 - -10;
@@ -55,11 +59,6 @@
 // // }
 
 
-// 6
-// JSON.parse()  
-// parse json to javascript value
-
-
 
 // let  block level
 // 
@@ -84,16 +83,9 @@
 
 // const name="aijajkhan";
 // const age=26;
-
 // console.log(isNaN(name))  not a number
 // console.log(isNaN(age))    number 
 
-
-// let person2={
-//     name: "aijaj khan"
-// }
-// delete person2.name  //you can not object delete only object property you can delete
-// console.log("kkkk", person2)
 
 
 let person={
@@ -130,10 +122,8 @@ var p;
 // }
 
 
-// console.log(+ true)  //number
 console.log("llll", !"aijaj")  //false
 console.log(typeof("aijajkhan"))  //string
-
 console.log(+true)    //  1 // when + string or boolean ke aage lagane par convert into number
 console.log(typeof(+true)) // number 
  
@@ -179,8 +169,8 @@ fruit.name="banana"  //no effect because obj ki property me kuch data define kar
 // console.log(typeof typeof (1))    //string bc type of 1 number and its written in english so string
 
 
-// console.log(!!null)  //condtion first true
-// console.log(!!"")   //condtion first true
+// console.log(!!null)  //condtion first true and final false
+// console.log(!!"")   //condtion first true and final false
 // console.log(!!1)
 
 
@@ -189,7 +179,7 @@ console.log(typeof[..."adilkhan"])
 
 
 // function getAge(...args){   //spread operator failana in array
-//     console.log("args", args)
+//     console.log("args", ...args)
 //     console.log("args", typeof(args))  //arr no data type its only obj
 // }
 // getAge(25)

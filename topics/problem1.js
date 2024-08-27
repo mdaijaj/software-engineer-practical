@@ -1,8 +1,8 @@
 // //1 sorting
 function bubbleSort(array){
-  for (let i=0; i<  array.length; i++){
+  for (let i=0; i< array.length; i++){
     for (let j=0; j< array.length-i; j++){   //each loop sorted last item so -i big value sorted send on last item
-      if(array[j] >array[j+1]){
+      if(array[j] > array[j+1]){
         //swaping value
         let temp=array[j];
         array[j]= array[j+1];
@@ -74,8 +74,8 @@ function SecondMax(arr2){
       let idx = 0;
       for (let i of arr) {
           if (!obj[i]) {   //condition check object item is not exits or undefine
-              obj[i] = 1;
-              // tempArr.push(i)
+              // obj[i] = 1;
+              tempArr.push(i)
               tempArr[idx] = i;
               idx++;
           } 
@@ -147,7 +147,7 @@ function CharactorCount(string){
   }
   console.log("newobj_string", newobj)
 }
-// CharactorCount(string)
+CharactorCount(string)
 
 
 
@@ -178,12 +178,12 @@ const users=[
         return false;
     // Check from 2 to n-1
     for (let i = 2; i < n; i++){
-        if (n % i == 0){
+        if (n % i == 0){    
             console.log("not prime number", n)
             return false;
         } 
     }
-    console.log("prime number", n)
+    console.log("prime number", n) //7
     return true;
 }
 // Driver Code
@@ -318,6 +318,10 @@ console.log('b:', b); // b: 5
 // console.log('b:', b); // b: 5
 
 
+
+// find vovels from string.
+
+
 //10 each word first capital letter 
 const str = 'sachin is the good batsman';
 let arr3=str.split(" ")
@@ -332,6 +336,25 @@ for (let i=0; i< arr3.length; i++){
 console.log("newstring", newstring)
 
 
+//armstrong number
+// let number=1634;
+// let result=number.toString();
+// // console.log(typeof(result))
+// let total=0;
+// for (var i=0; i<result.length; i++){
+//     let qub=result[i] ** result.length;
+//     total+=qub;
+//     console.log("qub", qub)
+// }
+// console.log("total", total)
+
+
+// if(total==number){
+//     console.log("this is armstrong number")
+// }
+// else{
+//         console.log("this is not armstrong number")
+// }
 
 
 // 11  //fibonacci serie

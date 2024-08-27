@@ -1,41 +1,35 @@
-life cycle method:-
-constructor:-
-before loading execute.
-
-funcion base component useEffect:-
-useState()
-return()
-useEffect()
-
-
 class base component life cycle method:-
 constructor
 rendor
-componentdidmount  -- first time loading    //useEffect  mounting birth  we should api call and async process in this phase 
+componentDidMount  -- first time loading    //useEffect  mounting birth  we should api call and async process in this phase 
 componentDidUpdate   -- update time load
-componentDidUnmount   --remove from component  dead phase
+componentwillUnmount   --remove from component  dead phase
 
 example:-
 componentDidMount()=>{
+  // Called after the component is inserted into the DOM
   console.log("first time loading then call this function, componentDidMount working here...")
 }
 
-componentDidUpdate()=>{
+componentDidUpdate(prevProps, prevState) {
   console.log(" when anyupdate call this function,  componentDidUpdate is working here...)
 }
 
-componentDidUnmount=()=>{
+componentWillUnmount=()=>{
+  // Called right before the component is removed from the DOM
   console.log("when you will remove any component then it will call this function working...   component remove..")
 }
 
 
-
 function base component life cycle method:-
+useState()
+return()
+useEffect()
+
 //componentDidMount phase
 useEffect(()=>{
-  console.log("componentDimount is working...")    //infinite loop time
+  console.log("componentDimount is working...")    //infinite loop time each time any event called
 })
-
 
 //componentDidMount phase
 useEffect(()=>{
@@ -58,11 +52,6 @@ useEffect((number)=>{
 }, [number]);
 
 
-
-
-
-
-
 2 hoc(higher order component)
 when component pas as a props input component and return output component that is call hoc
 when component pass as argument of funcion return inside function thats call hoc
@@ -70,61 +59,94 @@ a hoc is a advanced technique in React for reusing component logic.
 a hoc is third party react library.
 a hoc is funcion that take a component and returns a new component.
 
-why use hoc?
-same logic  when we use same component logic different component so we used hoc.
+2.why use hoc?
+same logic when we use same component logic different component so we used hoc.
 
-
-
-
-
-const subjects= (STUDENT)=>{ //component name as arg
-  class Subject extends Componet{
-    rendor(){
-      return (
-        <STUDENT hocsub="Java"></STUDENT>
-      )
-    }
-  }
-  return Subject;
+import './App.css';
+import React, { useRef, useState } from 'react'
+function App() {
+  return (
+    <div className="App">
+      <h1>HOC </h1>
+      <HOCRed cmp={Counter} />
+      <HOCGreen cmp={Counter} />
+      <HOCBlue cmp={Counter} />
+    </div>
+  );
 }
 
-export default subjects;
+function HOCRed(props)
+{
+  return <h2 style={{backgroundColor:'red',width:100}}>Red<props.cmp /></h2>
+}
+function HOCGreen(props)
+{
+  return <h2 style={{backgroundColor:'green',width:100}}>Grren<props.cmp /></h2>
+}
+function HOCBlue(props)
+{
+  return <h2 style={{backgroundColor:'blue',width:100}}>blue <props.cmp /></h2>
+}
 
+
+function Counter()
+{
+  const [count,setCount]=useState(0)
+  return<div>
+    <h3>{count}</h3>
+    <button onClick={()=>setCount(count+1)}>Update</button>
+  </div>
+}
+export default App;
 
 7 hooks:-
-useState
-useEffect
-useRef  //read deep
-useContext
-useReducer
-useMemo
-useCallback
-
-two type of hooks
-1 inbuild hooks
-  Basic
-  adddtional
-
-  Basic Hooks
-      useState() state management within particular component 
-      useContext()  //state management global access
-      useEffect() life cycle method
-
-  Additional Hooks:-
-      useRef()      :- blur color   
-      useReducer()  :- using redux thunk
-      useCallback() :- memoize the function
-      useMemo()     :- memoize the value
-      useLayoutEffect():- 
-
-2. customHooks
+useState:  Manages state. 
+useEffect: Manages side effects
+useMemo: Memoizes values for performance optimization
+useCallback: Memoized the functions.
+useRef: Accesses DOM elements or persists values  //(read deep)
+useContext : Consumes context
+useReducer: Manages complex state logic
+useLayoutEffect: Synchronously runs after DOM mutations
 
 
+useState():-
+The useState hook is used to add state to functional components.
 
-useCallback
+import React, { useState } from 'react';
+function Counter() {
+  const [count, setCount] = useState(0);
+
+  return (
+    <div>
+      <p>You clicked {count} times</p>
+      <button onClick={() => setCount(count + 1)}>Increment</button>
+    </div>
+  );
+}
+
+useEffect():-
+The useEffect hook is used to perform side effects in function components, such as fetching data or directly manipulating the DOM.
+
+import React, { useState, useEffect } from 'react';
+function Timer() {
+  const [time, setTime] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setTime(time + 1);
+    }, 1000);
+  }, [time]);
+
+  return <div>Time: {time} seconds</div>;
+}
+
+
+
+useCallback():-
 function store in cache same useMemo funcionality in funcion
 memoize the function
-code optimization handle  performance manage stop loop or rerendor 
+code optimization handle performance manage stop loop or rerendor 
 optimization component reredering
 refrential equality of function
 application well performance 
@@ -145,7 +167,7 @@ useContext:-
   data pass multiple level grandparent to child
   instead of redux for data pass
   component a pass to component b pass component c;
-  prop drilling se bachne ke lite useContext() use karte hai
+  prop drilling se bachne ke liye useContext() use karte hai
 
 
 useReducer:-
@@ -161,7 +183,6 @@ useRef:- when click then highlight color
   style color focus value etc handle using hooks
   it like a useState only and its preserve the value. No rerender
   use ref change property
-
   form validation, colors, focus while use only emergency
 
 function CustomTextInput(props) {
@@ -202,8 +223,7 @@ with redux we can use
 about redux:-
 redux is a patern and library for manageing and updating application state using events called "action". 
 It serve as centrallized store for state that needs to be used across your entire application.
-state can only be updated in a predictable fasshion.
-
+state can only be updated in a predictable fashion.
 
 1. action:-
 what i do?
@@ -218,14 +238,12 @@ function assoicated with store:
 data pass child to parent help using redux:-
 
 
-
-23oct 2022
+state vs props?
 props:-
 used for data pass one component to another component
 
 state:-
 state varible use manage state or updating state
-
 
 jsx:-
 its all html in component inside html in js used thats called jsx(html js ka mukut)
@@ -253,7 +271,6 @@ const TodoDisplay = () => {
     </div>
   );
 };
-
 export default TodoDisplay;
 
 
@@ -299,45 +316,67 @@ virtual dom is replica of original dom its a copy of original dom
 and modification any particular things
 
 
-controle component
-input field can be control  by react state like useState() control
-using useState
-state can be predictable
-
-uncontrole
-use useRef 
-input field honi chahiye
-input field can be control by useRef() or javascript document like document.getElmentBy
-state can not be predictable.
-
-
-
-useCallback
-life cycle method:-
-useState():-
-state change particular component change
-
-useEffect(()=>{
-  console.log("hello calling again to again console")
-})
-
-calling on screen load only once time when rerendering
-useEffect(()=>{
-  console.log("only once time console after rerendering")
-}, [])
-
-
-//depend on change in value
-useEffect(()=>{
-  console.log("depend on change in value")
-}, [value])
-
-
 shadow dom :=
 main dom ke ander hidden dom hota hai bahar wale dom ka style design ka impact nhi aata hai use hi
 shodow dom kahte hai.
 why?
 if class match then overwrite
+
+w
+controle component
+input field can be control  by react state like useState() control
+using useState
+state can be predictable
+
+function ControlledForm() {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+
+  const handleNameChange = (event) => {
+    setName(event.target.value);
+  };
+
+  const handleEmailChange = (event) => {
+    setEmail(event.target.value);
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    alert(`Name: ${name}, Email: ${email}`);
+  };
+
+  return (
+    <>
+      <label> Name:
+        <input type="text" value={name}  onChange={handleNameChange} />
+      </label>
+
+      <label> Email:
+        <input type="text" value={email}  onChange={handleEmailChange} />
+      </label>
+    </>
+  )
+}
+
+uncontrole:-
+import React, { useRef } from 'react';
+
+function UncontrolledForm() {
+  const nameInputRef = useRef(null);
+  const emailInputRef = useRef(null);
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const name = nameInputRef.current.value;
+    const email = emailInputRef.current.value;
+    alert(`Name: ${name}, Email: ${email}`);
+  };
+}
+  
+use useRef 
+input field honi chahiye
+input field can be control by useRef() or javascript document like document.getElmentBy
+state can not be predictable.
 
 
 fetch vs axios:-
@@ -364,8 +403,6 @@ pure component example
 useSearchParams() // for query data get
 outLet:- is related to nested routing.
 
-inverse data flow or child to parent data pass
-why we use react in fronted?
 
 14th april
 reactjs vs vanilla js
@@ -378,7 +415,7 @@ fix problem for prop drilling using component composition
 
 component 3 category
 stateless component  
-no state use only 
+no state use only Content
 small and resulable
 
 statefull component 
@@ -392,5 +429,45 @@ huge and none resulable
 
 compositing component?
 we can prop drilling to use children component call to solve prop drilling problem.
-we can also passing element as props alternative to 
+we can also passing element as props alternative
 
+
+28 What is the use of preventDefault method
+The preventDefault() method cancels the event if it is cancelable, meaning that the default action or behaviour that belongs to the event will not occur. For example, 
+prevent form submission when clicking on submit button and prevent opening the page URL when clicking on hyperlink are some common use cases.
+
+document
+  .getElementById("link")
+  .addEventListener("click", function (event) {
+    event.preventDefault();
+  });
+Note: Remember that not all events are cancelable.
+
+
+30 What is a service worker?
+A Service worker is basically a script (JavaScript file) that runs in the background, separate from a web page and provides features that don't need a web page or user interaction. 
+Some of the major features of service workers are Rich offline experiences(offline first web application development), periodic background syncs, 
+push notifications, intercept and handle network requests and programmatically managing a cache of responses.
+
+
+// ● How can you improve performance of your react app?
+1. Use React.memo
+2.Optimize State Management
+  Avoid unnecessary state:
+  const [count, setCount] = useState(0);
+3. Use useCallback and useMemo Hooks
+4. Lazy Loading Components
+	Load components only when they are needed, reducing the initial load time.
+5. Code Splitting
+	Breaks up your app into smaller bundles that can be loaded on demand.
+6.Avoid Anonymous Functions in JSX
+  Why: Creating functions in the JSX can lead to unnecessary re-renders as a new function is created every time the component renders.
+7. Optimize Conditional Rendering
+	Use short-circuit operators or ternary operators for cleaner and more efficient conditional rendering.
+8. Consider Server-Side Rendering (SSR)
+  Why: For faster initial page load and SEO benefits, you can implement SSR with frameworks like Next.js.
+  Why: For large lists, use libraries like react-window or react-virtualized to only render visible items.
+9. Optimize Images and Assets
+  What to do: Use optimized images, SVGs, and other assets. You can also lazy-load images to improve initial load time.
+10. Enable Production Mode
+  Why: Make sure to run your app in production mode which removes development warnings and optimizes the build.
