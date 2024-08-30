@@ -3,10 +3,19 @@
 // let b=[];
 // let c={}
 // let d={}
-// console.log(a==a)   //false because we compare memory location
+// console.log(a==b)   //here is memory location not value so its false.
 // console.log(c==d)  
 // console.log(a===b)
 
+console.log(![])   //false because we store sometihng like empty array so when narate then it will be true
+console.log(!{})   //false because we store sometihng like empty obj so when narate then it will be true
+console.log(!' ')   //false because we store sometihng like empty space so when narate then it will be true
+console.log(!" ")   //false because we store sometihng like empty space so when narate then it will be true
+console.log(!"")   //here is not store anythings so thats defult is false after narate we get true
+console.log(!'')   //here is not store anythings so defult is false after narate we get true
+let result= null ||  "" || false //all are false value
+const name="code step by step";
+console.log(!name) //false
 
 // 2.
 // let a=[];
@@ -14,16 +23,16 @@
 // console.log(a==b)   //true because we compare memory location
 // console.log(a===b)
 
+
 //3.
 // console.log(typeof(NaN))   //special operator (datatype number)
 // console.log(typeof(null))   //special operator (datatype Object)
 // console.log(typeof(Undefine))   //special operator (datatype Undefine)
 
 
-
 // 4
 // let data= 10 - -10;
-// console.log(data)
+// console.log(data)  //20
 
 // 5
 // let data={
@@ -48,7 +57,7 @@
 // }
 
 // inf={
-//     inf, ...info2
+//     ...inf, ...info2
 // }
 // console.log("info", inf)
 
@@ -61,7 +70,6 @@
 
 
 // let  block level
-// 
 // let name="prince khan";   
 // function getName(){  //let is block level scope 
 //     console.log("name", name)   //error cannot access before initilize
@@ -69,7 +77,7 @@
 // }
 // getName() 
 
-// import
+
 // const name="code step by step";
 // console.log(!typeof(name) ==="object")  //false  //first naration check and compare operator check
 // console.log(!typeof(name) ==="string")  //false
@@ -91,7 +99,7 @@
 let person={
     name: "aijaj khan"
 }
-// Object.seal(person)  //after use seal you cannot modify add object properties
+// Object.seal(person)  //after use seal you cannot add in object properties
 person.age=45
 person.name="ksish"  //update name only not add object properties.
 // console.log("kkkk", person)
@@ -122,10 +130,12 @@ var p;
 // }
 
 
-console.log("llll", !"aijaj")  //false
+console.log(!"aijaj")  //false
 console.log(typeof("aijajkhan"))  //string
 console.log(+true)    //  1 // when + string or boolean ke aage lagane par convert into number
 console.log(typeof(+true)) // number 
+let a=!0
+console.log(a)
  
 
 
@@ -142,8 +152,8 @@ console.log(typeof(+true)) // number
 //57
 // let c={name: "aijajkhan"}  
 // let d= c;  //location copy not data copy
-// c.name="adil khan"
-// console.log(d.name)   //adil khan
+// d.name="adil khan"
+// console.log(c.name)   //adil khan
 
 
 // let a=3
@@ -245,5 +255,43 @@ console.log(person2)
 // const arrayOfOddNumbers = [1, 3, 5];
 // arrayOfOddNumbers[100] = 199;
 // console.log(arrayOfOddNumbers.length); 200
+
+
+Promise.resolve()     //micro task
+.then(() => {
+    console.log("1")
+})
+ 
+queueMicrotask(() => console.log("2"))   //micro task
+setTimeout(() => {      //macro task stack
+    console.log("3")
+}, 0);
+ 
+console.log("4")
+new Promise(() => console.log("5"));   //micro task
+(async () => console.log("6"))()       //micro task
+//4
+// 6
+// 5
+// 2
+// 1
+// 3
+
+
+console.log('script start');  //1
+// Macrotask
+setTimeout(() => {
+    console.log('setTimeout');   //4
+}, 0);
+
+// Microtask
+Promise.resolve().then(() => {  //3
+    console.log('promise1');
+}).then(() => {
+    console.log('promise2');
+});
+
+console.log('script end');  //2
+
 
 

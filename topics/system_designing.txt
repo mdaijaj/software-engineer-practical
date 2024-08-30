@@ -1,0 +1,30 @@
+lld designing
+1.
+
+2. class diagram
+
+third party bank
+structure 
+minmal effected your code
+design patern
+
+3. database schema designing
+cardinality
+relations or cardinality bw the tables
+1: 1
+1: m
+m:1
+M:m
+
+4. coding
+
+
+#lld of payment app
+
+
+
+
+hld 
+what you system client requrirement
+
+

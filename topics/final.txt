@@ -1,19 +1,21 @@
-nodejs:- top 25
+nodejs:- top 30
 what is nodejs
 why use nodejs for backend
-what is callback
+what is callback and callback hell
 promise
-eventloop  libuv 
-single thread how to handle multiple reqeustion
+event loop   
+how to handle multile req if nodejs single thread?  how to handle multile user reqeust Handle
 What Is EventEmitter In NodeJs
 middleware
 callback hell How can you avoid callback hells
 synchonous vs asynchonous
 What are JWT?  What are disadvantages of using jwt based authentication?
+buffer example
 cookies session localstorage
 What are disadvantages of using session based authentication? 
 What Are The Key Features Of NodeJs?
 core module ?
+Explain the purpose of module exports?
 What are streams in Nodejs Explain the different types of streams present in Nodejs What is Piping in
 packages json vs packages.lock.json
 List down the major security implementations within Node.js
@@ -21,13 +23,18 @@ repl example
 with async await
 What are different authentication methods?
 Can you write CRUD operations in Node js without using frameworks?  practical
-worker thread  ? doubt
-What Is A Child_process Module In NodeJs?
+What Is A Child process Module In NodeJs?
 between spawn() and fork() methods in Node.js?
+what is npm? 
+cluster
+worker thread ? 
+API functions in Node?
 
 
 
 javascript:- 25 top
+promise promise.all()  promise.race() type  race method in promise
+callback and callback hell
 what is js fearture  
 advantage of JavaScript
 ecma script es6 with class 14 example (arrow vs regular function)
@@ -43,13 +50,14 @@ What is IIFE(Immediately Invoked Function Expression)
 What is scope in javascript
 undefined vs null vs NaN  undeclared
 What is the difference between Shallow and Deep copy
-javscript oops clsss object inheritance incapsulation construtor super this keyboard
-What is the use of setTimeout and setInterval the purpose of clearTimeout method and clearInterval 
 == and === operators
-What are regular expression patterns || What is a RegExp object
+hoisting
+What is an anonymous function
 What is memoization?
-What is a cookie ,need a Cookie , the options in a cookie, delete a cookie?
-What is the difference between proto and prototype?
+What is the use of setTimeout and setInterval 
+the purpose of clearTimeout method and clearInterval 
+
+
 
 
 
@@ -60,24 +68,22 @@ reactjs vs anguler why use reactjs for fronted
 life cycle method both useeffect
 state vs props
 class function component
-use state?
 useMemo() vs use callback()
 virtual dom real dom?
 what is jsx
 axios vs fetch?
 What is useRef ?
 What is hooks? all
-what is reduce how it works?
+what is reduce, useContext how it works?
 what is redux
 How to update state in redux?
 How do we pass props from child to parent in react
 useState vs useContext?
 What is Bebel?
-// ● Stateful vs stateless class funtion
-   ● lazyLoad of components
-// ● Prop drilling in react
+Stateful vs stateless class funtion
+lazyLoad of components
+Prop drilling in react
 Thunk in redux
-// ● What are middlewares in react?
 // ● What is difference in pure component an higher order components?
 // ● How can you improve performance of your react app?
 // ● Event Bubbling?
@@ -86,6 +92,8 @@ Thunk in redux
 // ● What are interceptors in React?  ?
 
 
+practical knowledge problem solve question
+top 10 question problem1
 
 
 
@@ -109,16 +117,11 @@ waht is Sharding?
 virtual properties
 what is transection?
 Embedded documents
-Difference between Where and Having Clause in SQL : 
+Projection
 
 
-
-
-practical knowledge problem solve question
-soring
-prime number
-binary search
-find second largest number
-sorted value unique value
-fibonasis value
-middleware with example
+html & css
+// simendig tag
+// blog
+// div
+// spam

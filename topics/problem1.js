@@ -4,7 +4,7 @@ function bubbleSort(array){
     for (let j=0; j< array.length-i; j++){   //each loop sorted last item so -i big value sorted send on last item
       if(array[j] > array[j+1]){
         //swaping value
-        let temp=array[j];
+        let temp=array[j];  //big value store temp
         array[j]= array[j+1];
         array[j+1]= temp
       }
@@ -17,8 +17,9 @@ function bubbleSort(array){
 
 
 
-//.sorting
-let numbers = [0, 1, 2, 30, 15, 5, 20];
+//sorting
+// let string=["a", "c", "b", "g","d", "r" ,"z", "o"]  // string only do sort()
+// let numbers = [0, 1, 2, 30, 15, 5, 20];
 // numbers.sort( function(a , b){
 //     if(a > b) return 1;
 //     if(a < b) return -1;
@@ -59,30 +60,29 @@ function SecondMax(arr2){
 
   // const arr = [1,2,3,4,4,1,2, 4];
   // const b=[];
-  // for(let i=0;i<arr.length;i++){
-  //     if(b.includes(arr[i])==false){   
-  //         b.push(arr[i])
-  //     }
-  // }
-  // console.log("removed duplicate array value",b)
-
-
-  const input = [1, 2, 3, 3, 4, 5,2, 6,3,6,1];
-  function removeDuplicate(arr) {
-      const tempArr = [];
-      const obj = {};
-      let idx = 0;
-      for (let i of arr) {
-          if (!obj[i]) {   //condition check object item is not exits or undefine
-              // obj[i] = 1;
-              tempArr.push(i)
-              tempArr[idx] = i;
-              idx++;
-          } 
+  for(let i=0;i<arr.length;i++){
+      if(b.includes(arr[i])==false){   
+          b.push(arr[i])
       }
-      return tempArr;
   }
-  // console.log("remove duplicate", removeDuplicate(input));
+  console.log("removed duplicate array value",b)
+
+  // const input = [1, 2, 3, 3, 4, 5,2, 6,3,6,1];
+  // function removeDuplicate(arr) {
+  //     const tempArr = [];
+  //     const obj = {};
+  //     let idx = 0;
+  //     for (let i of arr) {
+  //         if (!obj[i]) {   //condition check object item is not exits or undefine
+  //             obj[i] = 1;
+  //            // tempArr.push(i)
+  //              tempArr[idx] = i;
+  //             idx++;
+  //         } 
+  //     }
+  //     return tempArr;
+  // }
+  // // console.log("remove duplicate", removeDuplicate(input));
 
 
 // duplicate remove item
@@ -100,7 +100,7 @@ function SecondMax(arr2){
 
 
 
-//4. Binary Search
+//4. Binary Search (array should be sorted)
 let iterativeFunction = function (arr, x) {
   let start = 0 
   let end = arr.length - 1;
@@ -133,7 +133,6 @@ let x = 8;
 
 let string =["aijaj", "aijaj", "aman", "yogi", "satyam"]
 // let number = [11, 12,12, 10, 15, 11, 14, 13, 16];
-
 //5 charactor count
 function CharactorCount(string){
   let newobj={}
@@ -150,7 +149,6 @@ function CharactorCount(string){
 CharactorCount(string)
 
 
-
 // find each count:-
 const users=[
   { firstname: "aijaj", lastname: "khan", age: 25 },
@@ -159,21 +157,20 @@ const users=[
   { firstname: "elon ", lastname: "musk", age: 35 },
 ]
 
-// const output2= users.reduce(function (newObj2, item){
-//   // console.log("aijaj", newObj2[item.age])  new object check age exits or not
-//   if(newObj2[item.age]){
-//      newObj2[item.age] = ++newObj2[item.age]
-//   }else{
-//      newObj2[item.age]= 1
-//   }
-//   return newObj2;
-// }, {})
-// console.log("output2", output2)
+const output2= users.reduce(function (accumulator, currentValue){
+  // console.log("aijaj", accumulator[currentValue.age])  new object check age exits or not
+  if(accumulator[currentValue.age]){
+     accumulator[currentValue.age] = ++accumulator[currentValue.age]
+  }else{
+     accumulator[currentValue.age]= 1
+  }
+  return accumulator;
+}, {})
+console.log("output2", output2)
 
 
  //6 prime number in js
  function isPrime(n) {
-    // Corner case
     if (n <= 1)
         return false;
     // Check from 2 to n-1
@@ -188,7 +185,6 @@ const users=[
 }
 // Driver Code
 // isPrime(19)
-
 
 
  //prime number in js
@@ -257,17 +253,16 @@ function factorial(number){
 function palindromString(string){   121
   let start=0
   let end=string.length-1
-  let result=true;
   while(start<end){
     if(string[start]!= string[end]){
-      result=false
+      return false
     }
     start++
     end--
   }
-  return result
+  return true
 }
-let strings="123217"
+let strings="123214"
 console.log("kkk", palindromString(strings))
 
 
@@ -290,7 +285,7 @@ let n2 = 7007;
 // }
 
 
-// 15. swap two value without using third variable
+// 10. swap two value without using third variable
 let a = 5;
 let b = 10;
 a = a + b; // a now becomes 15
@@ -319,10 +314,10 @@ console.log('b:', b); // b: 5
 
 
 
-// find vovels from string.
+//11 find vovels from string.
 
 
-//10 each word first capital letter 
+//12 each word first capital letter 
 const str = 'sachin is the good batsman';
 let arr3=str.split(" ")
 console.log("arr", arr3)
@@ -336,7 +331,7 @@ for (let i=0; i< arr3.length; i++){
 console.log("newstring", newstring)
 
 
-//armstrong number
+//12. armstrong number  //153 is an Armstrong number. 1*1*1 + 5*5*5 + 3*3*3 = 153
 // let number=1634;
 // let result=number.toString();
 // // console.log(typeof(result))
@@ -347,17 +342,15 @@ console.log("newstring", newstring)
 //     console.log("qub", qub)
 // }
 // console.log("total", total)
-
-
 // if(total==number){
 //     console.log("this is armstrong number")
 // }
 // else{
-//         console.log("this is not armstrong number")
+//  console.log("this is not armstrong number")
 // }
 
 
-// 11  //fibonacci serie
+// 13  //fibonacci serie
 function fibonacci(n){
   let previous=0;
   let current=1;       
@@ -408,9 +401,12 @@ const object1 = {
 // "b: 42"
 
 
-//missing number
-function findMissingNumber(arr, n) {
-  const sum = (n * (n + 1)) / 2;
-  const arrSum = arr.reduce((acc, num) => acc + num, 0);
-  return sum - arrSum;
+// missing number
+function findMissingNumber(arr) {
+  const n = arr.length + 1;  // Since one number is missing
+  const totalSum = (n * (n + 1)) / 2;  // Sum of first n natural numbers
+  const arraySum = arr.reduce((acc, num) => acc + num, 0);  // Sum of elements in the array
+  return totalSum - arraySum;  // The missing number
 }
+// const arr = [1, 2, 4, 5, 6];
+// console.log('Missing number:', findMissingNumber(arr));  // Output: 3

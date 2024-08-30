@@ -1,8 +1,7 @@
 //1. clouser    
-// A closure is the combination of a function and the lexical environment within which that function was declared. 
+// A closure is the combination of a function and the lexical environment within that function was declared. 
 // It is an inner function that has access to the outer or enclosing function’s variables.
 function makeAdder(num) {
-
   function add (x) {
     return num + x;
   };
@@ -21,7 +20,7 @@ console.log(add10(2)); // 12
 // Call and apply are almost same except the way second arguments are passed
 // call as single object and apply as a array second arguments 
 // bind method use take variable function define;
-// call apply and bind method use access only once define other function property not repeating code
+// call apply and bind method use access only once define other function property not repeating function code
 
 var student = { 
   firstName: "John", 
@@ -174,11 +173,10 @@ copyobject.address.city="noida"
   // console.log("username", username)  //rahul
   // userinfo(username)
   
-//   var name="aijaj"
+// var name="aijaj"
 // function makeAdder() {
-    
-//   console.log(name)
-//   let name="rahul"
+//   console.log(name)  //undefine
+//   var name="rahul"   // if let then refrence error // if remove var or let then we get data "aijaj"
 // }
 // makeAdder()
 
@@ -245,9 +243,10 @@ console.log(resultMultiply);   // Output: 12
 // not make constructor
 // not take self own this keyboard
 // we can use single line synctax
+// not hoisting in let or const keyboards
 
 function add(a,b){
-  console.log("arguments.............", arguments)
+  console.log("arguments.............", arguments)  //not work arrow function
   return a+b;
 }
 // add(7,5)
@@ -306,6 +305,43 @@ function doTask3() {
 
 
 
+//12. using promise:-
+function doTask1() {
+  return new Promise((resolve) => {
+    setTimeout(function () {
+      console.log("Task 1 done");
+      resolve();
+    }, 1000);
+  });
+}
+
+function doTask2() {
+  return new Promise((resolve) => {
+    setTimeout(function () {
+      console.log("Task 2 done");
+      resolve();
+    }, 1000);
+  });
+}
+
+function doTask3() {
+  return new Promise((resolve) => {
+    setTimeout(function () {
+      console.log("Task 3 done");
+      resolve();
+    }, 1000);
+  });
+}
+
+// Using async/await to avoid callback hell
+// async function runTasks() {
+//   await doTask1();
+//   await doTask2();
+//   await doTask3();
+// }
+// runTasks();
+
+
 // 1. basic promise
 const myPromise = new Promise((resolve, reject) => {
   let success = true; 
@@ -358,7 +394,7 @@ firstPromiseData
 // })
 
 
-// // 4. Promise.race (First Promise to Resolve or Reject)
+// // 4. Promise.race (First Promise to Resolve or Reject as soon as return promise)
 // const promise1 = new Promise((resolve) => setTimeout(resolve, 500, "one"));
 // const promise2 = new Promise((resolve) => setTimeout(resolve, 100, "two"));
 // const promise3 = new Promise((resolve, reject) => setTimeout(reject, 200, "error handling"));
@@ -370,7 +406,6 @@ firstPromiseData
 // .catch((error) => {
 //     console.log(error);
 // })
-
 
 
 // // 5. Promise.allSettled (Wait for All Promises to Settle Eather resolved or rejected)
@@ -385,7 +420,7 @@ firstPromiseData
 
 
 
-// 6. Promise.any (First Fulfilled Promise)
+// 6. Promise.any (First Fulfilled Promise not reject)
 const promise1 = new Promise((resolve, reject) => setTimeout(reject, 100, "Error"));
 const promise2 = new Promise((resolve) => setTimeout(resolve, 200, "Success"));
 const promise3 = new Promise((resolve) => setTimeout(resolve, 300, "Another Success"));
@@ -399,54 +434,15 @@ Promise.any([promise1, promise2, promise3])
 
 
 
-
-//12. using promise:-
-function doTask1() {
-  return new Promise((resolve) => {
-    setTimeout(function () {
-      console.log("Task 1 done");
-      resolve();
-    }, 1000);
-  });
-}
-
-function doTask2() {
-  return new Promise((resolve) => {
-    setTimeout(function () {
-      console.log("Task 2 done");
-      resolve();
-    }, 1000);
-  });
-}
-
-function doTask3() {
-  return new Promise((resolve) => {
-    setTimeout(function () {
-      console.log("Task 3 done");
-      resolve();
-    }, 1000);
-  });
-}
-
-// Using async/await to avoid callback hell
-// async function runTasks() {
-//   await doTask1();
-//   await doTask2();
-//   await doTask3();
-// }
-// runTasks();
-
-
-
-
 //////////////////////////////////////////////////////////////////////////
 //array method:-
 // toString()
 
 let bikes=["r15", "apache", "yamaha", "honda", "bajaj", "tvs"]
-// console.log(bikes.toString());
-// console.log(bikes.join(""));
-// console.log(bikes.join("-"));
+// console.log(bikes.toString());  //r15,apache,yamaha,honda,bajaj,tvs
+// console.log(bikes.join(""));  //r15apacheyamahahondabajajtvs
+// console.log(bikes.join("-")); //r15-apache-yamaha-honda-bajaj-tvs
+
 
 
 // let cars=["ducati", "jaguar", "tvs", "swift"]
@@ -454,7 +450,17 @@ let bike=["r15", "apache", "yamaha", "honda", "bajaj", "tvs"]
 let scooty=["jupitor", "honda", "hero"]
 
 // let allvehicals=cars.concat(bike, scooty)
-// console.log("allvehicals",allvehicals) //return new array
+// console.log("allvehicals",allvehicals)  
+// output-://return new array  
+// allvehicals [
+//   'ducati',  'jaguar',
+//   'tvs',     'swift',
+//   'r15',     'apache',
+//   'yamaha',  'honda',
+//   'bajaj',   'tvs',
+//   'jupitor', 'honda',
+//   'hero'
+// ]
 
 
 

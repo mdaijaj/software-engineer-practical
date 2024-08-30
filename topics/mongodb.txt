@@ -1,5 +1,4 @@
 20 important question
-
 1 what is mysql and MongoDB Features const and pros
 2 What are the difference between NoSQL and SQL
 3 How to establish MongoDB database connection in a node application?
@@ -14,6 +13,13 @@
 13 transection
 14 What are the mongoose middlewares?  pre or post in schema that is call middlewares
 15 How to query data using mongoose?
+Trasection
+Second highest salary
+All join
+Sharding
+Agrregation
+Projection
+
 
 
 dump database
@@ -22,12 +28,7 @@ or
 mongodump --uri="mongodb://13.127.232.191:21819/vedobi" --forceTableScan
 
 
-Trasection
-Second highest salary
-All join
-Sharding
-Agrregation
-Projection
+
 
 
 virtual properties allow you to define computed or derived properties on your Mongoose models. 
@@ -40,6 +41,7 @@ const userSchema = new mongoose.Schema({
   firstName: String,
   lastName: String,
 });
+
 // Define a virtual property called 'fullName'
 userSchema.virtual('fullName').get(function () {
   return `${this.firstName} ${this.lastName}`;
@@ -52,11 +54,6 @@ nested documents or Embedded documents max 100
 one document size  max is 16mb not exeed more that
 
 
-what is transection?
-A transaction in MySQL is a sequence of one or more SQL statements that are treated as a single,
-indivisible unit of work. Transactions are used to maintain data integrity and consistency in a database
-
-
 virtual properties allow you to define computed or derived properties on your Mongoose models. 
 These virtual properties do not exist in the MongoDB document stored in the database; 
 instead, they are calculated on the fly when you access them.
@@ -75,7 +72,7 @@ userSchema.virtual('fullName').get(function () {
 const User = mongoose.model('User', userSchema);
 
 
-second highest salary
+// Find the second highest salary
 db.employees.aggregate([
   {
     $sort: { salary: -1 }
@@ -89,12 +86,20 @@ db.employees.aggregate([
 ]);
 
 
+const highestSalary = await collection.findOne({}, { sort: { salary: -1 }, projection: { salary: 1, _id: 0 } });
+const secondHighestSalary = await collection.find({ salary: { $lt: highestSalary } })
+  .sort({ salary: -1 })
+  .limit(1)
+  .toArray();
+  console.log('Second Highest Salary:', secondHighestSalary[0]?.salary);
+
+
 Mongodb
 nosql database Mongodb
 1 redis key value base
 2. casandra columns base big data
-3. document base Mongodb
-4. graph based 
+3. Mongodb document base 
+4. Graphql graph base 
 
 
 aggregation in Mongodb:-
@@ -105,42 +110,26 @@ fetching a lots of nested data from performed complex operations
 filter and sort documents and analysis data changes
 
 
-replica set
-duplicate of server
-
-Sharding or shard 
-Sharding is a data distribution process and stores a single data set into multiple databas.
-Vertical adding more resourses as on demand
-Horizontal adding more processing or physical machine
-
+replication or replica set (it's a all databases combination)
+duplicate of server data asynchoronous manner
+primary and second read and write operations in database.
+profit:-
+fault tolenrence,  problem solved
+read call to second or other but write call to focus to primary server
 
 
-IN Operator
-SELECT * FROM Customers
-WHERE Country IN ('Germany', 'France', 'UK');
-
-The SQL BETWEEN Operator
-SELECT * FROM Products
-WHERE Price BETWEEN 10 AND 20;
-
-The SQL COUNT(), AVG() and SUM() Functions
-
-
-SQL HAVING Examples
-SELECT COUNT(CustomerID), Country
-FROM Customers
-GROUP BY Country
-HAVING COUNT(CustomerID) > 5;
+Sharding or shard ( using load balancer) handle of user traffic  (using Horizontal Scaling)
+Sharding is a data distribution process and stores a single data set into multiple database.
+Vertical scalling adding more resourses as on demand
+Horizontal scalling adding more processing or physical machine
 
 
 projection:-
-
 db.collection_name.find({}, key: 1)
 
 {_id: 87455431577, title: "ksisis"},
 {_id: 87455478797, title: "rahls"},
 {_id: 87455478897, title: "how are you"},
-
 
 
 only display the title 
@@ -155,16 +144,20 @@ show all document only key title not others
 indexing:-
 createIndex()
 
-db.collection_name.createIndex({title: 1, description: -1})  //1 true, -1 false assending or desending
+db.collection_name.createIndex({title: 1, description: -1})  //1 true, -1 false 
 db.collection_name.dropIndex({title: 1});
 
 
 shard key = consists of a field or multiple field
 chunks = contains partitioned data or subsets of shared data.
-balancer = responsible for evently distribution of equale chunks across shards
+balancer = responsible for evently distribution of equal chunks across shards
 zones = can help to improve the data locality for shared clusters.
 
 less relationships
 nested each document size 16kb
 object inside array find query get data
-db.find({hobies:"dance"})  //all document which is dance hobies
+db.find({hobbies:"dance"})  //all document which is dance hobbies
+
+
+what is Scalable mysql Horizontal and Vertical?
+Mongodb data modeling

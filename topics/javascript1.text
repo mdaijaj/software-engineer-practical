@@ -598,9 +598,73 @@ console.log(newdata)// [16] show delete item
 
 
 34. What is event bubbling and event capturing in Javascript
-35. How many way to create object in Javascript
 36. What is object.seal and object.freeze in Javascript
+  New properties cannot be added.
+  Existing properties cannot be deleted.
+  Existing properties can be modified (if they are writable).
+
+let person = {
+    name: 'John',
+    age: 30
+};
+
+Object.seal(person);
+person.name = 'Jane';  // This is allowed (modifying existing property)
+console.log(person.name);  // Output: 'Jane'
+
+person.gender = 'male';  // This is not allowed (adding new property)
+console.log(person.gender);  // Output: undefined
+
+delete person.age;  // This is not allowed (deleting property)
+console.log(person.age);  // Output: 30
+
+object.freeze:-
+  New properties cannot be added.
+  Existing properties cannot be deleted.
+  Existing properties cannot be modified (even if they are writable).
+
+  let person = {
+      name: 'John',
+      age: 30
+  };
+  Object.freeze(person);
+
+  person.name = 'Jane';  // This is not allowed (modifying existing property)
+  console.log(person.name);  // Output: 'John'
+
+  person.gender = 'male';  // This is not allowed (adding new property)
+  console.log(person.gender);  // Output: undefined
+
+  delete person.age;  // This is not allowed (deleting property)
+  console.log(person.age);  // Output: 30
+
+
+
 37. What is Weakmap and Weakset in Javascript
-38. What is sessionStorage, localStorage , cookie,
-39. What is generator function in Javascript
+38. What is sessionStorage, localStorage , session, cookie.
+session:-
+  after banking website login you are not doing anything then automatic logout 
+  generate sessionId store in cookie
+  it create on server
+
+cookies:-
+  its a client side
+  koi product search karte hai same product add aa jata hai
+  its just a identity of users generator sessionId
+  all activity info store in Cookies
+  if remove cookes then you logout
+  size of 4kb data store.
+  when you want to expires on your time
+  advantage:-
+  username and passed it gender sessionId and store in cookes next time req then browser identity your data in cookes it go to home page.
+
+webstoreapi:- its a browser storage
+  sessionStorage:-
+  size 2-10 mb
+  it browser open then data is safe if tab is closed then data is removed
+
+  localStorage:-
+  its a temporary data storage.
+  it save data not removed even browser is closed.
+  size 2-10 mb
 

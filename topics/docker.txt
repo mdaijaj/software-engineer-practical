@@ -111,5 +111,82 @@ docker run myimage1 or imageId
 
 
 
+what is problem why we use docker?
+same environment use another laptop envirment after 3 years replication enviroment some are package work only window when we setup in mac or ubuntu 
+then not possible to work this mac or ubuntu
+multiple environment ko replication is very difficult
+so docker solve this problem?
+
+
+container
+jitni bhi enviroment hota hai hum kisi bhi os me use kar sakte hai 
+its litght waight share and multiple repla
+
+
+docker desktop its like docker-UI
+
+deamon its whole work of docker like container create images create all activities work using this tool.
+
+
+command:-
+docker run -it ubuntu   (intractive mode) 
+unable to find container so its auto installing container.
+
+docker container ls (all container list)
+docker start or stop containerName
+
+docker exec dockerName bash (in local)
+
+i want to attach local to server directory docker server
+docker exec -it dockerName bash
+
+docker run -it imageName
+docker exec containerName command
+
+docker images or docker image ls
+
+docker run -it node  (it open repl shell)
+
+
+hub.com its like github
+
+images:-
+image ko run karne ke liye container ki jarurut pardti hai
+image like a os behaviour
+single image work different container
+data is a isolated 
+
+
+port mapping:- exposed
+docker run -it -p 1025:1025 mailhog
+mapping port to 6000:9000  (docker is working 9000 port but we are port mapping on 6000 port example.  	
+
+you can pass environment variable like that:-
+docker run -it -p 1025:1025 -e key=value -e key=value mailhog
+mapping port to 6000:9000  (docker is working 9000 port but we are port mapping on 6000 port example.  	
+
+make a dockerFile
+
+create custom image in local command:-
+docker build -t imageName . (. is path and install automatic)
+
+docker run -it -p 8000:8000   youtube-nodejs(imagename)
+
+docker hub.io 
+docker push container or images in hub.io 
+
+
+docker composed:-
+multiple container ko use kar sakte hai
+docker-compose.yml file
+docker compose up (composing all container or images make or linux command ahead use sudo window no need);
+docker compose down (remove all container or images)
+docker compose up -d (working on background )
+cntl+c to stop container or images
+
+
+
+
+
 
 

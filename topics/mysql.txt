@@ -1,8 +1,13 @@
+Explain Vertical Scaling and Horizontal Scaling
+Scaling Horizontal and Vertical mysql 
+Difference between Where and Having Clause in SQL : 
+
+
+
 groupby
 SELECT product_category, SUM(sales_amount) AS total_sales FROM sales
 GROUP BY product_category;
-what is Scalable mysql Horizontal and Vertical?
-Mongodb data modeling
+
 
 having query
 SELECT product_category, SUM(sales_amount) AS total_sales FROM sales
@@ -16,46 +21,31 @@ show index from students;         //show index
 drop index studdob On students;
 
 
-table  multiple case
+table multiple case
 UPDATE db.Table1 SET col2 = (CASE col2 WHEN 1 THEN 0 ELSE 1 END);
 
 
+//second highest salary
 SELECT MAX(amount) from salary_stuctures ss 
 WHERE amount < (SELECT MAX(amount) from salary_stuctures ss2 ); 
-
-Explain Vertical Scaling and Horizontal Scaling
-Scaling Horizontal and Vertical both mysql and monggodb
-
-
-Embedded documents
-nested documents or Embedded documents max 100
-one document size  max is 16mb not exceed more that
 
 
 what is transection?
 A transaction in MySQL is a sequence of one or more SQL statements that are treated as a single,
 indivisible unit of work. Transactions are used to maintain data integrity and consistency in a database
 
+
 table  multiple case
 UPDATE db.Table1 SET col2 = (CASE col2 WHEN 1 THEN 0 ELSE 1 END);
 
-Explain Vertical Scaling and Horizontal Scaling
-Scaling Horizontal and Vertical both mysql and monggodb
+
+Migrations are scripts or instructions that specify how the database schema should change. 
+Each migration corresponds to a specific, discrete change to the schema, such as creating a new table, adding or modifying columns, 
+creating indexes, or defining relationships between tables. Migrations are typically versioned to ensure they are applied in a specific order.
 
 
 Migrations are scripts or instructions that specify how the database schema should change. 
 Each migration corresponds to a specific, discrete change to the schema, such as creating a new table, adding or modifying columns, creating indexes, or defining relationships between tables. Migrations are typically versioned to ensure they are applied in a specific order.
-
-doubt?
-11 orm what is meaning pros const with example
-object oriented db
-bson format
-json bson
-
-
-Migrations are scripts or instructions that specify how the database schema should change. 
-Each migration corresponds to a specific, discrete change to the schema, such as creating a new table, adding or modifying columns, creating indexes, or defining relationships between tables. Migrations are typically versioned to ensure they are applied in a specific order.
-
 
 
 | 1 | Ramesh | 32 | Ahmedabad | 2000.00 |
@@ -78,18 +68,38 @@ SELECT NAME, SUM(SALARY) FROM CUSTOMERS GROUP BY NAME;
 | Ramesh | 3500.00 |
 
 
-
 join example:-
 right
 left
 full join
 inner join
 self
- CARTESIAN join
- CROSS JOIN
+CARTESIAN join
+CROSS JOIN
 
- PRIMARY KEY: A primary key is a field in a table which uniquely identifies each row/record in a database table. Primary keys 
+PRIMARY KEY: A primary key is a field in a table which uniquely identifies each row/record in a database table. Primary keys 
 must contain unique values. A primary key column cannot have NULL values.
 
+IN Operator
+SELECT * FROM Customers
+WHERE Country IN ('Germany', 'France', 'UK');
 
-Difference between Where and Having Clause in SQL : 
+The SQL BETWEEN Operator
+SELECT * FROM Products
+WHERE Price BETWEEN 10 AND 20;
+
+The SQL COUNT(), AVG() and SUM() Functions
+
+
+SQL HAVING Examples
+SELECT COUNT(CustomerID), Country
+FROM Customers
+GROUP BY Country
+HAVING COUNT(CustomerID) > 5;
+
+
+doubt?
+11 orm what is meaning pros const with example
+object oriented db
+bson format
+json bson
