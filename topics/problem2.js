@@ -3,7 +3,7 @@
 var twoSum = function (nums, target) {
 
     for (var i = 0; i < nums.length; i++) {
-        for (var j = i; j < nums.length; j++) {
+        for (var j = i+1; j < nums.length; j++) {
             console.log(nums[i] + nums[j + 1])
             if (nums[i] + nums[j + 1] == target) {
                 console.log([i, j + 1])
@@ -13,8 +13,31 @@ var twoSum = function (nums, target) {
     }
     console.log("not found sum of index")
 };
-let nums = [4, 5, 6, 7, 8, 9];
+// let nums = [4, 5, 6, 7, 8, 9];
 // twoSum(nums, 12)
+
+
+
+//solve time complexity n^2 to n;
+var twoSum = function(nums, target) {
+    let map = new Map();  // Create a map to store the value and index
+    for (let i = 0; i < nums.length; i++) {
+        let complement = target - nums[i];  // Calculate the complement
+        if (map.has(complement)) {  // Check if complement exists in the map
+            console.log("map1", map)
+
+            return [map.get(complement), i];  // Return the indices
+        }
+        map.set(nums[i], i);  // Store the current value and its index in the 
+            console.log("map2", map)
+
+    }
+};
+
+let nums= [2, 7, 11, 15]
+let target= 26
+console.log("twoSum", twoSum(nums, target))
+
 
 
 

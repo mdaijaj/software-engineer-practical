@@ -10,8 +10,8 @@
 
 
 // ecmascript
-// rest spread
-// import and require
-
+// rest spread good example
+execution and stack  (aksay shahini) 
+prototype 
 
 

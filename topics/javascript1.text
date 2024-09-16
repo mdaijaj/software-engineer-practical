@@ -141,10 +141,21 @@ Expression:-
 An Expression is something which evaluates to a value, or which produce a value
 or the value itself
 
+ex:
+let x = 5 + 10;
+x * 2
+"Hello" + " World"
+3 > 2
+
+
 statement:-
 A bigger piece of code that is executed and which does not produce a value on
 itself.
 
+example:-
+let y = 10;
+if (x > 10) { console.log("x is greater than 10"); } (an if statement)
+for (let i = 0; i < 5; i++) { console.log(i); } (a loop statement)
 
 
 4. dom:- Document Object Model  :-
@@ -668,3 +679,29 @@ webstoreapi:- its a browser storage
   it save data not removed even browser is closed.
   size 2-10 mb
 
+
+Implicit coercion:-
+This occurs when JavaScript automatically converts a value to another type.
+
+let result1 = '5' + 10; // Implicit coercion: number to string
+console.log(result1);    // Output: '510' (number 10 is coerced to a string)
+
+let result2 = '5' * 2;  // Implicit coercion: string to number
+console.log(result2);   // Output: 10 (string '5' is coerced to a number)
+
+let result3 = '5' - '2'; // Implicit coercion: both strings are coerced to numbers
+console.log(result3);    // Output: 3
+
+
+Explicit coercion:-
+This occurs when you explicitly convert a value from one type to another using JavaScript functions or operators.
+
+let num = '123';
+let convertedNum = Number(num); // Explicit coercion: string to number
+console.log(convertedNum);      // Output: 123 (as a number)
+
+let bool = Boolean(1);          // Explicit coercion: number to boolean
+console.log(bool);              // Output: true
+
+let str = String(100);          // Explicit coercion: number to string
+console.log(str);               // Output: '100'

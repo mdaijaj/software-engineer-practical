@@ -3,6 +3,44 @@ Scaling Horizontal and Vertical mysql
 Difference between Where and Having Clause in SQL : 
 
 
+primary and unique key and forign key?
+
+primary key:-
+Cannot contain NULL values.
+Every table should have one primary key.
+A primary key automatically creates a clustered index in most databases
+its auto increament
+
+unique key:-
+Ensures that all values in the column are unique, but null values are allowed.
+Can contain one or more NULL values.
+a column or set of columns must be unique, but it's not required to identify a record.
+
+
+Key Differences:
+Feature	Primary Key	Unique Constraint
+Uniqueness	Must be unique	Must be unique
+Nullability	Cannot contain NULL values	Can contain NULL values
+Number per Table	Only one primary key per table	Multiple unique constraints per table
+Purpose	Used to uniquely identify each record	Used to ensure unique values in a column
+Index Type	Usually creates a clustered index	Usually creates a non-clustered index
+
+
+Key Differences:
+Feature	DROP	DELETE	TRUNCATE
+Removes	Entire table (or object)	Specific rows or all rows	All rows from the table
+Table structure	Table is removed entirely	Table remains intact	Table remains intact
+Rollback	Generally, cannot be rolled back	Can be rolled back (in a transaction)	Depends on DBMS
+Logging	Not logged	Logs each row deletion	Doesn't log individual rows
+Speed	Slow for large tables (depends)	Slower for large datasets	Faster for large datasets
+Condition	Cannot specify a condition	Can specify a WHERE condition	No condition; removes all rows
+Foreign Key Check	Fails if there are dependent FK	Complies with FK checks	Ignores FK constraints in some DBMS
+
+Summary:
+DROP: Permanently removes a table or object, including structure and data.
+DELETE: Removes specific rows or all rows but keeps the table structure.
+TRUNCATE: Quickly removes all rows but keeps the table structure; faster than DELETE for large datasets.
+
 
 groupby
 SELECT product_category, SUM(sales_amount) AS total_sales FROM sales

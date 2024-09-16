@@ -102,6 +102,23 @@ getMobile("Samsung", "Galaxy", "2020");
 
 
 8.Spread and Rest Operators
+Spread:-
+const fruits = ['apple', 'banana', 'orange'];
+const moreFruits = ['mango', 'pineapple', 'grape'];
+const allFruits = [...fruits, ...moreFruits];
+console.log(allFruits);   // Output: ['apple', 'banana', 'orange', 'mango', 'pineapple', 'grape']
+
+const person = { name: 'John', age: 30 };
+const job = { title: 'Developer', company: 'ABC Corp' };
+const employee = { ...person, ...job };
+
+
+Rest operator:-
+const person = { name: 'Alice', age: 25, city: 'New York', country: 'USA' };
+const { name, age, ...address } = person;
+console.log(name); // Output: 'Alice'
+console.log(age); // Output: 25
+console.log(address); // Output: { city: 'New York', country: 'USA' }
   
 
 9. Classes

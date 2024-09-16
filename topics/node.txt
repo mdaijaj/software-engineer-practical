@@ -48,26 +48,15 @@ thread pool type How does Nodejs handle the child threads? how many type of thre
 19 What are disadvantages of using jwt based authentication?
 
 
-//promise:-
-// Promise.resolve and Promise.reject  (basic promised)    
-// Promise.all        :- method is settled with only resolved promises,so if any promise reutrns error then it won't work
-// Promise.allSettled :- it is used for handling an array of promises and waiting for all of them to settle (resolve or reject).
-// Promise.any        :-any and race same promise but any only promise resolved case as soon as resolved
-// Promise.race       :-is used to race multiple promises and return the value of the first promise (either resolved or rejected) to completed
-
-
 doubt with example:-
 how to billion or trillion data to manage fetch data 
-Child processes
 14. What is the difference between spawn and fork methods in Node.js?
 20 What are buffer objects in nodejs?
 21 How does Nodejs handle the child threads?
 load balance in nodejs
 setimmediate  
-how is better then other language why choose nodejs for backend ?
 how to handle multile req if nodejs single thread?  how to handle multile user reqeust Handle
-fork Differentiate between spawn and fork methods in Nodejs?   15. Differentiate between spawn and fork methods in Nodejs?
 restful API and others
-how to handle multi thread in python practical than its better than nodejs
-API functions in Node?
 What Is A Child_process Module In NodeJs?
+
+

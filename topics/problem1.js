@@ -240,7 +240,7 @@ function factorial(number){
   total*= number
   if(number>1){
       factorial(number-1)
-  }else if(number==1){
+  }else{
       console.log("total", total)
   }
 }
@@ -303,16 +303,6 @@ console.log('b:', b); // b: 5
 // console.log('b:', b); // b: 5
 
 
-//Using Bitwise XOR
-// let a = 5;
-// let b = 10;
-// a = a ^ b; // a now becomes 15 (in binary: 0101 ^ 1010 = 1111)
-// b = a ^ b; // b becomes 5 (in binary: 1111 ^ 1010 = 0101)
-// a = a ^ b; // a becomes 10 (in binary: 1111 ^ 0101 = 1010)
-// console.log('a:', a); // a: 10
-// console.log('b:', b); // b: 5
-
-
 
 //11 find vovels from string.
 
@@ -350,6 +340,62 @@ console.log("newstring", newstring)
 // }
 
 
+// 12. find binary no 
+let newarr=[5,1,3,2,6];
+let output=newarr.map((item)=> item.toString(2))
+// console.log("output", output)
+
+
+const object1 = {
+  a: 'somestring',
+  b: 42,
+};
+
+//13 object iteration
+// for (const [key, value] of Object.entries(object1)) {
+//   console.log(`${key}: ${value}`);
+// }
+// Expected output:
+// "a: somestring"
+// "b: 42"
+
+
+// missing number
+function findMissingNumber(arr) {
+  const n = arr.length + 1;  // Since one number is missing
+  const totalSum = (n * (n + 1)) / 2;  // Sum of first n natural numbers
+  const arraySum = arr.reduce((acc, num) => acc + num, 0);  // Sum of elements in the array
+  return totalSum - arraySum;  // The missing number
+}
+// const arr = [1, 2, 4, 5, 6];
+// console.log('Missing number:', findMissingNumber(arr));  // Output: 3
+
+
+
+// find index of item which is sum of numbers equal to target value.
+function findTwoSum(nums, target) {
+  for (let i = 0; i < nums.length; i++) {
+    for (let j = i + 1; j < nums.length; j++) {
+      if (nums[i] + nums[j] === target) {
+        return [i, j]; // Return the indices
+      }
+    }
+  }
+  return []; // Return an empty array if no pair is found
+}
+
+let num = [2, 7, 1, 15];
+let target = 3;
+
+// const result = findTwoSum(num, target);
+// console.log(result); // Output: [0, 2]
+
+
+
+// const arr1 = [0, 1, 2, [3,7,5,[2,4]]];
+// console.log(arr1.flat(2));
+
+
 // 13  //fibonacci serie
 function fibonacci(n){
   let previous=0;
@@ -380,33 +426,3 @@ var result = generateFibonacciSeries(10);
 console.log(result);
 
 
-
-// 12. find binary no 
-let newarr=[5,1,3,2,6];
-let output=newarr.map((item)=> item.toString(2))
-// console.log("output", output)
-
-
-const object1 = {
-  a: 'somestring',
-  b: 42,
-};
-
-//13 object iteration
-// for (const [key, value] of Object.entries(object1)) {
-//   console.log(`${key}: ${value}`);
-// }
-// Expected output:
-// "a: somestring"
-// "b: 42"
-
-
-// missing number
-function findMissingNumber(arr) {
-  const n = arr.length + 1;  // Since one number is missing
-  const totalSum = (n * (n + 1)) / 2;  // Sum of first n natural numbers
-  const arraySum = arr.reduce((acc, num) => acc + num, 0);  // Sum of elements in the array
-  return totalSum - arraySum;  // The missing number
-}
-// const arr = [1, 2, 4, 5, 6];
-// console.log('Missing number:', findMissingNumber(arr));  // Output: 3

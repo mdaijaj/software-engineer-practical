@@ -7,10 +7,10 @@ componentwillUnmount   --remove from component  dead phase
 
 example:-
 componentDidMount()=>{
-  // Called after the component is inserted into the DOM
+  // Called after the component is inserted or add into the DOM
   console.log("first time loading then call this function, componentDidMount working here...")
 }
-
+`
 componentDidUpdate(prevProps, prevState) {
   console.log(" when anyupdate call this function,  componentDidUpdate is working here...)
 }
@@ -28,7 +28,7 @@ useEffect()
 
 //componentDidMount phase
 useEffect(()=>{
-  console.log("componentDimount is working...")    //infinite loop time each time any event called
+  console.log("componentDimount is working...")    //infinite loop time or each time any event called
 })
 
 //componentDidMount phase
@@ -56,8 +56,6 @@ useEffect((number)=>{
 when component pas as a props input component and return output component that is call hoc
 when component pass as argument of funcion return inside function thats call hoc
 a hoc is a advanced technique in React for reusing component logic.
-a hoc is third party react library.
-a hoc is funcion that take a component and returns a new component.
 
 2.why use hoc?
 same logic when we use same component logic different component so we used hoc.
@@ -75,22 +73,17 @@ function App() {
   );
 }
 
-function HOCRed(props)
-{
+function HOCRed(props){
   return <h2 style={{backgroundColor:'red',width:100}}>Red<props.cmp /></h2>
 }
-function HOCGreen(props)
-{
+function HOCGreen(props){
   return <h2 style={{backgroundColor:'green',width:100}}>Grren<props.cmp /></h2>
 }
-function HOCBlue(props)
-{
+function HOCBlue(props){
   return <h2 style={{backgroundColor:'blue',width:100}}>blue <props.cmp /></h2>
 }
 
-
-function Counter()
-{
+function Counter(){
   const [count,setCount]=useState(0)
   return<div>
     <h3>{count}</h3>
@@ -99,15 +92,17 @@ function Counter()
 }
 export default App;
 
+
 7 hooks:-
 useState:  Manages state. 
 useEffect: Manages side effects
 useMemo: Memoizes values for performance optimization
 useCallback: Memoized the functions.
 useRef: Accesses DOM elements or persists values  //(read deep)
-useContext : Consumes context
+useContext : solve the prop drilling proablem same functionality of redux
 useReducer: Manages complex state logic
-useLayoutEffect: Synchronously runs after DOM mutations
+useLayoutEffect: Synchronously runs after DOM mutations and useEffect work asynChoronously
+customeHook: self make own hook component
 
 
 useState():-
@@ -142,7 +137,6 @@ function Timer() {
 }
 
 
-
 useCallback():-
 function store in cache same useMemo funcionality in funcion
 memoize the function
@@ -150,7 +144,7 @@ code optimization handle performance manage stop loop or rerendor
 optimization component reredering
 refrential equality of function
 application well performance 
-unnessessary/unwantage function call ko rokne ke liye
+stop unnessessary or unwantage funcion invoke 
 
 
 useMemo():-
@@ -172,14 +166,15 @@ useContext:-
 
 useReducer:-
   state management
+  Manages complex state logic
   and use redux
-  action with dispatch
+  action with dispatch and store
 
- 
+
 useRef:- when click then highlight color
-  rerender do't lost state object 
+  rerender do'nt lost state object 
   access dom property or funcion
-  rerender component stop unwantage reredering
+  rerender component stop unwantage reredering or stop reredering
   style color focus value etc handle using hooks
   it like a useState only and its preserve the value. No rerender
   use ref change property
@@ -210,37 +205,98 @@ function CustomTextInput(props) {
 
 
 
-redux:-
-first phase:-
-1.prop drilling a component data pass to b component data pass to c component 
-child to parent prop data pass
+Redux Data Flow:-
+Action → Reducer → Store → View (React Component)
 
+1.Action
+2.Reducer
+3.Store
+4. View (React Components)
 
-2. react hooks
-with redux we can use
-
-3.redux store:-
-about redux:-
-redux is a patern and library for manageing and updating application state using events called "action". 
-It serve as centrallized store for state that needs to be used across your entire application.
-state can only be updated in a predictable fashion.
 
 1. action:-
 what i do?
+An action is a plain JavaScript object that describes what happened in the application. It typically contains two things: 
+a type (describes the action)
+a payload (additional data needed by the reducer to update the state).
+
+Dispatching an Action:
+
+example:-
+const incrementAction = {
+  type: 'INCREMENT',
+  payload: 1
+};
+
+store.dispatch(incrementAction);
+
 
 2. reducer:
 how to do?
+A reducer is a pure function that takes the current state and an action as arguments, and returns the new state. 
+It specifies how the application's state changes in response to the action.
+
+example:-
+const counterReducer = (state = 0, action) => {
+  switch (action.type) {
+    case 'INCREMENT':
+      return state + action.payload;
+    case 'DECREMENT':
+      return state - action.payload;
+    default:
+      return state;
+  }
+};
+
 
 3. store:-
 all the data store
+The store is the central place where the entire state of the application is stored. It holds the state tree, 
+allows access to the current state, and lets you dispatch actions.
 
-function assoicated with store:
-data pass child to parent help using redux:-
+example:-
+import { createStore } from 'redux';
+const store = createStore(counterReducer);
+
+store.subscribe(() => {
+  console.log(store.getState());
+});
+
+
+4. View display:-
+React components (or views) connect to the Redux store to retrieve data (state) and display it. When a user interacts with the UI, the components dispatch actions to modify the state.
+To connect React components with Redux, the connect function or useSelector (for hooks) is used to access the state, and dispatch is used to send actions.
+
+import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+
+const Counter = () => {
+  const count = useSelector(state => state);
+  const dispatch = useDispatch();
+  
+  return (
+    <div>
+      <p>{count}</p>
+      <button onClick={() => dispatch({ type: 'INCREMENT', payload: 1 })}>
+        Increment
+      </button>
+    </div>
+  );
+};
+export default Counter;
+
+
+Conclusion:-
+Dispatch actions that describe state changes.
+Reducers update the state based on actions.
+Store holds and provides the updated state.
+React components use the updated state to render UI.
 
 
 state vs props?
 props:-
 used for data pass one component to another component
+it's unmutalble
 
 state:-
 state varible use manage state or updating state
@@ -301,9 +357,15 @@ reuse multiple component
 
 
 webpack:-
-bundal of information don't go other side
-compiler bebel
+when we create setup react proeject it automatic install webpack and bebel it is a format bundal a files that is called webpack. 
+sari files ko ek bunle ke form me rakhti hai
+when we proeject setup npx create react app application all files bundle using webpack
+than install all packages and files set or bundal using webpack
 
+
+bebel
+es6 and moden javascript ko convert to browser understandable code
+inside javascript we write code html in js using bebel it convert to html in javascript code.
 
 dom
 its is a object presentation of the html document in tree structure in browser
@@ -312,19 +374,21 @@ object   element like h2 body head tag or object or element
 model all dom presentation organized way  || completed html document
  
 virtual dom:-
-virtual dom is replica of original dom its a copy of original dom
+virtual dom is a light-wight in memoray represent of actual dom.
+it is use improve performance
+virtual dom is replica of original dom
 and modification any particular things
 
 
 shadow dom :=
 main dom ke ander hidden dom hota hai bahar wale dom ka style design ka impact nhi aata hai use hi
-shodow dom kahte hai.
+shadow dom kahte hai.
 why?
 if class match then overwrite
 
-w
-controle component
-input field can be control  by react state like useState() control
+
+control component
+input field can be control by react state like useState() control
 using useState
 state can be predictable
 
@@ -358,6 +422,7 @@ function ControlledForm() {
   )
 }
 
+
 uncontrole:-
 import React, { useRef } from 'react';
 
@@ -373,6 +438,7 @@ function UncontrolledForm() {
   };
 }
   
+
 use useRef 
 input field honi chahiye
 input field can be control by useRef() or javascript document like document.getElmentBy
@@ -399,19 +465,18 @@ pure component is a class component like useMemo
 it work like stop re-rendering multi time.
 if name is same onClick function then they are not re-render component.
 
-pure component example
+pure component example 
 useSearchParams() // for query data get
 outLet:- is related to nested routing.
 
 
-14th april
-reactjs vs vanilla js
+reactjs vs vanillajs
 variarble query it's difficult to understand
 class value where we can get data in vanilla js using query
 data SELECT munuall
 
 
-fix problem for prop drilling using component composition
+fix problem for prop drilling using component composition and useContext
 
 component 3 category
 stateless component  
@@ -444,12 +509,6 @@ document
 Note: Remember that not all events are cancelable.
 
 
-30 What is a service worker?
-A Service worker is basically a script (JavaScript file) that runs in the background, separate from a web page and provides features that don't need a web page or user interaction. 
-Some of the major features of service workers are Rich offline experiences(offline first web application development), periodic background syncs, 
-push notifications, intercept and handle network requests and programmatically managing a cache of responses.
-
-
 // ● How can you improve performance of your react app?
 1. Use React.memo
 2.Optimize State Management
@@ -471,3 +530,9 @@ push notifications, intercept and handle network requests and programmatically m
   What to do: Use optimized images, SVGs, and other assets. You can also lazy-load images to improve initial load time.
 10. Enable Production Mode
   Why: Make sure to run your app in production mode which removes development warnings and optimizes the build.
+
+
+30 What is a service worker?
+A Service worker is basically a script (JavaScript file) that runs in the background, separate from a web page and provides features that don't need a web page or user interaction. 
+Some of the major features of service workers are Rich offline experiences(offline first web application development), periodic background syncs, 
+push notifications, intercept and handle network requests and programmatically managing a cache of responses.

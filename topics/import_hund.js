@@ -1,4 +1,3 @@
-// 1.
 // let a=[];
 // let b=[];
 // let c={}
@@ -7,15 +6,19 @@
 // console.log(c==d)  
 // console.log(a===b)
 
+//falsy value these are not directory false value but after convert become false value
+let result= null || undefined || ""  || NaN  || 0 || -0 //all are falshy value
+
+
 console.log(![])   //false because we store sometihng like empty array so when narate then it will be true
 console.log(!{})   //false because we store sometihng like empty obj so when narate then it will be true
 console.log(!' ')   //false because we store sometihng like empty space so when narate then it will be true
 console.log(!" ")   //false because we store sometihng like empty space so when narate then it will be true
-console.log(!"")   //here is not store anythings so thats defult is false after narate we get true
-console.log(!'')   //here is not store anythings so defult is false after narate we get true
-let result= null ||  "" || false //all are false value
+console.log(!"")   //true here is not store anythings so thats defult is false after narate we get true
+console.log(!'')   //true here is not store anythings so defult is false after narate we get true
 const name="code step by step";
 console.log(!name) //false
+
 
 // 2.
 // let a=[];
@@ -237,6 +240,13 @@ for( const item in obj){
 console.log(typeof 3 + 4 + "5")  //number45  left to right
 console.log(typeof (3 + 4 + + "5"))  //number    //string ke age plus lagane par number ho jata hai
 console.log(3 + 4 + + "5")  //12
+
+
+
+console.log(null==undefined) // true // we are not check datatype just check value
+console.log(null===undefined) // false //we check value and datatype too.
+
+
 
 
 // callbyref

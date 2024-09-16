@@ -219,7 +219,6 @@ const readerStream = fs.createReadStream('input.txt');
 const writerStream = fs.createWriteStream('output.txt');
 
 // Pipe the read and write operations
-// read input.txt and write data to output.txt
 readerStream.pipe(writerStream);
 
 
@@ -262,7 +261,7 @@ There are lots of ways to solve the issue of callback hells:
 1.modularization: break callbacks into independent functions,
 2.use a control flow library, like async await.
 3.use generators with Promises,
-4. make independent function
+4.make independent function
 
 
 7 What Is EventEmitter In NodeJs?
@@ -289,6 +288,7 @@ Data Streaming Applications
 Data Intensive Real-time Applications (DIRT)
 JSON APIs based Applications
 Single Page Applications
+network application
 
 
 10 What are the tasks that a middleware can do?
@@ -444,7 +444,7 @@ calculation karna evulate karna cmd shell par
 
 
 20 What are buffer objects in nodejs?
-In Node.js, Buffer objects are used to represent binary data in the form of a sequence of bytes. Many Node.js APIs, for example streams and file system operations, 
+Buffer objects are used to represent binary data in the form of a sequence of bytes. Many Node.js APIs, for example streams and file system operations, 
 support Buffers, as interactions with the operating system or other processes generally always happen in terms of binary data
 
 buffer=
@@ -452,7 +452,7 @@ its a temporary memory location in nodejs while creating file nodejs need some m
 
 
 21 How does Nodejs handle the child threads?
-In general, Node.js is a single threaded process and doesn’t expose the child threads or thread management methods. But you can still make use of the child threads 
+Node.js is a single threaded process and doesn’t expose the child threads or thread management methods. But you can still make use of the child threads 
 using spawn() for some specific asynchronous I/O tasks which execute in the background and don’t usually execute any JS code or hinder with the main event loop in the application. 
 If you still want to use the threading concept in your application you have to include a module called ChildProcess explicitly.
 
@@ -461,7 +461,7 @@ If you still want to use the threading concept in your application you have to i
 A module in Node.js is used to encapsulate all the related codes into a single unit of code which can be interpreted by shifting all related functions into a single file
 
 
-23 NPM stands for Node Package Manager. It provides following two main functionalities.
+23 NPM stands for Node Package Manager. It provides two main functionalities.
 It works as an Online repository for node.js packages/modules which are present at <nodejs.org>.
 It works as Command line utility to install packages, do version management and dependency management of Node.js packages. NPM comes bundled along with Node.js installable. We can verify its version using the following command-
 
@@ -472,7 +472,7 @@ Load balancers are usually used for performance purposes: if a server needs to d
 1. Using cluster module:
 cluster:-
 server ka copy
-traffic ko handle
+its handle of traffic
 
 
 

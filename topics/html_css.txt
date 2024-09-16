@@ -1,0 +1,13 @@
+
+h2 {
+    background: "green"
+}
+h2: selector
+background: properties
+green: value
+
+universal selector
+id selector  #
+class selector  .
+
+

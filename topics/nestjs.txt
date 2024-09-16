@@ -1,0 +1,79 @@
+@Module({
+  imports: [],
+  controllers: [AppController],
+  providers: [AppService],
+})
+export class AppModule {}
+
+
+
+how to project structure:-
+module architechture  @module main root
+
+controllers:-  (@ decorator controllers)
+@Controller('users')
+export class UserController {
+  @Get()
+  getAllUsers() {
+    return "This action returns all users";
+  }
+}
+
+propvider()
+serices:-  using decorator @Injectable()
+
+@Injectable()
+export class UserService {
+  getUsers() {
+    return ['user1', 'user2'];
+  }
+}
+
+
+What are guards in NestJS?
+Answer: Guards are used to implement authentication and authorization in NestJS. They determine whether a request should be allowed to proceed 
+based on certain conditions (e.g., checking if a user is authenticated). Guards implement the CanActivate interface
+
+
+ What are interceptors in NestJS?
+Answer: Interceptors are used to transform the request or response. They can be used for tasks like logging, modifying responses, handling 
+exceptions, or timing requests. Interceptors implement the NestInterceptor interface.
+
+
+6. What are pipes in NestJS?
+Answer: Pipes are used for transforming and validating data in NestJS. They are executed before the route handler is called. Built-in pipes include ValidationPipe, ParseIntPipe, and others. Custom pipes can also be created by implementing the PipeTransform interface.
+
+
+10. What is the difference between middleware and guards in NestJS?
+Answer:
+Middleware is used primarily for modifying requests before they reach route handlers and applies globally or to specific routes.
+Guards are specifically used for determining if a request is authorized to access a specific route. They focus on authentication and authorization.
+
+
+new project setup:-
+nest new project-name
+
+
+generate module control and service:-
+nest generate module <module-name>
+nest generate service <service-name>
+nest generate controller <controller-name>
+
+
+In NestJS, a decorator is a special kind of declaration that can be attached to a class, method, or property to modify its behavior. Decorators are a core feature of NestJS, and they are widely used to provide metadata, configure components, or enable specific behaviors within the framework.
+
+NestJS makes extensive use of TypeScript decorators, which are functions prefixed with the @ symbol. Decorators allow for cleaner, declarative programming by reducing boilerplate code and enabling developers to add functionality without directly altering the underlying logic.
+
+Types of Decorators in NestJS
+Class Decorators
+
+Used to decorate classes, such as controllers and modules.
+Method Decorators
+
+Used to define routes or middleware on methods in a controller.
+Parameter Decorators
+
+Used to extract specific information from the request, such as route parameters, query strings, or headers.
+Property Decorators
+
+Used to modify properties within a class, often in conjunction with dependency injection.

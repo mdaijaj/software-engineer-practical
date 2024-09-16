@@ -13,3 +13,11 @@ not execute in browser
 
 we have to compiler generate to js
 
+
+typescript is a superset of javascript
+typescript is fancy and much more powerfull manner
+
+stop run time error
+type and safety for not allow different data type operations
+
+

@@ -1,6 +1,7 @@
 //1. clouser    
+//a function along with its laxical scope bundal together its call clourse 
 // A closure is the combination of a function and the lexical environment within that function was declared. 
-// It is an inner function that has access to the outer or enclosing function’s variables.
+// that has access to the outer or enclosing function’s variables from inner function.
 function makeAdder(num) {
   function add (x) {
     return num + x;
@@ -15,7 +16,7 @@ console.log(add10(2)); // 12
 
 
 
-//2.  call vs apply vs bind
+//2. call vs apply vs bind
 // when we need object and function integration or intract to each other that time we can use call bind and apply
 // Call and apply are almost same except the way second arguments are passed
 // call as single object and apply as a array second arguments 
@@ -91,7 +92,7 @@ y="aman"
 //   city: "New York"
 // }
 
-let copyObj= originalObj;
+let copyObj= originalObj;   //call by refrence
 copyObj.city="benglore"
 // console.log("originalObj", originalObj)  // updated  object  (copy of memeory it effect of original object) 
 // console.log("copyObj", copyObj) //updated object (copy of memeory ) //call by refrence
@@ -183,7 +184,7 @@ copyobject.address.city="noida"
 
 
 //6.  What is a first class function
-// In Javascript, First-class functions means when functions in that language are treated like any other variable.
+// First-class functions means when functions in that language are treated like any other variable.
 // For example, in such a language, a function can be passed as an argument to other functions, can be returned by another function 
 // and can be assigned as a value to a variable. 
 
@@ -246,18 +247,21 @@ console.log(resultMultiply);   // Output: 12
 // not hoisting in let or const keyboards
 
 function add(a,b){
-  console.log("arguments.............", arguments)  //not work arrow function
+  console.log("arguments.............", arguments)  //work arrow function
   return a+b;
 }
 // add(7,5)
 
-// const add=(a, b)=>a+b;
+const add=(a, b)=>{
+  console.log("arguments.............", arguments)  //not get arguments
+  return a+b
+};
 // add(7,5)
 
 
 
 // 10 callback
-// A function that takes a callback as an argument and invokes it
+// A function that takes a callback as an argument and invokes it in side this function its called callback fucntion.
 function fetchData(callback) {
     setTimeout(()=>{
         let data= "data fetching successfully!"  //4
@@ -296,7 +300,7 @@ function doTask3() {
   }, 1000);
 }
 
-// // Nested callback hell
+// // Nested callback hell 
 // doTask1(function () {
 //     doTask2(function () {
 //         doTask3();
@@ -377,7 +381,7 @@ firstPromiseData
   });
 
 
-  // 3. Promise.all (Handling Multiple Promises) if any of promise rejected then its rejected promised.
+// 3. Promise.all (Handling Multiple Promises) if any of promise rejected then its rejected promised.
 // const promise1 = Promise.resolve(3);
 // const promise2 = 42;
 // const promise3 = new Promise((resolve) => {
@@ -530,10 +534,12 @@ function increment() {
 
 //16 prototype:-
 // javascript has a special properties called prototype that is either null or refrences other object.
+// in Javascript, every function and object has property named prototype by default;
 // Constructor function for creating Person objects
-function Person(firstName, lastName) {
+function Person() {
   this.firstName = firstName;
   this.lastName = lastName;
+  this.age
 }
 
 // Adding a method to the Person constructor's prototype

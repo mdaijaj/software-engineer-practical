@@ -26,9 +26,7 @@ dump database
 mongodump --username your_username --password your_password --authenticationDatabase admin --out /path/to/output/directory
 or
 mongodump --uri="mongodb://13.127.232.191:21819/vedobi" --forceTableScan
-
-
-
+restore:-
 
 
 virtual properties allow you to define computed or derived properties on your Mongoose models. 
@@ -54,24 +52,6 @@ nested documents or Embedded documents max 100
 one document size  max is 16mb not exeed more that
 
 
-virtual properties allow you to define computed or derived properties on your Mongoose models. 
-These virtual properties do not exist in the MongoDB document stored in the database; 
-instead, they are calculated on the fly when you access them.
-example:-
-
-const mongoose = require('mongoose');
-const userSchema = new mongoose.Schema({
-  firstName: String,
-  lastName: String,
-});
-// Define a virtual property called 'fullName'
-userSchema.virtual('fullName').get(function () {
-  return `${this.firstName} ${this.lastName}`;
-});
-
-const User = mongoose.model('User', userSchema);
-
-
 // Find the second highest salary
 db.employees.aggregate([
   {
@@ -94,9 +74,8 @@ const secondHighestSalary = await collection.find({ salary: { $lt: highestSalary
   console.log('Second Highest Salary:', secondHighestSalary[0]?.salary);
 
 
-Mongodb
 nosql database Mongodb
-1 redis key value base
+1  redis key value base
 2. casandra columns base big data
 3. Mongodb document base 
 4. Graphql graph base 
@@ -112,7 +91,7 @@ filter and sort documents and analysis data changes
 
 replication or replica set (it's a all databases combination)
 duplicate of server data asynchoronous manner
-primary and second read and write operations in database.
+primary and secondary read and write operations in database.
 profit:-
 fault tolenrence,  problem solved
 read call to second or other but write call to focus to primary server
@@ -161,3 +140,5 @@ db.find({hobbies:"dance"})  //all document which is dance hobbies
 
 what is Scalable mysql Horizontal and Vertical?
 Mongodb data modeling
+lookup 
+populate

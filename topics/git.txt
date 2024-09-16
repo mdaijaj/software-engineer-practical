@@ -1,10 +1,26 @@
 git reset/ revert
 git reset --soft <commit id>
+git base
+git merge
+git log (Show the commit history)
+git diff (Show changes between commits, commit and working tree, etc)
+
+git reset <commit>
+Reset the current HEAD to a specific state.
+
+git stash
+Save your changes and clean the working directory.
+takes your uncommitted changes (both staged and unstaged), saves them away for later use, and then reverts them from your working copy
+
+git stash list
 
 
-
-
-
-
-
-
+git add .
+git add
+git commit -m "messages"
+git fetch --all
+git pull 
+git checkout
+git checkout -b
+git push
+git merge
