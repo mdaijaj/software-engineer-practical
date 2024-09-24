@@ -43,20 +43,42 @@ TRUNCATE: Quickly removes all rows but keeps the table structure; faster than DE
 
 
 groupby
-SELECT product_category, SUM(sales_amount) AS total_sales FROM sales
-GROUP BY product_category;
+sales Table:
+id	product_name	quantity	price	sale_date
+1	Apple	10	1.00	2024-09-01
+2	Banana	5	0.50	2024-09-01
+3	Apple	3	1.00	2024-09-02
+4	Orange	8	0.80	2024-09-02
+5	Banana	6	0.50	2024-09-03
+
+query:-
+SELECT product_name, SUM(quantity) AS total_quantity FROM sales
+GROUP BY product_name;
+
+Result:-
+product_name	total_quantity
+Apple	13s
+Banana	11
+Orange	8
 
 
-having query
-SELECT product_category, SUM(sales_amount) AS total_sales FROM sales
-GROUP BY product_category
-HAVING total_sales > 10000;
+
+having query:-
+SELECT product_name, SUM(quantity) AS total_quantity FROM sales
+GROUP BY product_name HAVING total_quantity > 10;
+
+Result:
+product_name	total_quantity
+Apple	13
+Banana	11
+
 
 
 index use:-
 create index studdob On students (dob); add multiple columns  //create index
 show index from students;         //show index
 drop index studdob On students;
+
 
 
 table multiple case
@@ -68,9 +90,11 @@ SELECT MAX(amount) from salary_stuctures ss
 WHERE amount < (SELECT MAX(amount) from salary_stuctures ss2 ); 
 
 
+
 what is transection?
 A transaction in MySQL is a sequence of one or more SQL statements that are treated as a single,
 indivisible unit of work. Transactions are used to maintain data integrity and consistency in a database
+
 
 
 table  multiple case
@@ -84,26 +108,6 @@ creating indexes, or defining relationships between tables. Migrations are typic
 
 Migrations are scripts or instructions that specify how the database schema should change. 
 Each migration corresponds to a specific, discrete change to the schema, such as creating a new table, adding or modifying columns, creating indexes, or defining relationships between tables. Migrations are typically versioned to ensure they are applied in a specific order.
-
-
-| 1 | Ramesh | 32 | Ahmedabad | 2000.00 |
-| 2 | Ramesh | 25 | Delhi | 1500.00 |
-| 3 | kaushik | 23 | Kota | 2000.00 |
-| 4 | kaushik | 25 | Mumbai | 6500.00 |
-| 5 | Hardik | 27 | Bhopal | 8500.00 |
-| 6 | Komal | 22 | MP | 4500.00 |
-| 7 | Muffy | 24 | Indore | 10000.00 |
-
-SELECT NAME, SUM(SALARY) FROM CUSTOMERS GROUP BY NAME;
-
-
-  NAME | SUM(SALARY) |
-+---------+-------------+
-| Hardik | 8500.00 |
-| kaushik | 8500.00 |
-| Komal | 4500.00 |
-| Muffy | 10000.00 |
-| Ramesh | 3500.00 |
 
 
 join example:-
@@ -130,10 +134,11 @@ The SQL COUNT(), AVG() and SUM() Functions
 
 
 SQL HAVING Examples
-SELECT COUNT(CustomerID), Country
-FROM Customers
+SELECT COUNT(CustomerID), Country FROM Customers
 GROUP BY Country
 HAVING COUNT(CustomerID) > 5;
+
+what is Scalable mysql Horizontal and Vertical?
 
 
 doubt?

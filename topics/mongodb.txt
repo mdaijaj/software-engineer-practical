@@ -47,6 +47,7 @@ userSchema.virtual('fullName').get(function () {
 
 const User = mongoose.model('User', userSchema);
 
+
 Embedded documents
 nested documents or Embedded documents max 100
 one document size  max is 16mb not exeed more that
@@ -88,6 +89,33 @@ group value from multiple documents together
 fetching a lots of nested data from performed complex operations
 filter and sort documents and analysis data changes
 
+example:- sales
+[
+  { "_id": 1, "product": "Laptop", "quantity": 4, "price": 1000 },
+  { "_id": 2, "product": "Phone", "quantity": 10, "price": 500 },
+  { "_id": 3, "product": "Laptop", "quantity": 5, "price": 1000 },
+  { "_id": 4, "product": "Phone", "quantity": 8, "price": 500 },
+  { "_id": 5, "product": "Tablet", "quantity": 6, "price": 600 }
+]
+
+db.sales.aggregate([
+  {
+    $group: {
+      _id: "$product",              // Group by 'product'
+      totalQuantity: { $sum: "$quantity" }, // Sum the 'quantity' for each group
+      averagePrice: { $avg: "$price" }      // Calculate the average 'price' for each group
+    }
+  }
+])
+
+output:-
+[
+  { "_id": "Laptop", "totalQuantity": 9, "averagePrice": 1000 },
+  { "_id": "Phone", "totalQuantity": 18, "averagePrice": 500 },
+  { "_id": "Tablet", "totalQuantity": 6, "averagePrice": 600 }
+]
+
+
 
 replication or replica set (it's a all databases combination)
 duplicate of server data asynchoronous manner
@@ -110,7 +138,6 @@ db.collection_name.find({}, key: 1)
 {_id: 87455478797, title: "rahls"},
 {_id: 87455478897, title: "how are you"},
 
-
 only display the title 
 db.collection_name.find({}, title: 1, _id: 0)
 
@@ -120,9 +147,9 @@ show all document only key title not others
 {title: "how are you"},
 
 
+
 indexing:-
 createIndex()
-
 db.collection_name.createIndex({title: 1, description: -1})  //1 true, -1 false 
 db.collection_name.dropIndex({title: 1});
 
@@ -138,7 +165,198 @@ object inside array find query get data
 db.find({hobbies:"dance"})  //all document which is dance hobbies
 
 
-what is Scalable mysql Horizontal and Vertical?
 Mongodb data modeling
-lookup 
-populate
+
+
+Using $lookup to Join orders and customers:
+orders:-
+[
+  { "_id": 1, "orderDate": "2024-09-01", "customerId": 1001, "total": 250 },
+  { "_id": 2, "orderDate": "2024-09-02", "customerId": 1002, "total": 450 },
+  { "_id": 3, "orderDate": "2024-09-03", "customerId": 1001, "total": 300 }
+]
+
+customers:-
+[
+  { "_id": 1001, "name": "John Doe", "email": "john@example.com" },
+  { "_id": 1002, "name": "Jane Smith", "email": "jane@example.com" }
+]
+
+query:-
+db.orders.aggregate([
+  {
+    $lookup: {
+      from: "customers",          // Collection to join (customers)
+      localField: "customerId",   // Field from orders (customerId)
+      foreignField: "_id",        // Field from customers (_id)
+      as: "customerDetails"       // Name of the output array field
+    }
+  }
+])
+
+output:-
+[
+  {
+    "_id": 1,
+    "orderDate": "2024-09-01",
+    "customerId": 1001,
+    "total": 250,
+    "customerDetails": [
+      { "_id": 1001, "name": "John Doe", "email": "john@example.com" }
+    ]
+  },
+  {
+    "_id": 2,
+    "orderDate": "2024-09-02",
+    "customerId": 1002,
+    "total": 450,
+    "customerDetails": [
+      { "_id": 1002, "name": "Jane Smith", "email": "jane@example.com" }
+    ]
+  },
+  {
+    "_id": 3,
+    "orderDate": "2024-09-03",
+    "customerId": 1001,
+    "total": 300,
+    "customerDetails": [
+      { "_id": 1001, "name": "John Doe", "email": "john@example.com" }
+    ]
+  }
+]
+
+
+
+
+populate:-
+customer schema:-
+const mongoose = require('mongoose');
+const customerSchema = new mongoose.Schema({
+  name: String,
+  email: String
+});
+const Customer = mongoose.model('Customer', customerSchema);
+
+order schema:-
+const orderSchema = new mongoose.Schema({
+  orderDate: Date,
+  totalAmount: Number,
+  customerId: { type: mongoose.Schema.Types.ObjectId, ref: 'Customer' }
+});
+const Order = mongoose.model('Order', orderSchema);
+
+query:-
+db.Order.find().populate('customerId').then(orders => {
+  console.log(orders);
+});
+
+
+
+unwind:-
+students:-
+[
+  {
+    "_id": 1,
+    "name": "Alice",
+    "subjects": ["Math", "Science", "English"]
+  },
+  {
+    "_id": 2,
+    "name": "Bob",
+    "subjects": ["History", "Math"]
+  },
+  {
+    "_id": 3,
+    "name": "Charlie",
+    "subjects": []
+  }
+]
+
+query:-
+db.students.aggregate([
+  {
+    $unwind: "$subjects"
+  }
+])
+
+output:-
+[
+  {
+    "_id": 1,
+    "name": "Alice",
+    "subjects": "Math"
+  },
+  {
+    "_id": 1,
+    "name": "Alice",
+    "subjects": "Science"
+  },
+  {
+    "_id": 1,
+    "name": "Alice",
+    "subjects": "English"
+  },
+  {
+    "_id": 2,
+    "name": "Bob",
+    "subjects": "History"
+  },
+  {
+    "_id": 2,
+    "name": "Bob",
+    "subjects": "Math"
+  }
+]
+
+query2:-
+db.students.aggregate([
+  {
+    $unwind: {
+      path: "$subjects",
+      preserveNullAndEmptyArrays: true
+    }
+  }
+])
+
+output:-
+[
+  {
+    "_id": 1,
+    "name": "Alice",
+    "subjects": "Math"
+  },
+  {
+    "_id": 1,
+    "name": "Alice",
+    "subjects": "Science"
+  },
+  {
+    "_id": 1,
+    "name": "Alice",
+    "subjects": "English"
+  },
+  {
+    "_id": 2,
+    "name": "Bob",
+    "subjects": "History"
+  },
+  {
+    "_id": 2,
+    "name": "Bob",
+    "subjects": "Math"
+  },
+  {
+    "_id": 3,
+    "name": "Charlie",
+    "subjects": null
+  }
+]
+
+
+
+
+
+
+
+
+

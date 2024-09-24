@@ -56,8 +56,14 @@ inviteEmployee1("Hello", "How are you?"); // Hello John Rodson, How are you?
 inviteEmployee2("Hello", "How are you?"); // Hello Jimmy Baily, How are you?
 
 
+// 13. What is the currying function
+// Currying is the process of taking a function with multiple arguments and turning it into a sequence of functions 
+// each with only a single argument
+const multiArgFunction = (a, b, c) => a + b + c;
+console.log(multiArgFunction(1, 2, 3)); // 6
 
-//3 curry when we get all three argument then it will execute else no execute or delete part function that time we use curry
+
+
 //curry same clousers example different code write way on single line multiple arguments
 // function Addition1(a){
 //     return function(b){
@@ -531,6 +537,66 @@ function increment() {
 // console.log(increment()); // 2
 // console.log(increment()); // 3
 
+// What are the differences between pure and impure functions?
+// Pure function	                        Impure function
+// It has no side effects	                It causes side effects
+// It is always return the same result	    It returns different result on each call
+// Easy to read and debug	                Difficult to read and debug because they are affected by extenal code
+
+
+//16 map vs forEach:-
+// Purpose: It creates a new array by applying a function to each element of the original array.
+// Return Value: It returns the new array.
+// const arr = [1, 2, 3];
+// console.log(arr.map(curr => curr * curr)); // Output: [1, 4, 9]
+
+
+// Purpose: It executes a function on each element of the array but does not return anything.
+// Return Value: undefined
+const arr = [1, 2, 3];
+console.log(arr.forEach(curr => curr * curr)); // Output: undefined
+
+
+// de-bouncing
+// when we search bar like product name no function invoke each keybaord after search word few mili second function invoke it's call de-bouncing.
+ // when we scroll and resize window or component that it stop unwantage or un-nessary function invoke using de-bouncing 
+
+ let person = {
+  name: 'John',
+  age: 30
+};
+
+Object.seal(person);
+person.name = 'Jane';  // This is allowed (modifying existing property)
+console.log(person.name);  // Output: 'Jane'
+
+person.gender = 'male';  // This is not allowed (adding new property)
+console.log(person.gender);  // Output: undefined
+
+delete person.age;  // This is not allowed (deleting property)
+console.log(person.age);  // Output: 30
+
+
+// object.freeze:-
+// New properties cannot be added.
+// Existing properties cannot be deleted.
+// Existing properties cannot be modified (even if they are writable).
+
+let person = {
+    name: 'John',
+    age: 30
+};
+Object.freeze(person);
+
+person.name = 'Jane';  // This is not allowed (modifying existing property)
+console.log(person.name);  // Output: 'John'
+
+person.gender = 'male';  // This is not allowed (adding new property)
+console.log(person.gender);  // Output: undefined
+
+delete person.age;  // This is not allowed (deleting property)
+console.log(person.age);  // Output: 30
+//
 
 //16 prototype:-
 // javascript has a special properties called prototype that is either null or refrences other object.
@@ -592,3 +658,5 @@ var person2 = new Person('Jane', 'Smith');
 // a.__proto__= p
 // a.run();
 // console.log("language", a.language)
+
+

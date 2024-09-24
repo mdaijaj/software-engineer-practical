@@ -3,8 +3,8 @@
 // let c={}
 // let d={}
 // console.log(a==b)   //here is memory location not value so its false.
-// console.log(c==d)  
-// console.log(a===b)
+// console.log(c==d)  //false
+// console.log(a===b) //false
 
 //falsy value these are not directory false value but after convert become false value
 let result= null || undefined || ""  || NaN  || 0 || -0 //all are falshy value

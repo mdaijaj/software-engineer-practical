@@ -1,131 +1,3 @@
-1. What is a promise
-A promise is an object that may produce a single value some time in the future with either a resolved value or a reason that it’s not resolved(for example, network error). 
-It will be in one of the 3 possible states: fulfilled, rejected, or pending.
-
-basic promise:-
-const myPromise = new Promise((resolve, reject) => {
-    let success = true; // Change this to false to see the rejection case
-    if (success) {
-        resolve("Promise fulfilled!");
-    } else {
-        reject("Promise rejected!");
-    }
-});
-
-myPromise
-    .then((message) => {
-        console.log(message); // Output: "Promise fulfilled!" if success is true
-    })
-    .catch((error) => {
-        console.error(error); // Output: "Promise rejected!" if success is false
-    });
-
-
-Why do you need a promise
-Promises are used to handle asynchronous operations. They provide an alternative approach 
-for callbacks by reducing the callback hell and writing the cleaner code.
-
-What are the three states of promise
-Promises have three states:
-Pending: This is an initial state of the Promise before an operation begins
-Fulfilled: This state indicates that the specified operation was completed.
-Rejected: This state indicates that the operation did not complete. In this case an error value will be thrown.
-
-
-What is promise chaining?
-The process of executing a sequence of asynchronous tasks one after another using promises is known as Promise chaining. 
-Let's take an example of promise chaining for calculating the final result,
-
-new Promise((resolve, reject)=> {
-  setTimeout(() => resolve(10), 1000);
-})
-  .then((result)=> {
-    console.log(result); // 10
-    return result * 2;
-  })
-  .then((result)=> {
-    console.log(result); // 20
-    return result * 3;
-  })
-    .then((result)=> {
-    console.log(result); // 60
-    return result * 4;
-  });
-
-
-
-The usage of a promise would be as below,
-1. basic promise:-
-A basic promise is created using the Promise constructor, which takes an executor function with two parameters: resolve and reject.
-
-const promise = new Promise((resolve, reject) => {
-    const success = true; // Change this to false to see the rejection case
-    if (success) {
-        resolve("Operation was successful!");
-    } else {
-        reject("Operation failed.");
-    }
-});
-
-promise
-    .then(result => console.log(result)) // Handles success
-    .catch(error => console.error(error)); // Handles failure
-
-2. What is promise.all()
-Promise.all is used to handle multiple promises. It takes an array of promises and resolves when all of the promises in the array have resolved,
-or rejects if any promise in the array rejects.
-
-const promise1 = Promise.resolve(1);
-const promise2 = Promise.resolve(2);
-const promise3 = Promise.resolve(3);
-
-Promise.all([promise1, promise2, promise3])
-    .then(results => console.log(results)) // Outputs: [1, 2, 3]
-    .catch(error => console.error(error));
-
-3. Promise.allSettled
-Promise.allSettled is used to handle multiple promises and gets the result of all promises, regardless of whether they were fulfilled or rejected.
-
-const promise1 = Promise.resolve(1);
-const promise2 = Promise.reject("Error in promise 2");
-const promise3 = Promise.resolve(3);
-
-Promise.allSettled([promise1, promise2, promise3])
-    .then(results => console.log(results));
-    // Outputs: 
-    // [
-    //   { status: 'fulfilled', value: 1 },
-    //   { status: 'rejected', reason: 'Error in promise 2' },
-    //   { status: 'fulfilled', value: 3 }
-    // ]
-
-
-4. Promise.race
-Promise.race takes an array of promises and resolves or rejects as soon as the first promise in the array resolves or rejects.
-var promise1 = new Promise(function (resolve, reject) {
-  setTimeout(resolve, 500, "one");
-});
-var promise2 = new Promise(function (resolve, reject) {
-  setTimeout(resolve, 100, "two");
-});
-
-Promise.race([promise1, promise2]).then(function (value) {
-  console.log(value); // "two" // Both promises will resolve, but promise2 is faster
-});
-
-5.Promise.any() 
-Promise.any is used to handle multiple promises and resolves as soon as any of the promises resolved case only in the array.
-It rejects if all promises in the array reject.
-const promise1 = Promise.reject("Error in promise 1");
-const promise2 = Promise.resolve(2);
-const promise3 = Promise.reject("Error in promise 3");
-
-Promise.any([promise1, promise2, promise3])
-    .then(result => console.log(result)) // Outputs: 2
-    .catch(error => console.error(error));
-
-
-
 2. What are the pros and cons of promises over callbacks
 Pros:
 It avoids callback hell which is unreadable
@@ -196,23 +68,10 @@ never again..
 
 
 
-8 What is a callback function
-A callback function is a function passed into another function as an argument. This function is invoked inside the outer function to 
-complete an action. Let's take a simple example of how to use callback function
-ex1.
-function callbackFunction(name) {
-  console.log("Hello " + name);
-}
-
-function outerFunction(callback) {
-  let name = prompt("Please enter your name.");
-  callback(name);
-}
-
-outerFunction(callbackFunction);
 
 Why do we need callbacks
-The callbacks are needed because javascript is an event driven language. That means instead of waiting for a response javascript will keep executing while listening for other events. 
+The callbacks are needed because javascript is an event driven language. 
+That means instead of waiting for a response javascript will keep executing while listening for other events. 
 ex2.
 function firstFunction() {
   // Simulate a code delay
@@ -249,18 +108,6 @@ loadScript("/script1.js", function (script) {
     });
   });
 });
-
-
-9. What is a callback hell?
-Callback hell is when we have a lot of nested callbacks in order to execute asynchronous tasks in sequence.
-which makes code hard to read 
-and debug when dealing with asynchronous logic. The callback hell looks like below,
-// // Nested callback hell
-// doTask1(function () {
-//     doTask2(function () {
-//         doTask3();
-//     });
-// });
 
 
 10 What is a prototype chain
@@ -307,77 +154,6 @@ Object.setPrototypeOf(Square.prototype, Rectangle.prototype);
 Object.setPrototypeOf({}, null);
 
 
-13. What is the currying function
-Currying is the process of taking a function with multiple arguments and turning it into a sequence of functions 
-each with only a single argument
-Let's take an example of n-ary function and how it turns into a currying function,
-
-const multiArgFunction = (a, b, c) => a + b + c;
-console.log(multiArgFunction(1, 2, 3)); // 6
-
-const curryUnaryFunction = (a) => (b) => (c) => a + b + c;
-curryUnaryFunction(1); // returns a function: b => c =>  1 + b + c
-curryUnaryFunction(1)(2); // returns a function: c => 3 + c
-curryUnaryFunction(1)(2)(3); // returns the number 6
-Curried functions are great to improve code reusability and functional composition.
-
-
-
-14. What are closures
-A closure is the combination of a function and the lexical environment within which that function was declared. 
-It is an inner function that has access to the outer or enclosing function’s variables. The closure has three scope chains
-
-Own scope where variables defined between its curly brackets
-Outer function’s variables
-Global variables
-
-
-15 What is a first order function
-First-order function is a function that doesn’t accept another function as an argument and doesn’t return a function as its return value.
-
-const firstOrder = () => console.log("I am a first order function!");
-
-
-16 What is a higher order function
-Higher-order function is a function that accepts another function as an argument or returns a function as a return value or both.
-
-const firstOrderFunc = () =>
-  console.log("Hello, I am a First order function");
-const higherOrder = (ReturnFirstOrderFunc) => ReturnFirstOrderFunc();
-higherOrder(firstOrderFunc);
-
-
-
-17. What is a pure function
-A Pure function is a function where the return value is only determined by its arguments without any side effects. i.e, 
-If you call a function with the same arguments 'n' number of times and 'n' number of places in the application then it will always return the same value.
-pure function
-function add(a, b) {
-  return a + b;
-}
-console.log(add(2, 3)); // 5
-console.log(add(2, 3)); // 5
-console.log(add(2, 3)); // 5
-
-
-15 Impure function
-let counter = 0;
-function increment() {
-    counter += 1;
-    return counter;
-}
-console.log(increment()); 1
-console.log(increment()); 2
-console.log(increment()); 3
-
-
-What are the differences between pure and impure functions?
-Pure function	                        Impure function
-It has no side effects	                It causes side effects
-It is always return the same result	    It returns different result on each call
-Easy to read and debug	                Difficult to read and debug because they are affected by extenal code
-
-
 
 18 What are the differences between undeclared and undefined variables
 undeclared	undefined
@@ -394,6 +170,7 @@ Undefined:- Undefined is the default value of something which has never been ass
 
 null:- Null is quite similar to undefined but it is not a default value of anything.
         It is an object type. When you use typeof null, it returns "object".
+
 
 20 What is a strict mode in javascript
 Strict Mode is a new feature in ECMAScript 5 that allows you to place a program, or a function, in a “strict” operating context. This way it prevents certain actions from being taken and throws more exceptions. The literal expression "use strict"; instructs the browser to use the javascript code in the Strict mode.
@@ -425,12 +202,6 @@ Hoisting is a JavaScript mechanism where variables, function declarations and cl
 
 console.log(message); //output : undefined
 var message = "The variable Has been hoisted";
-message is hoisted but output undefined error handling,
-
-
-var message;
-console.log(message);  // undefined
-message = "The variable Has been hoisted";
 message is hoisted but output undefined error handling,
 
 
@@ -483,8 +254,8 @@ console.log(message); //Error: message is not defined
 
 
 25 What is scope in javascript
-Scope is the accessibility of variables, functions, and objects in some particular part of your code during runtime. In other words, scope determines the visibility of variables and other resources in areas of your code
-
+Scope is the accessibility of variables, functions, and objects in some particular part of your code during runtime. In other words, 
+scope determines the visibility of variables and other resources in areas of your code
 
 
 26 What is a Cookie
@@ -543,14 +314,6 @@ console.log(z); // 50
 
 
 
-30 What is a first class function
-First-class functions means when functions in that language are treated like any other variable.
-For example, in such a language, a function can be passed as an argument to other functions, can be returned by another function and can be assigned as a value to a variable. For example, in the below example, handler functions assigned to a listener
-const handler = () => console.log("This is a click handler function");
-document.addEventListener("click", handler);
-
-
-
 31 What is a constructor method
 The constructor method is a special method for creating and initializing an object created within a class. If you do not specify a constructor method, a default constructor is used.
 example:-
@@ -561,7 +324,6 @@ class Employee {
 }
 var employeeObject = new Employee();
 console.log(employeeObject.name); // John
-
 
 
 
@@ -609,47 +371,6 @@ console.log(newdata)// [16] show delete item
 
 
 34. What is event bubbling and event capturing in Javascript
-36. What is object.seal and object.freeze in Javascript
-  New properties cannot be added.
-  Existing properties cannot be deleted.
-  Existing properties can be modified (if they are writable).
-
-let person = {
-    name: 'John',
-    age: 30
-};
-
-Object.seal(person);
-person.name = 'Jane';  // This is allowed (modifying existing property)
-console.log(person.name);  // Output: 'Jane'
-
-person.gender = 'male';  // This is not allowed (adding new property)
-console.log(person.gender);  // Output: undefined
-
-delete person.age;  // This is not allowed (deleting property)
-console.log(person.age);  // Output: 30
-
-object.freeze:-
-  New properties cannot be added.
-  Existing properties cannot be deleted.
-  Existing properties cannot be modified (even if they are writable).
-
-  let person = {
-      name: 'John',
-      age: 30
-  };
-  Object.freeze(person);
-
-  person.name = 'Jane';  // This is not allowed (modifying existing property)
-  console.log(person.name);  // Output: 'John'
-
-  person.gender = 'male';  // This is not allowed (adding new property)
-  console.log(person.gender);  // Output: undefined
-
-  delete person.age;  // This is not allowed (deleting property)
-  console.log(person.age);  // Output: 30
-
-
 
 37. What is Weakmap and Weakset in Javascript
 38. What is sessionStorage, localStorage , session, cookie.

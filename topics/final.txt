@@ -125,3 +125,23 @@ html & css
 // blog
 // div
 // spam
+
+
+
+// // system designing
+// // low level designing
+
+// // 10 tempale
+// // youtube
+// // tinder
+// // whatsapp
+// // flipkart
+// // zomato
+// // flipkart
+
+
+// // 20 template
+// // parking system
+// // splite
+
+

@@ -1,7 +1,82 @@
+//top 20 question
+// intersection element from two array
+// function intersection(arr1, arr2) {
+//     return arr1.filter(x => arr2.includes(x));
+// }
+// console.log(intersection([1, 2, 3], [2, 3, 4])); // [2, 3]
+
+
+
+// let arr=[1, [2, [3, 4]], 5]
+// let result=arr.flat(Infinity);   // [1,2,3,4,5]
+// console.log(result)
+
+
+
+// add subarr and equal to target value with code optimized
+// function twoSum(arr, target) {
+//     let pairs = [];
+//     let map = new Map();
+//     for (let num of arr) {
+//         let complement = target - num;
+//         if (map.has(complement)) {
+//             pairs.push([complement, num]);
+//         }
+//         map.set(num, true);
+//     }
+//     return pairs;
+// }
+// console.log(twoSum([2, 7, 11, 15], 9)); // [[2, 7]]
+
+
+
+// // Reverse words in a sentence.
+// function reverseWords(sentence) {
+//     return sentence.split(' ').reverse().join(' ');
+// }
+// console.log(reverseWords("Hello World")); // "World Hello"
+
+
+
+// // Invert the key-value pairs of an object.
+// function invertObject(obj) {
+//     const inverted = {};
+//     for (let key in obj) {
+//         console.log(key)  // a,b
+//         console.log(obj[key])   //1,2
+//         inverted[obj[key]] = key;
+//     }
+//     return inverted;
+// }
+// let obj={ a: 1, b: 2 }
+// console.log(invertObject(obj)); // {1: "a", 2: "b"}
+
+
+
+// Compare two objects for equality.
+// function deepEqual(obj1, obj2) {
+//     console.log(obj1==obj2)  //false
+//     return JSON.stringify(obj1) === JSON.stringify(obj2);  //true
+// }
+// console.log(deepEqual({ a: 1 }, { a: 1 }));
+
+
+
+// // Find the greatest common divisor (GCD) of two numbers. (lcm and hcf)
+function gcd(a, b) {
+    if (b === 0) {  // Base case: if b is 0, return a
+        return a;
+    }
+    return gcd(b, a % b);  // Recursive case: gcd of b and remainder of a divided by b
+}
+let num1 = 56;
+let num2 = 98;
+console.log(`The HCF of ${gcd(num1, num2)}`); // Output: 14
+
+
 
 //1 leet code
 var twoSum = function (nums, target) {
-
     for (var i = 0; i < nums.length; i++) {
         for (var j = i+1; j < nums.length; j++) {
             console.log(nums[i] + nums[j + 1])
@@ -25,19 +100,37 @@ var twoSum = function(nums, target) {
         let complement = target - nums[i];  // Calculate the complement
         if (map.has(complement)) {  // Check if complement exists in the map
             console.log("map1", map)
-
             return [map.get(complement), i];  // Return the indices
         }
         map.set(nums[i], i);  // Store the current value and its index in the 
-            console.log("map2", map)
-
+        console.log("map2", map)
     }
 };
-
 let nums= [2, 7, 11, 15]
 let target= 26
 console.log("twoSum", twoSum(nums, target))
 
+
+
+//sorting using recursion
+function recursiveBubbleSort(arr, n = arr.length) {
+    if (n === 1) {  // Base case: If the size of the array is 1, it's already sorted
+        return;      
+    }
+    // Perform one pass of the bubble sort
+    for (let i = 0; i < n - 1; i++) {
+        if (arr[i] > arr[i + 1]) {
+            // Swap if the element found is greater than the next element
+            [arr[i], arr[i + 1]] = [arr[i + 1], arr[i]];
+        }
+    }
+    // Call the function recursively to sort the remaining array
+    recursiveBubbleSort(arr, n - 1);
+}
+
+let array = [64, 34, 25, 12, 22, 11, 90];
+recursiveBubbleSort(array);
+console.log(array); // Output: [11, 12, 22, 25, 34, 64, 90]
 
 
 
@@ -91,6 +184,7 @@ var romanToInt = function (item) {
 // romanToInt("MCDLXXVI");
 
 
+
 //3. synonyms
 function longestCommonPrefix(strs) {
     if (!strs || strs.length === 0) {
@@ -106,32 +200,11 @@ function longestCommonPrefix(strs) {
     }
     return strs[0];
 }
-// Example usage
+// Example usage  find intersection
 const strs = ["flower", "flow", "flight"];
 // const result = longestCommonPrefix(strs);
 //   console.log(result);
 
-
-
-//4 sorting merge two arr
-var mergeTwoLists = function (list1, list2) {
-
-    let arr = []
-    for (var i = 0; i < list2.length; i++) {
-        if (list1[i] < list2[i]) {
-            arr.push(list1[i])
-        }
-        else if (list1[i] == list2[i]) {
-            arr.push(list1[i])
-        }
-        arr.push(list2[i])
-    }
-    // console.log("aijaj", arr)
-    // // Output: [1,1,2,3,4,4]
-}
-let list1 = [1, 2, 4]
-let list2 = [1, 3, 4]
-// mergeTwoLists(list1, list2)
 
 
 //5 let const var example
@@ -142,6 +215,7 @@ function getData(a) {
 }
 console.log(a)
 // getData(a) //14
+
 
 
 //6. find binary to decimal number
@@ -166,34 +240,6 @@ const binaryToDecimal = (num) => {
 
 
 
-// console.log(1);
-// setTimeout(() => console.log(2), 0);
-// console.log(3);
-
-//7 Print -> 1 2 3 using async await
-const printNum = async () => {
-    console.log(1);
-    await new Promise((resolve) => setTimeout(() => {
-        console.log(2);
-        resolve();
-    }, 1000));
-    console.log(3);
-}
-// printNum()
-
-
-
-//8 Call by reference:
-let person = { name: 'Alice', age: 30 };
-// let age=26   variable not update but object update
-function updateAge(p) {
-    p.age++;
-}
-// updateAge(person);
-// console.log(person.age); // Output: 31
-
-
-
 //9 using hash map
 let str1 = "acadbdbadc";
 const checkCount = (str) => {
@@ -207,7 +253,6 @@ const checkCount = (str) => {
     return hashMap;
 };
 // checkCount(str1)
-
 
 
 
@@ -244,7 +289,6 @@ let B = [
 //     } 
 //     // add(A, B, C); 
 //     // console.log("C", C)
-
 //     // let i, j; 
 //     // console.log("Result matrix is <br>"); 
 //     // for (i = 0; i < N; i++) { 
@@ -255,109 +299,37 @@ let B = [
 
 
 
-// 11 print diamond 
-function printDiamond(n) {
-for (let i = 0; i < n; i++) {
-let row = "";
-for (let j = 0; j < n - i - 1; j++) {
-row += " ";
-}
-row += "*";
-for (let k = 0; k < 2 * i - 1; k++) {
-row += " ";
-}
-if (i !== 0) {
-row += "*";
-}
-console.log(row);
-}
-for (let i = n - 2; i >= 0; i--){
-let row = "";
-for (let j = 0; j < n - i - 1; j++) {
-row += " ";
-}
-row += "*";
-for (let k = 0; k < 2 * i - 1; k++) {
-row += " ";
-}
-if (i !== 0) {
-row += "*";
-}
-console.log(row);
-}
-}
-// Example usage
-// printDiamond(5);
+// // Write a function to generate all permutations of a string.
+// function permute(str) {
+//     if (str.length <= 1) return [str];
+//     let permutations = [];
+//     for (let i = 0; i < str.length; i++) {
+//         let char = str[i];
+//         let remaining = str.slice(0, i) + str.slice(i + 1);
+//         for (let perm of permute(remaining)) {
+//             permutations.push(char + perm);
+//         }
+//     }
+//     return permutations;
+// }
 
 
 
-// // 5 4 3 2 1
-// // 5 4 3 2
-// // 5 4 3
-// // 5 4 
-// // 5
+// //fibonacci series
+// function fibonacci(n) {
+//     if (n <= 1) return n;
+//     return fibonacci(n - 1) + fibonacci(n - 2);
+// }
+// console.log(fibonacci(5)); // 5
 
 
 
-let k=0;
-for (var i=5; i>k; i--){
-    let partern=""
-    for (var j=i; j>k;  j--){
-        partern+= j + " "
-    }
-    k+=1
-    i+=1
-    console.log(partern)
-}
-
-
-let obj1= {
-    "name": "User1",
-    "age": 30,
-    "city": "Hyderabad"
-  }
-  let obj2 ={
-    "name": "User1",
-    "age": 25,
-    "country": "India"
-  }
-  
-  for (const item in obj1) {
-    console.log(item)
-  }
-  
-  
-  // let mainarr=[];
-  // for (const [key, value] of Object.entries(obj1)) {
-  
-  // for (const [key2, value2] of Object.entries(obj2)) {
-  //     console.log(value, value2)
-  //     if(value!=value2){
-        
-  //     }
-  // }
-  
-  // }
-  // console.log(mainarr)
-  
-  //     let data2=Object.values(obj2)
-  //     let data1=Object.values(obj1)
-  //     let data3=Object.keys(obj2)
-  //     let data4=Object.keys(obj1)
-  
-  
-  //     let mainarr=[];
-  // // for (let item of data2){
-      
-  //     for (var i=0; i<data2.length; i++){
-  //       let data=data1.includes(data2[i])
-  //         if(!data){
-  //           let single= data3[i]
-  //             let other= data4[i]
-  //             mainarr.push(single)
-  //             mainarr.push(other)
-  //         }
-  //     }
-      
-  //     console.log(mainarr)
-  
+// // Write a function to find the nth Fibonacci number using dynamic programming.
+// function fib(n) {
+//     const dp = [0, 1];
+//     for (let i = 2; i <= n; i++) {
+//         dp[i] = dp[i - 1] + dp[i - 2];
+//     }
+//     return dp[n];
+// }
+// console.log(fib(5)); // 5

@@ -1,3 +1,5 @@
+// top 30 question
+
 // //1 sorting
 function bubbleSort(array){
   for (let i=0; i< array.length; i++){
@@ -20,7 +22,7 @@ function bubbleSort(array){
 //sorting
 // let string=["a", "c", "b", "g","d", "r" ,"z", "o"]  // string only do sort()
 // let numbers = [0, 1, 2, 30, 15, 5, 20];
-// numbers.sort( function(a , b){
+// numbers.sort(function(a , b){
 //     if(a > b) return 1;
 //     if(a < b) return -1;
 //     return 0;
@@ -58,14 +60,17 @@ function SecondMax(arr2){
   // removeDuplicates(arr2)
 
 
+
   // const arr = [1,2,3,4,4,1,2, 4];
   // const b=[];
   for(let i=0;i<arr.length;i++){
-      if(b.includes(arr[i])==false){   
+      if(!b.includes(arr[i])){   
           b.push(arr[i])
       }
   }
   console.log("removed duplicate array value",b)
+
+
 
   // const input = [1, 2, 3, 3, 4, 5,2, 6,3,6,1];
   // function removeDuplicate(arr) {
@@ -83,6 +88,7 @@ function SecondMax(arr2){
   //     return tempArr;
   // }
   // // console.log("remove duplicate", removeDuplicate(input));
+
 
 
 // duplicate remove item
@@ -125,10 +131,10 @@ let iterativeFunction = function (arr, x) {
 }
 let arr = [1, 3, 5, 7, 8, 9];
 let x = 8;
-
 // if (iterativeFunction(arr, x))
 //  console.log("Element found!");
 // else console.log("Element not found!");
+
 
 
 let string =["aijaj", "aijaj", "aman", "yogi", "satyam"]
@@ -149,6 +155,7 @@ function CharactorCount(string){
 CharactorCount(string)
 
 
+
 // find each count:-
 const users=[
   { firstname: "aijaj", lastname: "khan", age: 25 },
@@ -156,7 +163,6 @@ const users=[
   { firstname: "hrithik", lastname: "roshan", age: 35 },
   { firstname: "elon ", lastname: "musk", age: 35 },
 ]
-
 const output2= users.reduce(function (accumulator, currentValue){
   // console.log("aijaj", accumulator[currentValue.age])  new object check age exits or not
   if(accumulator[currentValue.age]){
@@ -169,6 +175,7 @@ const output2= users.reduce(function (accumulator, currentValue){
 console.log("output2", output2)
 
 
+
  //6 prime number in js
  function isPrime(n) {
     if (n <= 1)
@@ -179,12 +186,13 @@ console.log("output2", output2)
             console.log("not prime number", n)
             return false;
         } 
-    }
+    } 
     console.log("prime number", n) //7
     return true;
 }
 // Driver Code
 // isPrime(19)
+
 
 
  //prime number in js
@@ -198,13 +206,13 @@ function isPrime(n){
   // otherwise, n is prime number.
   return true;
 }
-
 var N = 15;
 for(var i = 1; i <= N; i++){
   if(isPrime(i)) {
     console.log( i );
   }
 }
+
 
 
 // 7 anagram
@@ -232,6 +240,16 @@ function isAnagram(str1, str2){
 }
 let checked= isAnagram("aijaj", "ajaji")
 console.log("checked", checked)
+
+
+
+// console.log(twoSum([2, 7, 11, 15], 9)); // [[2, 7]]
+// // Check if two strings are anagrams.
+// function areAnagrams(str1, str2) {
+//     return str1.split('').sort().join('') === str2.split('').sort().join('');
+// }
+// console.log(areAnagrams("listen", "silent")); // true
+
 
 
 //8 recursion using without loop   total= 5*4*3*2*1
@@ -266,6 +284,7 @@ let strings="123214"
 console.log("kkk", palindromString(strings))
 
 
+
 function checkPalindrome(n){
   let reverse = 0;
   let temp = n;
@@ -285,6 +304,7 @@ let n2 = 7007;
 // }
 
 
+
 // 10. swap two value without using third variable
 let a = 5;
 let b = 10;
@@ -293,6 +313,7 @@ b = a - b; // b becomes 5 (original value of a)
 a = a - b; // a becomes 10 (original value of b)
 console.log('a:', a); // a: 10
 console.log('b:', b); // b: 5
+
 
 
 //Using Destructuring Assignment: 
@@ -304,7 +325,28 @@ console.log('b:', b); // b: 5
 
 
 
-//11 find vovels from string.
+//11 find vovels from mystring.
+function findVovelsLetter(mystring){
+  let vovels=["a", "e", "o", "u", "i"]
+  let vovelsString="";
+  for (var i of mystring){
+      if(vovels.includes(i)){
+          vovelsString+=i
+      }
+  }
+}
+console.log(vovelsString)
+let mystring="my name is king khan";
+// findVovelsLetter(mystring)
+
+
+
+// //Count the number of vowels in a string.
+// function countVowels(str) {
+//     return (str.match(/[aeiou]/gi) || []).length;
+// }
+// console.log(countVowels("Hello World")); // 3
+
 
 
 //12 each word first capital letter 
@@ -319,6 +361,7 @@ for (let i=0; i< arr3.length; i++){
     newstring[i]=str2
 }
 console.log("newstring", newstring)
+
 
 
 //12. armstrong number  //153 is an Armstrong number. 1*1*1 + 5*5*5 + 3*3*3 = 153
@@ -340,17 +383,18 @@ console.log("newstring", newstring)
 // }
 
 
+
 // 12. find binary no 
 let newarr=[5,1,3,2,6];
 let output=newarr.map((item)=> item.toString(2))
 // console.log("output", output)
 
 
+
 const object1 = {
   a: 'somestring',
   b: 42,
 };
-
 //13 object iteration
 // for (const [key, value] of Object.entries(object1)) {
 //   console.log(`${key}: ${value}`);
@@ -360,7 +404,8 @@ const object1 = {
 // "b: 42"
 
 
-// missing number
+
+//15 missing number
 function findMissingNumber(arr) {
   const n = arr.length + 1;  // Since one number is missing
   const totalSum = (n * (n + 1)) / 2;  // Sum of first n natural numbers
@@ -372,7 +417,7 @@ function findMissingNumber(arr) {
 
 
 
-// find index of item which is sum of numbers equal to target value.
+//16 find index of item which is sum of numbers equal to target value.
 function findTwoSum(nums, target) {
   for (let i = 0; i < nums.length; i++) {
     for (let j = i + 1; j < nums.length; j++) {
@@ -383,10 +428,8 @@ function findTwoSum(nums, target) {
   }
   return []; // Return an empty array if no pair is found
 }
-
 let num = [2, 7, 1, 15];
 let target = 3;
-
 // const result = findTwoSum(num, target);
 // console.log(result); // Output: [0, 2]
 
@@ -396,7 +439,8 @@ let target = 3;
 // console.log(arr1.flat(2));
 
 
-// 13  //fibonacci serie
+
+// 17  //fibonacci serie
 function fibonacci(n){
   let previous=0;
   let current=1;       
@@ -413,6 +457,7 @@ function fibonacci(n){
 // fibonacci(10)
 
 
+
 //first n fibonacci series
 function generateFibonacciSeries(n) {
   var fibonacciSeries = [0, 1];
@@ -424,5 +469,3 @@ function generateFibonacciSeries(n) {
 }
 var result = generateFibonacciSeries(10);
 console.log(result);
-
-

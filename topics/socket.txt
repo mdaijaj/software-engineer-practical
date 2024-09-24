@@ -3,7 +3,7 @@ socket.io libraray
 
 websocket/http/ftp/smtp
 
-http   req, res send client get response from server
+http  req, res send client get response from server
 websocket in event dual communication client or server both send reqeust or response
 
 
@@ -21,3 +21,96 @@ socket.join(groupName)
 
 
 
+
+
+
+usecase socket real time data feching
+trading
+telegram, whatsapp
+mulplayer game
+
+http:-
+http is uni-directioal & stateless
+
+http send reqeust multi time when they need fetch data from server
+they have to send mulple time send reqeust
+
+is problem ko solved kiya http poling
+
+http poling (fix time frame)
+sort poling  (sort time)
+long poling (long time)
+
+while we chat to someone than time we reqeust but if not available then we get empty message response
+so i will take waste resource 
+problem:-
+after timeout we again send reqeust 
+
+2. server send event (sse)
+who much data send to client only server send(its only when only server send to client data) bulk data ne
+client can't send reqeust
+
+usecase:-
+chatgpt
+instagram live
+news broadcasting
+notification to lots of users
+
+problem:-
+only server send reqeust to client 
+no bi-directioal
+
+solution:-
+websocket, socket.io
+directioal full duplex 
+
+1. websocket stablish karne ke liye handshake ke liye first reqeust http reqeust response
+any time send message
+single connection send req and res any time 
+
+
+http and websocket:
+http:-
+stateless
+uni-directioal
+half-duplex
+
+websocket:-
+stateFull
+bi-directioal
+full-duplex
+
+
+
+socket event keyboad
+io.on  //connected entire app
+io.emit("send all message") 
+socket.on("event")   //"event  recieved message particular event
+socket.emit("event")  // send message 
+socket.on.connected  //socket connected
+socket.disconnect   //socket disconnect
+socket.broadcast   // socket send to all
+socket.join()   //join room or group particular public message on group
+socket.to()   //send particular useriD message
+
+
+
+io.on("connection", (socket)=>{   //new join connection
+    console.log("user is connected");
+
+    socket.broadcast.emit("welcome", "welcome to the server. ${socket.id}")   //message send to all
+
+    socket.on("message", ({userId, message})=>{
+        console.log(data)
+        socket.broadcast.emit("recieved-message", data)   //don't recieved message self exit other get message
+
+        socket.to(userId).emit("recieved-message", message)   //send to particular user message
+
+        // public message after join room see all message 
+        socket.on("join-room", (room)=>{
+            socket.join(room)
+            console.log("user joint the room, ${room})
+        } )
+
+    })
+})
