@@ -1,7 +1,7 @@
 aws main topic:-
 lambda serverless
     api gateway
-ec2
+ec2 (elastic cloud)
     vpc virtual private cloud
     ip management
     security group
@@ -40,23 +40,71 @@ policy add
 
 static hosting website in bucket
 
-private bucket and inside bucket copy image url and open in browser i am getting access deined but when bucket inside open option click then image open in browser
-so this is called temprary token generate its call pre-sign-url
- 
-
 setup
 cors
 policy
 
 
+public ip is a dynamic ip
+elastic ip generate allocate state ip then charge so it should be use or release ip
+associate ip no charge
+
+static ip set:-
+associate ip from elastic ip
+when you are not using aws services then not use elastic ip release else payment
 
 
+instance create
+static ip generate
+ip associate (no bill) or release ip (no bill) if ip generate not use (bill)
 
 
+security group:-
+inbound and outbound
+    if remove security inbound then not ssh access
+    one instance create multiple security group
+
+create new security group
+instance connect to new secrurity group
+	access
+	ssh ip 4
+	ssh ip 6
 
 
+1 aws account have 100 bucket
+i bucket data unlimited
 
+create bucket
+Block public access unchecked
+add bucket policy edit statement for public accesss
+	s3 
+	getobject
+	add resource (all resourses)
+	add static web app (property)
 
+using pre sign url private backet upload or downloadd using token and signature
 
+project setup (pre sign url)
+create user (access s3 group access)
+and public access not need to access  (no need to create user)
 
+get image private images using presign url
 
+aws s3 bucket overview:-
+object:- all data storage
+properties:- overview about bucket
+bucket version:- manage history version control
+tags:- different role tags 
+aws cloudtrail data events:- all track or logs about users. cloudtrail service
+event notification:- when image delete or upload call lambda trigger for notification send mail
+sns 
+sqs
+lambda function
+static website:- for static hoisting
+permission:-access, bucket access, acl, add policy, cors
+metricks:- or analytics status
+management :- life cycle rules, move after 10 days backeup glacier of 
+
+s3 bucket pricing
+data transfer uploading ka charge nhi lagta but downloading ka charge lagta hai
+there will be charge of storage

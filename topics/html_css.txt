@@ -11,3 +11,37 @@ id selector  #
 class selector  .
 
 
+1. What is the difference between CSS Grid and Flexbox?
+Answer:
+Flexbox is a one-dimensional layout system, meaning it is designed for laying out items in a single row or column (either horizontally or vertically). It works great for controlling the alignment, spacing, and ordering of items along a single axis.
+
+CSS Grid is a two-dimensional layout system, meaning it can control the placement of items in both rows and columns simultaneously. Grid is more suited for building complex layouts involving multiple rows and columns.
+
+
+Centering with Flexbox:
+.container {
+  display: flex;
+  justify-content: center; /* Horizontal centering */
+  align-items: center;     /* Vertical centering */
+  height: 100vh;           /* Full height of the viewport */
+}
+
+.item {
+  width: 200px;
+  height: 200px;
+  background-color: lightblue;
+}
+
+
+Centering with CSS Grid:
+.container {
+  display: grid;
+  place-items: center; /* Both horizontal and vertical centering */
+  height: 100vh;
+}
+
+.item {
+  width: 200px;
+  height: 200px;
+  background-color: lightblue;
+}

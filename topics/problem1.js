@@ -19,6 +19,28 @@ function bubbleSort(array){
 
 
 
+//sorting using recursion
+function recursiveBubbleSort(arr, n = arr.length) {
+  if (n === 1) {  // Base case: If the size of the array is 1, it's already sorted
+      return;      
+  }
+  // Perform one pass of the bubble sort
+  for (let i = 0; i < n - 1; i++) {
+      if (arr[i] > arr[i + 1]) {
+          // Swap if the element found is greater than the next element
+          [arr[i], arr[i + 1]] = [arr[i + 1], arr[i]];
+      }
+  }
+  // Call the function recursively to sort the remaining array
+  recursiveBubbleSort(arr, n - 1);
+}
+
+let array = [64, 34, 25, 12, 22, 11, 90];
+recursiveBubbleSort(array);
+console.log(array); // Output: [11, 12, 22, 25, 34, 64, 90]
+
+
+
 //sorting
 // let string=["a", "c", "b", "g","d", "r" ,"z", "o"]  // string only do sort()
 // let numbers = [0, 1, 2, 30, 15, 5, 20];
@@ -305,6 +327,14 @@ let n2 = 7007;
 
 
 
+// // Reverse words in a sentence.
+// function reverseWords(sentence) {
+//     return sentence.split(' ').reverse().join(' ');
+// }
+// console.log(reverseWords("Hello World")); // "World Hello"
+
+
+
 // 10. swap two value without using third variable
 let a = 5;
 let b = 10;
@@ -338,14 +368,6 @@ function findVovelsLetter(mystring){
 console.log(vovelsString)
 let mystring="my name is king khan";
 // findVovelsLetter(mystring)
-
-
-
-// //Count the number of vowels in a string.
-// function countVowels(str) {
-//     return (str.match(/[aeiou]/gi) || []).length;
-// }
-// console.log(countVowels("Hello World")); // 3
 
 
 
@@ -388,6 +410,46 @@ console.log("newstring", newstring)
 let newarr=[5,1,3,2,6];
 let output=newarr.map((item)=> item.toString(2))
 // console.log("output", output)
+
+
+//decimal to binary
+function binaryNumber(nums){
+  let string=""
+  while(0<nums){
+      let remain= nums%2;
+      nums=Math.floor(nums/2);
+      string+=remain
+  }
+return string
+}
+let result=15;
+
+// let num=10; 
+// for (var i=0; i<num; i++){
+//   console.log(binaryNumber(i))
+// }
+
+
+
+//6. find binary to decimal number
+let input = "1001110";
+const binaryToDecimal = (num) => {
+    let output = 0;
+    for (let i = num.length - 1; i >= 0; i--) {
+        let val = Math.pow(2, num.length - 1 - i) * Number(num[i]);
+        console.log("val", val)
+        output += val;
+    }
+    let reverseNum = num.split("").reverse();
+    let res = 0;
+    for (let i = 0; i < reverseNum.length; i++) {
+        let val = Math.pow(2, i) * Number(reverseNum[i]);
+        res += val;
+    }
+    console.log("output", output)  //38
+    return [res, output];
+};
+// binaryToDecimal(input)
 
 
 
@@ -435,37 +497,36 @@ let target = 3;
 
 
 
-// const arr1 = [0, 1, 2, [3,7,5,[2,4]]];
-// console.log(arr1.flat(2));
+
+// add subarr and equal to target value with code optimized
+// function twoSum(arr, target) {
+//     let pairs = [];
+//     let map = new Map();
+//     for (let num of arr) {
+//         let complement = target - num;
+//         if (map.has(complement)) {
+//             pairs.push([complement, num]);
+//         }
+//         map.set(num, true);
+//     }
+//     return pairs;
+// }
+// console.log(twoSum([2, 7, 11, 15], 9)); // [[2, 7]]
 
 
 
-// 17  //fibonacci serie
-function fibonacci(n){
-  let previous=0;
-  let current=1;       
-  let sum=0;
-  let fibonacciSeries=[0,1];
-  for (var i=2; i<=n; i++){
-    previous=current
-    current=sum
-    sum=previous+ current
-    fibonacciSeries.push(sum)
-  }
-  console.log("fibonacciSeries", fibonacciSeries)
-}
-// fibonacci(10)
+//top 10 question
+// intersection element from two array
+// function intersection(arr1, arr2) {
+//     return arr1.filter(x => arr2.includes(x));
+// }
+// console.log(intersection([1, 2, 3], [2, 3, 4])); // [2, 3]
 
 
 
-//first n fibonacci series
-function generateFibonacciSeries(n) {
-  var fibonacciSeries = [0, 1];
-  for (var i = 2; i < n; i++) {
-    var nextNumber = fibonacciSeries[i - 1] + fibonacciSeries[i - 2];  //formulla fn= (fn-1) + (fn-2)
-    fibonacciSeries.push(nextNumber);
-  }
-  console.log("fibonacciSeries", fibonacciSeries) ;
-}
-var result = generateFibonacciSeries(10);
-console.log(result);
+// Compare two objects for equality.
+// function deepEqual(obj1, obj2) {
+//     console.log(obj1==obj2)  //false
+//     return JSON.stringify(obj1) === JSON.stringify(obj2);  //true
+// }
+// console.log(deepEqual({ a: 1 }, { a: 1 }));

@@ -98,7 +98,7 @@ useState:  Manages state.
 useEffect: Manages side effects
 useMemo: Memoizes values for performance optimization
 useCallback: Memoized the functions.
-useRef: Accesses DOM elements or persists values  //(read deep)
+useRef: Accesses DOM elements or persists values 
 useContext : solve the prop drilling proablem same functionality of redux
 useReducer: Manages complex state logic
 useLayoutEffect: Synchronously runs after DOM mutations and useEffect work asynChoronously
@@ -360,7 +360,6 @@ webpack:-
 when we create setup react proeject it automatic install webpack and bebel it is a format bundal a files that is called webpack. 
 sari files ko ek bunle ke form me rakhti hai
 when we proeject setup npx create react app application all files bundle using webpack
-than install all packages and files set or bundal using webpack
 
 
 bebel
@@ -475,8 +474,6 @@ variarble query it's difficult to understand
 class value where we can get data in vanilla js using query
 data SELECT munuall
 
-
-fix problem for prop drilling using component composition and useContext
 
 component 3 category
 stateless component  

@@ -1,12 +1,17 @@
 
 typescript:-
 
-superset of js
+it superset of js
 easy to read,
 
 write and maintain 
 with features
 tuples, classes, Enums, Interfaces, Genrics
+
+its a layer of javascript
+less praoblem
+more maintainable and easy 
+error is more less
 
 disadvantage:-
 not execute in browser

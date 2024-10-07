@@ -1,7 +1,7 @@
 //1. clouser    
-//a function along with its laxical scope bundal together its call clourse 
 // A closure is the combination of a function and the lexical environment within that function was declared. 
-// that has access to the outer or enclosing function’s variables from inner function.
+//a function along with its laxical scope bundal together its call clourse 
+//a clouser give the access to the outer or enclosing function’s variables from inner function.
 function makeAdder(num) {
   function add (x) {
     return num + x;
@@ -179,13 +179,24 @@ copyobject.address.city="noida"
   // }
   // console.log("username", username)  //rahul
   // userinfo(username)
-  
-// var name="aijaj"
-// function makeAdder() {
-//   console.log(name)  //undefine
-//   var name="rahul"   // if let then refrence error // if remove var or let then we get data "aijaj"
-// }
-// makeAdder()
+
+
+// // let  block level
+let name="prince khan";   
+function getName(){  //let is block level scope 
+    console.log("name", name)   //error cannot access before initilize
+    var name="rahul khan"
+}
+getName() 
+
+
+let a = 14;
+function getData(a) {
+    a = 20
+    // console.log(a) // 20
+}
+console.log(a)
+// getData(a) //14
 
 
 
@@ -548,7 +559,7 @@ function increment() {
 // Purpose: It creates a new array by applying a function to each element of the original array.
 // Return Value: It returns the new array.
 // const arr = [1, 2, 3];
-// console.log(arr.map(curr => curr * curr)); // Output: [1, 4, 9]
+console.log(arr.map(curr => curr * curr)); // Output: [1, 4, 9]
 
 
 // Purpose: It executes a function on each element of the array but does not return anything.
@@ -607,6 +618,7 @@ function Person() {
   this.lastName = lastName;
   this.age
 }
+
 
 // Adding a method to the Person constructor's prototype
 Person.prototype.getFullName = function () {

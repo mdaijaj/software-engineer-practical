@@ -98,7 +98,7 @@ socket.to()   //send particular useriD message
 io.on("connection", (socket)=>{   //new join connection
     console.log("user is connected");
 
-    socket.broadcast.emit("welcome", "welcome to the server. ${socket.id}")   //message send to all
+    socket.broadcast.emit("welcome", "welcome to the server. ${socket.id}")   //mbubbleSortessage send to all
 
     socket.on("message", ({userId, message})=>{
         console.log(data)

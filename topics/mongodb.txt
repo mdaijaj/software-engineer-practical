@@ -56,13 +56,19 @@ one document size  max is 16mb not exeed more that
 // Find the second highest salary
 db.employees.aggregate([
   {
-    $sort: { salary: -1 }
+    $group: {
+      _id: "$salary", // Group by salary to ensure unique values
+      employees: { $push: "$$ROOT" } // Keep the employee records for later use, if needed
+    }
   },
   {
-    $skip: 1
+    $sort: { _id: -1 } // Sort salaries in descending order (highest to lowest)
   },
   {
-    $limit: 1
+    $skip: 1 // Skip the highest salary to get the second highest
+  },
+  {
+    $limit: 1 // Limit the result to the second unique highest salary
   }
 ]);
 
@@ -178,8 +184,8 @@ orders:-
 
 customers:-
 [
-  { "_id": 1001, "name": "John Doe", "email": "john@example.com" },
-  { "_id": 1002, "name": "Jane Smith", "email": "jane@example.com" }
+  { "_id": 1001, "name": "aijaj", "email": "aijaj@example.com" },
+  { "_id": 1002, "name": "prabind", "email": "prabind@example.com" }
 ]
 
 query:-
@@ -351,12 +357,3 @@ output:-
     "subjects": null
   }
 ]
-
-
-
-
-
-
-
-
-

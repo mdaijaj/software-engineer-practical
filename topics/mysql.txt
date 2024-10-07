@@ -19,9 +19,9 @@ a column or set of columns must be unique, but it's not required to identify a r
 
 Key Differences:
 Feature	Primary Key	Unique Constraint
-Uniqueness	Must be unique	Must be unique
+Uniqueness	Must be unique
 Nullability	Cannot contain NULL values	Can contain NULL values
-Number per Table	Only one primary key per table	Multiple unique constraints per table
+Number per Table Only one primary key per table	Multiple unique constraints per table
 Purpose	Used to uniquely identify each record	Used to ensure unique values in a column
 Index Type	Usually creates a clustered index	Usually creates a non-clustered index
 
@@ -86,14 +86,8 @@ UPDATE db.Table1 SET col2 = (CASE col2 WHEN 1 THEN 0 ELSE 1 END);
 
 
 //second highest salary
-SELECT MAX(amount) from salary_stuctures ss 
+SELECT MAX(amount) from salary_stuctures ss1
 WHERE amount < (SELECT MAX(amount) from salary_stuctures ss2 ); 
-
-
-
-what is transection?
-A transaction in MySQL is a sequence of one or more SQL statements that are treated as a single,
-indivisible unit of work. Transactions are used to maintain data integrity and consistency in a database
 
 
 
@@ -119,9 +113,6 @@ self
 CARTESIAN join
 CROSS JOIN
 
-PRIMARY KEY: A primary key is a field in a table which uniquely identifies each row/record in a database table. Primary keys 
-must contain unique values. A primary key column cannot have NULL values.
-
 IN Operator
 SELECT * FROM Customers
 WHERE Country IN ('Germany', 'France', 'UK');
@@ -146,3 +137,19 @@ doubt?
 object oriented db
 bson format
 json bson
+
+
+SELECT employees.id, employees.name, departments.department_name
+FROM employees
+INNER JOIN departments
+ON employees.department_id = departments.id;
+
+
+transection:-
+A transaction in MySQL is a sequence of one or more SQL statements that are treated as a single,
+indivisible unit of work. Transactions are used to maintain data integrity and consistency in a database
+a transaction is a sequence of SQL statements that are executed as a single unit. Transactions ensure that 
+either all operations are completed successfully, or none of them are applied, which is useful in maintaining the integrity of the database.
+BEGIN / START TRANSACTION: Begins a transaction.
+COMMIT: Saves the changes made during the transaction.
+ROLLBACK: Reverts the changes made during the transaction.
