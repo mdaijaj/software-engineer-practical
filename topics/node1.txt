@@ -156,7 +156,7 @@ Streams are objects that allow the reading of data from the source and writing o
 There are four types of streams.
 facilitate the reading operation.
 facilitate the writing operations
-facilitate both read and write operations.
+facilitate both read and write operations. (use pipe line stream)
 Duplex stream that performs computations based on the available input.
 
 1. Reading from a streams:
@@ -458,7 +458,8 @@ If you still want to use the threading concept in your application you have to i
 
 
 22 Explain the purpose of module exports?
-A module in Node.js is used to encapsulate all the related codes into a single unit of code which can be interpreted by shifting all related functions into a single file
+A module in Node.js is used to encapsulate all the related codes into a single unit of code which can be interpreted by shifting 
+all related functions into a single file
 
 
 23 NPM stands for Node Package Manager. It provides two main functionalities.

@@ -20,3 +20,33 @@ third party
 social media app
 
 
+
+middleware
+
+query optionmiztion
+data modeling
+statefull stateless
+
+rest api how to statefull
+web hook
+sop
+coverd collection
+rest api optionmiztion
+redis
+sharding implement
+orm\
+
+
+jwt
+
+algo256
+payload
+verify signature (secret key)
+
+usecase of jwt
+authentication and authority
+token expiry
+refresh   tocken
+
+
+

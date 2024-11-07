@@ -14,7 +14,7 @@ takes your uncommitted changes (both staged and unstaged), saves them away for l
 
 git stash list
 
-
+git init    //current directly initial create .git file
 git add .
 git add
 git commit -m "messages"

@@ -14,7 +14,6 @@
 14 What are the mongoose middlewares?  pre or post in schema that is call middlewares
 15 How to query data using mongoose?
 Trasection
-Second highest salary
 All join
 Sharding
 Agrregation
@@ -132,7 +131,7 @@ read call to second or other but write call to focus to primary server
 
 
 Sharding or shard ( using load balancer) handle of user traffic  (using Horizontal Scaling)
-Sharding is a data distribution process and stores a single data set into multiple database.
+Sharding is a data distribution process and stores a single data set into multiple database using Round-Robin algo 
 Vertical scalling adding more resourses as on demand
 Horizontal scalling adding more processing or physical machine
 
@@ -166,7 +165,7 @@ balancer = responsible for evently distribution of equal chunks across shards
 zones = can help to improve the data locality for shared clusters.
 
 less relationships
-nested each document size 16kb
+nested each document size 16mb
 object inside array find query get data
 db.find({hobbies:"dance"})  //all document which is dance hobbies
 

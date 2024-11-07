@@ -1,18 +1,33 @@
 //1. clouser    
 // A closure is the combination of a function and the lexical environment within that function was declared. 
-//a function along with its laxical scope bundal together its call clourse 
+//a function along with its laxical scope bundal together its call clouse 
 //a clouser give the access to the outer or enclosing function’s variables from inner function.
-function makeAdder(num) {
-  function add (x) {
-    return num + x;
-  };
-  return add
-}
 
-const add5 = makeAdder(5);
-const add10 = makeAdder(10);
-console.log(add5(2)); // 7
-console.log(add10(2)); // 12
+// Function to create a tax calculator for a specific state using closure
+function createTaxCalculator(state, taxRate) {
+  return function(amount) {
+    console.log(`Calculating tax for ${state}...`);
+    return amount * taxRate;
+  };
+}  
+
+// Creating tax calculators for different states
+const californiaTaxCalculator = createTaxCalculator('California', 0.0725);  // 7.25% tax rate
+const texasTaxCalculator = createTaxCalculator('Texas', 0.0625);            // 6.25% tax rate
+const newYorkTaxCalculator = createTaxCalculator('New York', 0.08875);      // 8.875% tax rate
+
+// Calculating taxes for an amount in different states
+const amount = 100;  // Example amount
+
+const californiaTax = californiaTaxCalculator(amount);  
+const texasTax = texasTaxCalculator(amount);
+const newYorkTax = newYorkTaxCalculator(amount);
+
+// Output results
+console.log(`Tax in California for $${amount}: $${californiaTax.toFixed(2)}`);
+console.log(`Tax in Texas for $${amount}: $${texasTax.toFixed(2)}`);
+console.log(`Tax in New York for $${amount}: $${newYorkTax.toFixed(2)}`);
+
 
 
 
@@ -105,7 +120,7 @@ copyObj.city="benglore"
 
 //so there is problem to object copy now going to solution we used shallow copy and deep copy
 
-//shallo copy
+//shallow copy
 // A shallow copy of an object is a copy of the object’s structure, but not the elements or value. 
 // This means that changes copy objects that will not affect the original object.
 let originalObj= {
@@ -171,16 +186,6 @@ copyobject.address.city="noida"
 
 
 // 5. scope example
-  // let username = "rahul"
-  // function userinfo(username) {
-  //     username = "aijaj";
-  //     console.log("kkkk", username)
-  //     return username
-  // }
-  // console.log("username", username)  //rahul
-  // userinfo(username)
-
-
 // // let  block level
 let name="prince khan";   
 function getName(){  //let is block level scope 
@@ -237,8 +242,8 @@ const firstOrder = () => console.log("I am a first order function!");
 
 //8.  What is a higher order function
 // Higher-order function is a function that accepts another function as an argument or returns a function as a return value or both.
-function operate(operation, x, y) {
-  return operation(x, y);
+function operation(operator, x, y) {
+  return operator(x, y);
 }
 
 function add(x, y) {
@@ -249,8 +254,8 @@ function multiply(x, y) {
   return x * y;
 }
 
-const resultAdd = operate(add, 3, 4);
-const resultMultiply = operate(multiply, 3, 4);
+const resultAdd = operation(add, 3, 4);
+const resultMultiply = operation(multiply, 3, 4);
 console.log(resultAdd);        // Output: 7
 console.log(resultMultiply);   // Output: 12
 
@@ -264,7 +269,7 @@ console.log(resultMultiply);   // Output: 12
 // not hoisting in let or const keyboards
 
 function add(a,b){
-  console.log("arguments.............", arguments)  //work arrow function
+  console.log("arguments.............", arguments)  //work normal function as arguments
   return a+b;
 }
 // add(7,5)
@@ -278,7 +283,7 @@ const add=(a, b)=>{
 
 
 // 10 callback
-// A function that takes a callback as an argument and invokes it in side this function its called callback fucntion.
+// callback function is a function that takes a callback as an argument and invokes it in side this function its called callback fucntion.
 function fetchData(callback) {
     setTimeout(()=>{
         let data= "data fetching successfully!"  //4
@@ -381,9 +386,9 @@ myPromise.then((message) => {
 
 
 // 2. chaining promise
-// const firstPromiseData = new Promise((resolve, reject) => {
-//   setTimeout(() => resolve(10), 1000);
-// });
+const firstPromiseData = new Promise((resolve, reject) => {
+  setTimeout(() => resolve(10), 1000);
+});
 firstPromiseData
   .then((result) => {
       console.log(result); // Output: 10
@@ -672,3 +677,15 @@ var person2 = new Person('Jane', 'Smith');
 // console.log("language", a.language)
 
 
+
+
+
+let flag=true
+
+setTimeout(()=>{
+  console.log("aijaj")
+}, 1000)
+
+while(flag){
+  console.log("hello world")
+}

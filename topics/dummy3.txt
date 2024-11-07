@@ -1,1 +1,48 @@
-If you need example / dummy files for testing or demo and presentation purpose, this is a great place for you. The files might be useful for testing upload,
+
+restfull
+syestem application
+optimesation
+caresdu
+question write
+sql nosql
+basic prog
+joint sql
+orderby group
+test practical
+
+why we use nestjs
+nodejs
+optimesation
+db query
+mock interviews
+
+
+
+
+
+
+5 2 1
+11
+
+sum=5*1
+sum=5*2
+sum=5*3
+while(sum<amount){
+    sum=5*2 //10
+}
+
+
+sum=2*1
+while(sum<amount){
+    0
+}
+
+sum=1*1
+sum=1*2
+while(sum<amount){
+    sum=1*
+    if(amount==sum){
+        return sum
+    }
+}
+

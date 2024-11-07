@@ -3,7 +3,7 @@ Scaling Horizontal and Vertical mysql
 Difference between Where and Having Clause in SQL : 
 
 
-primary and unique key and forign key?
+primary, unique key and forign key?
 
 primary key:-
 Cannot contain NULL values.
@@ -17,17 +17,17 @@ Can contain one or more NULL values.
 a column or set of columns must be unique, but it's not required to identify a record.
 
 
-Key Differences:
+Key Differences:-
 Feature	Primary Key	Unique Constraint
 Uniqueness	Must be unique
 Nullability	Cannot contain NULL values	Can contain NULL values
 Number per Table Only one primary key per table	Multiple unique constraints per table
-Purpose	Used to uniquely identify each record	Used to ensure unique values in a column
-Index Type	Usually creates a clustered index	Usually creates a non-clustered index
+Purpose	Used to uniquely identify each record Used to ensure unique values in a column
+Index Type	Usually creates a clustered index Usually creates a non-clustered index
 
 
 Key Differences:
-Feature	DROP	DELETE	TRUNCATE
+Feature	DROP DELETE	TRUNCATE
 Removes	Entire table (or object)	Specific rows or all rows	All rows from the table
 Table structure	Table is removed entirely	Table remains intact	Table remains intact
 Rollback	Generally, cannot be rolled back	Can be rolled back (in a transaction)	Depends on DBMS
@@ -57,9 +57,9 @@ GROUP BY product_name;
 
 Result:-
 product_name	total_quantity
-Apple	13s
-Banana	11
-Orange	8
+Apple	            13
+Banana	            11
+Orange	            8
 
 
 
@@ -88,11 +88,6 @@ UPDATE db.Table1 SET col2 = (CASE col2 WHEN 1 THEN 0 ELSE 1 END);
 //second highest salary
 SELECT MAX(amount) from salary_stuctures ss1
 WHERE amount < (SELECT MAX(amount) from salary_stuctures ss2 ); 
-
-
-
-table  multiple case
-UPDATE db.Table1 SET col2 = (CASE col2 WHEN 1 THEN 0 ELSE 1 END);
 
 
 Migrations are scripts or instructions that specify how the database schema should change. 
@@ -133,10 +128,7 @@ what is Scalable mysql Horizontal and Vertical?
 
 
 doubt?
-11 orm what is meaning pros const with example
-object oriented db
-bson format
-json bson
+orm what is meaning pros const with example
 
 
 SELECT employees.id, employees.name, departments.department_name
@@ -146,10 +138,59 @@ ON employees.department_id = departments.id;
 
 
 transection:-
-A transaction in MySQL is a sequence of one or more SQL statements that are treated as a single,
-indivisible unit of work. Transactions are used to maintain data integrity and consistency in a database
-a transaction is a sequence of SQL statements that are executed as a single unit. Transactions ensure that 
-either all operations are completed successfully, or none of them are applied, which is useful in maintaining the integrity of the database.
-BEGIN / START TRANSACTION: Begins a transaction.
-COMMIT: Saves the changes made during the transaction.
-ROLLBACK: Reverts the changes made during the transaction.
+In MySQL, a transaction is a sequence of one or more SQL operations that are executed as a single unit. 
+Transactions allow you to group SQL statements so that they are all executed together successfully or none at all. 
+This ensures data integrity, especially in operations that involve multiple steps, 
+where a failure in one step should prevent other steps from committing.
+Transaction Control Statements in MySQL:-
+    1. START TRANSACTION: Begins a new transaction.
+    2. COMMIT: Saves all changes made within the transaction permanently to the database.
+    3. ROLLBACK: Undoes all changes made within the transaction, reverting to the initial state.
+
+
+Key Properties of Transactions
+Transactions follow the ACID properties:
+
+Atomicity: Ensures all operations within a transaction complete successfully or none do.
+Consistency: Ensures the database remains in a consistent state before and after the transaction.
+Isolation: Ensures that transactions are executed independently of one another.
+Durability: Once a transaction is committed, its results are permanent.
+
+
+Consider a banking application where you need to transfer money from one account to another. The transfer involves two operations:
+Deducting the amount from the sender’s account
+Adding the amount to the receiver’s account
+
+example:-
+-- Start the transaction
+START TRANSACTION;
+
+-- Step 1: Deduct amount from sender's account
+UPDATE accounts 
+SET balance = balance - 100 
+WHERE account_id = 1;
+
+-- Step 2: Add amount to receiver's account
+UPDATE accounts 
+SET balance = balance + 100 
+WHERE account_id = 2;
+
+-- If both operations succeed, commit the transaction
+COMMIT;
+
+
+
+If there’s an error in either step, you can ROLLBACK the transaction to ensure data integrity:
+START TRANSACTION;
+
+UPDATE accounts 
+SET balance = balance - 100 
+WHERE account_id = 1;
+
+-- Intentional error (for example, trying to update a non-existent account)
+UPDATE accounts 
+SET balance = balance + 100 
+WHERE account_id = 999;  -- This account_id does not exist
+
+-- Rollback if any statement fails
+ROLLBACK;

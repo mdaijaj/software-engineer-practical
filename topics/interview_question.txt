@@ -1,0 +1,185 @@
+middleware
+query optionmiztion
+data modeling
+statefull stateless
+
+rest api how to statefull
+web hook
+sop
+coverd collection
+rest api optionmiztion
+redis
+sharding implement
+orm
+
+
+jwt
+algo256
+payload
+verify signature (secret key)
+
+usecase of jwt
+authentication and authority
+token expiry
+refresh   tocken
+
+
+
+acid
+transection
+ddl mml
+mongodb id size
+ssc vs ssr
+
+
+const inputStrings = ["Delhi", "Banglore", "Hyderabad"];
+const specifiedValue = 36;
+const arr = [];
+
+for(var i=0;i<inputStrings.length;i++){
+    var obj = {}
+    obj[inputStrings[i]] = specifiedValue
+    arr.push(obj)
+}
+console.log(arr)
+console.log(JSON.stringify(arr))
+
+
+//OUTPUT:-
+//[
+// { "Delhi": 36 },
+// { "Banglore": 36 },
+// { "Hyderabad": 36 }
+// ]
+
+
+function showMessage(marks){
+    const message = marks || 'Absent';
+    console.log(`${marks} ${message}`)
+}
+
+showMessage(29);
+showMessage(0);
+showMessage(46);
+
+
+
+
+console.log('Start');
+
+setTimeout(() => console.log('Timeout 1'), 0);
+
+setImmediate(() => console.log('Immediate'));
+
+process.nextTick(() => console.log('Next Tick'));
+
+Promise.resolve().then(() => console.log('Promise'));
+
+console.log('End');
+
+
+
+
+
+
+// console.log(0 == -0);       // true
+// console.log(0 === -0);      // true
+// console.log(0 === "-0");      // false
+
+// OLX Interview
+const number = 21;
+// console.log(number.toString());   // 21
+console.log(number.toString(2));   //       this will return number 
+console.log(number.toString(8));    // octal number system
+console.log(number.toString(16));   //hexadecimal number system
+
+
+
+oriserve.com company
+acid
+scallable mysql and mongodb which is more or less scallable with exmaple
+index structure while using indexing
+partition database or schema design
+send message to user 30 min how will you manage handle
+drawback of these things
+
+
+
+
+
+react validatation
+test("/input ")
+intersec in reactjs
+
+
+
+
+
+react Interview
+portal
+error baunding
+suspense
+react memo
+thunk 
+builder
+jwt session cookies
+redux work flow
+
+
+
+
+nodejs
+cluster
+stream method zed
+cluster
+isPrimary
+fork
+spawn
+event loop
+call stack
+event emitter
+task queue
+rejex test method
+aws public and private(same bucket)
+repl
+
+
+
+
+
+
+
+database:-
+acid
+transection
+index
+
+
+//testing
+cummnication profession way voice action
+understaning way
+clear concept fuctinality exam functinaty
+selling product();
+
+
+
+
+console level question?
+for(var i =0; i< 5; i++){
+console.log(i)
+  setTimeout(() => {
+    console.log(i)
+  }, 3000)
+console.log(i*2)
+}
+//0 0 1 2 2 4 3 6 4 8 5 5 5 5 5
+
+
+
+for(var i =0; i< 5; i++){
+  setTimeout(() => {
+    console.log(i)
+  }, 3000)
+}   // 5 5 5 5 5
+
+

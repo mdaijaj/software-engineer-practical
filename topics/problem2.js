@@ -1,4 +1,4 @@
-// // Invert the key-value pairs of an object.
+//1 Invert the key-value pairs of an object.
 // function invertObject(obj) {
 //     const inverted = {};
 //     for (let key in obj) {  //object loop using in not of
@@ -13,7 +13,7 @@
 
 
 
-// // Find the greatest common divisor (GCD) of two numbers. (hcf)
+//2. // Find the greatest common divisor (GCD) of two numbers. (hcf)
 function gcd(a, b) {
     if (b === 0) {  // Base case: if b is 0, return a
         return a;
@@ -48,7 +48,7 @@ const strs = ["flower", "flow", "flight"];
 
 
 
-// // Write a function to generate all permutations of a string.
+//4. // Write a function to generate all permutations of a string.
 // function permute(str) {
 //     if (str.length <= 1) return [str];
 //     let permutations = [];
@@ -64,7 +64,7 @@ const strs = ["flower", "flow", "flight"];
 
 
 
-// 17  //fibonacci serie
+// 5.  //fibonacci serie
 function fibonaccieSerries(n){
     let arr=[0,1]
     for (var i=2; i<n; i++){
@@ -95,7 +95,7 @@ fibonaccieSerries(5, arr)
 
 
 
-// const arr1 = [0, 1, 2, [3,7,5,[2,4]]];
+//6. const arr1 = [0, 1, 2, [3,7,5,[2,4]]];
 // console.log(arr1.flat(2));
 
 // let arr=[1, [2, [3, 4]], 5]
@@ -123,7 +123,7 @@ function flattenArray(arr) {
 
 
 
-//10 matrix Driver code
+//7. matrix Driver code
 let A = [   
     [1, 1, 1, 1], 
     [2, 2, 2, 2], 
@@ -166,7 +166,7 @@ let B = [
 
 
 
-//2. roman to integer example
+//8. roman to integer example
 var romanToInt = function (item) {
     let I = 1;
     let V = 5
@@ -214,4 +214,70 @@ var romanToInt = function (item) {
     return total
 };
 // romanToInt("MCDLXXVI");
+
+// 9. happy number
+let num=6;
+function happyNumber(nums){
+    let sum=0;
+    // let arr= nums.toString();
+    for(let i=1; i<nums; i++){
+        if(nums%i==0){
+            sum+=i
+        }
+    }
+     if (sum==nums) {
+        console.log(`${nums} is a perfect number.`);
+    } else {
+        console.log(`${nums} is not a perfect number.`);
+    }
+}
+happyNumber(num)
+
+
+
+// 10. Product of Array Except Self
+let arr=[1,2,3,4]
+let temp=[];
+for (var i of arr){
+    let prefix= i;
+    let product=1;
+    arr.map((item)=> {
+        if(item!=i){
+            product*=item
+        }
+    })
+    temp.push(product)
+}
+console.log("product", temp)
+
+
+//11 permutations
+function permutations(str) {
+    const results = [];
+    if (str.length === 1) return [str];
+    for (let i = 0; i < str.length; i++) {
+        const char = str[i];
+        const remaining = str.slice(0, i) + str.slice(i + 1);
+        for (let perm of permutations(remaining)) {
+            results.push(char + perm);
+        }
+    }
+    return results;
+}
+console.log(permutations("abc")); // ["abc", "acb", "bac", "bca", "cab", "cba"]
+
+
+
+// //12. Problem: Rotate an array to the right by k steps.
+// function rotate(nums, k) {
+//     k = k % nums.length;
+//     nums.unshift(...nums.splice(nums.length - k, k));
+// }
+// let arr = [1, 2, 3, 4, 5, 6, 7];
+// rotate(arr, 3);
+// console.log(arr); // [5, 6, 7, 1, 2, 3, 4]
+
+
+
+
 

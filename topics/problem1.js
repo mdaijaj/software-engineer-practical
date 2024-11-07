@@ -79,7 +79,7 @@ function SecondMax(arr2){
       const set = new Set(arrOfNum);
       // console.log("set", [...set])
   }
-  // removeDuplicates(arr2)
+  // removeDuplicates(arr2).
 
 
 
@@ -262,9 +262,6 @@ function isAnagram(str1, str2){
 }
 let checked= isAnagram("aijaj", "ajaji")
 console.log("checked", checked)
-
-
-
 // console.log(twoSum([2, 7, 11, 15], 9)); // [[2, 7]]
 // // Check if two strings are anagrams.
 // function areAnagrams(str1, str2) {
@@ -274,7 +271,7 @@ console.log("checked", checked)
 
 
 
-//8 recursion using without loop   total= 5*4*3*2*1
+//8 factorial number recursion using without loop   total= 5*4*3*2*1
 let total=1;
 function factorial(number){
   total*= number
@@ -290,8 +287,8 @@ function factorial(number){
 
 //9 Function to check Palindrome
 //  string palindrom
-function palindromString(string){   121
-  let start=0
+function palindromString(string){  // 121
+  let start=0 
   let end=string.length-1
   while(start<end){
     if(string[start]!= string[end]){
@@ -386,7 +383,7 @@ console.log("newstring", newstring)
 
 
 
-//12. armstrong number  //153 is an Armstrong number. 1*1*1 + 5*5*5 + 3*3*3 = 153
+//13. armstrong number  //153 is an Armstrong number. 1*1*1 + 5*5*5 + 3*3*3 = 153
 // let number=1634;
 // let result=number.toString();
 // // console.log(typeof(result))
@@ -406,7 +403,7 @@ console.log("newstring", newstring)
 
 
 
-// 12. find binary no 
+// 14. find binary no 
 let newarr=[5,1,3,2,6];
 let output=newarr.map((item)=> item.toString(2))
 // console.log("output", output)
@@ -431,33 +428,25 @@ let result=15;
 
 
 
-//6. find binary to decimal number
-let input = "1001110";
-const binaryToDecimal = (num) => {
-    let output = 0;
-    for (let i = num.length - 1; i >= 0; i--) {
-        let val = Math.pow(2, num.length - 1 - i) * Number(num[i]);
-        console.log("val", val)
-        output += val;
-    }
-    let reverseNum = num.split("").reverse();
-    let res = 0;
-    for (let i = 0; i < reverseNum.length; i++) {
-        let val = Math.pow(2, i) * Number(reverseNum[i]);
-        res += val;
-    }
-    console.log("output", output)  //38
-    return [res, output];
-};
-// binaryToDecimal(input)
+//15. find binary to decimal number
+// let number=11001
+// let str= number.toString();
+// let sum=0;
+// let index=0;
+// for (var i=str.length-1; 0<=i; i--){
+//     let result= Math.pow(2, i);
+//     let final= result * parseInt(str[index])
+//     sum+=final;
+//     index+=1
+// }
+// console.log("sum", sum)
 
 
-
+// //16 object iteration
 const object1 = {
   a: 'somestring',
   b: 42,
 };
-//13 object iteration
 // for (const [key, value] of Object.entries(object1)) {
 //   console.log(`${key}: ${value}`);
 // }
@@ -467,7 +456,7 @@ const object1 = {
 
 
 
-//15 missing number
+//17 missing number
 function findMissingNumber(arr) {
   const n = arr.length + 1;  // Since one number is missing
   const totalSum = (n * (n + 1)) / 2;  // Sum of first n natural numbers
@@ -479,7 +468,7 @@ function findMissingNumber(arr) {
 
 
 
-//16 find index of item which is sum of numbers equal to target value.
+//18 find index of item which is sum of numbers equal to target value.
 function findTwoSum(nums, target) {
   for (let i = 0; i < nums.length; i++) {
     for (let j = i + 1; j < nums.length; j++) {
@@ -515,8 +504,7 @@ let target = 3;
 
 
 
-//top 10 question
-// intersection element from two array
+//19 intersection element from two array
 // function intersection(arr1, arr2) {
 //     return arr1.filter(x => arr2.includes(x));
 // }
@@ -524,9 +512,28 @@ let target = 3;
 
 
 
-// Compare two objects for equality.
+//20 Compare two objects for equality.
 // function deepEqual(obj1, obj2) {
 //     console.log(obj1==obj2)  //false
 //     return JSON.stringify(obj1) === JSON.stringify(obj2);  //true
 // }
 // console.log(deepEqual({ a: 1 }, { a: 1 }));
+
+
+//21 swap in array
+// let arr=[7,8,5,4,7,8]
+// let start=0; 
+// let end=arr.length-1;
+
+// function swap(arr, start, end){
+//    let temp = arr[start];
+//     arr[start] = arr[end];
+//     arr[end] = temp;
+// }
+
+// while(start<end){
+//     swap(arr, start, end);
+//     start++;
+//     end--;
+// }
+// console.log(arr)

@@ -300,3 +300,33 @@ let z=2
 // });
 
 // console.log('script end');  //2
+
+
+//filter not return falsy value but map return all data
+let arr=[-1,0,1,2,3,4,5, undefined, null, "", " ", "aijaj"]
+let result=arr.filter((item)=> item)
+console.log(result)
+
+
+
+// // operator question
+// let a=10;
+// let b=12
+// console.log(a || b)  // 10  or condition first value
+// console.log(a && b)  // 12 if all true value then last value and if 
+
+
+// let a=10;
+// let b=null
+// console.log(a && b)  // false value any of them false then false value return
+
+
+console.log(3 + false) //3  false=0
+console.log(3 + true) //4   true =1
+
+
+
+
+
+
+

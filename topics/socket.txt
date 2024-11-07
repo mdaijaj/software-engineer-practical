@@ -1,9 +1,8 @@
 websocket 
 socket.io libraray
-
 websocket/http/ftp/smtp
 
-http  req, res send client get response from server
+http req, res send client get response from server
 websocket in event dual communication client or server both send reqeust or response
 
 
@@ -12,19 +11,13 @@ on = (data recieved)  lister
 socket = (invidual socket id)
 io.on =(intire socket)
 
-socket.broadcast.emit("message")   except this go to all message
+socket.broadcast.emit("message")   except all message
 socket.to ()   to trigger event for particular room 
 socket.join(groupName) 
 
 
-
-
-
-
-
-
-
-usecase socket real time data feching
+usecase :-
+socket real time data feching
 trading
 telegram, whatsapp
 mulplayer game
@@ -84,7 +77,7 @@ full-duplex
 
 socket event keyboad
 io.on  //connected entire app
-io.emit("send all message") 
+io.emit("send all user message") 
 socket.on("event")   //"event  recieved message particular event
 socket.emit("event")  // send message 
 socket.on.connected  //socket connected
