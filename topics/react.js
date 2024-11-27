@@ -12,7 +12,7 @@
 // // ● How to update state in redux?
 // // ● How to update state using useState?
 // // ● What are component lifecycle methods?
-// // ● How do we pass props from child to parent in react
+// // ● How do we pass props from child to parent in react   
 // // ● How can we stop re-rendering in react?  //using useMemo
 // // ● Stateful vs stateless class funtion
 // // ● lazyLoad of components

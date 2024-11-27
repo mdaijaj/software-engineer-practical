@@ -2,7 +2,6 @@ top 10 project:-
 flipkart home page
 tour travel 
 netflix home
-tribute home page
 e-commerce
 
 
@@ -12,6 +11,7 @@ wellfound
 linkedin
 indeed
 apna
+
 glassdor
 career builder
 job hai

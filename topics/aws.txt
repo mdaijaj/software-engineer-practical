@@ -108,3 +108,4 @@ management :- life cycle rules, move after 10 days backeup glacier of
 s3 bucket pricing
 data transfer uploading ka charge nhi lagta but downloading ka charge lagta hai
 there will be charge of storage
+

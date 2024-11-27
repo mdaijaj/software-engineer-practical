@@ -1,4 +1,4 @@
-//1. clouser    
+//1. clouser :-    
 // A closure is the combination of a function and the lexical environment within that function was declared. 
 //a function along with its laxical scope bundal together its call clouse 
 //a clouser give the access to the outer or enclosing function’s variables from inner function.
@@ -99,7 +99,7 @@ console.log(multiArgFunction(1, 2, 3)); // 6
 
 
 //4. call by value and call by refrence
-// when we copy of object it its copy of memeory location no value (call by refrence)
+// when we copy of object it its copy of memeory location not value (call by refrence)
 // when we copy of variable then its copy of value  (call by value)
 
 let x= "rahul";
@@ -292,7 +292,7 @@ function fetchData(callback) {
 }
 
 function handleData (data) { 
-    console.log("callback function: ", data);    //3
+  console.log("callback function: ", data);    //3
 }
 
 console.log("Start fetching data...");  //1
@@ -556,7 +556,7 @@ function increment() {
 // What are the differences between pure and impure functions?
 // Pure function	                        Impure function
 // It has no side effects	                It causes side effects
-// It is always return the same result	    It returns different result on each call
+// It is always return the same result	  It returns different result on each call
 // Easy to read and debug	                Difficult to read and debug because they are affected by extenal code
 
 

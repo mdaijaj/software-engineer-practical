@@ -22,7 +22,6 @@ social media app
 
 
 middleware
-
 query optionmiztion
 data modeling
 statefull stateless
@@ -50,3 +49,11 @@ refresh   tocken
 
 
 
+
+
+practical
+load balance
+Sharding
+replica
+normalization
+ACID

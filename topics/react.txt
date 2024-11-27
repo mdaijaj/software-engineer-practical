@@ -507,29 +507,79 @@ Note: Remember that not all events are cancelable.
 
 
 // ● How can you improve performance of your react app?
-1. Use React.memo
+1.Optimize Component Rendering
+Avoid Unnecessary Renders: Use React.memo to prevent re-rendering of functional components unless their props change.
+Use useCallback to memoize event handlers.
+Use useMemo to memoize expensive calculations.
+
 2.Optimize State Management
   Avoid unnecessary state:
   const [count, setCount] = useState(0);
-3. Use useCallback and useMemo Hooks
+
+3. Minimize Third-Party Dependencies
+Only include necessary dependencies. Avoid heavy libraries unless indispensable.
+Tree-shake unused code with tools like Webpack.
+
 4. Lazy Loading Components
 	Load components only when they are needed, reducing the initial load time.
+
 5. Code Splitting
 	Breaks up your app into smaller bundles that can be loaded on demand.
+  Configure Webpack for code splitting to load only the required parts of your application.
+
 6.Avoid Anonymous Functions in JSX
   Why: Creating functions in the JSX can lead to unnecessary re-renders as a new function is created every time the component renders.
+    // Bad
+  <button onClick={() => handleClick(id)}>Click Me</button>
+
+  // Good
+  const handleButtonClick = () => handleClick(id);
+  <button onClick={handleButtonClick}>Click Me</button>
+
 7. Optimize Conditional Rendering
 	Use short-circuit operators or ternary operators for cleaner and more efficient conditional rendering.
+
 8. Consider Server-Side Rendering (SSR)
   Why: For faster initial page load and SEO benefits, you can implement SSR with frameworks like Next.js.
   Why: For large lists, use libraries like react-window or react-virtualized to only render visible items.
+
 9. Optimize Images and Assets
   What to do: Use optimized images, SVGs, and other assets. You can also lazy-load images to improve initial load time.
-10. Enable Production Mode
-  Why: Make sure to run your app in production mode which removes development warnings and optimizes the build.
+  Use responsive and lazy-loaded images. Libraries like react-lazyload or react-intersection-observer help with this.
+  Use modern image formats like WebP for smaller file sizes.
+
+10. Use Production Build
+Use the production build of React by running npm run build. This minifies and optimizes your code for deployment.
+
+12. Optimize API Calls
+Cache API responses using libraries like SWR or React Query.
+Batch multiple API requests where possible.
+
+13. Optimize CSS
+Use CSS-in-JS solutions like Emotion or Styled-components for scoped styling.
+Remove unused CSS with tools like PurifyCSS.
 
 
 30 What is a service worker?
 A Service worker is basically a script (JavaScript file) that runs in the background, separate from a web page and provides features that don't need a web page or user interaction. 
 Some of the major features of service workers are Rich offline experiences(offline first web application development), periodic background syncs, 
 push notifications, intercept and handle network requests and programmatically managing a cache of responses.
+
+
+
+
+store:- it holds whole data of application
+reduce:- what manipulate that data when it recieved an action
+action:- what tells reducer to manipute the store data it carrrie the name and some oher data. 
+
+flow:-
+Reducer:- action ko change karne me help karenga
+
+main.js or index.js :- provider rape with store
+
+counter manage(any functinality):- counter_slice make multiple method or function
+
+store: counter_slice introduct in store
+
+
+

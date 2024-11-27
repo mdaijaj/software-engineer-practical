@@ -26,7 +26,7 @@ Event Loop: The event loop is responsible for managing and dispatching events an
 3. High Performance
 V8 Engine: Node.js uses the V8 JavaScript engine, developed by Google for Chrome, which compiles JavaScript to native machine code for fast execution.
 Optimized for I/O-bound Applications: Its asynchronous model is particularly well-suited for applications that involve a lot of I/O operations, such as web servers and real-time applications.
-
+ 
 4. Scalability
 - Cluster Module: Node.js can leverage multiple CPU cores by using the cluster module, 
   which allows it to create child processes that share the same server port.

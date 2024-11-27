@@ -183,3 +183,140 @@ for(var i =0; i< 5; i++){
 }   // 5 5 5 5 5
 
 
+
+
+company ngo
+//
+
+let arr=[{
+    id: 1,
+    type:  "cast",
+    name: "rahul"
+},
+{
+    id: 2,
+    type:  "cast2",
+    name: "prince"
+},{
+    id: 3,
+    type:  "cast3",
+    name: "aman"
+},{
+    id: 4,
+    type:  "cast2",
+    name: "price"
+},{
+    id: 5,
+    type:  "cast3",
+    name: "rahul"
+}
+]
+
+let result= arr.filter((item)=> item.type!=="cast2")
+// console.log(result)
+
+
+
+function filterList(filterByProperty, isEqual, value){
+    return isEqual? arr.filter((item)=> item[filterByProperty] == value) : arr.filter((item)=> item[filterByProperty] !== value)
+}
+
+console.log(filterList("type", false, "cast2"))
+console.log(filterList("name", true, "rahul"))
+
+
+//return list of object other then specefy type.  
+//list of object which name is rahul
+
+
+
+optionmiztion query
+drop table if exists locations;
+create table locations (id int primary key, name text, parent_location_id int null, user_status boolean);
+insert into locations (id, name, user_status) values
+            (1, 'Karnataka', 1),
+            (2, 'Assam', 0),
+            (3, 'Kerala', 1);
+insert into locations (id, name, parent_location_id, user_status) values
+            (5, 'Bangalore', 1),
+            (6, 'Mysore', 1, 1),
+            (7, 'Guwahati', 2, 1),
+            (8, 'Cochin', 3, 0);
+insert into locations (id, name, parent_location_id, user_status) values
+            (9, 'Jaynagar', 5,0),
+            (10, 'Hebbal', 5,1),
+            (11, 'Rajiv Nagar', 6, 1),
+            (12, 'Srirampura', 6, 0),
+            (13, 'Panjabari', 7, 1),
+            (14, 'Lokhra', 7, 0),
+            (15, 'Jew town', 8, 1);
+
+select locations1.name from locations as locations1 join locations as locations2 
+on locations1.id= locations2.parent_location_id where locations2.name="Bangalore";
+
+select name from locations where id=(select parent_location_id from locations where name="Bangalore");
+
+
+
+
+slk company Interview
+// console.log("Start");
+ 
+// Promise.resolve().then(() => {
+//   console.log("First Promise");
+//   return Promise.resolve();
+// }).then(() => {
+//   console.log("Second Promise");
+//   setTimeout(() => {
+//     console.log("Inside Timeout");
+//   }, 0);
+// });
+ 
+// console.log("End");
+
+
+// // start
+// // end
+// // first Promise
+// // second promise
+// // inside timeout
+
+
+// function mul(a){
+//     return function(b){
+//         return function (c){
+//             return a*b*c;
+//         }
+//     }
+// }
+// let result=mul(3)(4)(5)
+// console.log(result)
+
+
+let arr=[1,2,3,4,3,4,5,5,5,6,7]
+let main=[];
+for (var i=0; i<arr.length; i++){
+    if(!main.includes(arr[i])){
+        main.push(arr[i])
+    }
+}
+console.log(main)
+
+
+
+life cycle method
+event loop
+redux 
+state variable
+middleware function
+cors module
+multer
+
+
+
+UPDATE db.Table1 SET col2 = (CASE col2 WHEN 1 THEN 0 ELSE 1 END);
+
+
+
+ 
+

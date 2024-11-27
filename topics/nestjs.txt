@@ -30,6 +30,17 @@ export class UserService {
 }
 
 
+
+top basic command:-
+nest new <project-name>
+nest generate module <module-name>
+nest generate controller <controller-name>
+nest generate service <service-name>
+nest generate provider <provider-name>
+nest generate guard <guard-name>
+
+
+
 What are guards in NestJS?
 Answer: Guards are used to implement authentication and authorization in NestJS. They determine whether a request should be allowed to proceed 
 based on certain conditions (e.g., checking if a user is authenticated). Guards implement the CanActivate interface
@@ -47,17 +58,7 @@ Answer: Pipes are used for transforming and validating data in NestJS. They are 
 10. What is the difference between middleware and guards in NestJS?
 Answer:
 Middleware is used primarily for modifying requests before they reach route handlers and applies globally or to specific routes.
-Guards are specifically used for determining if a request is authorized to access a specific route. They focus on authentication and authorization.
-
-
-new project setup:-
-nest new project-name
-
-
-generate module control and service:-
-nest generate module <module-name>
-nest generate service <service-name>
-nest generate controller <controller-name>
+Guards are specifically used for determining if a request is authorized to access a specific route. They focus on authentication and authorization.  
 
 
 In NestJS, a decorator is a special kind of declaration that can be attached to a class, method, or property to modify its behavior. Decorators are a core feature of NestJS, and they are widely used to provide metadata, configure components, or enable specific behaviors within the framework.
@@ -115,7 +116,7 @@ Answer: Modules are organizational units in NestJS, grouping related components 
 Modules make the code more modular, reusable, and easy to maintain, which is particularly helpful in large applications.
 
 
-4. Explain Dependency Injection in NestJS.
+4. Dependency Injection in NestJS.
 Answer: Dependency Injection (DI) is a design pattern where NestJS automatically injects dependencies into a component instead of creating them manually. 
 It’s facilitated through providers, and NestJS uses Inversion of Control (IoC) to manage dependencies, improving modularity and testability.
 

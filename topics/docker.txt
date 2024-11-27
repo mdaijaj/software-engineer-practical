@@ -188,5 +188,30 @@ cntl+c to stop container or images
 
 
 
+docker details:-
+docker desktop download
+docker intall CMD
+docker --version
+docker run -it ubuntu(image_name)  //default install container if not install or exits
+docker exec containerName command
 
 
+container:- its like a machine
+image:- its like a operating system(op) which work on container.
+
+docker start docker_name
+docker stop dockerName
+docker images:- show all images
+docker run -it node  //install nodejs image
+docker container ls  //show all containers
+
+docker is replication of envirment variable
+
+multiple containers different type postgres,node, mongodb,redis,mailhog
+we have to exec single container we got problem
+
+solution:-
+docker compose se multiple container create,setup, destroy
+docker compose up:- all container installing
+docker compose down:- all container removed
+docker compose up -d:-  run on background

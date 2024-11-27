@@ -1,4 +1,3 @@
-
 //first target pair
 function Pairsum_target(arr, target) {
     arr.sort();
@@ -20,7 +19,6 @@ function Pairsum_target(arr, target) {
     }
     return 0
 }
-
 let arr = [7, 8, 4, 2, 5, 9];
 let target = 12;
 // Pairsum_target(arr, target)
@@ -58,28 +56,6 @@ let arr2 = [2,5,6]
 // merge(arr1, arr1.indexOf(0), arr2, arr2.length);
 
 
-
-
-var removeElement = function(nums, val) {
-    let arr=[]
-    let index=0;
-    for (var i of nums){
-        if(i!=val){
-           arr.push(i)
-        }else{
-            index+=1
-        }
-    }
-    for(var i=0; i<index; i++){
-        let char = String.fromCharCode(95);
-        arr.push(char)
-    }
-    console.log("arr", arr);
-};
-
-let nums= [0,1,2,2,3,0,4,2]
-let val= 2;
-removeElement(nums, val)
 
 
 

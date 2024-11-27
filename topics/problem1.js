@@ -60,7 +60,7 @@ function SecondMax(arr2){
        let second_max=arr2[0];
        for (var i=0; i<arr2.length; i++){
            if(arr2[i]>max){
-               max= arr2[i]
+              max= arr2[i]
            }
            if(arr2[i] > second_max && arr2[i]!=max) {
               second_max = arr2[i];
@@ -94,7 +94,7 @@ function SecondMax(arr2){
 
 
 
-  // const input = [1, 2, 3, 3, 4, 5,2, 6,3,6,1];
+  // cons t input = [1, 2, 3, 3, 4, 5,2, 6,3,6,1];
   // function removeDuplicate(arr) {
   //     const tempArr = [];
   //     const obj = {};
@@ -135,7 +135,7 @@ let iterativeFunction = function (arr, x) {
 
   // Iterate while start not meets end
   while (start <= end) {
-
+ 
       // Find the mid index
       let mid = Math.floor((start + end) / 2);
       console.log("mid", mid)
@@ -151,7 +151,7 @@ let iterativeFunction = function (arr, x) {
   }
   return false;
 }
-let arr = [1, 3, 5, 7, 8, 9];
+// let arr = [1, 3, 5, 7, 8, 9];
 let x = 8;
 // if (iterativeFunction(arr, x))
 //  console.log("Element found!");
@@ -480,7 +480,7 @@ function findTwoSum(nums, target) {
   return []; // Return an empty array if no pair is found
 }
 let num = [2, 7, 1, 15];
-let target = 3;
+// let target = 3;
 // const result = findTwoSum(num, target);
 // console.log(result); // Output: [0, 2]
 
@@ -488,19 +488,33 @@ let target = 3;
 
 
 // add subarr and equal to target value with code optimized
-// function twoSum(arr, target) {
-//     let pairs = [];
-//     let map = new Map();
-//     for (let num of arr) {
-//         let complement = target - num;
-//         if (map.has(complement)) {
-//             pairs.push([complement, num]);
-//         }
-//         map.set(num, true);
-//     }
-//     return pairs;
-// }
-// console.log(twoSum([2, 7, 11, 15], 9)); // [[2, 7]]
+
+//first target pair
+function Pairsum_target(arr, target) {
+  arr.sort();
+  console.log(arr)
+  let start = 0;
+  let end = arr.length - 1;
+
+  while (start < end) {
+      if (arr[start] + arr[end] == target) {
+          console.log("aijajkhan", start, end)
+          return start, end
+      }
+      else if (arr[start] + arr[end] < target) {
+          start++
+      }
+      else {
+          end--
+      }
+  }
+  return 0
+}
+let arr = [7, 8, 4, 2, 5, 9];
+let target = 6;
+Pairsum_target(arr, target)
+
+
 
 
 
@@ -536,4 +550,7 @@ let target = 3;
 //     start++;
 //     end--;
 // }
-// console.log(arr)
+// console.log(arr)1 2 3
+// 1 2 3
+// 1 2 3
+// 1 2 3

@@ -26,43 +26,6 @@ console.log(`The HCF of ${gcd(num1, num2)}`); // Output: 14
 
 
 
-//3. synonyms  test doubt
-function longestCommonPrefix(strs) {
-    if (strs.length === 0) {
-        return '';
-    }
-    for (let i = 0; i < strs[0].length; i++) {
-        const char = strs[0][i];
-        for (let j = 1; j < strs.length; j++) {
-            if (i >= strs[j].length || strs[j][i] !== char) {
-                return strs[0].substring(0, i);
-            }
-        }
-    }
-    return strs[0];
-}
-// Example usage  find intersection
-const strs = ["flower", "flow", "flight"];
-// const result = longestCommonPrefix(strs);
-//   console.log(result);
-
-
-
-//4. // Write a function to generate all permutations of a string.
-// function permute(str) {
-//     if (str.length <= 1) return [str];
-//     let permutations = [];
-//     for (let i = 0; i < str.length; i++) {
-//         let char = str[i];
-//         let remaining = str.slice(0, i) + str.slice(i + 1);
-//         for (let perm of permute(remaining)) {
-//             permutations.push(char + perm);
-//         }
-//     }
-//     return permutations;
-// }
-
-
 
 // 5.  //fibonacci serie
 function fibonaccieSerries(n){
@@ -103,14 +66,13 @@ fibonaccieSerries(5, arr)
 // console.log(result)
 
 
-// let arr2 = [1, 2, 3, [4, 5, 6], [7, 8, [9, 10, 11], 12], [13, 14, 15]];
-function flattenArray(arr) {
-    let result = [];
+let arr2 = [1, 2, 3, [4, 5, 6], [7, 8, [9, 10, 11], 12], [13, 14, 15]];
+let result = [];
 
+function flattenArray(arr) {
     for (let i = 0; i < arr.length; i++) {
-        console.log("kkk", Array.isArray(arr[i]), arr[i] )
         if (Array.isArray(arr[i])) {
-            result = result.concat(flattenArray(arr[i]));
+            flattenArray(arr[i])  
         } else {
             result.push(arr[i]);
         } 
@@ -118,8 +80,7 @@ function flattenArray(arr) {
     return result;
 }
 
-// let flattenedArray = flattenArray(arr2);
-// console.log(flattenedArray);
+console.log(flattenArray(arr2))
 
 
 
@@ -235,20 +196,20 @@ happyNumber(num)
 
 
 
-// 10. Product of Array Except Self
-let arr=[1,2,3,4]
-let temp=[];
-for (var i of arr){
-    let prefix= i;
-    let product=1;
-    arr.map((item)=> {
-        if(item!=i){
-            product*=item
-        }
-    })
-    temp.push(product)
-}
-console.log("product", temp)
+// // 10. Product of Array Except Self
+// let arr=[1,2,3,4]
+// let temp=[];
+// for (var i of arr){
+//     let prefix= i;
+//     let product=1;
+//     arr.map((item)=> {
+//         if(item!=i){
+//             product*=item
+//         }
+//     })
+//     temp.push(product)
+// }
+// console.log("product", temp)
 
 
 //11 permutations
@@ -278,6 +239,38 @@ console.log(permutations("abc")); // ["abc", "acb", "bac", "bca", "cab", "cba"]
 // console.log(arr); // [5, 6, 7, 1, 2, 3, 4]
 
 
+//4. // Write a function to generate all permutations of a string.
+// function permute(str) {
+//     if (str.length <= 1) return [str];
+//     let permutations = [];
+//     for (let i = 0; i < str.length; i++) {
+//         let char = str[i];
+//         let remaining = str.slice(0, i) + str.slice(i + 1);
+//         for (let perm of permute(remaining)) {
+//             permutations.push(char + perm);
+//         }
+//     }
+//     return permutations;
+// }
 
 
 
+//3. synonyms  test doubt
+function longestCommonPrefix(strs) {
+    if (strs.length === 0) {
+        return '';
+    }
+    for (let i = 0; i < strs[0].length; i++) {
+        const char = strs[0][i];
+        for (let j = 1; j < strs.length; j++) {
+            if (i >= strs[j].length || strs[j][i] !== char) {
+                return strs[0].substring(0, i);
+            }
+        }
+    }
+    return strs[0];
+}
+// Example usage  find intersection
+const strs = ["flower", "flow", "flight"];
+// const result = longestCommonPrefix(strs);
+//   console.log(result);

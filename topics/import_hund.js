@@ -51,7 +51,7 @@
 // // console.log(y)
 // // const [,y]= data;   //2 element of data
 
-// // let info={
+// // let info1={
 // //     name: "kishan", age: 47, skill: "javascript"
 // // }
 
@@ -60,7 +60,7 @@
 // // }
 
 // // inf={
-// //     ...info, ...info2
+// //     ...info1, ...info2
 // // }
 // // console.log("info", inf)
 
@@ -83,8 +83,8 @@
 
 // const name="aijajkhan";
 // const age=26;
-// console.log(isNaN(name)) false not a number
-// console.log(isNaN(age))  true  number 
+// console.log(isNaN(name)) true
+// console.log(isNaN(age))  false
 
 
 

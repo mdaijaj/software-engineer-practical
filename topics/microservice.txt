@@ -3,3 +3,15 @@ data management between services big problem how to management?
 
 if there are 3 table relation if one table services failed then it also throw error not fetch data
 on syn condition
+
+
+
+dead letter queue(dlq):- 
+A dead-letter queue (DLQ) is a temporary storage location for messages that a software system can't process or deliver. DLQs are used to store messages that:
+Are sent to a non-existent queue
+Exceed the size limit
+Exceed the maximum queue length
+Reach the time to live (TTL)
+Are rejected by another queue exchange
+Have been read and rejected too many times 
+

@@ -2,7 +2,7 @@ Explain Vertical Scaling and Horizontal Scaling
 Scaling Horizontal and Vertical mysql 
 Difference between Where and Having Clause in SQL : 
 
-
+what is normalization?
 primary, unique key and forign key?
 
 primary key:-
@@ -18,7 +18,7 @@ a column or set of columns must be unique, but it's not required to identify a r
 
 
 Key Differences:-
-Feature	Primary Key	Unique Constraint
+Feature	Primary Key vs Unique Constraint
 Uniqueness	Must be unique
 Nullability	Cannot contain NULL values	Can contain NULL values
 Number per Table Only one primary key per table	Multiple unique constraints per table

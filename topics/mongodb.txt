@@ -148,7 +148,7 @@ db.collection_name.find({}, title: 1, _id: 0)
 
 show all document only key title not others
 {title: "ksisis"},
-{title: "rahls"},
+{title: "rahul"},
 {title: "how are you"},
 
 
