@@ -189,29 +189,84 @@ cntl+c to stop container or images
 
 
 docker details:-
-docker desktop download
+docker desktop download and docker cli
 docker intall CMD
-docker --version
+docker --version ||  docker -v
 docker run -it ubuntu(image_name)  //default install container if not install or exits
 docker exec containerName command
 
 
 container:- its like a machine
-image:- its like a operating system(op) which work on container.
+image:- its like a operating system(op) which work on container. 
 
 docker start docker_name
 docker stop dockerName
 docker images:- show all images
 docker run -it node  //install nodejs image
+docker exec <container_name> <command>
 docker container ls  //show all containers
-
 docker is replication of envirment variable
 
 multiple containers different type postgres,node, mongodb,redis,mailhog
 we have to exec single container we got problem
 
 solution:-
-docker compose se multiple container create,setup, destroy
+docker compose se multiple container create, setup, destroy
 docker compose up:- all container installing
 docker compose down:- all container removed
 docker compose up -d:-  run on background
+
+
+
+piyoush garg docker:-
+problem:-
+envirment setup to other system  munual its hacktic to all users so when we setup all these things
+same envirment  multiple user setup very difficult so thats why solved this problem
+
+
+docker deamon:-
+    its a tool which all work operation like image create, image pull
+docker desktop:-
+    its docker status check on desktop
+
+hub.com
+there is all github for all containers
+docker container ls -a (using a show all container list which is not active)
+
+
+docker exec -it container_name bash (for attach specific container)
+
+
+docker images
+docker images ls
+docker run -it node
+
+
+docker run -it -p 6000: 9000 image_name  (port mapping image container port to local port)
+if port not mapping not working any port.
+
+docker run -it -p 6000: 9000 -e key : value -e key : value image_name   (envirment variable mapping)
+
+
+
+
+
+
+basic nodejs app
+
+docker build -t (tags)  nodejs_demo .  (custom images)
+
+docker run -it -p 8000:8000 image_name
+docker exec -it imageId bash
+docker run -it -e port =4000 -p 4000: 4000 image_name (port mapping assigned)
+
+
+hub.docker.com (make free account)
+image push on docker like github
+
+docker compose up  (here is all multpple containers)
+docker compose down (remove all containers.)
+docker compose up -d
+
+ 
+

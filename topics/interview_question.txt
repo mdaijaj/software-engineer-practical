@@ -320,3 +320,54 @@ UPDATE db.Table1 SET col2 = (CASE col2 WHEN 1 THEN 0 ELSE 1 END);
 
  
 
+
+// Execution Order and Explanation
+1. Synchronous code executes first:
+2. process.nextTick is executed before other microtasks in the current phase of the event loop.
+    It's processed right after the synchronous code, as it's the highest-priority microtask.
+3. Microtasks from Promises and queueMicrotask are executed in the order they were queued:
+4. setTimeout (macrotask) runs last:
+
+
+
+//macro task
+setTimeout(()=>{
+    console.log("in timeout")   //macro task
+},0)
+
+
+
+const a = new Promise((resolve,reject)=>{   syncronous
+    console.log("Promise const")
+    resolve()
+});
+
+console.log("First")   syncronous
+
+a.then(()=>{
+    console.log("Promise resolved")    promise
+})
+
+console.log("Outside")    syncronous
+
+queueMicrotask(()=>{     next promise queue microtask
+    console.log("in queue microtask") 
+})
+
+
+// process.nextTick is executed before other microtasks in the current phase of the event loop.
+// It's processed right after the synchronous code,
+process.nextTick(()=>{    
+    console.log("inside nexttick")
+})
+
+
+// Promise const
+// First
+// Outside
+// inside nexttick
+// Promise resolved
+// in queue microtask
+// in timeout
+
+

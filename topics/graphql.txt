@@ -1,0 +1,17 @@
+
+
+
+backend graphql
+framwork appolo
+
+
+mutation :- when we insert into graphql
+query:- when we fetch data from server
+resolver:- logic we write in resolver.
+
+
+
+
+
+
+
