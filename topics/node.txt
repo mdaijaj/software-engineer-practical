@@ -7,7 +7,7 @@ core module ?
 What are streams in Nodejs Explain the different types of streams present in Nodejs What is Piping in Node?
 new promise practical
 how to handle multile req if nodejs single thread?  how to handle multile user reqeust Handle
-fork Differentiate between spawn and fork methods in Nodejs?   15. Differentiate between spawn and fork methods in Nodejs?
+fork Differentiate between spawn and fork meth ods in Nodejs?   15. Differentiate between spawn and fork methods in Nodejs?
 callback vs callback hell How can you avoid callback hells
 middleware with example
 asynchoronous vs synchoronous

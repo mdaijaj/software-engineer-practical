@@ -1,0 +1,247 @@
+1. What is PostgreSQL?
+Answer:
+PostgreSQL is an open-source, advanced relational database management system (RDBMS) that supports both SQL (relational) and JSON (non-relational) querying. It is known for its reliability, scalability, and extensibility.
+
+2. How is PostgreSQL different from MySQL?
+Answer:
+Feature	PostgreSQL	MySQL
+ACID Compliance	Fully ACID-compliant	ACID-compliant (except MyISAM engine)
+Joins & Subqueries	More advanced support	Limited support
+Indexing	Supports GIN, BRIN, etc.	Supports only standard B-tree indexes
+JSON Support	Advanced JSONB storage	JSON storage but less optimized
+
+3. What are the key features of PostgreSQL?
+Answer:
+ACID compliance
+Support for JSONB (binary JSON)
+Full-text search capabilities
+Advanced indexing (GIN, BRIN, etc.)
+Table partitioning
+Replication & high availability
+
+4. How do you create a database in PostgreSQL?
+Example:
+
+sql
+Copy
+Edit
+CREATE DATABASE mydb;
+To switch to the database:
+
+sql
+Copy
+Edit
+\c mydb
+
+5. How do you list all databases in PostgreSQL?
+Command:
+
+sql
+Copy
+Edit
+\l
+or
+
+sql
+Copy
+Edit
+SELECT datname FROM pg_database;
+
+6. What is the difference between CHAR, VARCHAR, and TEXT?
+Data Type	Description
+CHAR(n)	Fixed-length string (padded with spaces)
+VARCHAR(n)	Variable-length string with a maximum limit n
+TEXT	Unlimited-length string
+Example:
+
+sql
+Copy
+Edit
+CREATE TABLE test_table (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(50),
+    description TEXT
+);
+
+7. How do you create a table in PostgreSQL?
+Example:
+
+sql
+Copy
+Edit
+CREATE TABLE employees (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    salary NUMERIC(10, 2),
+    joining_date DATE
+);
+
+8. What are indexes in PostgreSQL, and what types of indexes does it support?
+Answer:
+Indexes improve query performance by allowing faster lookups. PostgreSQL supports:
+
+B-Tree (default)
+GIN (for full-text search)
+BRIN (for large tables)
+Hash Index
+Example:
+
+sql
+Copy
+Edit
+CREATE INDEX idx_name ON employees (name);
+
+9. How do you perform a backup and restore in PostgreSQL?
+Backup Command:
+
+sh
+Copy
+Edit
+pg_dump -U username -d mydb -F c -f backup_file.dump
+Restore Command:
+
+sh
+Copy
+Edit
+pg_restore -U username -d mydb -F c backup_file.dump
+
+10. What are the different types of joins in PostgreSQL?
+Answer:
+
+INNER JOIN: Returns matching rows from both tables.
+LEFT JOIN: Returns all rows from the left table and matching rows from the right table.
+RIGHT JOIN: Returns all rows from the right table and matching rows from the left table.
+FULL JOIN: Returns all rows when there is a match in either table.
+Example:
+
+sql
+Copy
+Edit
+SELECT employees.name, departments.dept_name
+FROM employees
+INNER JOIN departments ON employees.dept_id = departments.id;
+Intermediate PostgreSQL Questions
+
+11. What is the difference between INNER JOIN, LEFT JOIN, and RIGHT JOIN?
+Example:
+
+sql
+Copy
+Edit
+-- INNER JOIN (Only matching records)
+SELECT e.name, d.dept_name
+FROM employees e
+INNER JOIN departments d ON e.dept_id = d.id;
+
+-- LEFT JOIN (All employees, even without department)
+SELECT e.name, d.dept_name
+FROM employees e
+LEFT JOIN departments d ON e.dept_id = d.id;
+
+-- RIGHT JOIN (All departments, even if no employees)
+SELECT e.name, d.dept_name
+FROM employees e
+RIGHT JOIN departments d ON e.dept_id = d.id;
+
+12. How do you optimize a slow query in PostgreSQL?
+Answer:
+
+Use EXPLAIN ANALYZE
+Add proper indexes
+Avoid **SELECT ***
+Use proper data types
+Use partitioning for large tables
+Example:
+
+sql
+Copy
+Edit
+EXPLAIN ANALYZE SELECT * FROM employees WHERE salary > 50000;
+
+13. What is the EXPLAIN ANALYZE command?
+Answer:
+EXPLAIN ANALYZE helps analyze query execution plans and suggests optimizations.
+
+Example:
+
+sql
+Copy
+Edit
+EXPLAIN ANALYZE SELECT * FROM employees WHERE name = 'John Doe';
+
+14. What are CTEs (Common Table Expressions)?
+Example:
+
+sql
+Copy
+Edit
+WITH high_salary AS (
+    SELECT * FROM employees WHERE salary > 60000
+)
+SELECT * FROM high_salary;
+15. What are PostgreSQL schemas?
+Example:
+
+sql
+Copy
+Edit
+CREATE SCHEMA company;
+CREATE TABLE company.employees (id SERIAL, name VARCHAR(100));
+
+16. What is the difference between HAVING and WHERE?
+Answer:
+
+WHERE filters rows before aggregation.
+HAVING filters after aggregation.
+Example:
+
+sql
+Copy
+Edit
+SELECT department, COUNT(*) 
+FROM employees 
+WHERE salary > 40000 
+GROUP BY department 
+HAVING COUNT(*) > 5;
+
+17. How does PostgreSQL handle transactions?
+Example:
+
+sql
+Copy
+Edit
+BEGIN;
+UPDATE accounts SET balance = balance - 100 WHERE id = 1;
+UPDATE accounts SET balance = balance + 100 WHERE id = 2;
+COMMIT;
+
+18. What is ON CONFLICT in PostgreSQL?
+Example:
+
+sql
+Copy
+Edit
+INSERT INTO employees (id, name) VALUES (1, 'John Doe')
+ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name;
+
+19. What is the difference between SERIAL and UUID for primary keys?
+Answer:
+SERIAL: Auto-incrementing integer
+UUID: Globally unique identifier, useful for distributed systems
+Example:
+
+sql
+Copy
+Edit
+CREATE TABLE users (
+    id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+    name VARCHAR(100)
+);
+
+20. How does PostgreSQL implement full-text search?
+Example:
+
+sql
+Copy
+Edit
+SELECT * FROM articles WHERE to_tsvector(content) @@ to_tsquery('PostgreSQL');

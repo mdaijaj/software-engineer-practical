@@ -102,9 +102,9 @@ function SecondMax(arr2){
   //     for (let i of arr) {
   //         if (!obj[i]) {   //condition check object item is not exits or undefine
   //             obj[i] = 1;
-  //            // tempArr.push(i)
-  //              tempArr[idx] = i;
-  //             idx++;
+  //             tempArr.push(i)
+  //             // tempArr[idx] = i;
+  //            // idx++;
   //         } 
   //     }
   //     return tempArr;
@@ -146,7 +146,7 @@ let iterativeFunction = function (arr, x) {
       // Else look in left or right half accordingly
       else if (arr[mid] < x)
           start = mid + 1;
-      else
+      else 
           end = mid - 1;
   }
   return false;

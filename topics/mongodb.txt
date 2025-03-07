@@ -20,11 +20,10 @@ Agrregation
 Projection
 
 
-
-dump database
+dump database 
 mongodump --username your_username --password your_password --authenticationDatabase admin --out /path/to/output/directory
 or
-mongodump --uri="mongodb://13.127.232.191:21819/vedobi" --forceTableScan
+mongodump --uri="mongodb://13.127.232.191:21819 /vedobi" --forceTableScan
 restore:-
 
 
@@ -53,24 +52,13 @@ one document size  max is 16mb not exeed more that
 
 
 // Find the second highest salary
+1st method
 db.employees.aggregate([
-  {
-    $group: {
-      _id: "$salary", // Group by salary to ensure unique values
-      employees: { $push: "$$ROOT" } // Keep the employee records for later use, if needed
-    }
-  },
-  {
-    $sort: { _id: -1 } // Sort salaries in descending order (highest to lowest)
-  },
-  {
-    $skip: 1 // Skip the highest salary to get the second highest
-  },
-  {
-    $limit: 1 // Limit the result to the second unique highest salary
-  }
+  { $group: { _id: "$salary" } },  // Group by unique salaries
+  { $sort: { _id: -1 } },          // Sort salaries in descending order
+  { $skip: 1 },                    // Skip the highest salary
+  { $limit: 1 }                     // Get the second highest salary
 ]);
-
 
 const highestSalary = await collection.findOne({}, { sort: { salary: -1 }, projection: { salary: 1, _id: 0 } });
 const secondHighestSalary = await collection.find({ salary: { $lt: highestSalary } })
@@ -88,7 +76,7 @@ nosql database Mongodb
 
 
 aggregation in Mongodb:-
-aggregation is the process of selecting data from a collection to process multiple documents and returns computed results
+aggregation is the process of selecting data  from a collection to process multiple documents and returns computed results
 
 group value from multiple documents together
 fetching a lots of nested data from performed complex operations
@@ -258,8 +246,7 @@ db.Order.find().populate('customerId').then(orders => {
 
 
 unwind:-
-students:-
-[
+students:- [
   {
     "_id": 1,
     "name": "Alice",
@@ -356,3 +343,49 @@ output:-
     "subjects": null
   }
 ]
+
+
+Query Optimization in MongoDB
+Optimizing queries in MongoDB is essential to improve performance, reduce response time, and minimize resource usage:
+
+
+
+
+4.Using Covered Queries
+5.Avoiding $where and Regex on Non-Indexed Fields
+6.Optimizing Aggregation Pipelines
+7.Using $exists and $type Efficiently
+8.Analyzing Queries with .explain()
+
+
+1.Using Indexes
+db.users.createIndex({ email: 1 });
+db.users.find({ email: "user@example.com" });
+
+
+2.Avoiding Full Collection Scans
+Bad Query (No Index)
+db.orders.find({ status: "pending" });
+
+To optimize, create an index:
+db.orders.createIndex({ status: 1 });
+
+
+3.Using Projection to Return Only Necessary Fields
+Bad Query (Fetching All Fields)
+db.users.find({ age: { $gt: 25 } });
+
+Optimized Query (Fetching Required Fields Only)
+db.users.find({ age: { $gt: 25 } }, { name: 1, email: 1, _id: 0 });
+
+
+
+
+Comparison: MongoDB vs. MySQL Optimization
+Optimization Technique	MongoDB	MySQL
+Indexing	createIndex()	CREATE INDEX
+Projection	{field: 1}	SELECT column_name
+Optimizing Joins	$lookup in Aggregation	JOIN with Indexes
+Query Analysis	.explain("executionStats")	EXPLAIN
+Query Caching	Not available (Use Redis)	Query Cache
+Avoid Full Scans	Indexing, Filtering Early	Indexing, WHERE Clause

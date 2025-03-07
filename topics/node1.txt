@@ -298,7 +298,20 @@ A middleware is a simple function that has the ability to handle incoming reques
 Execute any code.
 Make changes to the request and the response objects.
 End the request-response cycle.
-Call the next middleware function in the stack.
+Call the next middleware function in the stack. 
+
+const authMiddleware = (req, res, next) => {
+    if (req.headers.authorization === 'Bearer my-secret-token') {
+        next(); // Authorized, proceed to the next middleware or route handler
+    } else {
+        res.status(403).send('Forbidden');
+    }
+};
+
+app.get('/secure', authMiddleware, (req, res) => {
+    res.send('Secure Data');
+});
+
 
 
 11 What are the different types of middleware?
@@ -434,7 +447,7 @@ Chaining is a mechanism whereby the output of one stream is connected to another
 
 19 Explain REPL In NodeJs?
 The REPL stands for “Read Eval Print Loop”. It is a simple program that accepts the commands, evaluates them, and finally prints the results. 
-REPL provides an environment similar to that of Unix/Linux shell or a window console, in which we can enter the command and the system, in turn, responds with the output. REPL performs the following tasks.
+REPL provides an environment similar to that of Unix/Linux shell or a  window console, in which we can enter the command and the system, in turn, responds with the output. REPL performs the following tasks.
 
 READ - It Reads the input from the user, parses it into JavaScript data structure and then stores it in the memory.
 EVAL - It Executes the data structure.

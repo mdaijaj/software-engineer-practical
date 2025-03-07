@@ -1,8 +1,6 @@
 middleware
 query optionmiztion
 data modeling
-statefull stateless
-
 rest api how to statefull
 web hook
 sop
@@ -23,6 +21,7 @@ authentication and authority
 token expiry
 refresh   tocken
 
+statefull stateless
 
 
 acid
@@ -371,3 +370,34 @@ process.nextTick(()=>{
 // in timeout
 
 
+
+
+Spread and rest
+split and slice
+map forearch
+stream with example
+scope
+hosting
+freez
+event loop
+console wale
+cluseter
+thread
+event loop how it Work
+aws
+nodejs
+
+database
+sql group by 
+query customer order count
+group by having
+aggreate gationg
+aggreate pipeling
+indexing, replicas
+radis,
+authentication optimzation
+jwt Work token manage how it Work
+middelware
+
+loop
+online  api call in reactjs

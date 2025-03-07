@@ -71,10 +71,11 @@
 
 
 
-// // const name="code step by step";
-// // console.log(!typeof(name) ==="object")  //false  //first naration check and compare operator check
-// // console.log(!typeof(name) ==="string")  //false
-// // console.log(!typeof(name) ===false)  //true    //string using narate(!) convert to boolean
+// const name="code step by step";
+// console.log(!typeof(name)) //false
+// console.log(!typeof(name) ==="object")  //false  //first naration check and compare operator check
+// console.log(!typeof(name) ==="string")  //false
+// console.log(!typeof(name) ===false)  //true    //string using narate(!) convert to boolean
 
 
 
@@ -95,17 +96,19 @@
 // // Object.seal(person)  //after use seal you cannot add in object properties
 // person.age=45
 // person.name="ksish"  //update name only not add object properties.
-// console.log("kkkk", person)
+// console.log("kkkk", person) 
+// output: kkkk { name: 'ksish' }
 
 
 // //freeze not update or not add
 // let person={
 //     name: "aijaj khan"
 // }
-// Object.freeze(person)  //after use seal you cannot add in object properties
+// Object.freeze(person)  //after use freezed you cannot modify in object properties
 // person.age=45
 // person.name="ksish"  //update name only not add object properties.
-// console.log("kkkk", person)
+// console.log("kkkk", person) 
+// ouput: { name: 'aijaj khan' }
 
 
 
@@ -113,7 +116,7 @@ let x=1;
 let y=1
 let z=2
 // console.log("arthematic", x === y === --z)   //boolean and number   //false
-// console.log("arthematic", x === y == --z)   //boolean and number   //true
+// console.log("arthematic", x === y == --z)   //boolean and number   //false
 // Then, true === --z is evaluated, which results in false because true (a boolean) is not strictly equal to 1 (a number).
 
 

@@ -359,7 +359,7 @@ reuse multiple component
 webpack:-
 when we create setup react proeject it automatic install webpack and bebel it is a format bundal a files that is called webpack. 
 sari files ko ek bunle ke form me rakhti hai
-when we proeject setup npx create react app application all files bundle using webpack
+when we proeject setu p npx create react app application all files bundle using webpack
 
 
 bebel

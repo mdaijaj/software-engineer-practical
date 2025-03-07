@@ -8,7 +8,7 @@ function createTaxCalculator(state, taxRate) {
   return function(amount) {
     console.log(`Calculating tax for ${state}...`);
     return amount * taxRate;
-  };
+  };  
 }  
 
 // Creating tax calculators for different states
@@ -74,7 +74,7 @@ inviteEmployee2("Hello", "How are you?"); // Hello Jimmy Baily, How are you?
 // 13. What is the currying function
 // Currying is the process of taking a function with multiple arguments and turning it into a sequence of functions 
 // each with only a single argument
-const multiArgFunction = (a, b, c) => a + b + c;
+const multiArgFunction = (a, b, c) =>  a+b+c  
 console.log(multiArgFunction(1, 2, 3)); // 6
 
 
@@ -82,7 +82,7 @@ console.log(multiArgFunction(1, 2, 3)); // 6
 //curry same clousers example different code write way on single line multiple arguments
 // function Addition1(a){
 //     return function(b){
-//         return function(c){
+//         return function(c){  
 //             return a+b+c
 //         }
 //     }
@@ -153,18 +153,18 @@ shallowCopy.address.city = "mumbai" ;
 // console.log(original.address.city);      // mumbai
 // console.log(shallowCopy.address.city);   // mumbai
 
-// so this is effected original obj when we use nested object not copy shallow copy then we use // deep copy
-let deepCopy = JSON.parse(JSON.stringify(original));
+// so this is effected original obj when we use nested object not copy shallow copy then we use
+let deepCopy = JSON.parse(JSON.stringify(original));  // deep copy
 deepCopy.address.city = mumbai;
 // console.log(original.address.city);      // pune
 // console.log(deepCopy.address.city);   // mumbai 
 
 
-let original2 = {
+let  original2  = {
   name: "Alice",
   address: {
       state: "Maharastra",
-      city: "Pune"
+      city: "Pune"  
   },
   getData: function(){
     return "api is calling!"
@@ -313,13 +313,13 @@ function doTask2(callback2) {
   setTimeout(function () {
     console.log("Task 2 done");
     callback2();
-  }, 1000);
+  }, 4000);
 }
 
 function doTask3() {
   setTimeout(function () {
     console.log("Task 3 done");
-  }, 1000);
+  }, 2000);
 }
 
 // // Nested callback hell 
@@ -677,15 +677,48 @@ var person2 = new Person('Jane', 'Smith');
 // console.log("language", a.language)
 
 
-
-
-
 let flag=true
 
 setTimeout(()=>{
   console.log("aijaj")
-}, 1000)
+},  )
 
 while(flag){
-  console.log("hello world")
+  console.log("hello world")   //infinite print
 }
+
+
+//spread vs rest
+// 1. Spread Operator (...)
+// The spread operator is used to expand an iterable (array, object, string) into individual elements.
+
+// Example 1: Spreading an Array
+const arr1 = [1, 2, 3];
+const arr2 = [4, 5, 6];
+const combinedArr = [...arr1, ...arr2];
+console.log(combinedArr); // Output: [1, 2, 3, 4, 5, 6]
+
+// Example 2: Adding/Overriding Properties in Objects
+const user = { name: "Alice", age: 25 };
+const updatedUser = { ...user, age: 26, city: "Delhi" };
+console.log(updatedUser); 
+// Output: { name: 'Alice', age: 26, city: 'Delhi' }
+
+
+// 2. Rest Parameter (...)
+// The rest parameter collects multiple values into an array. It is mainly used in function arguments.
+
+// Example 1: Function with Rest Parameter
+const sum = (...numbers) => {
+    return numbers.reduce((acc, num) => acc + num, 0);
+};
+console.log(sum(1, 2, 3, 4)); // Output: 10
+// 👉 Gathers all function arguments into an array (numbers).
+
+// Example 2: Rest Parameters with Named Arguments
+const userInfo = (name, age, ...hobbies) => {
+    console.log(`Name: ${name}, Age: ${age}, Hobbies: ${hobbies}`);
+};
+
+userInfo("John", 30, "Reading", "Gaming", "Traveling");
+// Output: Name: John, Age: 30, Hobbies: Reading, Gaming, Traveling
