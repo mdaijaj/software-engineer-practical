@@ -11,8 +11,12 @@ create instance and setup aws vm instance
     launch instance
     create a ppk or pem file
 
-connection aws 
+connection aws
 connection mongodb and configraion
 connection mongodb
+encrypted file in nodejs
+sms service
+mongodb operator with solutions
+
 
 

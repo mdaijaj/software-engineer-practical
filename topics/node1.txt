@@ -20,7 +20,8 @@ fetchData().then((data) => {
 console.log('Task 3');  
 
 2. Single-Threaded with Event Loop
-Single-Threaded Model: Node.js operates on a single thread using the event loop to handle multiple connections concurrently. This allows it to manage thousands of connections efficiently without creating a new thread for each connection.
+Single-Threaded Model: Node.js operates on a single thread using the event loop to handle multiple connections concurrently. 
+This allows it to manage thousands of connections efficiently without creating a new thread for each connection.
 Event Loop: The event loop is responsible for managing and dispatching events and callbacks, handling asynchronous operations.
 
 3. High Performance
@@ -557,3 +558,57 @@ event handlers
 setTimeout
 setInterver
 setimmediate
+
+
+import csurf from "csurf";
+import express from "express";
+
+const app = express();
+const csrfProtection = csurf({ cookie: true });
+
+app.use(csrfProtection);
+
+app.get("/form", (req, res) => {
+  res.render("form", { csrfToken: req.csrfToken() });
+});
+
+app.post("/submit", (req, res) => {
+  res.send("Form submitted successfully!");
+});
+
+
+
+//synchoronous
+const fs = require('fs');
+console.log("Start");
+
+// Blocking file read
+const data = fs.readFileSync('example.txt', 'utf8');
+console.log(data);
+console.log("End");
+
+
+//asynchoronous
+const fs = require('fs');
+console.log("Start");
+
+// Non-blocking file read
+fs.readFile('example.txt', 'utf8', (err, data) => {
+    if (err) {
+        console.error(err);
+        return;
+    }
+    console.log(data);
+});
+console.log("End");
+
+
+
+if nodejs is a single thread How Node.js Manages Concurrency?
+Event Loop	Manages asynchronous operations (I/O, timers, promises).
+Non-Blocking I/O	Frees the main thread for other tasks.
+Worker Threads	Handles CPU-intensive tasks in the background.
+Thread Pool (libuv)	Manages file system, database, and network tasks.
+Cluster Mode	Runs multiple Node.js instances to utilize multi-core CPUs.
+
+

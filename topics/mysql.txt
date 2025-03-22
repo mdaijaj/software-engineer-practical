@@ -12,7 +12,7 @@ A primary key automatically creates a clustered index in most databases
 its auto increament
 
 unique key:-
-Ensures that all values in the column are unique, but null values are allowed.
+Ensures that all values in the column are unique, but null values are not allowed.
 Can contain one or more NULL values.
 a column or set of columns must be unique, but it's not required to identify a record.
 
@@ -105,8 +105,7 @@ left
 full join
 inner join
 self
-CARTESIAN join
-CROSS JOIN
+CARTESIAN join (CROSS JOIN)
 
 IN Operator
 SELECT * FROM Customers
@@ -119,17 +118,20 @@ WHERE Price BETWEEN 10 AND 20;
 The SQL COUNT(), AVG() and SUM() Functions
 
 
-SQL HAVING Examples
+SQL HAVING Examples  //multiple row use having and single row where used
 SELECT COUNT(CustomerID), Country FROM Customers
 GROUP BY Country
 HAVING COUNT(CustomerID) > 5;
 
 what is Scalable mysql Horizontal and Vertical?
 
+orm what is meaning pros const with example?
+ORM (Object-Relational Mapping) is a technique that allows developers to interact with a relational database 
+(e.g., PostgreSQL, MySQL, MongoDB) using object-oriented programming instead of writing raw SQL queries.
 
-doubt?
-orm what is meaning pros const with example
-
+Why Use ORM? (Advantages Over Raw SQL)
+✅ 1. Easier & Cleaner Code (No Need for Raw SQL Queries)
+ORM allows you to interact with the database using objects instead of complex SQL queries.
 
 SELECT employees.id, employees.name, departments.department_name
 FROM employees
@@ -168,12 +170,12 @@ START TRANSACTION;
 -- Step 1: Deduct amount from sender's account
 UPDATE accounts 
 SET balance = balance - 100 
-WHERE account_id = 1;
+WHERE account_no = 1;
 
 -- Step 2: Add amount to receiver's account
 UPDATE accounts 
 SET balance = balance + 100 
-WHERE account_id = 2;
+WHERE account_no = 2;
 
 -- If both operations succeed, commit the transaction
 COMMIT;
@@ -194,3 +196,117 @@ WHERE account_id = 999;  -- This account_id does not exist
 
 -- Rollback if any statement fails
 ROLLBACK;
+
+
+The SQL LIKE clause is used to compare a value to similar values using wildcard operators. There are two wildcards used in
+conjunction with the LIKE operator.
+• The percent sign (%)
+• The underscore (_)
+The percent sign represents zero, one or multiple characters. The underscore represents a single number or character. These
+symbols can be used in combinations.
+
+
+
+1. The percent sign (%)
+Matches one or more characters.
+Note − MS Access uses the asterisk (*) wildcard character instead of the percent sign (%) wildcard character.
+2. The underscore (_)
+Matches one character.
+Note − MS Access uses a question mark (?) instead of the underscore (_) to match any one character
+
+
+
+all query:-
+1
+WHERE SALARY LIKE '200%'
+Finds any values that start with 200.
+2
+WHERE SALARY LIKE '%200%'
+Finds any values that have 200 in any position.
+3
+WHERE SALARY LIKE '_00%'
+Finds any values that have 00 in the second and third positions.
+4
+WHERE SALARY LIKE '2_%_%'
+Finds any values that start with 2 and are at least 3 characters in length.
+5
+WHERE SALARY LIKE '%2'
+Finds any values that end with 2.
+6
+WHERE SALARY LIKE '_2%3'
+Finds any values that have a 2 in the second position and end with a 3.
+7
+WHERE SALARY LIKE '2___3'
+Finds any values in a five-digit number that start with 2 and end with 3.
+
+having me where clouse
+
+
+
+
+
+
+UNION: Removes duplicate rows and returns only distinct results.
+UNION ALL: Includes all records, even duplicates.
+
+Employee Table
+id	name	department
+1	John	HR
+2	Alice	IT
+3	Bob	IT
+
+Manager Table
+id	name	department
+1	John	HR
+4	Sarah	Finance
+
+Using UNION:-
+SELECT name, department FROM Employee
+UNION
+SELECT name, department FROM Manager;
+
+Output (Distinct Results)
+name	department
+John	HR
+Alice	IT
+Bob	IT
+Sarah	Finance
+
+
+Using UNION ALL
+SELECT name, department FROM Employee
+UNION ALL
+SELECT name, department FROM Manager;
+Output (All Rows Including Duplicates)
+
+name	department
+John	HR
+Alice	IT
+Bob	IT
+John	HR
+Sarah	Finance
+
+
+1. 2nd highest Salary :
+Syntax:
+SELECT MAX(SALARY)
+FROM TABLENAME
+WHERE SALARY NOT IN ( SELECT MAX(SALARY) FROM TABLENAME);
+
+
+
+3. Nth Highest Salary:
+Syntax:
+SELECT MIN(SALARY)
+FROM TABLENAME
+WHERE SALARY IN (SELECT TOP Nth SALARY FROM TABLENAME
+ORDER BY SALARY DESC);
+
+
+SELECT * FROM Customers
+WHERE Country IN ('Germany', 'France', 'UK');
+
+
+Ex: The following SQL statement selects all products with a price between 10 and 20:
+SELECT * FROM Products
+WHERE Price BETWEEN 10 AND 20;

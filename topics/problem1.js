@@ -41,7 +41,7 @@ console.log(array); // Output: [11, 12, 22, 25, 34, 64, 90]
 
 
 
-//sorting
+// sorting
 // let string=["a", "c", "b", "g","d", "r" ,"z", "o"]  // string only do sort()
 // let numbers = [0, 1, 2, 30, 15, 5, 20];
 // numbers.sort(function(a , b){
@@ -344,9 +344,9 @@ console.log('b:', b); // b: 5
 
 
 //Using Destructuring Assignment: 
-// let a = 5;
-// let b = 10;
-// [a, b] = [b, a];
+  // let a = 5;
+  // let b = 10;
+  // [a, b] = [b, a];
 // console.log('a:', a); // a: 10
 // console.log('b:', b); // b: 5
 
@@ -465,7 +465,7 @@ function findMissingNumber(arr) {
 }
 // const arr = [1, 2, 4, 5, 6];
 // console.log('Missing number:', findMissingNumber(arr));  // Output: 3
-
+ 
 
 
 //18 find index of item which is sum of numbers equal to target value.
@@ -534,23 +534,29 @@ Pairsum_target(arr, target)
 // console.log(deepEqual({ a: 1 }, { a: 1 }));
 
 
-//21 swap in array
-// let arr=[7,8,5,4,7,8]
-// let start=0; 
-// let end=arr.length-1;
+//6. const arr1 = [0, 1, 2, [3,7,5,[2,4]]];
+// console.log(arr1.flat(2));
 
-// function swap(arr, start, end){
-//    let temp = arr[start];
-//     arr[start] = arr[end];
-//     arr[end] = temp;
-// }
+// let arr=[1, [2, [3, 4]], 5]
+// let result=arr.flat(Infinity);   // [1,2,3,4,5]
+// console.log(result)  
 
-// while(start<end){
-//     swap(arr, start, end);
-//     start++;
-//     end--;
-// }
-// console.log(arr)1 2 3
-// 1 2 3
-// 1 2 3
-// 1 2 3
+
+let arr2 = [1, 2, 3, [4, 5, 6], [7, 8, [9, 10, 11], 12], [13, 14, 15]];
+let result = [];
+
+function flattenArray(arr) {
+    for (let i = 0; i < arr.length; i++) {
+        if (Array.isArray(arr[i])) {
+            flattenArray(arr[i])  
+        } else {
+            result.push(arr[i]);
+        } 
+    }
+    return result;
+}
+
+console.log(flattenArray(arr2))  
+
+
+

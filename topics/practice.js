@@ -1,7 +1,7 @@
 let count=0;
 function getData(){
     console.log("feting datas", count)
-    count+=1
+    count += 1
 }
 
 //debouncing

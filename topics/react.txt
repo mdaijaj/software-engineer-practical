@@ -583,3 +583,53 @@ store: counter_slice introduct in store
 
 
 
+fetch("https://example.com/api", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+    "X-CSRF-Token": "your_csrf_token",
+  },
+  body: JSON.stringify({ data: "some_data" }),
+});
+
+
+// de-bouncing
+// when we search bar like product name no function invoke each keybaord after search word few mili second function invoke it's call de-bouncing.
+ // when we scroll and resize window or component that it stop unwantage or un-nessary function invoke using de-bouncing 
+
+
+import React, { useState, useEffect } from "react";
+
+const SearchComponent = () => {
+  const [query, setQuery] = useState("");
+  const [debouncedQuery, setDebouncedQuery] = useState(query);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setDebouncedQuery(query);
+    }, 500); // 500ms delay
+
+    return () => clearTimeout(timer); // Cleanup previous timer
+  }, [query]);
+
+  useEffect(() => {
+    if (debouncedQuery) {
+      console.log("Fetching results for:", debouncedQuery);
+      // Call API or perform action
+    }
+  }, [debouncedQuery]);
+
+  return (
+    <div>
+      <input
+        type="text"
+        value={query}
+        onChange={(e) => setQuery(e.target.value)}
+        placeholder="Search..."
+      />
+      <p>Search Query: {debouncedQuery}</p>
+    </div>
+  );
+};
+
+export default SearchComponent;

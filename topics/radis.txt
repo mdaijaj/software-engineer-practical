@@ -1,0 +1,88 @@
+docker
+aws
+radis
+queque message system
+
+
+
+raddish ram db
+caching
+message brocker
+document database
+straming inchain
+
+
+redis use ram  20 ns
+use caching
+case sensitive
+
+data type
+key value
+string
+list
+hashtable
+set
+geospaital
+
+1. Basic Commands
+SET key value	Set a key with a value
+GET key	Get the value of a key
+DEL key	Delete a key
+EXISTS key	Check if a key exists (returns 1 if exists, 0 if not)
+EXPIRE key seconds	Set an expiration time for a key
+TTL key	Get remaining time to live for a key
+FLUSHALL	Delete all keys from all databases
+FLUSHDB	Delete all keys from the current database
+
+
+
+2. String Commands
+Command	Description
+APPEND key value	Append value to an existing key
+INCR key	Increment a numeric value by 1
+INCRBY key increment	Increment by a specific value
+DECR key	Decrement a numeric value by 1
+DECRBY key decrement	Decrement by a specific value
+MSET key1 value1 key2 value2	Set multiple keys at once
+MGET key1 key2	Get multiple values at once
+
+Example:
+SET count 10
+INCR count   # 11
+DECR count   # 10
+
+
+3. List Commands
+Command	Description
+LPUSH key value1 value2	Add values to the left of the list
+RPUSH key value1 value2	Add values to the right of the list
+LPOP key	Remove and return the leftmost element
+RPOP key	Remove and return the rightmost element
+LRANGE key start stop	Get elements from a list within the given range
+LLEN key	Get the length of the list
+
+example:-
+LPUSH mylist A B C  # mylist = [C, B, A]
+RPUSH mylist D      # mylist = [C, B, A, D]
+LPOP mylist         # C
+
+
+4. Set Commands
+Command	Description
+SADD key value1 value2	Add values to a set
+SREM key value	Remove a value from a set
+SMEMBERS key	Get all elements in a set
+SISMEMBER key value	Check if a value exists in the set (1 or 0)
+SCARD key	Get the number of elements in a set
+SUNION key1 key2	Get union of multiple sets
+SINTER key1 key2	Get intersection of multiple sets
+
+🔹 Example:
+SADD fruits apple banana orange
+SREM fruits banana
+SMEMBERS fruits  # ["apple", "orange"]
+
+
+
+traditional db mongodb mysql ssd 200ms
+

@@ -1,7 +1,7 @@
 //1. clouser :-    
 // A closure is the combination of a function and the lexical environment within that function was declared. 
 //a function along with its laxical scope bundal together its call clouse 
-//a clouser give the access to the outer or enclosing function’s variables from inner function.
+//a clouser give the access to the outer from inner function.
 
 // Function to create a tax calculator for a specific state using closure
 function createTaxCalculator(state, taxRate) {
@@ -9,7 +9,7 @@ function createTaxCalculator(state, taxRate) {
     console.log(`Calculating tax for ${state}...`);
     return amount * taxRate;
   };  
-}  
+}   
 
 // Creating tax calculators for different states
 const californiaTaxCalculator = createTaxCalculator('California', 0.0725);  // 7.25% tax rate
@@ -370,19 +370,30 @@ function doTask3() {
 
 // 1. basic promise
 const myPromise = new Promise((resolve, reject) => {
-  let success = true; 
-  if (success) {
-      resolve("Promise fulfilled!");
-  } else {
-      reject("Promise rejected!");
-  }
+  let success = true; // Change to false to test rejection
+  console.log("Promise is in Pending state...");
+
+  setTimeout(() => {
+      if (success) {
+          resolve("Promise Resolved!");
+      } else {
+          reject("Promise Rejected!");
+      }
+  }, 2000);
 });
 
-myPromise.then((message) => {
-      console.log(message); // Output: "Promise fulfilled!" if success is true
-}).catch((error) => {
-    console.error(error); // Output: "Promise rejected!" if success is false
-});
+// Handling the Promise
+myPromise
+  .then((result) => {
+      console.log("Fulfilled:", result);
+  })
+  .catch((error) => {
+      console.log("Rejected:", error);
+  })
+  .finally(() => {
+      console.log("Promise is Settled.");
+  });
+
 
 
 // 2. chaining promise
@@ -573,11 +584,7 @@ const arr = [1, 2, 3];
 console.log(arr.forEach(curr => curr * curr)); // Output: undefined
 
 
-// de-bouncing
-// when we search bar like product name no function invoke each keybaord after search word few mili second function invoke it's call de-bouncing.
- // when we scroll and resize window or component that it stop unwantage or un-nessary function invoke using de-bouncing 
-
- let person = {
+let person = {
   name: 'John',
   age: 30
 };
@@ -722,3 +729,51 @@ const userInfo = (name, age, ...hobbies) => {
 
 userInfo("John", 30, "Reading", "Gaming", "Traveling");
 // Output: Name: John, Age: 30, Hobbies: Reading, Gaming, Traveling
+
+
+// 1. Microtasks
+// Microtasks are executed immediately after the current execution context and before any macrotasks.
+// Microtasks include:
+// Promises (.then(), .catch(), .finally())
+// MutationObserver
+// queueMicrotask()
+
+example:-
+console.log("Script start");
+Promise.resolve().then(() => {
+    console.log("Microtask 1");
+});
+
+queueMicrotask(() => {
+    console.log("Microtask 2");
+});
+console.log("Script end");
+
+output:-
+// Script start
+// Script end
+// Microtask 1
+// Microtask 2
+
+
+
+// 2. Macrotasks
+// Macrotasks (or simply Tasks) are scheduled by:
+setTimeout
+setInterval
+setImmediate (Node.js)
+I/O operations
+MessageChannel
+requestAnimationFrame (Browser)
+
+example:-
+console.log("Script start");
+setTimeout(() => {
+    console.log("Macrotask (setTimeout)");
+}, 0);
+console.log("Script end");
+
+output:-
+// Script start
+// Script end
+// Macrotask (setTimeout) 

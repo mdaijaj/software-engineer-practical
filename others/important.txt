@@ -48,12 +48,21 @@ token expiry
 refresh   tocken
 
 
-
-
-
 practical
 load balance
 Sharding
 replica
 normalization
 ACID
+
+
+
+what is nodejs why we choose?
+mongodb and mysql query three table and 
+first charactor capital letter
+it first
+
+
+microservice
+migration pg not take env file instead of env take from cloud service
+problem solve

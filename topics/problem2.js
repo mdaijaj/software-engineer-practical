@@ -12,6 +12,28 @@
 // console.log(invertObject(obj)); // {1: "a", 2: "b"}
 
 
+//21 swap in array
+// let arr=[7,8,5,4,7,8]
+// let start=0; 
+// let end=arr.length-1;
+
+// function swap(arr, start, end){
+//    let temp = arr[start];
+//     arr[start] = arr[end];
+//     arr[end] = temp;
+// }
+
+// while(start<end){
+//     swap(arr, start, end);
+//     start++;
+//     end--;
+// }
+// console.log(arr)1 2 3
+// 1 2 3
+// 1 2 3
+// 1 2 3
+
+
 
 //2. // Find the greatest common divisor (GCD) of two numbers. (hcf)
 function gcd(a, b) {
@@ -55,33 +77,6 @@ function fibonaccieSerries(n, arr){
 }
 let arr=[0,1]
 fibonaccieSerries(5, arr)
-
-
-
-//6. const arr1 = [0, 1, 2, [3,7,5,[2,4]]];
-// console.log(arr1.flat(2));
-
-// let arr=[1, [2, [3, 4]], 5]
-// let result=arr.flat(Infinity);   // [1,2,3,4,5]
-// console.log(result)
-
-
-let arr2 = [1, 2, 3, [4, 5, 6], [7, 8, [9, 10, 11], 12], [13, 14, 15]];
-let result = [];
-
-function flattenArray(arr) {
-    for (let i = 0; i < arr.length; i++) {
-        if (Array.isArray(arr[i])) {
-            flattenArray(arr[i])  
-        } else {
-            result.push(arr[i]);
-        } 
-    }
-    return result;
-}
-
-console.log(flattenArray(arr2))
-
 
 
 //7. matrix Driver code

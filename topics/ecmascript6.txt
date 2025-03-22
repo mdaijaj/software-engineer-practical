@@ -5,7 +5,7 @@
 // 4. Enhanced Object Literals
 // 5. Destructuring
 // 6. Default Parameter
-// 7. Spread Operators Rest
+// 7. Spread Rest Operators 
 // 8. Classes
 // 9. Promises
 // 10. Array helper functions Array Methods
@@ -60,12 +60,12 @@ console.log(x)   //5
 
 let x=5;
 if(x){
-    var x=10
+    let x=10
 }
 console.log(x)   //10
 
 
-3. Multi-line Strings
+3. Multi-line Strings using backtick
 let greeting = `Hello World,     
                 Greetings to all,
                 Keep Learning and Practicing!`
@@ -138,7 +138,7 @@ class UserProfile {
      console.log(`The Full-Name is ${this.firstName} ${this.lastName}`);    
    } 
 }
-let obj = new UserProfile('John', 'Smith');
+let obj = new UserProfile('John', 'Smith');  //generate instace
 obj.getName(); // output: The Full-Name is John Smith
 
 

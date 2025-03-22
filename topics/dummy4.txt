@@ -1,1 +1,106 @@
 add new file here or content
+
+
+let result = ""
+for(let i=0;i<str.length;i++){
+    const char = str[i]
+    const repCount = str[i+1]
+    for(let i=0;i<repCount;i++){
+        result += char
+    }
+}
+console.log(result)
+const str = "3a5v6c"
+
+let result = ""
+for(let i=0;i<str.length;i++){
+    const char = str[i+1]
+    const repCount = str[i]
+    for(let i=0;i<repCount;i++){
+        result += char
+    }
+}
+console.log(result)
+
+
+
+three table: 
+employee, department, salary
+1. salary should be lowest
+2. department should be it on top
+3. employee name should be capital letter
+Harshit Bhargav
+11:21 AM
+const str = "a3b2c5"
+
+let result = ""
+for(let i=0;i<str.length;i++){
+    const char = str[i]
+    const repCount = str[i+1]
+    for(let i=0;i<repCount;i++){
+        result += char
+    }
+}
+console.log(result)
+const str = "3a5v6c"
+
+let result = ""
+for(let i=0;i<str.length;i++){
+    const char = str[i+1]
+    const repCount = str[i]
+    for(let i=0;i<repCount;i++){
+        result += char
+    }
+}
+console.log(result)
+Harshit Bhargav
+11:25 AM
+let arr = [2,5,0,2,6,0,1,0]
+
+let index = 0
+for(let i=0;i<arr.length;i++){
+    if(arr[i]!==0){
+        [arr[index],arr[i]] = [arr[i],arr[index]]
+        index++
+    }
+}
+
+console.log(arr)
+You
+11:35 AM
+let arr = [2,5,0,2,6,0,1,0]
+let arr = [2,5,0,2,6,0,1,0]
+Harshit Bhargav
+11:50 AM
+let flag = true;
+setTimeout(() => {
+    flag = false;
+    console.log("I am changing");
+}, 1);
+while (flag) {
+    console.log('Hello world');
+}
+Harshit Bhargav
+11:52 AM
+console.log("Line 1 " ,a); 
+var a = 10;
+function test() {
+  console.log("line 2 " ,a);  // Line 2
+  var a = 20;
+  setTimeout(() => {
+    console.log("set timeout",a);  // Line 3
+  }, 0);
+  Promise.resolve().then(() => {
+    console.log("resolve",a);  // Line 4
+  });
+  console.log(" line 5 ",a);  // Line 5
+}
+test();
+console.log("line 6 ",a);
+Harshit Bhargav
+11:57 AM
+function sum (a=5, b=2){
+    console.log(a + b);
+}
+ 
+sum(null,20)

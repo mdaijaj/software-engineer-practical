@@ -1,16 +1,12 @@
-middleware
-query optionmiztion
-data modeling
-rest api how to statefull
-web hook
-sop
-coverd collection
-rest api optionmiztion
+what is middleware
+how to query optionmiztion
+what is data modeling
+rest api vs api and how many type of api?
+what is web hook
+what is sop
 redis
 sharding implement
-orm
-
-
+what is orm pros and cost orm?
 jwt
 algo256
 payload
@@ -311,17 +307,11 @@ middleware function
 cors module
 multer
 
-
-
 UPDATE db.Table1 SET col2 = (CASE col2 WHEN 1 THEN 0 ELSE 1 END);
-
-
-
- 
-
 
 // Execution Order and Explanation
 1. Synchronous code executes first:
+
 2. process.nextTick is executed before other microtasks in the current phase of the event loop.
     It's processed right after the synchronous code, as it's the highest-priority microtask.
 3. Microtasks from Promises and queueMicrotask are executed in the order they were queued:
@@ -401,3 +391,27 @@ middelware
 
 loop
 online  api call in reactjs
+
+
+
+
+custom events
+concruncy handle single thread
+different between room and channel in socket
+hirarchy base project
+array me bulk data ko how to handle
+message broker in event-base question
+mysql query realted to date and group avg
+
+
+
+table case
+
+
+non-functionality requirement:-
+otp
+secuirity
+
+priority
+rate limiting
+migration orm
