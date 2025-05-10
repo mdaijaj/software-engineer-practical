@@ -1,9 +1,7 @@
 what is middleware
 how to query optionmiztion
-what is data modeling
 rest api vs api and how many type of api?
-what is web hook
-what is sop
+
 redis
 sharding implement
 what is orm pros and cost orm?
@@ -16,7 +14,6 @@ usecase of jwt
 authentication and authority
 token expiry
 refresh   tocken
-
 statefull stateless
 
 
@@ -415,3 +412,4 @@ secuirity
 priority
 rate limiting
 migration orm
+what is web hook

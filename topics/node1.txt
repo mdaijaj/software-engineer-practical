@@ -236,7 +236,8 @@ console.log("File Compressed.");
 How to handle large data in Node.js?
 The Node.js stream feature makes it possible to process large data continuously in smaller chunks without keeping it all in memory. 
 One benefit of using streams is that it saves time, 
-since you don't have to wait for all the data to load before you start processing. This also makes the process less memory-intensive.
+since you don't have to wait for all the data to load before you start processing. 
+This also makes the process less memory-intensive.
 
 Some of the use cases of Node.js streams include:
 Reading a file that's larger than the free memory space, because it's broken into smaller chunks and processed by streams. 
@@ -612,3 +613,7 @@ Thread Pool (libuv)	Manages file system, database, and network tasks.
 Cluster Mode	Runs multiple Node.js instances to utilize multi-core CPUs.
 
 
+
+JS is a single threaded, behaviour is sync.
+How we can make it asynchronous via promises, callback, timers function.
+DOM, Event Loop in javascript

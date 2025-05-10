@@ -1,0 +1,272 @@
+// example2
+//  program that shows the delay in execution
+// example1
+// function greet() {
+//    console.log('Hello world');
+// }
+
+function sayName(name) {
+   console.log('Hello' + ' ' + name);
+}
+
+// // calling the function
+// setTimeout(greet, 2000);
+// sayName('John');
+  
+
+// hoisting:-
+xyz()
+function xyz(){
+   var abc= "hello js"
+   console.log(abc)
+}
+
+host=5;
+// console.log("aijaj", host)
+var host;  //its is working hoisting
+
+
+// abcd=5;
+// console.log("hosting", abcd)
+// let abcd;  //its is not working hoisting
+// console.log("ram", abcd)
+
+
+// 1. Object–
+// An Object is a unique entity that contains properties and methods. For example “car” is a real life
+// Object, which has some characteristics like color, type, model, horsepower and performs certain
+// actions like drive. The characteristics of an Object are called Properties in Object-Oriented Programming and the actions
+// are called methods. An Object is an instance of a class. Objects are everywhere in JavaScript, almost every element is an
+// Object whether it is a function, array, or string.
+
+
+// 2. Classes–
+// Classes are blueprint of an Object. A class can have many Objects because class is a template while Object are instances
+// of the class.
+// there are no classes in JavaScript we have only Object. To be more precise,
+// JavaScript is a prototype based Object Oriented Language,
+// which means it doesn’t have classes, rather it defines behaviors using a constructor function and then
+// reuse it using the prototype.
+
+
+// Note: Even the classes provided by ECMA2015 are objects.
+// Defining class using es6
+
+
+// example traditional way of defining an Object and simulate them as classes.
+class Vehicle {
+   constructor(name, maker, engine) {
+     this.name = name;
+     this.maker =  maker;
+     this.engine = engine;
+   }
+   getDetails(){
+       return (`The name of the bike is ${this.name}.`)
+   }
+ }
+ // Making object with the help of the constructor
+ let bike1 = new Vehicle('Hayabusa', 'Suzuki', '1340cc');
+ let bike2 = new Vehicle('Ninja', 'Kawasaki', '998cc');
+ 
+//   console.log(bike1.name)userInf1;    // Hayabusa
+//   console.log(bike2.maker);   // Kawasaki
+//   console.log(bike1.getDetails());
+
+
+
+// 3. Encapsulation –
+// The process of wrapping properties and functions within a single unit is known as encapsulation.
+// Let’s understand encapsulation with an example.
+
+//encapsulation example
+class personB{
+   constructor(name,id){
+       this.name = name;
+       this.id = id;
+   }
+   add_Address(add){ 
+       this.add = add;
+   }
+   getDetails(){
+       console.log(`Name is ${this.name},Address is: ${this.add}`);
+   }
+}
+let person3 = new personB('Mukul',21);  //incapsulation
+// person3.add_Address('Delhi');
+// person3.getDetails();
+
+
+
+// Sometimes encapsulation refers to the hiding of data or data Abstraction which means representing essential features hiding the background detail.
+
+
+// Abstraction example
+function personA(fname,lname){
+    let firstname = fname;
+    let lastname = lname;
+
+    let getDetails_noaccess = function(){
+        return (`First name is: ${firstname} Last
+            name is: ${lastname}`);
+    }
+
+    this.getDetails_access = function(){
+        return (`First name is: ${firstname}, Last
+            name is: ${lastname}`);
+    }
+}
+let person4 = new personA('Mukul','Latiyan');
+// console.log(person4.firstname);
+// console.log(person4.getDetails_noaccess);
+// console.log(person4.getDetails_access());
+
+
+
+// 4. Inheritance –
+// It is a concept in which some properties and methods of an Object are being used by another Object. Unlike most of the OOP
+// languages where classes inherit classes, JavaScript Objects inherit Objects i.e. certain
+// features (property and methods) of one object can be reused by other Objects.
+
+
+//Inheritance example
+   class personC{
+       //constructure
+       constructor(name){
+           this.name = name;
+       }
+       //method to return the string
+       toString(){
+           return (`Name of person: ${this.name}`);
+       }
+   }
+   class student extends personC{
+       constructor(name,id){
+           //super keyword for calling the above class constructor
+           super(name);
+           this.id = id;
+       }
+       toString(){
+           return (`${super.toString()},Student ID: ${this.id}`);
+       }
+   }
+   // let student1 = new student('Mukul',22);
+   // console.log(student1.toString());
+
+
+
+
+//6 inheritance in js
+class Employee{
+    constructor(givenName, givenExp, givenDivision){
+        this.name= givenName
+        this.experience= givenExp
+        this.givenDivision= givenDivision
+    }
+    slogan(){
+        return `I am ${this.name} and my company is the best`
+    }
+    joiningYear(){
+        return 2022 - this.experience
+    }
+    static add(a,b){
+        return a + b
+    }
+ }
+ 
+ class Programmer extends Employee{
+    constructor(givenName, givenExp, givenDivision, language, github){
+        super(givenName, givenExp, givenDivision, language)   //super means that previous class constructure use
+        this.language= language
+        this.github= github
+    }
+    favouriteLanguage(){   //if use static not use this keyboard
+        if(this.language=="python"){
+            return "pyton"
+        }else{
+            return "javascript"
+        }
+    }
+    static multiply(a,b){
+        return a * b
+    }
+ }
+ // console.log(Employee.add(4,8))
+ const aijaj= new Programmer("aijaj", 2, "nodejs", "javascirpt", "mdaijaj")
+ // console.log("aijaj", aijaj)
+ // console.log("aijaj", aijaj.favouriteLanguage())
+ // console.log("aijaj", Programmer.multiply(4,8))
+ 
+
+
+ Scenario:
+A company wants to develop an e-commerce platform with features like product listing, user authentication, a shopping cart, and a payment gateway. Instead of building the entire system in one go, they follow an Agile Scrum approach.
+
+Step-by-Step Agile Process (Scrum Example)
+1. Product Backlog Creation
+The Product Owner lists all the features needed in the product backlog:
+✅ User Authentication
+✅ Product Listing Page
+✅ Shopping Cart
+✅ Payment Integration
+✅ Order History
+
+2. Sprint Planning (Iteration 1 - 2 Weeks)
+The team selects high-priority features from the backlog for the first sprint:
+
+Sprint Goal: Develop User Authentication & Product Listing
+
+✅ Sign-up/Login with JWT authentication
+✅ Display products with search & filter options
+
+3. Daily Stand-ups (Daily Progress Check - 15 min)
+Each team member updates their progress:
+
+🧑‍💻 Developer: "I finished the login API, starting front-end integration."
+
+🎨 UI Designer: "Working on product page layout."
+
+🧪 QA Tester: "Will test the login feature today."
+
+4. Sprint Review (End of Sprint - Demo)
+The team presents the completed User Authentication & Product Listing Page to stakeholders for feedback.
+
+📝 Feedback: Improve UI for better user experience
+
+5. Sprint Retrospective (Process Improvement Meeting)
+Team discusses what went well and what to improve:
+✅ Good: Effective teamwork, login API worked smoothly
+❌ Improve: Reduce UI bugs before review
+
+Next Sprint (Iteration 2 - 2 Weeks)
+Shopping Cart & Payment Integration
+
+Bug Fixes from previous sprint
+
+This cycle continues until the final product is delivered with continuous improvements 🚀.
+
+Would you like a breakdown for another Agile framework like Kanban?
+
+
+
+api tools
+
+how to manage 1 million user handle whats app chating.
+rate limit
+caching
+load balancing  using cluster
+child process create
+
+
+multi thread and multi process
+event loop
+
+
+
+
+
+
+
+
+
+
+

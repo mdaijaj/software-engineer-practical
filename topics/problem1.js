@@ -8,7 +8,7 @@ function bubbleSort(array){
         //swaping value
         let temp=array[j];  //big value store temp
         array[j]= array[j+1];
-        array[j+1]= temp
+        array[j+1]= temp 
       }
     }
   }
@@ -76,7 +76,7 @@ function SecondMax(arr2){
 
 //3 duplicate remove value
   function removeDuplicates(arrOfNum) {
-      const set = new Set(arrOfNum);
+      const set = new Set(arrOfNum); 
       // console.log("set", [...set])
   }
   // removeDuplicates(arr2).
@@ -559,4 +559,87 @@ function flattenArray(arr) {
 console.log(flattenArray(arr2))  
 
 
+//Flattening a Nested Object
+let obj = {
+  a: 1,
+  b: {
+      c: 2,
+      d: {
+          e: 3,
+          f: 4
+      }
+  },
+  g: 5,
+  h: {
+      i: 6,
+      j: {
+          k: 7,
+          l: 8
+      }
+  }
+};
 
+let result = [];
+function flattenObjectValues(obj) {
+  for (let key in obj) {
+      if (typeof obj[key] === 'object' && obj[key] !== null) {
+          flattenObjectValues(obj[key]);
+      } else {
+          result.push(obj[key]);
+      }
+  }
+  return result;
+}
+
+console.log(flattenObjectValues(obj));
+
+
+
+// Flatten Object While Keeping Arrays Intact
+function flattenObject(obj, parentKey = "", result = {}) {
+  for (let key in obj) {
+      let newKey = parentKey ? `${parentKey}.${key}` : key;
+
+      if (typeof obj[key] === "object" && obj[key] !== null && !Array.isArray(obj[key])) {
+          // Recursively flatten the nested object
+          flattenObject(obj[key], newKey, result);
+      } else {
+          // Store the value (whether it's a primitive or an array)
+          result[newKey] = obj[key];
+      }
+  }
+  return result;
+}
+
+let obj1 = { "a": 1, "b": { "c": 2 } };
+let obj2 = { "a": 1, "b": { "c": [2, 3, 4] } };
+console.log(flattenObject(obj1)); // Output: { "a": 1, "b.c": 2 }
+console.log(flattenObject(obj2)); // Output: { "a": 1, "b.c": [2, 3, 4] }
+
+
+
+// Show zero at last 
+let arr1 = [2,0,1,2,0,2,1,0]
+let nonZeroIndex = 0;
+for(let i=0;i<arr1.length;i++){
+  if(arr1[i]!==0){
+    [arr1[nonZeroIndex],arr1[i]] = [arr1[i],arr1[nonZeroIndex]];
+    nonZeroIndex++
+  }
+}
+console.log(arr1)// Another Efficient Way with Two Pointers (in-place):
+
+// show zeroes in beginning
+// if(arr1[i]==0)
+
+ 
+// for(let item of arr){
+//   if(item===0){
+//     newArr.push(item)
+//   }else{
+//     modifyArr.push(item)
+//   }
+// }
+// const actualArray = modifyArr.concat(newArr)
+// console.log(actualArray)
+// output - [2,1,2,2,1,0,0,0]

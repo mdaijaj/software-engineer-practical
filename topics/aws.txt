@@ -51,7 +51,7 @@ associate ip no charge
 
 static ip set:-
 associate ip from elastic ip
-when you are not using aws services then not use elastic ip release else payment
+when you are not using aws services then     not use elastic ip release else payment
 
 
 instance create

@@ -330,6 +330,10 @@ function doTask3() {
 // });
 
 
+// 2. What are the pros and cons of promises over callbacks
+
+
+
 
 //12. using promise:-
 function doTask1() {
@@ -695,7 +699,7 @@ while(flag){
 }
 
 
-//spread vs rest
+//17 spread vs rest
 // 1. Spread Operator (...)
 // The spread operator is used to expand an iterable (array, object, string) into individual elements.
 

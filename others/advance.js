@@ -55,7 +55,7 @@ function greeting(name) {
 let ab= 20;
 let ba=10;
 const sum= ()=> ab+ba;
-// console.log("sum", sum())
+// console.log("sum", sum())  
 
 
 
@@ -549,46 +549,7 @@ class Employee{
 
 
 
-
-//5 prototype concept
-//  Each and every function in JavaScript automatically has a property called prototype.
-//  Every object that's created by a certain constructor function will get access to all the
-// methods and properties that we define on the constructors prototype property.
-//  Each object created by that constructor function
-//  Each object created by this constructor function will now get access to all the
-// methods and properties of this prototype property
-//  Vivek and Arpit does not have calcAge function in them but still they can access it
-// because of the prototypal inheritance.
-//  This keyword is set to the object calling the method.
-//  Prototype of Vivek and Arpit is Person.prototype(prototype property of Person)
-//  Each object has special property called __proto__
-
-
-
-
-// meaning
-// where do you start and made
-// Object literal : Object.prototype se start karenga
-let obj={
-   name: "aijaj",
-   channel:"high point",
-   address: "delhi",
-}
-// console.log(obj)
-//_proto_
-
-
-//constructor
-// function obj2(givenName){
-//     this.name= givenName
-// }
-
-// obj.prototype.getName()
-
-
-// let obj2= new Obj("aijaj")
-// console.log(obj2)
-
+ 
 
 
 //7 binding this keybard

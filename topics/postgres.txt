@@ -22,29 +22,21 @@ Replication & high availability
 4. How do you create a database in PostgreSQL?
 Example:
 
-sql
-Copy
-Edit
+sql query:-
 CREATE DATABASE mydb;
 To switch to the database:
 
-sql
-Copy
-Edit
+sql query:-
 \c mydb
 
 5. How do you list all databases in PostgreSQL?
 Command:
 
-sql
-Copy
-Edit
+sql query:-
 \l
 or
 
-sql
-Copy
-Edit
+sql query:-
 SELECT datname FROM pg_database;
 
 6. What is the difference between CHAR, VARCHAR, and TEXT?
@@ -54,9 +46,7 @@ VARCHAR(n)	Variable-length string with a maximum limit n
 TEXT	Unlimited-length string
 Example:
 
-sql
-Copy
-Edit
+sql query:-
 CREATE TABLE test_table (
     id SERIAL PRIMARY KEY,
     name VARCHAR(50),
@@ -66,9 +56,7 @@ CREATE TABLE test_table (
 7. How do you create a table in PostgreSQL?
 Example:
 
-sql
-Copy
-Edit
+sql query:-
 CREATE TABLE employees (
     id SERIAL PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
@@ -86,23 +74,17 @@ BRIN (for large tables)
 Hash Index
 Example:
 
-sql
-Copy
-Edit
+sql query:-
 CREATE INDEX idx_name ON employees (name);
 
 9. How do you perform a backup and restore in PostgreSQL?
 Backup Command:
 
-sh
-Copy
-Edit
+sh query:-
 pg_dump -U username -d mydb -F c -f backup_file.dump
 Restore Command:
 
-sh
-Copy
-Edit
+sh query:-
 pg_restore -U username -d mydb -F c backup_file.dump
 
 10. What are the different types of joins in PostgreSQL?
@@ -114,9 +96,7 @@ RIGHT JOIN: Returns all rows from the right table and matching rows from the lef
 FULL JOIN: Returns all rows when there is a match in either table.
 Example:
 
-sql
-Copy
-Edit
+sql query:-
 SELECT employees.name, departments.dept_name
 FROM employees
 INNER JOIN departments ON employees.dept_id = departments.id;
@@ -125,9 +105,7 @@ Intermediate PostgreSQL Questions
 11. What is the difference between INNER JOIN, LEFT JOIN, and RIGHT JOIN?
 Example:
 
-sql
-Copy
-Edit
+sql query:-
 -- INNER JOIN (Only matching records)
 SELECT e.name, d.dept_name
 FROM employees e
@@ -153,9 +131,7 @@ Use proper data types
 Use partitioning for large tables
 Example:
 
-sql
-Copy
-Edit
+sql query:-
 EXPLAIN ANALYZE SELECT * FROM employees WHERE salary > 50000;
 
 13. What is the EXPLAIN ANALYZE command?
@@ -164,17 +140,13 @@ EXPLAIN ANALYZE helps analyze query execution plans and suggests optimizations.
 
 Example:
 
-sql
-Copy
-Edit
+sql query:-
 EXPLAIN ANALYZE SELECT * FROM employees WHERE name = 'John Doe';
 
 14. What are CTEs (Common Table Expressions)?
 Example:
 
-sql
-Copy
-Edit
+sql query:-
 WITH high_salary AS (
     SELECT * FROM employees WHERE salary > 60000
 )
@@ -182,9 +154,7 @@ SELECT * FROM high_salary;
 15. What are PostgreSQL schemas?
 Example:
 
-sql
-Copy
-Edit
+sql query:-
 CREATE SCHEMA company;
 CREATE TABLE company.employees (id SERIAL, name VARCHAR(100));
 
@@ -195,9 +165,7 @@ WHERE filters rows before aggregation.
 HAVING filters after aggregation.
 Example:
 
-sql
-Copy
-Edit
+sql query:-
 SELECT department, COUNT(*) 
 FROM employees 
 WHERE salary > 40000 
@@ -207,9 +175,7 @@ HAVING COUNT(*) > 5;
 17. How does PostgreSQL handle transactions?
 Example:
 
-sql
-Copy
-Edit
+sql query:-
 BEGIN;
 UPDATE accounts SET balance = balance - 100 WHERE id = 1;
 UPDATE accounts SET balance = balance + 100 WHERE id = 2;
@@ -218,9 +184,7 @@ COMMIT;
 18. What is ON CONFLICT in PostgreSQL?
 Example:
 
-sql
-Copy
-Edit
+sql query:-
 INSERT INTO employees (id, name) VALUES (1, 'John Doe')
 ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name;
 
@@ -230,18 +194,19 @@ SERIAL: Auto-incrementing integer
 UUID: Globally unique identifier, useful for distributed systems
 Example:
 
-sql
-Copy
-Edit
+sql query:-
 CREATE TABLE users (
     id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
     name VARCHAR(100)
 );
 
 20. How does PostgreSQL implement full-text search?
-Example:
+Example: 
 
-sql
-Copy
-Edit
+sql query:-
 SELECT * FROM articles WHERE to_tsvector(content) @@ to_tsquery('PostgreSQL');
+
+
+prisma setup:-
+npx prisma 
+npx prisma init

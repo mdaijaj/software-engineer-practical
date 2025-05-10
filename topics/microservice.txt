@@ -15,3 +15,14 @@ Reach the time to live (TTL)
 Are rejected by another queue exchange
 Have been read and rejected too many times 
 
+
+usecase of microservice
+use multple language
+
+
+if package.json file
+type: model
+then import file should be filename.js
+
+
+

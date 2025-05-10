@@ -323,13 +323,25 @@ console.log(result)
 // let b=null
 // console.log(a && b)  // false value any of them false then false value return
 
-
 console.log(3 + false) //3  false=0
 console.log(3 + true) //4   true =1
 
 
+console.log(0.1 + 0.3 === 0.4)  //true
+console.log(0.2 + 0.3 === 0.5)  //true
+console.log(0.1 + 0.2 === 0.3)  //false  //not equal
+// when we add these two value = 0.30000000000000004
 
 
 
+//If you want asynchronous behavior inside the loop, you need to use await with a promise or some asynchronous operation.
+async function abc() {
+    for (let i = 0; i < 10; i++) {
+        // Simulating an async operation with a delay
+        await new Promise(resolve => setTimeout(resolve, 1000)); // Wait for 1 second
+        console.log(i);
+    }
+}
 
+abc();
 

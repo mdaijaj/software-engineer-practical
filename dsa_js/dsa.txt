@@ -15,41 +15,7 @@ graph
 graph traversal
 dijstra algo
 trie
-
-
-
-5x^2+6x+12   
-
-array
-
-
-6,7
-
-
-
-
-
-
-
-load balanncer
-cloud
-sharding
-
-
-majenda
-oracal
-shopify
-medusa e-commerce framework js
-
-zoho service all use example
-
 dsa js remaining
 link list
 tree
 graph
-
-
-
-
-doubt:-
-event driven

@@ -1,10 +1,103 @@
-Explain Vertical Scaling and Horizontal Scaling
-Scaling Horizontal and Vertical mysql 
-Difference between Where and Having Clause in SQL : 
+Vertical Scaling vs Horizontal Scaling (With Examples)
+Scaling is the process of increasing system capacity to handle more traffic or workload. There are two main types of scaling:
 
-what is normalization?
+1️⃣ Vertical Scaling (Scaling Up)
+Increases the power of a single machine (CPU, RAM, Disk, etc.).
+Does not require code changes but has hardware limitations.
+
+🖥 Example: Vertical Scaling in MySQL
+Before Scaling:-
+A MySQL database runs on a 4-core, 8GB RAM server.
+It starts slowing down due to high queries.
+
+After Scaling Up:-
+Upgrade to a 16-core, 64GB RAM server.
+Queries execute faster because of better hardware.
+
+✅ Pros:
+✔️ Simple to implement.
+✔️ No change in database architecture.
+
+❌ Cons:
+❌ Expensive hardware upgrades.
+❌ Single point of failure (one server).
+
+2️⃣ Horizontal Scaling (Scaling Out)
+Adds more machines (nodes) to distribute the load.
+Uses load balancers and replication techniques.
+
+🖥 Example: Horizontal Scaling in MongoDB
+Before Scaling
+A MongoDB instance runs on one server and handles 1M requests/day.
+Performance drops as requests increase.
+
+After Scaling Out
+Add 3 more MongoDB servers and use sharding.
+Each server stores part of the data (e.g., users A-M on one server, N-Z on another).
+
+✅ Pros:
+✔️ Infinite scalability.
+✔️ High availability (if one server fails, others handle traffic).
+
+❌ Cons:
+❌ Requires load balancing.
+❌ More complex architecture.
+
+
+
+
+Difference between WHERE and HAVING Clause in SQL
+Both WHERE and HAVING clauses are used to filter data in SQL, but they serve different purposes and operate at different stages of query processing:
+
+WHERE Clause
+Purpose: Filters rows before any grouping or aggregation is performed.
+Usage: Used to specify conditions on individual rows.
+Example:-
+SELECT *
+FROM employees
+WHERE salary > 5000;
+
+
+HAVING Clause
+Purpose: Filters aggregated results after the GROUP BY clause is applied.
+Usage: Used to specify conditions on aggregated data (e.g., SUM, COUNT, AVG).
+Example:-
+SELECT department, COUNT(*) AS employee_count
+FROM employees
+GROUP BY department
+HAVING COUNT(*) > 5;
+
+Combined Usage Example
+Often, both WHERE and HAVING are used in the same query:
+
+SELECT department, AVG(salary) AS avg_salary, COUNT(*) AS employee_count
+FROM employees
+WHERE salary IS NOT NULL
+GROUP BY department
+HAVING AVG(salary) > 6000;
+
+explain:-
+WHERE Clause: Filters out rows where salary is NULL.
+GROUP BY Clause: Groups the remaining rows by department.
+Aggregation: Calculates the average salary (AVG(salary)) and employee count (COUNT(*)) for each department.
+HAVING Clause: Filters out groups (departments) where the average salary is not greater than 6000.
+
+
+
+What is Migration?
+Database migration is the process of changing, transferring, or updating a database schema or data while ensuring minimal downtime. It is commonly used to:
+Modify table structures (adding/removing columns, changing types).
+Migrate data between different databases (e.g., MySQL → PostgreSQL).
+Version control the database schema using migration tools.
+
+
+What is Database Normalization?
+Normalization is the process of organizing a database to reduce data redundancy and improve data integrity. It involves structuring 
+the tables and their relationships to minimize duplication and ensure logical data dependencies. The goal is to design a schema 
+that avoids anomalies during insert, update, or delete operations. 
+
+
 primary, unique key and forign key?
-
 primary key:-
 Cannot contain NULL values.
 Every table should have one primary key.
@@ -62,7 +155,6 @@ Banana	            11
 Orange	            8
 
 
-
 having query:-
 SELECT product_name, SUM(quantity) AS total_quantity FROM sales
 GROUP BY product_name HAVING total_quantity > 10;
@@ -90,15 +182,6 @@ SELECT MAX(amount) from salary_stuctures ss1
 WHERE amount < (SELECT MAX(amount) from salary_stuctures ss2 ); 
 
 
-Migrations are scripts or instructions that specify how the database schema should change. 
-Each migration corresponds to a specific, discrete change to the schema, such as creating a new table, adding or modifying columns, 
-creating indexes, or defining relationships between tables. Migrations are typically versioned to ensure they are applied in a specific order.
-
-
-Migrations are scripts or instructions that specify how the database schema should change. 
-Each migration corresponds to a specific, discrete change to the schema, such as creating a new table, adding or modifying columns, creating indexes, or defining relationships between tables. Migrations are typically versioned to ensure they are applied in a specific order.
-
-
 join example:-
 right
 left
@@ -123,9 +206,8 @@ SELECT COUNT(CustomerID), Country FROM Customers
 GROUP BY Country
 HAVING COUNT(CustomerID) > 5;
 
-what is Scalable mysql Horizontal and Vertical?
 
-orm what is meaning pros const with example?
+what is orm meaning pros const with example?
 ORM (Object-Relational Mapping) is a technique that allows developers to interact with a relational database 
 (e.g., PostgreSQL, MySQL, MongoDB) using object-oriented programming instead of writing raw SQL queries.
 
@@ -150,11 +232,12 @@ Transaction Control Statements in MySQL:-
     3. ROLLBACK: Undoes all changes made within the transaction, reverting to the initial state.
 
 
-Key Properties of Transactions
-Transactions follow the ACID properties:
-
+Key Properties of Transactions:-
 Atomicity: Ensures all operations within a transaction complete successfully or none do.
+            The entire transaction is treated as a single unit.
+            If one part fails, the entire transaction fails.
 Consistency: Ensures the database remains in a consistent state before and after the transaction.
+            A transaction brings the database from one valid state to another valid state.
 Isolation: Ensures that transactions are executed independently of one another.
 Durability: Once a transaction is committed, its results are permanent.
 
@@ -310,3 +393,73 @@ WHERE Country IN ('Germany', 'France', 'UK');
 Ex: The following SQL statement selects all products with a price between 10 and 20:
 SELECT * FROM Products
 WHERE Price BETWEEN 10 AND 20;
+
+
+What is Partitioning in Databases?
+Partitioning is the process of dividing a large table or index into smaller, more manageable pieces called partitions, 
+while still treating it as a single entity. This technique improves query performance and maintenance by allowing operations 
+to be executed on smaller subsets of data.
+
+Key Benefits of Partitioning
+Improved Query Performance:
+Queries that target a specific partition (or a few partitions) are faster because the database scans only a subset of data.
+
+Efficient Maintenance:
+Operations like backups, archiving, or data purging can be performed on individual partitions rather than the entire table.
+
+Scalability:
+Large tables can be managed more effectively by dividing them into logical segments.
+
+
+Imagine a table sales that stores data for each sale transaction over several years. To improve performance and manageability, 
+you can partition this table by year.
+
+Create the Partitioned Table:
+Use Range Partitioning based on a date column.
+
+sql
+Copy
+Edit
+CREATE TABLE sales (
+    sale_id INT AUTO_INCREMENT PRIMARY KEY,
+    sale_date DATE,
+    amount DECIMAL(10,2),
+    customer_id INT
+)
+PARTITION BY RANGE (YEAR(sale_date)) (
+    PARTITION p2020 VALUES LESS THAN (2021),
+    PARTITION p2021 VALUES LESS THAN (2022),
+    PARTITION p2022 VALUES LESS THAN (2023),
+    PARTITION pFuture VALUES LESS THAN MAXVALUE
+);
+
+Explanation:
+PARTITION BY RANGE (YEAR(sale_date)):
+Divides the table based on the year extracted from sale_date.
+
+PARTITION p2020 VALUES LESS THAN (2021):
+Stores sales data for the year 2020.
+
+PARTITION p2021 VALUES LESS THAN (2022):
+Stores sales data for the year 2021.
+
+PARTITION p2022 VALUES LESS THAN (2023):
+Stores sales data for the year 2022.
+
+PARTITION pFuture VALUES LESS THAN MAXVALUE:
+Catches any sales records with years beyond 2022.
+
+Inserting Data:
+Insert data into the sales table as usual. The database automatically routes each row to the correct partition based on the sale date.
+
+sql
+INSERT INTO sales (sale_date, amount, customer_id) 
+VALUES ('2021-06-15', 250.00, 101);
+Querying the Partitioned Table:
+When you query data with a filter on sale_date, MySQL can quickly narrow down the relevant partition(s):
+
+sql
+SELECT * FROM sales 
+WHERE sale_date BETWEEN '2021-01-01' AND '2021-12-31';
+Result:
+MySQL only scans the partition p2021, thus speeding up the query.

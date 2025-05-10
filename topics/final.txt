@@ -1,40 +1,41 @@
-nodejs:- top 30
-what is nodejs
-why use nodejs for backend
-what is callback and callback hell
-promise
+20	javascript	
+20	nodejs	
+20	mongodb	
+20	mysql with postgres
+20  reactjs
+20	typescript	
+problem 1 top 30
+
+
+what is nodejs features and why we use nodejs for backend?
+what is callback?
+callback hell  How can you avoid callback hells
+promise and type
 event loop   
 how to handle multile req if nodejs single thread?  how to handle multile user reqeust Handle
 What Is EventEmitter In NodeJs
 middleware
-callback hell How can you avoid callback hells
-synchonous vs asynchonous
+synchonous vs asynchonous?
 What are JWT?  What are disadvantages of using jwt based authentication?
 buffer example
 cookies session localstorage
 What are disadvantages of using session based authentication? 
 What Are The Key Features Of NodeJs?
 core module ?
-Explain the purpose of module exports?
 What are streams in Nodejs Explain the different types of streams present in Nodejs What is Piping in
 packages json vs packages.lock.json
 List down the major security implementations within Node.js
 repl example
 with async await
-What are different authentication methods?
-Can you write CRUD operations in Node js without using frameworks?  practical
 What Is A Child process Module In NodeJs?
 between spawn() and fork() methods in Node.js?
 what is npm? 
-cluster
+cluster 
 worker thread ? 
-API functions in Node?
 
 
 
 javascript:- 25 top
-promise promise.all()  promise.race() type  race method in promise
-callback and callback hell
 what is js fearture  
 advantage of JavaScript
 ecma script es6 with class 14 example (arrow vs regular function)
@@ -54,8 +55,7 @@ What is the difference between Shallow and Deep copy
 hoisting
 What is an anonymous function
 What is memoization?
-What is the use of setTimeout and setInterval 
-the purpose of clearTimeout method and clearInterval 
+What is the use of setTimeout and setInterval clearTimeout method and clearInterval 
 
 
 
@@ -67,12 +67,10 @@ what is reactjs fearture
 reactjs vs anguler why use reactjs for fronted
 life cycle method both useeffect
 state vs props
-class function component
 useMemo() vs use callback()
 virtual dom real dom?
 what is jsx
 axios vs fetch?
-What is useRef ?
 What is hooks? all
 what is reduce, useContext how it works?
 what is redux
@@ -84,40 +82,44 @@ Stateful vs stateless class funtion
 lazyLoad of components
 Prop drilling in react
 Thunk in redux
-// ● What is difference in pure component an higher order components?
 // ● How can you improve performance of your react app?
 // ● Event Bubbling?
 // What is the use of preventDefault method?  stop redirect page or reload
 // What is the use of stopPropagation method?
 // ● What are interceptors in React?  ?
 
-
+class function component
+What is useRef ?
 practical knowledge problem solve question
 top 10 question problem1
 
 
 
-databases: 25?
+mysql: 25?
+what is normalisatioin?
 all join right left full join inner join self CARTESIAN join CROSS JOIN
+what is mysql props and const
+what is Mongodb props and const
 second highest salary?
 db connection flow?
-raw query any type?
 what is orm why we use?
 what is migration
 mysql vs nosql?
-groupby and having query
+mysql vs sql?
+when we use groupby and having query?
 what is index how to create index with example in both
-what is mysql props and const
-what is Mongodb props and const
+Vertical Scaling and Horizontal Scaling?
+what is transection?
+raw query any type practical?
+
 what is aggregate pipeling with example
-Vertical Scaling and Horizontal Scaling
-what is replica
+what is replica?
 waht is Sharding?
 14 What are the mongoose middlewares?  pre or post in schema that is call middlewares
-virtual properties
-what is transection?
+virtual properties?
 Embedded documents
-Projection
+what is Projection?
+
 
 
 html & css
@@ -125,23 +127,4 @@ html & css
 // blog
 // div
 // spam
-
-
-
-// // system designing
-// // low level designing
-
-// // 10 tempale
-// // youtube
-// // tinder
-// // whatsapp
-// // flipkart
-// // zomato
-// // flipkart
-
-
-// // 20 template
-// // parking system
-// // splite
-
 

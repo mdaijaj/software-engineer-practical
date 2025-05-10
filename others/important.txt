@@ -6,6 +6,8 @@ Ability to write unit testing of code components and functional tests for module
 Experience working in AWS stack like such as S3, EKS, MSK and ELBs is a big plus
 
 
+
+
 sales marketting fronted api with example and flow:-
 role wise access with frotned api integration with example
 
@@ -18,6 +20,25 @@ india mard
 telephonic data
 third party
 social media app
+
+
+
+// // system designing
+// // low level designing
+
+// // 10 tempale
+// // youtube
+// // tinder
+// // whatsapp
+// // flipkart
+// // zomato
+// // flipkart
+
+
+// // 20 template
+// // parking system
+// // splite
+
 
 
 
@@ -36,11 +57,6 @@ sharding implement
 orm\
 
 
-jwt
-
-algo256
-payload
-verify signature (secret key)
 
 usecase of jwt
 authentication and authority

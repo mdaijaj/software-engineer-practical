@@ -1,0 +1,30 @@
+1. What are your key strengths and weaknesses?
+
+strengths:-
+Problem-Solving Minds:
+explore learn new things
+Attention to Performance & Scalability:
+Collaboration & Communication with team work.
+
+
+weaknesses:-
+Over-Optimizing Code:
+"I sometimes spend too much time optimizing code, even when it's already efficient. To balance this, 
+I now follow a structured approach: first, ensure functionality, then optimize only where necessary." 
+
+Taking on Too Many Tasks:
+"I tend to take on multiple tasks to help my team, which can sometimes spread me too thin. I’ve learned to prioritize tasks better using Agile methodologies and delegation."
+
+Public Speaking in Large Groups:
+"While I’m comfortable in team discussions, presenting in large meetings was initially a challenge. I’ve improved by actively participating in tech meetups and internal knowledge-sharing sessions."
+
+
+2. Can you tell me about a challenging project you worked on and how you handled it?
+1. Problem rbac custom
+2. project setup api integration multiple repository and working learn new things using small break down Problem Solving
+    The main challenge was integrating multiple third-party APIs from different providers, each with unique data formats,
+3. zoho invoice generate service
+
+
+
+
